@@ -1,4 +1,61 @@
 export const medicalVocab = [
+    // --- A1 Level: Absolute Basics for Medical Context ---
+    {
+        dutch: "Ja", english: "Yes", level: "A1", category: "General",
+        explanation: "Simple confirmation, essential for patient communication.",
+        example: "Bent u meneer Jansen? Ja."
+    },
+    {
+        dutch: "Nee", english: "No", level: "A1", category: "General",
+        explanation: "Simple negation.",
+        example: "Heeft u pijn op dit moment? Nee."
+    },
+    {
+        dutch: "Pijn", english: "Pain", level: "A1", category: "Symptoms",
+        explanation: "The most basic way to express or ask about physical suffering.",
+        example: "Waar voelt u de pijn?"
+    },
+    {
+        dutch: "Help", english: "Help", level: "A1", category: "General",
+        explanation: "An urgent request for assistance.",
+        example: "Help me alstublieft!"
+    },
+    {
+        dutch: "Dokter", english: "Doctor", level: "A1", category: "Personnel",
+        explanation: "General term for a medical professional.",
+        example: "De dokter komt zo bij u."
+    },
+    {
+        dutch: "Water", english: "Water", level: "A1", category: "General",
+        explanation: "Essential for hydration and medication intake.",
+        example: "Mag ik een glas water?"
+    },
+    {
+        dutch: "Hier", english: "Here", level: "A1", category: "General",
+        explanation: "Used to point to a location of pain or an object.",
+        example: "Het doet precies hier pijn."
+    },
+    {
+        dutch: "Nu", english: "Now", level: "A1", category: "General",
+        explanation: "Expressing urgency or current state.",
+        example: "We gaan nu naar de operatiekamer."
+    },
+    {
+        dutch: "Bed", english: "Bed", level: "A1", category: "Facilities",
+        explanation: "Where the patient stays.",
+        example: "U moet in bed blijven liggen."
+    },
+    {
+        dutch: "Koud", english: "Cold", level: "A1", category: "Symptoms",
+        explanation: "Basic feeling of temperature.",
+        example: "Ik heb het erg koud."
+    },
+    {
+        dutch: "Warm", english: "Warm/Hot", level: "A1", category: "Symptoms",
+        explanation: "Basic feeling of temperature, often related to fever.",
+        example: "Mijn voorhoofd voelt warm aan."
+    },
+
     // --- A2 Level: Basics & Common Body Parts ---
     {
         dutch: "Hoofdpijn", english: "Headache", level: "A2", category: "Symptoms",
