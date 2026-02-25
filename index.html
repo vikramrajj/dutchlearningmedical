@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medisch Nederlands | Dutch Medical Flashcards</title>
+    <meta name="description"
+        content="Master Dutch medical terminology for A2, B1, and B2 levels with interactive flashcards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1 class="logo">Medisch<span>Nederlands</span></h1>
+            <div class="level-badge" id="currentLevelDisplay">Level: A2</div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="game-setup">
+            <div class="controls">
+                <div class="control-group">
+                    <label for="levelSelect">Difficulty Level</label>
+                    <select id="levelSelect">
+                        <option value="all">All Levels</option>
+                        <option value="A2">A2 (Beginner)</option>
+                        <option value="B1">B1 (Intermediate)</option>
+                        <option value="B2">B2 (Professional)</option>
+                    </select>
+                </div>
+                <div class="progress-container">
+                    <div class="progress-text">Progress: <span id="progressCount">0/0</span></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flashcard-section">
+            <div class="flashcard-container">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <span class="category-tag" id="cardCategory">Category</span>
+                            <h2 class="word" id="dutchWord">Dutch Word</h2>
+                            <p class="hint">Click to flip</p>
+                        </div>
+                        <div class="flashcard-back">
+                            <h2 class="translation" id="englishWord">English Translation</h2>
+                            <div class="explanation-box">
+                                <p class="example-label">Definition:</p>
+                                <p id="englishExplanation">Detailed explanation goes here...</p>
+                            </div>
+                            <div class="example-box">
+                                <p class="example-label">Example Sentence:</p>
+                                <p id="exampleSentence">Example goes here...</p>
+                            </div>
+                            <p class="hint">Click to flip back</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="prevBtn" class="btn btn-secondary">Previous</button>
+                <button id="shuffleBtn" class="btn btn-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 3 21 3 21 8"></polyline>
+                        <line x1="4" y1="20" x2="21" y2="3"></line>
+                        <polyline points="21 16 21 21 16 21"></polyline>
+                        <line x1="15" y1="15" x2="21" y2="21"></line>
+                        <line x1="4" y1="4" x2="9" y2="9"></line>
+                    </svg>
+                </button>
+                <button id="nextBtn" class="btn btn-primary">Next Card</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Medisch Nederlands. Learn Dutch for Healthcare Professionals.</p>
+    </footer>
+
+    <script type="module" src="scripts/app.js"></script>
+</body>
+
+</html>
