@@ -1,61 +1,4 @@
 export const medicalVocab = [
-    // --- A1 Level: Absolute Basics for Medical Context ---
-    {
-        dutch: "Ja", english: "Yes", level: "A1", category: "General",
-        explanation: "Simple confirmation, essential for patient communication.",
-        example: "Bent u meneer Jansen? Ja."
-    },
-    {
-        dutch: "Nee", english: "No", level: "A1", category: "General",
-        explanation: "Simple negation.",
-        example: "Heeft u pijn op dit moment? Nee."
-    },
-    {
-        dutch: "Pijn", english: "Pain", level: "A1", category: "Symptoms",
-        explanation: "The most basic way to express or ask about physical suffering.",
-        example: "Waar voelt u de pijn?"
-    },
-    {
-        dutch: "Help", english: "Help", level: "A1", category: "General",
-        explanation: "An urgent request for assistance.",
-        example: "Help me alstublieft!"
-    },
-    {
-        dutch: "Dokter", english: "Doctor", level: "A1", category: "Personnel",
-        explanation: "General term for a medical professional.",
-        example: "De dokter komt zo bij u."
-    },
-    {
-        dutch: "Water", english: "Water", level: "A1", category: "General",
-        explanation: "Essential for hydration and medication intake.",
-        example: "Mag ik een glas water?"
-    },
-    {
-        dutch: "Hier", english: "Here", level: "A1", category: "General",
-        explanation: "Used to point to a location of pain or an object.",
-        example: "Het doet precies hier pijn."
-    },
-    {
-        dutch: "Nu", english: "Now", level: "A1", category: "General",
-        explanation: "Expressing urgency or current state.",
-        example: "We gaan nu naar de operatiekamer."
-    },
-    {
-        dutch: "Bed", english: "Bed", level: "A1", category: "Facilities",
-        explanation: "Where the patient stays.",
-        example: "U moet in bed blijven liggen."
-    },
-    {
-        dutch: "Koud", english: "Cold", level: "A1", category: "Symptoms",
-        explanation: "Basic feeling of temperature.",
-        example: "Ik heb het erg koud."
-    },
-    {
-        dutch: "Warm", english: "Warm/Hot", level: "A1", category: "Symptoms",
-        explanation: "Basic feeling of temperature, often related to fever.",
-        example: "Mijn voorhoofd voelt warm aan."
-    },
-
     // --- A2 Level: Basics & Common Body Parts ---
     {
         dutch: "Hoofdpijn", english: "Headache", level: "A2", category: "Symptoms",
@@ -124,7 +67,7 @@ export const medicalVocab = [
     },
     {
         dutch: "Hoesten", english: "Coughing", level: "A2", category: "Symptoms",
-        explanation: "Explelling air from the lungs with a sudden sharp sound, often due to irritation of the throat.",
+        explanation: "Expelling air from the lungs with a sudden sharp sound, often due to irritation of the throat.",
         example: "Het hoesten houdt me uit mijn slaap."
     },
     {
@@ -133,15 +76,11 @@ export const medicalVocab = [
         example: "Veel mensen hebben deze winter de griep."
     },
     {
-        dutch: "Pijn", english: "Pain", level: "A2", category: "Symptoms",
-        explanation: "Highly unpleasant physical sensation caused by illness or injury.",
-        example: "Waar heeft u precies pijn?"
-    },
-    {
         dutch: "Bloed", english: "Blood", level: "A2", category: "General",
         explanation: "The red liquid that circulates in the arteries and veins of humans and other vertebrate animals.",
         example: "Er zit wat bloed op het verband."
     },
+
     {
         dutch: "Verband", english: "Bandage", level: "A2", category: "Equipment",
         explanation: "A strip of material used to bind or wrap a part of the body.",
@@ -2757,49 +2696,54 @@ export const medicalVocab = [
         example: "Er zijn maximaal twee bezoekers per patiënt toegestaan."
     },
     {
-        dutch: "Cadeau", english: "Gift/Present", level: "A2", category: "General",
-        explanation: "A thing given willingly to someone without payment.",
-        example: "Heeft u een cadeau meegebracht voor de zieke?"
+        dutch: "Decubituspreventie", english: "Pressure ulcer prevention", level: "B2", category: "Treatment",
+        explanation: "Measures taken to prevent bedsores in bedridden patients.",
+        example: "Decubituspreventie is een belangrijke verpleegtaak."
     },
     {
-        dutch: "Beterschap", english: "Get well soon", level: "A2", category: "General",
-        explanation: "A wish for someone to recover from illness.",
-        example: "Ik wens u veel beterschap!"
+        dutch: "Wisselligging", english: "Repositioning (patient)", level: "B1", category: "Treatment",
+        explanation: "Regularly changing a patient's position to prevent pressure sores.",
+        example: "De patiënt moet elke twee uur een wisselligging krijgen."
     },
     {
-        dutch: "Kaartje", english: "Card (greeting)", level: "A2", category: "General",
-        explanation: "A decorative card sent to convey good wishes.",
-        example: "Zullen we een kaartje sturen naar de buurvrouw?"
+        dutch: "Saturatiemeter", english: "Pulse oximeter", level: "B1", category: "Equipment",
+        explanation: "A device that measures oxygen saturation in the blood.",
+        example: "De saturatiemeter laat een waarde van 97% zien."
     },
     {
-        dutch: "Fruitmand", english: "Fruit basket", level: "A2", category: "General",
-        explanation: "A basket containing fruit, often given as a gift to a sick person.",
-        example: "De collega's hebben een mooie fruitmand gestuurd."
+        dutch: "Zuurstofmasker", english: "Oxygen mask", level: "A2", category: "Equipment",
+        explanation: "A mask placed over the nose and mouth to deliver supplemental oxygen.",
+        example: "De patiënt heeft een zuurstofmasker nodig."
     },
     {
-        dutch: "Bloemen", english: "Flowers", level: "A2", category: "General",
-        explanation: "The seed-bearing part of a plant.",
-        example: "Pas op, sommige afdelingen staan geen bloemen toe."
+        dutch: "Katheter", english: "Catheter", level: "B1", category: "Equipment",
+        explanation: "A flexible tube inserted through a narrow opening into a body cavity for removing fluid.",
+        example: "De verpleegkundige plaatst een katheter."
     },
     {
-        dutch: "Vaas", english: "Vase", level: "A2", category: "Equipment",
-        explanation: "A decorative container without handles, typically made of glass or china and used as an ornament or for displaying cut flowers.",
-        example: "Zet de rozen in een vaas met water."
+        dutch: "Vochtbalans", english: "Fluid balance", level: "B1", category: "Diagnostics",
+        explanation: "The balance between fluid intake and output in a patient.",
+        example: "Houdt u de vochtbalans goed bij?"
     },
     {
-        dutch: "Afleiding", english: "Distraction", level: "B1", category: "General",
-        explanation: "A thing that prevents someone from giving their full attention to something else.",
-        example: "Lezen is een goede afleiding tijdens het wachten."
+        dutch: "Vitale functies", english: "Vital signs", level: "B1", category: "Diagnostics",
+        explanation: "Clinical measurements that indicate the state of essential body functions.",
+        example: "We controleren elke vier uur de vitale functies."
     },
     {
-        dutch: "Verveling", english: "Boredom", level: "B1", category: "General",
-        explanation: "The state of feeling weary and restless through lack of interest.",
-        example: "Lange ziekenhuisopnames leiden vaak tot verveling."
+        dutch: "Overdracht", english: "Handover/Report", level: "B1", category: "General",
+        explanation: "The transfer of patient care responsibility from one nurse to another.",
+        example: "Tijdens de overdracht bespreken we alle patiënten."
     },
     {
-        dutch: "Tijdsverdrijf", english: "Pastime", level: "B2", category: "General",
-        explanation: "An activity that someone does regularly for enjoyment rather than work.",
-        example: "Puzzelen is een fijn tijdsverdrijf als je rust moet houden."
+        dutch: "Rapportage", english: "Documentation/Report", level: "B1", category: "General",
+        explanation: "The recording of patient observations and care activities.",
+        example: "De rapportage moet voor het einde van de dienst klaar zijn."
+    },
+    {
+        dutch: "Zorgdossier", english: "Care file/Patient record", level: "B2", category: "General",
+        explanation: "The complete medical and nursing record of a patient.",
+        example: "Alle observaties staan in het zorgdossier."
     },
     {
         dutch: "Rust", english: "Rest", level: "A2", category: "Treatment",
@@ -2837,19 +2781,9 @@ export const medicalVocab = [
         example: "De vermoeidheid is een direct gevolg van de infectie."
     },
     {
-        dutch: "Bijkomend", english: "Additional/Incidental", level: "B2", category: "General",
-        explanation: "Added to what is already present or to the main subject; incidental.",
-        example: "Er zijn geen bijkomende complicaties opgetreden."
-    },
-    {
         dutch: "Complicatie", english: "Complication", level: "B1", category: "General",
         explanation: "A secondary disease or condition aggravating an already existing one.",
         example: "De operatie verliep zonder enige complicatie."
-    },
-    {
-        dutch: "Risico", english: "Risk", level: "A2", category: "General",
-        explanation: "A situation involving exposure to danger.",
-        example: "Houdt u rekening met het risico op nabloedingen?"
     },
     {
         dutch: "Nabloeding", english: "Secondary hemorrhage", level: "B2", category: "Symptoms",
@@ -2862,7 +2796,7 @@ export const medicalVocab = [
         example: "Roodheid en pus kunnen wijzen op een wondinfectie."
     },
     {
-        dutch: "Koorsig", english: "Feverish", level: "B1", category: "Symptoms",
+        dutch: "Koortsig", english: "Feverish", level: "B1", category: "Symptoms",
         explanation: "Having symptoms of a fever.",
         example: "Ik voel me al de hele middag een beetje koortsig."
     },
@@ -2870,11 +2804,6 @@ export const medicalVocab = [
         dutch: "Rillerig", english: "Shivery", level: "B1", category: "Symptoms",
         explanation: "Feeling shivery, especially as a symptom of fever or cold.",
         example: "Ik heb het koud en ben rillerig."
-    },
-    {
-        dutch: "Zwakjes", english: "Weakly/Fragile", level: "B1", category: "Symptoms",
-        explanation: "In a weak manner.",
-        example: "De patiënt voelt zich nog erg zwakjes op de benen."
     },
     {
         dutch: "Aansterken", english: "To regain strength", level: "B2", category: "Treatment",
@@ -2887,28 +2816,2231 @@ export const medicalVocab = [
         example: "In het hersteloord krijgt hij de juiste begeleiding."
     },
     {
-        dutch: "Begeleiding", english: "Guidance/Support", level: "B1", category: "General",
-        explanation: "Advice or information aimed at resolving a problem or difficulty.",
-        example: "Professionele begeleiding is cruciaal tijdens dit proces."
-    },
-    {
-        dutch: "Maaltijdservice", english: "Meal service", level: "A2", category: "General",
-        explanation: "A service that provides meals to people at home.",
-        example: "Mijn ouders maken gebruik van de maaltijdservice."
-    },
-    {
-        dutch: "Tafeltje-dek-je", english: "Meals on wheels", level: "B1", category: "General",
-        explanation: "A traditional Dutch name for meal delivery services for the elderly.",
-        example: "Tafeltje-dek-je brengt elke dag een warme maaltijd."
-    },
-    {
-        dutch: "Vrijwilliger", english: "Volunteer", level: "B1", category: "Personnel",
-        explanation: "A person who freely offers to take part in an enterprise or undertake a task.",
-        example: "De vrijwilliger begeleidt de patiënt naar de juiste afdeling."
-    },
-    {
         dutch: "Mantelzorg", english: "Informal care", level: "B1", category: "General",
         explanation: "Unpaid care for a loved one with long-term illness.",
         example: "Mantelzorg kan soms erg zwaar zijn voor de familie."
+    },
+
+    // --- C1 Level: Advanced Clinical & Specialized Nursing Terminology ---
+    {
+        dutch: "Hemodynamiek", english: "Hemodynamics", level: "C1", category: "Diagnostics",
+        explanation: "The dynamics of blood flow and the forces involved in circulating blood through the body.",
+        example: "De hemodynamiek van de patiënt is instabiel na de operatie."
+    },
+    {
+        dutch: "Anafylactische shock", english: "Anaphylactic shock", level: "C1", category: "Conditions",
+        explanation: "A severe, potentially life-threatening allergic reaction occurring within seconds or minutes of exposure to an allergen.",
+        example: "Bij een anafylactische shock moet direct adrenaline worden toegediend."
+    },
+    {
+        dutch: "Sepsis", english: "Sepsis", level: "C1", category: "Conditions",
+        explanation: "A life-threatening organ dysfunction caused by the body's dysregulated response to infection.",
+        example: "Vroege herkenning van sepsis is levensreddend."
+    },
+    {
+        dutch: "Trombose", english: "Thrombosis", level: "C1", category: "Conditions",
+        explanation: "The formation of a blood clot inside a blood vessel, obstructing the flow of blood.",
+        example: "Na langdurige immobilisatie is er een verhoogd risico op trombose."
+    },
+    {
+        dutch: "Longembolie", english: "Pulmonary embolism", level: "C1", category: "Conditions",
+        explanation: "A blockage in one of the pulmonary arteries in the lungs, usually caused by blood clots.",
+        example: "Plotselinge kortademigheid kan wijzen op een longembolie."
+    },
+    {
+        dutch: "Pneumothorax", english: "Pneumothorax", level: "C1", category: "Conditions",
+        explanation: "A collapsed lung caused by air leaking into the space between the lung and chest wall.",
+        example: "Op de röntgenfoto is een pneumothorax te zien."
+    },
+    {
+        dutch: "Decompensatio cordis", english: "Heart failure", level: "C1", category: "Conditions",
+        explanation: "A condition in which the heart is unable to pump sufficient blood to meet the body's needs.",
+        example: "De patiënt is opgenomen met decompensatio cordis."
+    },
+    {
+        dutch: "Atriumfibrilleren", english: "Atrial fibrillation", level: "C1", category: "Conditions",
+        explanation: "An irregular and often rapid heart rate that can increase the risk of stroke and heart failure.",
+        example: "Het ECG toont atriumfibrilleren."
+    },
+    {
+        dutch: "Elektrolytenbalans", english: "Electrolyte balance", level: "C1", category: "Diagnostics",
+        explanation: "The balance of minerals in the blood that carry an electric charge and affect body functions.",
+        example: "Een verstoorde elektrolytenbalans kan hartritmestoornissen veroorzaken."
+    },
+    {
+        dutch: "Hypoglykemie", english: "Hypoglycemia", level: "C1", category: "Conditions",
+        explanation: "An abnormally low level of blood sugar, a common complication of diabetes treatment.",
+        example: "Bij hypoglykemie moet de patiënt direct suiker innemen."
+    },
+    {
+        dutch: "Hyperglykemie", english: "Hyperglycemia", level: "C1", category: "Conditions",
+        explanation: "An abnormally high level of blood sugar, often associated with diabetes.",
+        example: "Onbehandelde hyperglykemie kan leiden tot diabetisch coma."
+    },
+    {
+        dutch: "Hemoglobine", english: "Hemoglobin", level: "C1", category: "Diagnostics",
+        explanation: "A protein in red blood cells that carries oxygen from the lungs to the rest of the body.",
+        example: "Het hemoglobinegehalte is te laag; de patiënt is anemisch."
+    },
+    {
+        dutch: "Trombocyten", english: "Platelets/Thrombocytes", level: "C1", category: "Diagnostics",
+        explanation: "Blood cells that help stop bleeding by clumping and forming plugs in blood vessel injuries.",
+        example: "Een laag trombocytengehalte verhoogt het bloedingsrisico."
+    },
+    {
+        dutch: "Leukocyten", english: "White blood cells/Leukocytes", level: "C1", category: "Diagnostics",
+        explanation: "Cells of the immune system that are involved in protecting the body against infections.",
+        example: "Verhoogde leukocyten duiden vaak op een infectie."
+    },
+    {
+        dutch: "Intraveneus", english: "Intravenous (IV)", level: "C1", category: "Treatment",
+        explanation: "Administered into a vein, allowing direct access to the bloodstream.",
+        example: "Het antibioticum wordt intraveneus toegediend."
+    },
+    {
+        dutch: "Subcutaan", english: "Subcutaneous", level: "C1", category: "Treatment",
+        explanation: "Situated or applied under the skin.",
+        example: "De insuline wordt subcutaan geïnjecteerd."
+    },
+    {
+        dutch: "Intramusculair", english: "Intramuscular", level: "C1", category: "Treatment",
+        explanation: "Situated within, or administered into, a muscle.",
+        example: "Het vaccin wordt intramusculair toegediend."
+    },
+    {
+        dutch: "Perifeer infuus", english: "Peripheral IV line", level: "C1", category: "Equipment",
+        explanation: "A short catheter inserted into a peripheral vein to administer fluids or medication.",
+        example: "Het perifeer infuus moet elke 72 uur vervangen worden."
+    },
+    {
+        dutch: "Centrale lijn", english: "Central venous catheter", level: "C1", category: "Equipment",
+        explanation: "A catheter placed into a large vein for administering medication or fluids.",
+        example: "De arts plaatst een centrale lijn in de halsvene."
+    },
+    {
+        dutch: "Thoraxdrain", english: "Chest drain", level: "C1", category: "Equipment",
+        explanation: "A tube inserted through the chest wall to drain fluid, blood, or air from around the lungs.",
+        example: "Na de operatie wordt een thoraxdrain ingebracht."
+    },
+    {
+        dutch: "Maagsonde", english: "Nasogastric tube", level: "C1", category: "Equipment",
+        explanation: "A tube passed through the nose to the stomach for feeding or draining contents.",
+        example: "De patiënt krijgt sondevoeding via de maagsonde."
+    },
+    {
+        dutch: "Sondevoeding", english: "Tube feeding/Enteral nutrition", level: "C1", category: "Treatment",
+        explanation: "Nutrition delivered directly to the stomach or small intestine through a tube.",
+        example: "De diëtiste bepaalt de samenstelling van de sondevoeding."
+    },
+    {
+        dutch: "Parenterale voeding", english: "Parenteral nutrition", level: "C1", category: "Treatment",
+        explanation: "Nutrition delivered intravenously, bypassing the digestive system entirely.",
+        example: "Parenterale voeding is nodig wanneer de darmen niet functioneren."
+    },
+    {
+        dutch: "Aspiratie", english: "Aspiration", level: "C1", category: "Conditions",
+        explanation: "The inhalation of food, liquid, or foreign material into the airways.",
+        example: "Er is een verhoogd aspiratierisico bij deze patiënt."
+    },
+    {
+        dutch: "Cyanose", english: "Cyanosis", level: "C1", category: "Symptoms",
+        explanation: "A bluish discoloration of the skin resulting from poor circulation or inadequate oxygenation.",
+        example: "Cyanose rond de lippen wijst op zuurstoftekort."
+    },
+    {
+        dutch: "Oedeem", english: "Edema", level: "C1", category: "Symptoms",
+        explanation: "Swelling caused by excess fluid trapped in the body's tissues.",
+        example: "De patiënt heeft ernstig oedeem in beide onderbenen."
+    },
+    {
+        dutch: "Ascites", english: "Ascites", level: "C1", category: "Conditions",
+        explanation: "Abnormal buildup of fluid in the abdomen, often associated with liver disease.",
+        example: "De buikomvang is toegenomen door ascites."
+    },
+    {
+        dutch: "Ileus", english: "Ileus/Bowel obstruction", level: "C1", category: "Conditions",
+        explanation: "A condition in which the bowel does not work correctly, causing obstruction.",
+        example: "Na de buikoperatie is een paralytische ileus opgetreden."
+    },
+    {
+        dutch: "Peritonitis", english: "Peritonitis", level: "C1", category: "Conditions",
+        explanation: "Inflammation of the peritoneum, the tissue lining the inner wall of the abdomen.",
+        example: "Peritonitis is een ernstige complicatie die snel behandeld moet worden."
+    },
+    {
+        dutch: "Meningitis", english: "Meningitis", level: "C1", category: "Conditions",
+        explanation: "Inflammation of the meninges, the membranes surrounding the brain and spinal cord.",
+        example: "Bij vermoeden van meningitis wordt een lumbaalpunctie verricht."
+    },
+    {
+        dutch: "Lumbaalpunctie", english: "Lumbar puncture", level: "C1", category: "Diagnostics",
+        explanation: "A procedure in which a needle is inserted into the spinal canal to collect cerebrospinal fluid.",
+        example: "De neuroloog voert een lumbaalpunctie uit."
+    },
+    {
+        dutch: "Biopsie", english: "Biopsy", level: "C1", category: "Diagnostics",
+        explanation: "The removal of a small piece of tissue for examination under a microscope.",
+        example: "De uitslag van de biopsie wordt volgende week verwacht."
+    },
+    {
+        dutch: "Endoscopie", english: "Endoscopy", level: "C1", category: "Diagnostics",
+        explanation: "A procedure using a flexible tube with a camera to look inside the body.",
+        example: "De gastro-enteroloog voert een endoscopie uit."
+    },
+    {
+        dutch: "Colonoscopie", english: "Colonoscopy", level: "C1", category: "Diagnostics",
+        explanation: "An examination of the large bowel using a flexible camera tube.",
+        example: "Voor de colonoscopie moet de darm volledig schoon zijn."
+    },
+    {
+        dutch: "Bronchoscopie", english: "Bronchoscopy", level: "C1", category: "Diagnostics",
+        explanation: "A procedure to look inside the airways using a thin, lighted tube.",
+        example: "De longarts verricht een bronchoscopie om de luchtwegen te inspecteren."
+    },
+    {
+        dutch: "Dialyse", english: "Dialysis", level: "C1", category: "Treatment",
+        explanation: "A treatment that filters and purifies the blood using a machine when the kidneys can't.",
+        example: "De patiënt moet drie keer per week naar de dialyse."
+    },
+    {
+        dutch: "Intubatie", english: "Intubation", level: "C1", category: "Treatment",
+        explanation: "The insertion of a tube into the trachea to maintain an open airway.",
+        example: "De anesthesist voert de intubatie uit voor de operatie."
+    },
+    {
+        dutch: "Extubatie", english: "Extubation", level: "C1", category: "Treatment",
+        explanation: "The removal of an endotracheal tube from the airway.",
+        example: "Na extubatie wordt de patiënt nauwlettend geobserveerd."
+    },
+    {
+        dutch: "Defibrillator", english: "Defibrillator", level: "C1", category: "Equipment",
+        explanation: "A device that delivers an electrical shock to the heart to restore normal rhythm.",
+        example: "De AED-defibrillator hangt bij de receptie."
+    },
+    {
+        dutch: "Reanimatie", english: "Resuscitation/CPR", level: "C1", category: "Treatment",
+        explanation: "Emergency procedures performed to restore breathing and blood circulation.",
+        example: "De verpleegkundige startte direct met reanimatie."
+    },
+    {
+        dutch: "Triage", english: "Triage", level: "C1", category: "General",
+        explanation: "The process of prioritizing patients based on the severity of their condition.",
+        example: "Bij binnenkomst op de SEH vindt triage plaats."
+    },
+    {
+        dutch: "Glasgow Coma Schaal", english: "Glasgow Coma Scale", level: "C1", category: "Diagnostics",
+        explanation: "A neurological scale used to assess a patient's level of consciousness.",
+        example: "De GCS-score van de patiënt is 12."
+    },
+    {
+        dutch: "Pupilreflex", english: "Pupillary reflex", level: "C1", category: "Diagnostics",
+        explanation: "The constriction of the pupils in response to light, used to assess neurological function.",
+        example: "Controleer de pupilreflex met een zaklamp."
+    },
+    {
+        dutch: "Rigiditeit", english: "Rigidity", level: "C1", category: "Symptoms",
+        explanation: "Stiffness or inflexibility, particularly of muscles, often associated with neurological conditions.",
+        example: "Nekrigiditeit kan wijzen op meningitis."
+    },
+    {
+        dutch: "Spasticiteit", english: "Spasticity", level: "C1", category: "Symptoms",
+        explanation: "Increased involuntary muscle tone causing stiff and awkward movements.",
+        example: "De fysiotherapeut behandelt de spasticiteit in de benen."
+    },
+    {
+        dutch: "Atelectase", english: "Atelectasis", level: "C1", category: "Conditions",
+        explanation: "Partial or complete collapse of a lung or lobe of a lung.",
+        example: "Postoperatieve atelectase wordt voorkomen door ademhalingsoefeningen."
+    },
+    {
+        dutch: "Tachycardie", english: "Tachycardia", level: "C1", category: "Symptoms",
+        explanation: "An abnormally fast heart rate, typically over 100 beats per minute.",
+        example: "De monitor toont een tachycardie van 130 slagen per minuut."
+    },
+    {
+        dutch: "Bradycardie", english: "Bradycardia", level: "C1", category: "Symptoms",
+        explanation: "An abnormally slow heart rate, typically under 60 beats per minute.",
+        example: "Bradycardie kan een bijwerking zijn van bètablokkers."
+    },
+    {
+        dutch: "Hypotensie", english: "Hypotension", level: "C1", category: "Conditions",
+        explanation: "Abnormally low blood pressure that can cause dizziness and fainting.",
+        example: "Orthostatische hypotensie is een veelvoorkomend probleem bij ouderen."
+    },
+    {
+        dutch: "Hypertensie", english: "Hypertension", level: "C1", category: "Conditions",
+        explanation: "Abnormally high blood pressure, a major risk factor for cardiovascular disease.",
+        example: "Hypertensie moet behandeld worden om complicaties te voorkomen."
+    },
+
+    // --- C2 Level: Expert/Research-level Medical & Pharmacological Terminology ---
+    {
+        dutch: "Farmacokinetiek", english: "Pharmacokinetics", level: "C2", category: "Medication",
+        explanation: "The study of how the body absorbs, distributes, metabolizes, and excretes a drug.",
+        example: "De farmacokinetiek van dit middel is complex bij nierfalen."
+    },
+    {
+        dutch: "Farmacodynamiek", english: "Pharmacodynamics", level: "C2", category: "Medication",
+        explanation: "The study of the biochemical and physiological effects of drugs on the body.",
+        example: "De farmacodynamiek bepaalt hoe het medicijn op cellulair niveau werkt."
+    },
+    {
+        dutch: "Halfwaardetijd", english: "Half-life (pharmacological)", level: "C2", category: "Medication",
+        explanation: "The time required for the concentration of a drug in the body to be reduced by half.",
+        example: "De halfwaardetijd van dit antibioticum is acht uur."
+    },
+    {
+        dutch: "Bioequivalentie", english: "Bioequivalence", level: "C2", category: "Medication",
+        explanation: "The similarity of two drug products in terms of absorption rate and extent.",
+        example: "De generieke versie moet bioequivalentie aantonen."
+    },
+    {
+        dutch: "Geneesmiddeleninteractie", english: "Drug interaction", level: "C2", category: "Medication",
+        explanation: "A reaction between two or more drugs, or between a drug and food or supplement.",
+        example: "Controleer altijd op mogelijke geneesmiddeleninteracties."
+    },
+    {
+        dutch: "Polyfarmacie", english: "Polypharmacy", level: "C2", category: "Medication",
+        explanation: "The simultaneous use of multiple drugs by a single patient, typically five or more.",
+        example: "Polyfarmacie bij ouderen vergroot het risico op bijwerkingen."
+    },
+    {
+        dutch: "Idiopathisch", english: "Idiopathic", level: "C2", category: "General",
+        explanation: "Relating to a disease or condition with no identifiable cause.",
+        example: "De diagnose is idiopathische longfibrose."
+    },
+    {
+        dutch: "Iatrogeen", english: "Iatrogenic", level: "C2", category: "General",
+        explanation: "Relating to illness caused by medical examination or treatment.",
+        example: "Iatrogene schade moet worden gemeld als incident."
+    },
+    {
+        dutch: "Nosocomiaal", english: "Nosocomial/Hospital-acquired", level: "C2", category: "Conditions",
+        explanation: "Relating to infections originating in a hospital or healthcare facility.",
+        example: "Nosocomiale infecties zijn een groot probleem op intensive care-afdelingen."
+    },
+    {
+        dutch: "Multiresistente bacterie", english: "Multi-drug resistant bacterium (MRSA)", level: "C2", category: "Conditions",
+        explanation: "A bacterium that is resistant to multiple antibiotics, making infections difficult to treat.",
+        example: "De patiënt is geïsoleerd vanwege een multiresistente bacterie."
+    },
+    {
+        dutch: "Hemostase", english: "Hemostasis", level: "C2", category: "General",
+        explanation: "The process by which bleeding is stopped through blood vessel contraction, platelet plugging, and coagulation.",
+        example: "Hemostase is essentieel tijdens chirurgische ingrepen."
+    },
+    {
+        dutch: "Coagulopathie", english: "Coagulopathy", level: "C2", category: "Conditions",
+        explanation: "A condition in which the blood's ability to clot is impaired.",
+        example: "De patiënt heeft een coagulopathie en bloedt snel."
+    },
+    {
+        dutch: "Dissemineerde intravasale stolling", english: "Disseminated intravascular coagulation (DIC)", level: "C2", category: "Conditions",
+        explanation: "A serious condition causing both abnormal clotting and bleeding throughout the body.",
+        example: "DIC is een levensbedreigende complicatie van sepsis."
+    },
+    {
+        dutch: "Rhabdomyolyse", english: "Rhabdomyolysis", level: "C2", category: "Conditions",
+        explanation: "The rapid breakdown of skeletal muscle tissue, releasing harmful proteins into the bloodstream.",
+        example: "Rhabdomyolyse kan leiden tot acuut nierfalen."
+    },
+    {
+        dutch: "Elektrocardiogram", english: "Electrocardiogram (ECG)", level: "C2", category: "Diagnostics",
+        explanation: "A recording of the electrical activity of the heart over a period of time.",
+        example: "Het elektrocardiogram laat ST-elevatie zien in de anterolaterale afleidingen."
+    },
+    {
+        dutch: "Tamponade", english: "Cardiac tamponade", level: "C2", category: "Conditions",
+        explanation: "Compression of the heart caused by fluid collecting in the pericardial sac.",
+        example: "Harttamponade vereist acute pericardiocentese."
+    },
+    {
+        dutch: "Pericardiocentese", english: "Pericardiocentesis", level: "C2", category: "Treatment",
+        explanation: "A procedure to drain fluid from the pericardial sac surrounding the heart.",
+        example: "De cardioloog voert een pericardiocentese uit onder echocontrole."
+    },
+    {
+        dutch: "Aneurysma", english: "Aneurysm", level: "C2", category: "Conditions",
+        explanation: "An abnormal bulge or ballooning in the wall of a blood vessel.",
+        example: "Een geruptureerd aneurysma is een levensbedreigende noodsituatie."
+    },
+    {
+        dutch: "Emfyseem", english: "Emphysema", level: "C2", category: "Conditions",
+        explanation: "A lung condition causing shortness of breath due to damage to the alveoli.",
+        example: "Emfyseem is een irreversibele longziekte geassocieerd met roken."
+    },
+    {
+        dutch: "Pleuravocht", english: "Pleural effusion", level: "C2", category: "Conditions",
+        explanation: "Excess fluid that accumulates in the pleural cavity around the lungs.",
+        example: "Op de thoraxfoto is links pleuravocht zichtbaar."
+    },
+    {
+        dutch: "Pancreatitis", english: "Pancreatitis", level: "C2", category: "Conditions",
+        explanation: "Inflammation of the pancreas, causing severe upper abdominal pain.",
+        example: "Acute pancreatitis kan leiden tot ernstige systemische complicaties."
+    },
+    {
+        dutch: "Hepato-encefalopathie", english: "Hepatic encephalopathy", level: "C2", category: "Conditions",
+        explanation: "Brain dysfunction caused by liver failure, leading to confusion and altered consciousness.",
+        example: "Hepato-encefalopathie is een ernstige complicatie van levercirrose."
+    },
+    {
+        dutch: "Nefrotisch syndroom", english: "Nephrotic syndrome", level: "C2", category: "Conditions",
+        explanation: "A kidney disorder that causes the body to excrete too much protein in the urine.",
+        example: "Het nefrotisch syndroom presenteert zich met oedeem en proteïnurie."
+    },
+    {
+        dutch: "Glomerulonefritis", english: "Glomerulonephritis", level: "C2", category: "Conditions",
+        explanation: "Inflammation of the tiny filters in the kidneys (glomeruli).",
+        example: "Glomerulonefritis kan leiden tot progressief nierfalen."
+    },
+    {
+        dutch: "Pathofysiologie", english: "Pathophysiology", level: "C2", category: "General",
+        explanation: "The study of the disordered physiological processes associated with disease.",
+        example: "Begrip van de pathofysiologie is essentieel voor evidence-based verpleging."
+    },
+    {
+        dutch: "Differentiaaldiagnose", english: "Differential diagnosis", level: "C2", category: "Diagnostics",
+        explanation: "The systematic method of identifying a disease by eliminating other possible conditions.",
+        example: "De differentiaaldiagnose omvat meerdere aandoeningen."
+    },
+    {
+        dutch: "Evidence-based practice", english: "Evidence-based practice", level: "C2", category: "General",
+        explanation: "Clinical practice informed by the best available research evidence combined with clinical expertise.",
+        example: "Evidence-based practice is de standaard in de moderne verpleegkunde."
+    },
+    {
+        dutch: "Klinische besluitvorming", english: "Clinical decision-making", level: "C2", category: "General",
+        explanation: "The process by which healthcare professionals analyze information to make clinical judgments.",
+        example: "Klinische besluitvorming vereist kritisch denken en kennis."
+    },
+    {
+        dutch: "Palliatieve sedatie", english: "Palliative sedation", level: "C2", category: "Treatment",
+        explanation: "The use of sedative medications to relieve refractory suffering in terminally ill patients.",
+        example: "Palliatieve sedatie wordt alleen ingezet als er geen andere opties meer zijn."
+    },
+    {
+        dutch: "Informed consent", english: "Informed consent", level: "C2", category: "General",
+        explanation: "Permission granted with full knowledge of the possible risks and benefits of a procedure.",
+        example: "Zonder informed consent mag de ingreep niet plaatsvinden."
+    },
+
+    // --- Additional A2 Nursing Vocabulary ---
+    {
+        dutch: "Thermometer", english: "Thermometer", level: "A2", category: "Equipment",
+        explanation: "A device for measuring body temperature.",
+        example: "Neem de temperatuur op met de thermometer."
+    },
+    {
+        dutch: "Rolstoel", english: "Wheelchair", level: "A2", category: "Equipment",
+        explanation: "A chair fitted with wheels for use as a means of transport by a person who is unable to walk.",
+        example: "De patiënt wordt per rolstoel naar de afdeling gebracht."
+    },
+    {
+        dutch: "Krukken", english: "Crutches", level: "A2", category: "Equipment",
+        explanation: "A support used under the armpit by a lame person for walking.",
+        example: "Na de knieoperatie loopt hij op krukken."
+    },
+    {
+        dutch: "Looprek", english: "Walking frame/Walker", level: "A2", category: "Equipment",
+        explanation: "A metal frame used by disabled or elderly people for support while walking.",
+        example: "Oma gebruikt een looprek om zich voort te bewegen."
+    },
+    {
+        dutch: "Ziekenhuisbed", english: "Hospital bed", level: "A2", category: "Equipment",
+        explanation: "A specially designed bed for hospitalized patients.",
+        example: "Het ziekenhuisbed kan elektrisch versteld worden."
+    },
+    {
+        dutch: "Operatiekamer", english: "Operating room", level: "A2", category: "Facilities",
+        explanation: "A room in a hospital specially equipped for surgical operations.",
+        example: "De patiënt wordt naar de operatiekamer gebracht."
+    },
+    {
+        dutch: "Intensive care", english: "Intensive care unit (ICU)", level: "A2", category: "Facilities",
+        explanation: "A special department in a hospital for patients who are dangerously ill.",
+        example: "Na de operatie gaat hij naar de intensive care."
+    },
+    {
+        dutch: "Spoedeisende hulp", english: "Emergency department", level: "A2", category: "Facilities",
+        explanation: "The department of a hospital that provides immediate treatment for acute illnesses and injuries.",
+        example: "We gaan direct naar de spoedeisende hulp."
+    },
+    {
+        dutch: "Polikliniek", english: "Outpatient clinic", level: "A2", category: "Facilities",
+        explanation: "A clinic for the medical treatment of outpatients.",
+        example: "De controle vindt plaats op de polikliniek."
+    },
+    {
+        dutch: "Handdoek", english: "Towel", level: "A2", category: "General",
+        explanation: "A piece of absorbent cloth used for drying.",
+        example: "Hier is een schone handdoek voor u."
+    },
+    {
+        dutch: "Handschoenen", english: "Gloves", level: "A2", category: "Equipment",
+        explanation: "Protective hand coverings worn by medical staff.",
+        example: "Trek altijd handschoenen aan bij wondverzorging."
+    },
+    {
+        dutch: "Mondkapje", english: "Face mask", level: "A2", category: "Equipment",
+        explanation: "A protective covering for the mouth and nose.",
+        example: "Draag een mondkapje in de isolatiekamer."
+    },
+    {
+        dutch: "Schort", english: "Gown/Apron", level: "A2", category: "Equipment",
+        explanation: "A protective garment worn over clothing.",
+        example: "Trek een beschermend schort aan bij het douchen van de patiënt."
+    },
+    {
+        dutch: "Washandje", english: "Washcloth", level: "A2", category: "Equipment",
+        explanation: "A small cloth used for washing the body.",
+        example: "Gebruik een warm washandje om het gezicht te wassen."
+    },
+    {
+        dutch: "Verschonen", english: "To change (bedding/diaper)", level: "A2", category: "Treatment",
+        explanation: "Replacing soiled bedding or incontinence materials.",
+        example: "Het bed moet verschoond worden."
+    },
+    {
+        dutch: "Incontinentie", english: "Incontinence", level: "B1", category: "Conditions",
+        explanation: "The inability to control urination or bowel movements.",
+        example: "Incontinentie komt veel voor bij oudere patiënten."
+    },
+    {
+        dutch: "Luier", english: "Diaper/Incontinence pad", level: "A2", category: "Equipment",
+        explanation: "An absorbent garment worn by incontinent patients.",
+        example: "De patiënt draagt een incontinentieluier."
+    },
+    {
+        dutch: "Eetlust", english: "Appetite", level: "A2", category: "Symptoms",
+        explanation: "A natural desire to satisfy a bodily need, especially for food.",
+        example: "De patiënt heeft weinig eetlust."
+    },
+    {
+        dutch: "Slapeloosheid", english: "Insomnia", level: "B1", category: "Symptoms",
+        explanation: "Habitual sleeplessness or inability to sleep.",
+        example: "Slapeloosheid is een veelvoorkomende klacht in het ziekenhuis."
+    },
+    {
+        dutch: "Vermoeidheid", english: "Fatigue", level: "A2", category: "Symptoms",
+        explanation: "Extreme tiredness resulting from mental or physical exertion or illness.",
+        example: "Vermoeidheid is een veelvoorkomend symptoom na chemotherapie."
+    },
+    {
+        dutch: "Kortademigheid", english: "Shortness of breath", level: "B1", category: "Symptoms",
+        explanation: "Difficulty breathing or a feeling of not getting enough air.",
+        example: "De patiënt klaagt over kortademigheid bij inspanning."
+    },
+    {
+        dutch: "Hartkloppingen", english: "Palpitations", level: "B1", category: "Symptoms",
+        explanation: "An abnormally rapid or irregular heartbeat felt by the patient.",
+        example: "Heeft u last van hartkloppingen?"
+    },
+    {
+        dutch: "Braken", english: "Vomiting", level: "A2", category: "Symptoms",
+        explanation: "The involuntary, forceful expulsion of the contents of the stomach.",
+        example: "De patiënt heeft de hele nacht gebraakt."
+    },
+    {
+        dutch: "Bloedneus", english: "Nosebleed", level: "A2", category: "Symptoms",
+        explanation: "Bleeding from the nose.",
+        example: "Het kind heeft een bloedneus na het vallen."
+    },
+    {
+        dutch: "Uitdroging", english: "Dehydration", level: "B1", category: "Conditions",
+        explanation: "An abnormal loss of water from the body, especially from illness or physical exertion.",
+        example: "De patiënt vertoont tekenen van uitdroging."
+    },
+    {
+        dutch: "Ondervoeding", english: "Malnutrition", level: "B1", category: "Conditions",
+        explanation: "Lack of proper nutrition caused by not having enough to eat or not eating the right things.",
+        example: "Ondervoeding is een risico bij langdurig zieke patiënten."
+    },
+    {
+        dutch: "Doorligwond", english: "Pressure sore/Bedsore", level: "B1", category: "Conditions",
+        explanation: "A sore that develops on the skin due to prolonged pressure, typically in bedridden patients.",
+        example: "Er is een doorligwond ontstaan op het stuitbeen."
+    },
+    {
+        dutch: "Wondverzorging", english: "Wound care", level: "B1", category: "Treatment",
+        explanation: "The process of cleaning, treating, and dressing a wound.",
+        example: "De wondverzorging wordt twee keer per dag uitgevoerd."
+    },
+    {
+        dutch: "Ontsmetting", english: "Disinfection", level: "B1", category: "Treatment",
+        explanation: "The process of cleaning something to destroy bacteria and viruses.",
+        example: "Ontsmetting van de handen is verplicht voor en na patiëntencontact."
+    },
+    {
+        dutch: "Sterilisatie", english: "Sterilization", level: "B1", category: "Treatment",
+        explanation: "The process of making something completely free from bacteria or other living microorganisms.",
+        example: "Alle instrumenten moeten na gebruik gesteriliseerd worden."
+    },
+    {
+        dutch: "Tablettenhouder", english: "Pill organizer", level: "A2", category: "Equipment",
+        explanation: "A container used to organize and store medications by day and time.",
+        example: "Gebruik een tablettenhouder om uw medicijnen bij te houden."
+    },
+    {
+        dutch: "Druppels", english: "Drops", level: "A2", category: "Medication",
+        explanation: "Liquid medicine administered in drops.",
+        example: "Doe drie druppels in elk oog."
+    },
+    {
+        dutch: "Zetpil", english: "Suppository", level: "B1", category: "Medication",
+        explanation: "A solid medical preparation designed to be inserted into the rectum.",
+        example: "Bij koorts kan een zetpil worden gegeven."
+    },
+    {
+        dutch: "Zuurstof", english: "Oxygen", level: "A2", category: "General",
+        explanation: "A chemical element essential for respiration.",
+        example: "De patiënt heeft extra zuurstof nodig."
+    },
+    {
+        dutch: "Ademhaling", english: "Breathing/Respiration", level: "A2", category: "Diagnostics",
+        explanation: "The process of inhaling and exhaling air.",
+        example: "De ademhaling van de patiënt is oppervlakkig."
+    },
+    {
+        dutch: "Polsslag", english: "Pulse", level: "A2", category: "Diagnostics",
+        explanation: "The rhythmic throbbing of the arteries as blood is propelled through them.",
+        example: "Meet de polsslag aan de pols."
+    },
+    {
+        dutch: "Temperatuur", english: "Temperature", level: "A2", category: "Diagnostics",
+        explanation: "The degree of internal heat of a person's body.",
+        example: "De temperatuur van de patiënt is 38,5 graden."
+    },
+    {
+        dutch: "Gewicht", english: "Weight", level: "A2", category: "Diagnostics",
+        explanation: "The heaviness of a person, often monitored for clinical purposes.",
+        example: "Noteer het gewicht van de patiënt bij opname."
+    },
+    {
+        dutch: "Lengte", english: "Height", level: "A2", category: "Diagnostics",
+        explanation: "The measurement of a person from head to foot.",
+        example: "De lengte van de patiënt is 1 meter 75."
+    },
+    {
+        dutch: "Bloedsuiker", english: "Blood sugar/Blood glucose", level: "B1", category: "Diagnostics",
+        explanation: "The concentration of glucose in the blood.",
+        example: "De bloedsuiker is te hoog; we moeten de insuline aanpassen."
+    },
+
+    // --- Additional B1 Nursing Vocabulary ---
+    {
+        dutch: "Zuurgraad", english: "Acidity/pH", level: "B1", category: "Diagnostics",
+        explanation: "A measure of how acidic or basic a substance is.",
+        example: "De zuurgraad van het bloed is te laag."
+    },
+    {
+        dutch: "Stolling", english: "Coagulation/Clotting", level: "B1", category: "Diagnostics",
+        explanation: "The process by which blood changes from a liquid to a gel.",
+        example: "De stollingstijd is verlengd door de medicatie."
+    },
+    {
+        dutch: "Baarmoeder", english: "Uterus/Womb", level: "B1", category: "Body Parts",
+        explanation: "The organ in the lower body of a woman where offspring are conceived and develop before birth.",
+        example: "De baarmoeder wordt onderzocht met een echo."
+    },
+    {
+        dutch: "Eierstokken", english: "Ovaries", level: "B1", category: "Body Parts",
+        explanation: "A pair of female reproductive organs that produce eggs and hormones.",
+        example: "De echo laat een cyste op de eierstokken zien."
+    },
+    {
+        dutch: "Prostaat", english: "Prostate", level: "B1", category: "Body Parts",
+        explanation: "A gland in the male reproductive system that produces fluid for semen.",
+        example: "De prostaat moet regelmatig gecontroleerd worden na het 50e levensjaar."
+    },
+    {
+        dutch: "Blaas", english: "Bladder", level: "B1", category: "Body Parts",
+        explanation: "A membranous sac in the body that stores urine.",
+        example: "De blaas is volledig gevuld volgens de echo."
+    },
+    {
+        dutch: "Schildklier", english: "Thyroid gland", level: "B1", category: "Body Parts",
+        explanation: "A large ductless gland in the neck that produces hormones regulating growth and development.",
+        example: "De schildklier produceert te weinig hormonen."
+    },
+    {
+        dutch: "Alvleesklier", english: "Pancreas", level: "B1", category: "Body Parts",
+        explanation: "A large gland behind the stomach that secretes digestive enzymes and hormones including insulin.",
+        example: "De alvleesklier speelt een cruciale rol bij de insulineproductie."
+    },
+    {
+        dutch: "Milt", english: "Spleen", level: "B1", category: "Body Parts",
+        explanation: "An abdominal organ involved in blood filtration and the immune response.",
+        example: "De milt is vergroot bij dit type infectie."
+    },
+    {
+        dutch: "Middenrif", english: "Diaphragm", level: "B1", category: "Body Parts",
+        explanation: "A dome-shaped muscle below the lungs that controls breathing.",
+        example: "Het middenrif trekt samen bij het inademen."
+    },
+    {
+        dutch: "Slokdarm", english: "Esophagus", level: "B1", category: "Body Parts",
+        explanation: "The part of the alimentary canal that connects the throat to the stomach.",
+        example: "De patiënt heeft last van reflux in de slokdarm."
+    },
+    {
+        dutch: "Twaalfvingerige darm", english: "Duodenum", level: "B1", category: "Body Parts",
+        explanation: "The first part of the small intestine immediately beyond the stomach.",
+        example: "Er is een zweer gevonden in de twaalfvingerige darm."
+    },
+    {
+        dutch: "Galblaas", english: "Gallbladder", level: "B1", category: "Body Parts",
+        explanation: "A small organ beneath the liver that stores bile.",
+        example: "De galblaas moet operatief verwijderd worden."
+    },
+    {
+        dutch: "Galstenen", english: "Gallstones", level: "B1", category: "Conditions",
+        explanation: "Solid deposits that form in the gallbladder.",
+        example: "De echo toont meerdere galstenen."
+    },
+    {
+        dutch: "Nierstenen", english: "Kidney stones", level: "B1", category: "Conditions",
+        explanation: "Hard deposits of minerals and salts that form inside the kidneys.",
+        example: "Nierstenen kunnen extreme pijn veroorzaken."
+    },
+    {
+        dutch: "Blindedarm", english: "Appendix", level: "B1", category: "Body Parts",
+        explanation: "A small tube-shaped sac attached to the lower end of the large intestine.",
+        example: "De blindedarm is ontstoken en moet verwijderd worden."
+    },
+    {
+        dutch: "Blindedarmontsteking", english: "Appendicitis", level: "B1", category: "Conditions",
+        explanation: "Inflammation of the appendix, causing severe abdominal pain.",
+        example: "Blindedarmontsteking vereist vaak een spoedoperatie."
+    },
+    {
+        dutch: "Besmetting", english: "Contamination/Contagion", level: "B1", category: "General",
+        explanation: "The process by which disease-causing agents are spread.",
+        example: "Handhygiëne voorkomt besmetting."
+    },
+    {
+        dutch: "Quarantaine", english: "Quarantine", level: "B1", category: "General",
+        explanation: "A period of isolation imposed to prevent spread of disease.",
+        example: "De patiënt zit in quarantaine vanwege een besmettelijke ziekte."
+    },
+    {
+        dutch: "Isolatie", english: "Isolation", level: "B1", category: "General",
+        explanation: "Keeping a patient separate from others to prevent spread of infection.",
+        example: "De patiënt ligt in isolatie op een eenpersoonskamer."
+    },
+    {
+        dutch: "Bloedtransfusie", english: "Blood transfusion", level: "B1", category: "Treatment",
+        explanation: "The transfer of blood from one person to another.",
+        example: "De patiënt heeft een bloedtransfusie nodig vanwege ernstig bloedverlies."
+    },
+    {
+        dutch: "Hechten", english: "To suture/To stitch", level: "B1", category: "Treatment",
+        explanation: "The act of sewing a wound or surgical incision closed.",
+        example: "De arts gaat de wond hechten."
+    },
+    {
+        dutch: "Spalken", english: "To splint", level: "B1", category: "Treatment",
+        explanation: "Immobilizing a broken or injured limb with a rigid support.",
+        example: "We moeten de arm spalken tot de röntgenfoto gemaakt is."
+    },
+    {
+        dutch: "Gips", english: "Plaster cast", level: "A2", category: "Equipment",
+        explanation: "A rigid casing applied to an injured limb to keep it immobile.",
+        example: "Zijn arm zit zes weken in het gips."
+    },
+    {
+        dutch: "Meetlint", english: "Measuring tape", level: "A2", category: "Equipment",
+        explanation: "A flexible ruler used to measure body parts.",
+        example: "Meet de buikomvang met het meetlint."
+    },
+    {
+        dutch: "Schaar", english: "Scissors", level: "A2", category: "Equipment",
+        explanation: "A cutting instrument used in medical procedures.",
+        example: "Geef me de verbandschaar om het verband te knippen."
+    },
+    {
+        dutch: "Pincet", english: "Tweezers/Forceps", level: "A2", category: "Equipment",
+        explanation: "A small tool used for gripping small things or removing foreign bodies.",
+        example: "Gebruik de pincet om de splinter te verwijderen."
+    },
+
+    // --- Additional B2 Nursing Vocabulary ---
+    {
+        dutch: "Hematurie", english: "Hematuria", level: "B2", category: "Symptoms",
+        explanation: "The presence of blood in the urine.",
+        example: "Hematurie kan wijzen op een nierprobleem."
+    },
+    {
+        dutch: "Dyspneu", english: "Dyspnea", level: "B2", category: "Symptoms",
+        explanation: "Difficult or labored breathing.",
+        example: "De patiënt heeft toenemende dyspneu."
+    },
+    {
+        dutch: "Dysfagie", english: "Dysphagia", level: "B2", category: "Symptoms",
+        explanation: "Difficulty or discomfort in swallowing.",
+        example: "Dysfagie verhoogt het risico op aspiratie."
+    },
+    {
+        dutch: "Apneu", english: "Apnea", level: "B2", category: "Symptoms",
+        explanation: "The temporary cessation of breathing, especially during sleep.",
+        example: "De patiënt heeft last van slaapapneu."
+    },
+    {
+        dutch: "Hemafrese", english: "Hemapheresis", level: "B2", category: "Treatment",
+        explanation: "A procedure in which blood is removed, components are separated, and the remainder returned.",
+        example: "Hemafrese wordt gebruikt voor plasmavervanging."
+    },
+    {
+        dutch: "Metastase", english: "Metastasis", level: "B2", category: "Conditions",
+        explanation: "The spread of cancer from one part of the body to another.",
+        example: "De scan toont metastasen in de lever."
+    },
+    {
+        dutch: "Biopt", english: "Biopsy sample", level: "B2", category: "Diagnostics",
+        explanation: "A tissue sample removed for laboratory examination.",
+        example: "Het biopt wordt naar het laboratorium gestuurd."
+    },
+    {
+        dutch: "Tracheostomie", english: "Tracheostomy", level: "B2", category: "Treatment",
+        explanation: "A surgical opening created through the neck into the trachea.",
+        example: "De patiënt ademt via een tracheostomie."
+    },
+    {
+        dutch: "Stoma", english: "Stoma", level: "B2", category: "Treatment",
+        explanation: "An artificial opening on the body surface for waste elimination.",
+        example: "De stomaverzorging wordt dagelijks uitgevoerd."
+    },
+    {
+        dutch: "Colostomie", english: "Colostomy", level: "B2", category: "Treatment",
+        explanation: "A surgical procedure creating an opening from the colon to the surface of the body.",
+        example: "Na de darmoperatie heeft de patiënt een tijdelijke colostomie."
+    },
+    {
+        dutch: "Ileostomie", english: "Ileostomy", level: "B2", category: "Treatment",
+        explanation: "A surgical opening in the ileum brought to the body surface for waste elimination.",
+        example: "De ileostomie produceert meer dunne ontlasting dan een colostomie."
+    },
+    {
+        dutch: "Decubitus", english: "Decubitus/Pressure injury", level: "B2", category: "Conditions",
+        explanation: "Tissue damage caused by sustained pressure, typically on bony prominences.",
+        example: "Decubitus graad 3 vereist specialistische wondbehandeling."
+    },
+    {
+        dutch: "Contractuur", english: "Contracture", level: "B2", category: "Conditions",
+        explanation: "Permanent shortening of a muscle or tendon causing deformity.",
+        example: "Door langdurige bedrust is een contractuur in de knie ontstaan."
+    },
+    {
+        dutch: "Embolie", english: "Embolism", level: "B2", category: "Conditions",
+        explanation: "Obstruction of a blood vessel by a clot or other material.",
+        example: "Een luchtembolie is een zeldzame maar ernstige complicatie."
+    },
+    {
+        dutch: "Ischemie", english: "Ischemia", level: "B2", category: "Conditions",
+        explanation: "Inadequate blood supply to an organ or part of the body.",
+        example: "Ischemie van de hartspier kan leiden tot een hartinfarct."
+    },
+    {
+        dutch: "Hartinfarct", english: "Myocardial infarction/Heart attack", level: "B2", category: "Conditions",
+        explanation: "Death of heart muscle due to blocked blood flow.",
+        example: "Bij een hartinfarct is elke minuut cruciaal."
+    },
+    {
+        dutch: "Cerebrovasculair accident", english: "Stroke/CVA", level: "B2", category: "Conditions",
+        explanation: "A sudden interruption of blood flow to the brain causing brain damage.",
+        example: "De patiënt is opgenomen met een cerebrovasculair accident."
+    },
+    {
+        dutch: "Epilepsie", english: "Epilepsy", level: "B2", category: "Conditions",
+        explanation: "A neurological disorder marked by sudden recurrent episodes of seizures.",
+        example: "De patiënt heeft epilepsie en draagt een alarmbandje."
+    },
+    {
+        dutch: "Insulte", english: "Seizure", level: "B2", category: "Symptoms",
+        explanation: "A sudden, uncontrolled electrical disturbance in the brain.",
+        example: "De patiënt heeft vannacht een insulte gehad."
+    },
+    {
+        dutch: "Delirium", english: "Delirium", level: "B2", category: "Conditions",
+        explanation: "An acute, fluctuating state of confusion often seen in hospitalized elderly patients.",
+        example: "Delirium komt veel voor bij oudere patiënten na een operatie."
+    },
+    {
+        dutch: "Depressie", english: "Depression", level: "B2", category: "Conditions",
+        explanation: "A mood disorder causing a persistent feeling of sadness and loss of interest.",
+        example: "Depressie is een veelvoorkomende comorbiditeit bij chronische ziekte."
+    },
+    {
+        dutch: "Angststoornis", english: "Anxiety disorder", level: "B2", category: "Conditions",
+        explanation: "A mental health disorder characterized by excessive feelings of anxiety and fear.",
+        example: "De patiënt wordt behandeld voor een gegeneraliseerde angststoornis."
+    },
+    {
+        dutch: "Schizofrenie", english: "Schizophrenia", level: "B2", category: "Conditions",
+        explanation: "A chronic mental disorder with symptoms including hallucinations, delusions, and disordered thinking.",
+        example: "Schizofrenie wordt behandeld met antipsychotica."
+    },
+    {
+        dutch: "Psychose", english: "Psychosis", level: "B2", category: "Conditions",
+        explanation: "A severe mental disorder in which thought and emotions are so impaired that contact with reality is lost.",
+        example: "De patiënt is opgenomen met een acute psychose."
+    },
+    {
+        dutch: "Delier", english: "Delirium", level: "B2", category: "Conditions",
+        explanation: "An acute confusional state characterized by disturbed attention, cognition, and perception.",
+        example: "Een delier moet snel herkend en behandeld worden."
+    },
+    {
+        dutch: "Hallucinatie", english: "Hallucination", level: "B2", category: "Symptoms",
+        explanation: "An experience of seeing, hearing, or feeling something that is not actually present.",
+        example: "De patiënt meldt visuele hallucinaties."
+    },
+    {
+        dutch: "Waangedachte", english: "Delusion", level: "B2", category: "Symptoms",
+        explanation: "A fixed false belief that is resistant to reason or confrontation with actual fact.",
+        example: "De patiënt heeft waangedachten over vergiftiging."
+    },
+    {
+        dutch: "Suïcidaliteit", english: "Suicidality", level: "B2", category: "Conditions",
+        explanation: "The risk of or tendency toward suicide.",
+        example: "Bij suïcidaliteit moet direct een psychiater worden ingeschakeld."
+    },
+    {
+        dutch: "Dwangverpleging", english: "Compulsory care/Involuntary commitment", level: "B2", category: "General",
+        explanation: "Legally mandated psychiatric care against a patient's will.",
+        example: "Dwangverpleging wordt alleen ingezet als er ernstig gevaar dreigt."
+    },
+    {
+        dutch: "Fixatie", english: "Physical restraint", level: "B2", category: "Treatment",
+        explanation: "The use of devices to restrict a patient's movement for safety.",
+        example: "Fixatie is een laatste redmiddel en moet worden gerapporteerd."
+    },
+
+    // --- Additional C1 Advanced Clinical Terms ---
+    {
+        dutch: "Acidose", english: "Acidosis", level: "C1", category: "Conditions",
+        explanation: "An excessively acid condition of the body fluids or tissues.",
+        example: "Metabole acidose wordt gecorrigeerd met bicarbonaat."
+    },
+    {
+        dutch: "Alkalose", english: "Alkalosis", level: "C1", category: "Conditions",
+        explanation: "An excessively alkaline condition of the body fluids or tissues.",
+        example: "Respiratoire alkalose kan optreden bij hyperventilatie."
+    },
+    {
+        dutch: "Bloedgasanalyse", english: "Arterial blood gas analysis", level: "C1", category: "Diagnostics",
+        explanation: "A test measuring oxygen and carbon dioxide levels in arterial blood.",
+        example: "De bloedgasanalyse laat een verlaagd zuurstofgehalte zien."
+    },
+    {
+        dutch: "Ventilator", english: "Mechanical ventilator", level: "C1", category: "Equipment",
+        explanation: "A machine designed to mechanically move breathable air into and out of the lungs.",
+        example: "De patiënt ligt aan de ventilator op de IC."
+    },
+    {
+        dutch: "CPAP", english: "Continuous positive airway pressure", level: "C1", category: "Equipment",
+        explanation: "A device that uses mild air pressure to keep breathing airways open.",
+        example: "CPAP wordt ingezet bij obstructief slaapapneu."
+    },
+    {
+        dutch: "Pacemaker", english: "Pacemaker", level: "C1", category: "Equipment",
+        explanation: "A device implanted in the chest to help control abnormal heart rhythms.",
+        example: "De patiënt heeft een pacemaker vanwege ernstige bradycardie."
+    },
+    {
+        dutch: "Echocardiografie", english: "Echocardiography", level: "C1", category: "Diagnostics",
+        explanation: "An ultrasound test that examines the heart's structure and function.",
+        example: "De echocardiografie toont een verminderde ejectiefractie."
+    },
+    {
+        dutch: "Ejectiefractie", english: "Ejection fraction", level: "C1", category: "Diagnostics",
+        explanation: "The percentage of blood pumped out of the heart with each contraction.",
+        example: "Een ejectiefractie onder de 40% wijst op hartfalen."
+    },
+    {
+        dutch: "Centrale veneuze druk", english: "Central venous pressure", level: "C1", category: "Diagnostics",
+        explanation: "The pressure in the large veins near the heart, indicating fluid status.",
+        example: "De centrale veneuze druk is verhoogd bij overvulling."
+    },
+    {
+        dutch: "Anisocorie", english: "Anisocoria", level: "C1", category: "Symptoms",
+        explanation: "A condition in which the pupils are of unequal size.",
+        example: "Anisocorie na hoofdletsel is een alarmerend teken."
+    },
+    {
+        dutch: "Fasciitis", english: "Fasciitis", level: "C1", category: "Conditions",
+        explanation: "Inflammation of the fascia, the connective tissue surrounding muscles.",
+        example: "Necrotiserende fasciitis vereist onmiddellijke chirurgische interventie."
+    },
+    {
+        dutch: "Compartimentsyndroom", english: "Compartment syndrome", level: "C1", category: "Conditions",
+        explanation: "Increased pressure within a muscle compartment that impairs blood flow.",
+        example: "Compartimentsyndroom is een chirurgisch spoedgeval."
+    },
+    {
+        dutch: "Maligne hypertermie", english: "Malignant hyperthermia", level: "C1", category: "Conditions",
+        explanation: "A life-threatening reaction to certain anesthetic drugs causing a dangerous rise in body temperature.",
+        example: "Maligne hypertermie wordt behandeld met dantroleen."
+    },
+
+    // --- Additional C2 Expert Terms ---
+    {
+        dutch: "Autorisatiebeleid", english: "Authorization policy", level: "C2", category: "General",
+        explanation: "The set of rules governing who may access medical records and perform certain medical actions.",
+        example: "Het autorisatiebeleid bepaalt welke zorgverlener toegang heeft tot het dossier."
+    },
+    {
+        dutch: "Antimicrobieel stewardship", english: "Antimicrobial stewardship", level: "C2", category: "General",
+        explanation: "Systematic efforts to optimize antibiotic use to combat antimicrobial resistance.",
+        example: "Antimicrobieel stewardship is cruciaal om resistentie te voorkomen."
+    },
+    {
+        dutch: "Cytokine storm", english: "Cytokine storm", level: "C2", category: "Conditions",
+        explanation: "An overreaction of the immune system producing a flood of inflammatory proteins.",
+        example: "Een cytokine storm kan optreden bij ernstige COVID-19-infectie."
+    },
+    {
+        dutch: "Hemodynamische monitoring", english: "Hemodynamic monitoring", level: "C2", category: "Diagnostics",
+        explanation: "Continuous monitoring of blood flow dynamics in critically ill patients.",
+        example: "Hemodynamische monitoring is essentieel op de intensive care."
+    },
+    {
+        dutch: "Vasoactieve medicatie", english: "Vasoactive medication", level: "C2", category: "Medication",
+        explanation: "Drugs that affect the diameter of blood vessels and thereby influence blood pressure.",
+        example: "Noradrenaline is de meest gebruikte vasoactieve medicatie bij septische shock."
+    },
+    {
+        dutch: "Extracorporele membraanoxygenatie", english: "Extracorporeal membrane oxygenation (ECMO)", level: "C2", category: "Treatment",
+        explanation: "A technique providing cardiac and respiratory support by pumping blood outside the body for oxygenation.",
+        example: "ECMO wordt ingezet als de longen en het hart onvoldoende functioneren."
+    },
+    {
+        dutch: "Immunosuppressie", english: "Immunosuppression", level: "C2", category: "Treatment",
+        explanation: "Suppression of the immune system, often used after organ transplantation.",
+        example: "Na transplantatie is levenslange immunosuppressie noodzakelijk."
+    },
+    {
+        dutch: "Graft-versus-hostziekte", english: "Graft-versus-host disease", level: "C2", category: "Conditions",
+        explanation: "A complication after transplant where donor immune cells attack the recipient's body.",
+        example: "Graft-versus-hostziekte is een ernstige complicatie na beenmergtransplantatie."
+    },
+    {
+        dutch: "Proteïnurie", english: "Proteinuria", level: "C2", category: "Symptoms",
+        explanation: "The presence of abnormal amounts of protein in the urine, indicating kidney disease.",
+        example: "Proteïnurie is een vroeg teken van nierschade bij diabetes."
+    },
+    {
+        dutch: "Elektromyografie", english: "Electromyography (EMG)", level: "C2", category: "Diagnostics",
+        explanation: "A diagnostic procedure to assess the health of muscles and the nerve cells that control them.",
+        example: "Elektromyografie wordt gebruikt om zenuw- en spierproblemen vast te stellen."
+    },
+
+    // --- Batch 2: Pediatrics & Obstetrics (A2-B2) ---
+    {
+        dutch: "Zwangerschap", english: "Pregnancy", level: "A2", category: "Conditions",
+        explanation: "The condition of carrying a developing embryo or fetus within the female body.",
+        example: "De zwangerschap verloopt zonder complicaties."
+    },
+    {
+        dutch: "Bevalling", english: "Delivery/Childbirth", level: "A2", category: "Treatment",
+        explanation: "The process of giving birth to a baby.",
+        example: "De bevalling duurde acht uur."
+    },
+    {
+        dutch: "Verloskundige", english: "Midwife", level: "A2", category: "Personnel",
+        explanation: "A person trained to assist women in childbirth.",
+        example: "De verloskundige begeleidt de bevalling."
+    },
+    {
+        dutch: "Weeën", english: "Contractions/Labor pains", level: "B1", category: "Symptoms",
+        explanation: "Regular tightening of the uterus during labor.",
+        example: "De weeën komen nu elke vijf minuten."
+    },
+    {
+        dutch: "Keizersnede", english: "Cesarean section", level: "B1", category: "Treatment",
+        explanation: "A surgical procedure to deliver a baby through an incision in the abdomen.",
+        example: "De arts besluit tot een keizersnede."
+    },
+    {
+        dutch: "Navelstreng", english: "Umbilical cord", level: "B1", category: "Body Parts",
+        explanation: "The flexible tube connecting the fetus to the placenta.",
+        example: "De navelstreng wordt na de geboorte doorgeknipt."
+    },
+    {
+        dutch: "Moederkoek", english: "Placenta", level: "B1", category: "Body Parts",
+        explanation: "The organ that provides oxygen and nutrients to the growing baby.",
+        example: "De moederkoek wordt na de geboorte uitgedreven."
+    },
+    {
+        dutch: "Vruchtwater", english: "Amniotic fluid", level: "B1", category: "General",
+        explanation: "The fluid surrounding a fetus within the amniotic sac.",
+        example: "Het vruchtwater is gebroken; de bevalling begint."
+    },
+    {
+        dutch: "Couveuse", english: "Incubator", level: "B1", category: "Equipment",
+        explanation: "An enclosed apparatus for caring for premature babies.",
+        example: "De baby ligt in de couveuse vanwege vroeggeboorte."
+    },
+    {
+        dutch: "Vroeggeboorte", english: "Premature birth", level: "B1", category: "Conditions",
+        explanation: "Birth that takes place more than three weeks before the estimated due date.",
+        example: "Bij vroeggeboorte is intensieve monitoring noodzakelijk."
+    },
+    {
+        dutch: "Borstvoeding", english: "Breastfeeding", level: "A2", category: "Treatment",
+        explanation: "The feeding of an infant with breast milk.",
+        example: "Borstvoeding is de beste voeding voor pasgeborenen."
+    },
+    {
+        dutch: "Flesvoeding", english: "Bottle feeding", level: "A2", category: "Treatment",
+        explanation: "The feeding of an infant with formula milk from a bottle.",
+        example: "De baby krijgt flesvoeding omdat moeder niet kan kolven."
+    },
+    {
+        dutch: "Kolven", english: "To pump (breast milk)", level: "B1", category: "Treatment",
+        explanation: "Using a pump to express breast milk.",
+        example: "De moeder kolft elke drie uur."
+    },
+    {
+        dutch: "Kinderarts", english: "Pediatrician", level: "A2", category: "Personnel",
+        explanation: "A doctor who specializes in the treatment of children.",
+        example: "De kinderarts onderzoekt het kind."
+    },
+    {
+        dutch: "Vaccinatie", english: "Vaccination", level: "A2", category: "Treatment",
+        explanation: "Treatment with a vaccine to produce immunity against a disease.",
+        example: "De vaccinatie is opgenomen in het Rijksvaccinatieprogramma."
+    },
+    {
+        dutch: "Inenting", english: "Inoculation", level: "A2", category: "Treatment",
+        explanation: "The introduction of a vaccine into the body to produce immunity.",
+        example: "De inenting tegen mazelen staat gepland."
+    },
+    {
+        dutch: "Mazelen", english: "Measles", level: "B1", category: "Conditions",
+        explanation: "A highly contagious viral disease causing fever and a red rash.",
+        example: "Mazelen kan ernstige complicaties veroorzaken bij jonge kinderen."
+    },
+    {
+        dutch: "Waterpokken", english: "Chickenpox", level: "B1", category: "Conditions",
+        explanation: "A mild, highly contagious childhood disease caused by the varicella-zoster virus.",
+        example: "Het kind heeft waterpokken en moet thuisblijven."
+    },
+    {
+        dutch: "Roodvonk", english: "Scarlet fever", level: "B1", category: "Conditions",
+        explanation: "An infectious disease caused by streptococcus bacteria, marked by a scarlet rash.",
+        example: "Roodvonk wordt behandeld met antibiotica."
+    },
+    {
+        dutch: "Kinkhoest", english: "Whooping cough", level: "B1", category: "Conditions",
+        explanation: "A highly contagious respiratory disease causing severe coughing fits.",
+        example: "Kinkhoest is gevaarlijk voor zuigelingen."
+    },
+
+    // --- Geriatrics & Elderly Care (B1-C1) ---
+    {
+        dutch: "Dementie", english: "Dementia", level: "B1", category: "Conditions",
+        explanation: "A chronic disorder marked by memory loss and declining cognitive function.",
+        example: "Dementie is de meest voorkomende aandoening in verpleeghuizen."
+    },
+    {
+        dutch: "Alzheimer", english: "Alzheimer's disease", level: "B1", category: "Conditions",
+        explanation: "A progressive neurodegenerative disease and the most common cause of dementia.",
+        example: "Alzheimer tast het geheugen en het denkvermogen aan."
+    },
+    {
+        dutch: "Parkinson", english: "Parkinson's disease", level: "B1", category: "Conditions",
+        explanation: "A progressive nervous system disorder affecting movement.",
+        example: "De tremor is een kenmerkend symptoom van Parkinson."
+    },
+    {
+        dutch: "Tremor", english: "Tremor", level: "B1", category: "Symptoms",
+        explanation: "An involuntary trembling movement in part of the body.",
+        example: "De patiënt heeft een tremor in de handen."
+    },
+    {
+        dutch: "Valneiging", english: "Fall tendency/Fall risk", level: "B1", category: "Symptoms",
+        explanation: "An increased risk of falling, common in elderly patients.",
+        example: "De patiënt heeft een verhoogde valneiging."
+    },
+    {
+        dutch: "Valpreventie", english: "Fall prevention", level: "B1", category: "Treatment",
+        explanation: "Measures taken to reduce the risk of falling.",
+        example: "Valpreventie is essentieel bij oudere patiënten."
+    },
+    {
+        dutch: "Verwardheid", english: "Confusion", level: "B1", category: "Symptoms",
+        explanation: "A state of being bewildered or unclear in one's mind.",
+        example: "De verwardheid is toegenomen sinds gisteren."
+    },
+    {
+        dutch: "Dwalen", english: "Wandering", level: "B1", category: "Symptoms",
+        explanation: "Aimless walking, often associated with dementia.",
+        example: "De patiënt heeft de neiging om te dwalen."
+    },
+    {
+        dutch: "Heupfractuur", english: "Hip fracture", level: "B1", category: "Conditions",
+        explanation: "A break in the upper part of the thighbone near the hip joint.",
+        example: "Na een val heeft de patiënt een heupfractuur opgelopen."
+    },
+    {
+        dutch: "Osteoporose", english: "Osteoporosis", level: "B1", category: "Conditions",
+        explanation: "A condition in which the bones become weak and brittle.",
+        example: "Osteoporose verhoogt het risico op botbreuken."
+    },
+    {
+        dutch: "Artrose", english: "Osteoarthritis", level: "B1", category: "Conditions",
+        explanation: "A degenerative joint disease causing pain and stiffness.",
+        example: "Artrose in de knieën beperkt de mobiliteit."
+    },
+    {
+        dutch: "Reuma", english: "Rheumatism", level: "B1", category: "Conditions",
+        explanation: "A general term for conditions causing chronic pain in joints and connective tissue.",
+        example: "Reuma veroorzaakt pijnlijke en stijve gewrichten."
+    },
+    {
+        dutch: "Jicht", english: "Gout", level: "B1", category: "Conditions",
+        explanation: "A form of inflammatory arthritis caused by excess uric acid crystals in the joints.",
+        example: "Jicht veroorzaakt hevige pijn in de grote teen."
+    },
+    {
+        dutch: "Verpleeghuis", english: "Nursing home", level: "A2", category: "Facilities",
+        explanation: "A facility providing residential care for elderly or disabled people.",
+        example: "Oma woont sinds vorig jaar in het verpleeghuis."
+    },
+    {
+        dutch: "Dagbesteding", english: "Day care activities", level: "B1", category: "General",
+        explanation: "Organized activities for people with dementia or disabilities during the day.",
+        example: "Dagbesteding biedt structuur en sociale contacten."
+    },
+    {
+        dutch: "Thuiszorg", english: "Home care", level: "A2", category: "General",
+        explanation: "Health care or supportive care provided in the patient's home.",
+        example: "De thuiszorg komt elke ochtend om te helpen met wassen."
+    },
+    {
+        dutch: "Verzorgende", english: "Care worker", level: "A2", category: "Personnel",
+        explanation: "A person who provides personal care to patients.",
+        example: "De verzorgende helpt de bewoners met de dagelijkse verzorging."
+    },
+
+    // --- Rehabilitation & Allied Health (B1-C1) ---
+    {
+        dutch: "Fysiotherapeut", english: "Physiotherapist", level: "A2", category: "Personnel",
+        explanation: "A healthcare professional who treats patients through physical methods.",
+        example: "De fysiotherapeut helpt bij het herstel na de operatie."
+    },
+    {
+        dutch: "Ergotherapeut", english: "Occupational therapist", level: "B1", category: "Personnel",
+        explanation: "A healthcare professional who helps patients develop or recover daily living skills.",
+        example: "De ergotherapeut leert de patiënt opnieuw zelfstandig aan te kleden."
+    },
+    {
+        dutch: "Logopedist", english: "Speech therapist", level: "B1", category: "Personnel",
+        explanation: "A specialist who treats speech and swallowing disorders.",
+        example: "De logopedist behandelt het slikprobleem."
+    },
+    {
+        dutch: "Diëtist", english: "Dietitian", level: "B1", category: "Personnel",
+        explanation: "A specialist in nutrition who advises patients on dietary matters.",
+        example: "De diëtist stelt een voedingsplan op."
+    },
+    {
+        dutch: "Maatschappelijk werker", english: "Social worker", level: "B1", category: "Personnel",
+        explanation: "A professional who provides support for social and emotional problems.",
+        example: "De maatschappelijk werker helpt bij de ontslagregeling."
+    },
+    {
+        dutch: "Psycholoog", english: "Psychologist", level: "A2", category: "Personnel",
+        explanation: "A specialist who studies and treats mental processes and behavior.",
+        example: "De psycholoog begeleidt de patiënt bij angst."
+    },
+    {
+        dutch: "Psychiater", english: "Psychiatrist", level: "B1", category: "Personnel",
+        explanation: "A medical doctor who specializes in mental health disorders.",
+        example: "De psychiater schrijft antidepressiva voor."
+    },
+    {
+        dutch: "Gerontoloog", english: "Gerontologist", level: "C1", category: "Personnel",
+        explanation: "A specialist in the study of aging and the problems of elderly people.",
+        example: "De gerontoloog adviseert over ouderenzorg."
+    },
+    {
+        dutch: "Mobilisatie", english: "Mobilization", level: "B1", category: "Treatment",
+        explanation: "Getting a patient moving again after an illness or surgery.",
+        example: "Vroege mobilisatie na de operatie bevordert het herstel."
+    },
+    {
+        dutch: "Oefentherapie", english: "Exercise therapy", level: "B1", category: "Treatment",
+        explanation: "Therapeutic exercises prescribed to improve physical function.",
+        example: "Oefentherapie versterkt de spieren rond het gewricht."
+    },
+    {
+        dutch: "Looptraining", english: "Gait training", level: "B1", category: "Treatment",
+        explanation: "Training to improve a patient's ability to walk.",
+        example: "De looptraining begint morgen met de fysiotherapeut."
+    },
+    {
+        dutch: "Hulpmiddelen", english: "Assistive devices/Aids", level: "A2", category: "Equipment",
+        explanation: "Devices that help people with disabilities perform daily activities.",
+        example: "De ergotherapeut adviseert over hulpmiddelen in huis."
+    },
+    {
+        dutch: "Tillift", english: "Patient lift/Hoist", level: "B1", category: "Equipment",
+        explanation: "A mechanical device for lifting and transferring patients safely.",
+        example: "Gebruik de tillift om rugletsel te voorkomen."
+    },
+    {
+        dutch: "Anti-emboliekousen", english: "Anti-embolism stockings", level: "B1", category: "Equipment",
+        explanation: "Compression stockings worn to prevent blood clots.",
+        example: "Trek de anti-emboliekousen aan voor de operatie."
+    },
+
+    // --- Surgical & Procedural Terms (B1-C1) ---
+    {
+        dutch: "Laparoscopie", english: "Laparoscopy", level: "B2", category: "Diagnostics",
+        explanation: "A minimally invasive surgical procedure using small incisions and a camera.",
+        example: "De ingreep wordt uitgevoerd via laparoscopie."
+    },
+    {
+        dutch: "Amputatie", english: "Amputation", level: "B1", category: "Treatment",
+        explanation: "The surgical removal of a limb or part of a limb.",
+        example: "Na de amputatie krijgt de patiënt een prothese."
+    },
+    {
+        dutch: "Prothese", english: "Prosthesis", level: "B1", category: "Equipment",
+        explanation: "An artificial device that replaces a missing body part.",
+        example: "De patiënt moet leren lopen met de prothese."
+    },
+    {
+        dutch: "Transplantatie", english: "Transplantation", level: "B1", category: "Treatment",
+        explanation: "The surgical transfer of an organ or tissue from one person to another.",
+        example: "De niertransplantatie is goed verlopen."
+    },
+    {
+        dutch: "Donor", english: "Donor", level: "A2", category: "General",
+        explanation: "A person who donates organs, blood, or tissue.",
+        example: "De donor is een familielid van de patiënt."
+    },
+    {
+        dutch: "Orgaandonatie", english: "Organ donation", level: "B1", category: "General",
+        explanation: "The giving of an organ or tissue to help someone who needs a transplant.",
+        example: "Orgaandonatie redt jaarlijks honderden levens."
+    },
+    {
+        dutch: "Naad", english: "Suture/Stitch", level: "B1", category: "Equipment",
+        explanation: "A thread or wire used to sew a wound or surgical incision closed.",
+        example: "De naden worden over tien dagen verwijderd."
+    },
+    {
+        dutch: "Drain", english: "Surgical drain", level: "B1", category: "Equipment",
+        explanation: "A tube used to remove blood, pus, or other fluids from a wound.",
+        example: "De drain wordt morgen verwijderd."
+    },
+    {
+        dutch: "Wonddrainage", english: "Wound drainage", level: "B1", category: "Treatment",
+        explanation: "The process of draining fluids from a surgical wound.",
+        example: "De wonddrainage verloopt goed; er is minimaal vocht."
+    },
+
+    // --- Dermatology & Skin (B1-C1) ---
+    {
+        dutch: "Huiduitslag", english: "Rash", level: "A2", category: "Symptoms",
+        explanation: "An area of redness and spots on the skin.",
+        example: "De patiënt heeft een rode huiduitslag op de borst."
+    },
+    {
+        dutch: "Eczeem", english: "Eczema", level: "B1", category: "Conditions",
+        explanation: "A condition that makes the skin red, inflamed, and itchy.",
+        example: "Eczeem wordt behandeld met vochtinbrengende crème."
+    },
+    {
+        dutch: "Psoriasis", english: "Psoriasis", level: "B1", category: "Conditions",
+        explanation: "A chronic autoimmune condition causing rapid skin cell buildup and scaling.",
+        example: "Psoriasis veroorzaakt rode, schilferige plekken op de huid."
+    },
+    {
+        dutch: "Zweer", english: "Ulcer", level: "B1", category: "Conditions",
+        explanation: "An open sore on the body caused by a break in the skin or mucous membrane.",
+        example: "Er is een veneuze zweer op het onderbeen."
+    },
+    {
+        dutch: "Blaar", english: "Blister", level: "A2", category: "Symptoms",
+        explanation: "A small pocket of fluid within the skin.",
+        example: "De brandwond heeft een grote blaar veroorzaakt."
+    },
+    {
+        dutch: "Brandwond", english: "Burn", level: "A2", category: "Conditions",
+        explanation: "An injury to the skin caused by heat, chemicals, or radiation.",
+        example: "Een tweedegraads brandwond moet steriel verbonden worden."
+    },
+    {
+        dutch: "Jeuk", english: "Itching", level: "A2", category: "Symptoms",
+        explanation: "An uncomfortable sensation on the skin that causes a desire to scratch.",
+        example: "De patiënt klaagt over hevige jeuk."
+    },
+    {
+        dutch: "Netelroos", english: "Hives/Urticaria", level: "B1", category: "Conditions",
+        explanation: "Raised, itchy welts on the skin caused by an allergic reaction.",
+        example: "Netelroos kan een allergische reactie zijn op medicatie."
+    },
+    {
+        dutch: "Wratten", english: "Warts", level: "A2", category: "Conditions",
+        explanation: "Small, rough growths on the skin caused by the human papillomavirus.",
+        example: "Wratten op de voeten worden voetwratten genoemd."
+    },
+    {
+        dutch: "Schimmelinfectie", english: "Fungal infection", level: "B1", category: "Conditions",
+        explanation: "An infection caused by a fungus.",
+        example: "De schimmelinfectie wordt behandeld met een antifungale crème."
+    },
+
+    // --- ENT (Ear, Nose, Throat) (A2-B2) ---
+    {
+        dutch: "Oorontsteking", english: "Ear infection/Otitis", level: "A2", category: "Conditions",
+        explanation: "An infection of the ear, commonly seen in children.",
+        example: "Het kind heeft een oorontsteking en moet oordruppels gebruiken."
+    },
+    {
+        dutch: "Doofheid", english: "Deafness", level: "A2", category: "Conditions",
+        explanation: "The partial or complete inability to hear.",
+        example: "Ouderdomsdoofheid is een geleidelijk proces."
+    },
+    {
+        dutch: "Gehoorapparaat", english: "Hearing aid", level: "A2", category: "Equipment",
+        explanation: "A device worn in or behind the ear to amplify sound.",
+        example: "De patiënt draagt een gehoorapparaat in het linkeroor."
+    },
+    {
+        dutch: "Oorsuizen", english: "Tinnitus", level: "B1", category: "Symptoms",
+        explanation: "A ringing or buzzing sound in one or both ears.",
+        example: "Oorsuizen kan het gevolg zijn van gehoorschade."
+    },
+    {
+        dutch: "Keelontsteking", english: "Sore throat/Pharyngitis", level: "A2", category: "Conditions",
+        explanation: "Inflammation of the throat causing pain and difficulty swallowing.",
+        example: "Een keelontsteking wordt vaak veroorzaakt door een virus."
+    },
+    {
+        dutch: "Amandelontsteking", english: "Tonsillitis", level: "B1", category: "Conditions",
+        explanation: "Inflammation of the tonsils, typically caused by infection.",
+        example: "Bij terugkerende amandelontsteking worden de amandelen verwijderd."
+    },
+    {
+        dutch: "Bijholteontsteking", english: "Sinusitis", level: "B1", category: "Conditions",
+        explanation: "Inflammation of the mucous membrane lining the sinuses.",
+        example: "Een bijholteontsteking kan hoofdpijn veroorzaken."
+    },
+    {
+        dutch: "Neusbloeding", english: "Epistaxis/Nosebleed", level: "B1", category: "Symptoms",
+        explanation: "Bleeding from the nose, can be spontaneous or trauma-induced.",
+        example: "Een neusbloeding stopt meestal vanzelf na tien minuten."
+    },
+    {
+        dutch: "Heesheid", english: "Hoarseness", level: "A2", category: "Symptoms",
+        explanation: "A change in voice quality making it sound rough or strained.",
+        example: "De heesheid houdt al twee weken aan."
+    },
+
+    // --- Ophthalmology (A2-B2) ---
+    {
+        dutch: "Oogarts", english: "Ophthalmologist", level: "A2", category: "Personnel",
+        explanation: "A medical doctor who specializes in eye and vision care.",
+        example: "De oogarts controleert het gezichtsvermogen."
+    },
+    {
+        dutch: "Bijziendheid", english: "Myopia/Nearsightedness", level: "B1", category: "Conditions",
+        explanation: "A condition where near objects appear clearly but distant objects appear blurry.",
+        example: "Bijziendheid wordt gecorrigeerd met een bril of lenzen."
+    },
+    {
+        dutch: "Staar", english: "Cataract", level: "B1", category: "Conditions",
+        explanation: "Clouding of the lens of the eye causing decreased vision.",
+        example: "Staar komt veel voor bij ouderen en is operatief te behandelen."
+    },
+    {
+        dutch: "Glaucoom", english: "Glaucoma", level: "B1", category: "Conditions",
+        explanation: "A condition of increased pressure within the eyeball causing gradual loss of sight.",
+        example: "Glaucoom wordt behandeld met oogdruppels."
+    },
+    {
+        dutch: "Oogdruppels", english: "Eye drops", level: "A2", category: "Medication",
+        explanation: "Liquid medication applied directly into the eye.",
+        example: "Doe drie keer per dag oogdruppels in beide ogen."
+    },
+    {
+        dutch: "Gezichtsveld", english: "Visual field", level: "B2", category: "Diagnostics",
+        explanation: "The extent of the observable world seen at any given moment.",
+        example: "Het gezichtsveld is beperkt door de glaucoom."
+    },
+
+    // --- Emergency Medicine (B1-C1) ---
+    {
+        dutch: "Ambulance", english: "Ambulance", level: "A2", category: "Equipment",
+        explanation: "A vehicle equipped for taking sick or injured people to hospital.",
+        example: "Bel 112 voor een ambulance."
+    },
+    {
+        dutch: "Brancard", english: "Stretcher", level: "A2", category: "Equipment",
+        explanation: "A framework for carrying a sick or injured person.",
+        example: "De patiënt wordt op een brancard naar de ambulance gebracht."
+    },
+    {
+        dutch: "Halskraag", english: "Cervical collar/Neck brace", level: "B1", category: "Equipment",
+        explanation: "A medical device used to support and immobilize the cervical spine.",
+        example: "Leg een halskraag aan bij vermoeden van nekletsel."
+    },
+    {
+        dutch: "Tourniquet", english: "Tourniquet", level: "B1", category: "Equipment",
+        explanation: "A device used to stop severe bleeding by compressing a limb.",
+        example: "Leg een tourniquet aan bij levensbedreigende bloedingen."
+    },
+    {
+        dutch: "Infuuszak", english: "IV bag", level: "A2", category: "Equipment",
+        explanation: "A sterile bag containing fluid for intravenous administration.",
+        example: "Hang een nieuwe infuuszak op."
+    },
+    {
+        dutch: "Bewusteloosheid", english: "Unconsciousness", level: "B1", category: "Symptoms",
+        explanation: "A state of being unaware of surroundings and unable to respond to stimuli.",
+        example: "Bij bewusteloosheid leg de patiënt in de stabiele zijligging."
+    },
+    {
+        dutch: "Stabiele zijligging", english: "Recovery position", level: "B1", category: "Treatment",
+        explanation: "A position used to prevent choking in unconscious patients who are breathing.",
+        example: "Leg de patiënt in de stabiele zijligging."
+    },
+    {
+        dutch: "Schokbestrijding", english: "Shock management", level: "B2", category: "Treatment",
+        explanation: "Treatment of the medical condition of shock.",
+        example: "Schokbestrijding begint met het toedienen van intraveneus vocht."
+    },
+    {
+        dutch: "Vergiftiging", english: "Poisoning", level: "B1", category: "Conditions",
+        explanation: "The condition of having ingested or been exposed to a harmful substance.",
+        example: "Bel het Nationaal Vergiftigingen Informatie Centrum bij vergiftiging."
+    },
+    {
+        dutch: "Verdrinking", english: "Drowning", level: "B1", category: "Conditions",
+        explanation: "Death or near-death caused by submersion in liquid.",
+        example: "Bij bijna-verdrinking moet de longen gecontroleerd worden."
+    },
+    {
+        dutch: "Onderkoeling", english: "Hypothermia", level: "B1", category: "Conditions",
+        explanation: "A dangerously low body temperature, below 35°C.",
+        example: "Onderkoeling kan levensbedreigend zijn als de kerntemperatuur daalt."
+    },
+    {
+        dutch: "Hitteberoerte", english: "Heatstroke", level: "B1", category: "Conditions",
+        explanation: "A condition caused by the body overheating, usually due to prolonged exposure to high temperatures.",
+        example: "Hitteberoerte is een medisch noodgeval dat snel gekoeld moet worden."
+    },
+    {
+        dutch: "Wespenbeet", english: "Wasp sting", level: "A2", category: "Conditions",
+        explanation: "A sting from a wasp that can cause allergic reactions.",
+        example: "Controleer of de patiënt allergisch is voor een wespenbeet."
+    },
+    {
+        dutch: "Verstuiking", english: "Sprain", level: "A2", category: "Conditions",
+        explanation: "An injury to a joint caused by sudden wrenching of ligaments.",
+        example: "De verstuiking van de enkel wordt behandeld met ijs en rust."
+    },
+    {
+        dutch: "Ontwrichting", english: "Dislocation", level: "B1", category: "Conditions",
+        explanation: "Displacement of a bone from its normal position at a joint.",
+        example: "De ontwrichting van de schouder moet zo snel mogelijk behandeld worden."
+    },
+    {
+        dutch: "Hersenschudding", english: "Concussion", level: "B1", category: "Conditions",
+        explanation: "A temporary injury to the brain caused by a blow to the head.",
+        example: "Na een hersenschudding moet de patiënt rust houden."
+    },
+
+    // --- Pharmacology & Medication Extended (B1-C2) ---
+    {
+        dutch: "Bijsluiter", english: "Package insert/Leaflet", level: "A2", category: "Medication",
+        explanation: "An information sheet included with a medication providing usage instructions and warnings.",
+        example: "Lees altijd de bijsluiter voor gebruik."
+    },
+    {
+        dutch: "Dosering", english: "Dosage", level: "A2", category: "Medication",
+        explanation: "The amount of medicine to be taken at one time.",
+        example: "De dosering wordt aangepast aan het gewicht van de patiënt."
+    },
+    {
+        dutch: "Bijwerking", english: "Side effect", level: "B1", category: "Medication",
+        explanation: "An undesirable secondary effect of a drug or medical treatment.",
+        example: "Misselijkheid is een veelvoorkomende bijwerking."
+    },
+    {
+        dutch: "Overdosis", english: "Overdose", level: "B1", category: "Medication",
+        explanation: "An excessive and dangerous dose of a drug.",
+        example: "Bij een overdosis moet direct actie ondernomen worden."
+    },
+    {
+        dutch: "Antistollingsmiddel", english: "Anticoagulant", level: "B2", category: "Medication",
+        explanation: "A substance that prevents the blood from clotting.",
+        example: "Het antistollingsmiddel voorkomt trombose."
+    },
+    {
+        dutch: "Bloedverdunner", english: "Blood thinner", level: "B1", category: "Medication",
+        explanation: "A common term for anticoagulant medication.",
+        example: "De patiënt gebruikt een bloedverdunner na de hartoperatie."
+    },
+    {
+        dutch: "Insuline", english: "Insulin", level: "B1", category: "Medication",
+        explanation: "A hormone used to treat diabetes by regulating blood sugar levels.",
+        example: "De patiënt spuit twee keer per dag insuline."
+    },
+    {
+        dutch: "Antidepressivum", english: "Antidepressant", level: "B2", category: "Medication",
+        explanation: "A drug used to treat depression and other mood disorders.",
+        example: "Het antidepressivum heeft een paar weken nodig om effect te hebben."
+    },
+    {
+        dutch: "Bètablokker", english: "Beta blocker", level: "B2", category: "Medication",
+        explanation: "A drug that slows heart rate and lowers blood pressure.",
+        example: "De bètablokker wordt voorgeschreven bij hoge bloeddruk."
+    },
+    {
+        dutch: "Diureticum", english: "Diuretic", level: "B2", category: "Medication",
+        explanation: "A drug that promotes the production of urine, used to reduce fluid retention.",
+        example: "Het diureticum helpt het overtollige vocht af te voeren."
+    },
+    {
+        dutch: "Corticosteroïden", english: "Corticosteroids", level: "C1", category: "Medication",
+        explanation: "Anti-inflammatory drugs used to treat a wide range of conditions.",
+        example: "Corticosteroïden worden voorgeschreven bij ernstige ontsteking."
+    },
+    {
+        dutch: "Opiaat", english: "Opiate/Opioid", level: "C1", category: "Medication",
+        explanation: "A class of drugs derived from or related to opium, used for pain relief.",
+        example: "Opiaten worden alleen voorgeschreven bij ernstige pijn."
+    },
+    {
+        dutch: "Benzodiazepine", english: "Benzodiazepine", level: "C1", category: "Medication",
+        explanation: "A class of drugs used to treat anxiety, insomnia, and seizures.",
+        example: "Benzodiazepines worden alleen kortdurend voorgeschreven vanwege verslavingsrisico."
+    },
+    {
+        dutch: "Cytostaticum", english: "Cytostatic drug/Chemotherapy agent", level: "C1", category: "Medication",
+        explanation: "A drug that inhibits cell growth and division, used in cancer treatment.",
+        example: "Het cytostaticum wordt intraveneus toegediend."
+    },
+    {
+        dutch: "Immunoglobuline", english: "Immunoglobulin", level: "C2", category: "Medication",
+        explanation: "Antibodies administered to provide passive immunity against infections.",
+        example: "Intraveneuze immunoglobuline wordt gegeven bij ernstige auto-immuunziekten."
+    },
+    {
+        dutch: "Monoklonaal antilichaam", english: "Monoclonal antibody", level: "C2", category: "Medication",
+        explanation: "Laboratory-made molecules that can mimic the immune system's ability to fight pathogens.",
+        example: "Het monoklonaal antilichaam richt zich specifiek op de tumorcellen."
+    },
+
+    // --- Additional Clinical Terms (Mixed Levels) ---
+    {
+        dutch: "Anamnese", english: "Medical history/Anamnesis", level: "B1", category: "Diagnostics",
+        explanation: "A patient's account of their medical history.",
+        example: "De arts neemt een uitgebreide anamnese af."
+    },
+    {
+        dutch: "Lichamelijk onderzoek", english: "Physical examination", level: "A2", category: "Diagnostics",
+        explanation: "An examination of the body to determine general health.",
+        example: "Het lichamelijk onderzoek laat geen bijzonderheden zien."
+    },
+    {
+        dutch: "Diagnose", english: "Diagnosis", level: "A2", category: "Diagnostics",
+        explanation: "The identification of the nature of an illness.",
+        example: "De diagnose is gesteld na uitgebreid onderzoek."
+    },
+    {
+        dutch: "Prognose", english: "Prognosis", level: "B1", category: "General",
+        explanation: "The likely course and outcome of a disease or ailment.",
+        example: "De prognose voor deze aandoening is gunstig."
+    },
+    {
+        dutch: "Chronisch", english: "Chronic", level: "B1", category: "General",
+        explanation: "A condition persisting for a long time or constantly recurring.",
+        example: "De patiënt heeft een chronische longziekte."
+    },
+    {
+        dutch: "Acuut", english: "Acute", level: "B1", category: "General",
+        explanation: "A condition with rapid onset and short duration.",
+        example: "De patiënt wordt opgenomen met acute buikpijn."
+    },
+    {
+        dutch: "Terminaal", english: "Terminal", level: "B2", category: "General",
+        explanation: "Relating to or at the end stage of a fatal disease.",
+        example: "De patiënt is terminaal en krijgt palliatieve zorg."
+    },
+    {
+        dutch: "Palliatieve zorg", english: "Palliative care", level: "B2", category: "Treatment",
+        explanation: "Specialized medical care focused on providing relief from symptoms of serious illness.",
+        example: "Palliatieve zorg richt zich op comfort en kwaliteit van leven."
+    },
+    {
+        dutch: "Hospice", english: "Hospice", level: "B1", category: "Facilities",
+        explanation: "A facility providing care for terminally ill patients.",
+        example: "De patiënt is overgebracht naar het hospice."
+    },
+    {
+        dutch: "Euthanasie", english: "Euthanasia", level: "B2", category: "General",
+        explanation: "The painless killing of a patient suffering from an incurable disease, legal in the Netherlands under strict conditions.",
+        example: "Euthanasie is in Nederland wettelijk geregeld."
+    },
+    {
+        dutch: "Wilsverklaring", english: "Advance directive/Living will", level: "B2", category: "General",
+        explanation: "A written statement of a person's wishes regarding medical treatment.",
+        example: "De wilsverklaring moet in het dossier worden opgenomen."
+    },
+    {
+        dutch: "Revalidatie", english: "Rehabilitation", level: "B1", category: "Treatment",
+        explanation: "The process of restoring health after illness, injury, or addiction.",
+        example: "Na het ongeluk volgt een lang traject van revalidatie."
+    },
+    {
+        dutch: "Ontslag", english: "Discharge (from hospital)", level: "A2", category: "General",
+        explanation: "The formal release of a patient from hospital care.",
+        example: "Het ontslag is gepland voor aanstaande vrijdag."
+    },
+    {
+        dutch: "Ontslagbrief", english: "Discharge letter", level: "B1", category: "General",
+        explanation: "A letter summarizing the patient's hospital stay and follow-up instructions.",
+        example: "De ontslagbrief wordt naar de huisarts gestuurd."
+    },
+    {
+        dutch: "Nazorg", english: "Aftercare/Follow-up care", level: "B1", category: "Treatment",
+        explanation: "Care given to a patient after a major treatment or hospital stay.",
+        example: "De nazorg wordt gecoördineerd door de wijkverpleegkundige."
+    },
+    {
+        dutch: "Controleafspraak", english: "Follow-up appointment", level: "A2", category: "General",
+        explanation: "A scheduled visit to check on a patient's progress after treatment.",
+        example: "Maak een controleafspraak over twee weken."
+    },
+    {
+        dutch: "Verwijsbrief", english: "Referral letter", level: "B1", category: "General",
+        explanation: "A letter from one doctor to another requesting specialist consultation.",
+        example: "U heeft een verwijsbrief nodig van de huisarts."
+    },
+    {
+        dutch: "Informed consent formulier", english: "Consent form", level: "B2", category: "General",
+        explanation: "A document that a patient signs to give permission for a medical procedure.",
+        example: "Het informed consent formulier moet voor de operatie getekend worden."
+    },
+    {
+        dutch: "Protocollen", english: "Protocols", level: "B1", category: "General",
+        explanation: "Sets of standardized rules and procedures in healthcare.",
+        example: "Volg altijd de protocollen bij medicatietoediening."
+    },
+    {
+        dutch: "Richtlijn", english: "Guideline", level: "B1", category: "General",
+        explanation: "A recommendation for clinical practice based on available evidence.",
+        example: "De nieuwe richtlijn voor pijnbestrijding is gepubliceerd."
+    },
+    {
+        dutch: "Indicatie", english: "Indication", level: "B1", category: "General",
+        explanation: "A sign or circumstance that suggests a particular course of medical treatment.",
+        example: "Er is een duidelijke indicatie voor operatief ingrijpen."
+    },
+    {
+        dutch: "Contra-indicatie", english: "Contraindication", level: "B2", category: "General",
+        explanation: "A condition that makes a particular treatment inadvisable.",
+        example: "Zwangerschap is een contra-indicatie voor dit medicijn."
+    },
+    {
+        dutch: "Toediening", english: "Administration (of medication)", level: "B1", category: "Medication",
+        explanation: "The act of giving a patient medication or treatment.",
+        example: "De toediening van de medicatie vindt plaats om 08:00 uur."
+    },
+    {
+        dutch: "Infuuspomp", english: "Infusion pump", level: "B1", category: "Equipment",
+        explanation: "A device that delivers fluids or medications at a controlled rate.",
+        example: "De infuuspomp is ingesteld op 100 ml per uur."
+    },
+    {
+        dutch: "Spuitpomp", english: "Syringe pump/Driver", level: "B2", category: "Equipment",
+        explanation: "A device that uses a syringe to deliver medication at a precisely controlled rate.",
+        example: "De morfine wordt toegediend via een spuitpomp."
+    },
+    {
+        dutch: "Glucosemeter", english: "Glucose meter", level: "A2", category: "Equipment",
+        explanation: "A device for measuring blood sugar levels.",
+        example: "Meet de bloedsuiker met de glucosemeter."
+    },
+    {
+        dutch: "Stethoscoop", english: "Stethoscope", level: "A2", category: "Equipment",
+        explanation: "An instrument used for listening to internal body sounds.",
+        example: "De arts luistert met de stethoscoop naar de longen."
+    },
+    {
+        dutch: "Bloeddrukmeter", english: "Blood pressure monitor", level: "A2", category: "Equipment",
+        explanation: "A device used to measure blood pressure.",
+        example: "De verpleegkundige gebruikt de bloeddrukmeter."
+    },
+    {
+        dutch: "Wondzalf", english: "Wound ointment", level: "A2", category: "Medication",
+        explanation: "A topical preparation applied to wounds to promote healing.",
+        example: "Breng de wondzalf dun aan op het geïnfecteerde gebied."
+    },
+    {
+        dutch: "Pleister", english: "Band-aid/Plaster", level: "A2", category: "Equipment",
+        explanation: "An adhesive bandage used to cover small wounds.",
+        example: "Plak een pleister op het wondje."
+    },
+    {
+        dutch: "Gaasje", english: "Gauze pad", level: "A2", category: "Equipment",
+        explanation: "A thin, translucent fabric used as a wound dressing.",
+        example: "Leg een steriel gaasje op de wond."
+    },
+    {
+        dutch: "Hechtpleister", english: "Adhesive strip/Butterfly stitch", level: "B1", category: "Equipment",
+        explanation: "An adhesive strip used to close small wounds without stitches.",
+        example: "De wond is klein genoeg voor hechtpleisters."
+    },
+    {
+        dutch: "Vernevelen", english: "To nebulize", level: "B2", category: "Treatment",
+        explanation: "To administer medication as a fine mist inhaled into the lungs.",
+        example: "De arts schrijft salbutamol voor om te vernevelen."
+    },
+    {
+        dutch: "Inhalator", english: "Inhaler", level: "B1", category: "Equipment",
+        explanation: "A device for administering a drug as a mist inhaled into the lungs.",
+        example: "De astmapatiënt gebruikt een inhalator."
+    },
+    {
+        dutch: "Astma", english: "Asthma", level: "A2", category: "Conditions",
+        explanation: "A chronic respiratory condition marked by spasms in the bronchi, causing difficulty breathing.",
+        example: "Astma wordt behandeld met inhalatiecorticosteroïden."
+    },
+    {
+        dutch: "COPD", english: "Chronic obstructive pulmonary disease", level: "B1", category: "Conditions",
+        explanation: "A chronic inflammatory lung disease causing obstructed airflow from the lungs.",
+        example: "COPD is een veelvoorkomende aandoening bij rokers."
+    },
+    {
+        dutch: "Longontsteking", english: "Pneumonia", level: "B1", category: "Conditions",
+        explanation: "An infection that inflames the air sacs in one or both lungs.",
+        example: "De longontsteking wordt behandeld met antibiotica."
+    },
+    {
+        dutch: "Blaasontsteking", english: "Urinary tract infection/Cystitis", level: "B1", category: "Conditions",
+        explanation: "An infection of the bladder, common in women.",
+        example: "Een blaasontsteking wordt behandeld met antibiotica."
+    },
+    {
+        dutch: "Nierbekkenontsteking", english: "Pyelonephritis", level: "B2", category: "Conditions",
+        explanation: "An infection of the kidney, often a complication of an untreated urinary tract infection.",
+        example: "Nierbekkenontsteking vereist intraveneuze antibiotica."
+    },
+    {
+        dutch: "Leverontsteking", english: "Hepatitis", level: "B1", category: "Conditions",
+        explanation: "Inflammation of the liver, typically caused by a viral infection.",
+        example: "Hepatitis B is te voorkomen met vaccinatie."
+    },
+    {
+        dutch: "Darmspoeling", english: "Bowel irrigation/Enema", level: "B2", category: "Treatment",
+        explanation: "A procedure to clean the bowels by introducing fluid into the rectum.",
+        example: "Voor de colonoscopie is een darmspoeling nodig."
+    },
+    {
+        dutch: "Klysma", english: "Enema", level: "B1", category: "Treatment",
+        explanation: "A fluid injected into the rectum to empty the bowels or to administer drugs.",
+        example: "De verpleegkundige dient een klysma toe."
+    },
+
+    // --- Final Batch: Cardiology, Neurology, Oncology, Endocrinology ---
+    {
+        dutch: "Hartstilstand", english: "Cardiac arrest", level: "B1", category: "Conditions",
+        explanation: "The sudden cessation of the heart's pumping action.",
+        example: "Bij een hartstilstand moet onmiddellijk gereanimeerd worden."
+    },
+    {
+        dutch: "Hartfalen", english: "Heart failure", level: "B1", category: "Conditions",
+        explanation: "A chronic condition where the heart doesn't pump blood as well as it should.",
+        example: "Hartfalen veroorzaakt kortademigheid en vermoeidheid."
+    },
+    {
+        dutch: "Hartritmestoornis", english: "Arrhythmia", level: "B2", category: "Conditions",
+        explanation: "An irregular heartbeat caused by improper electrical impulses in the heart.",
+        example: "De hartritmestoornis wordt behandeld met medicatie."
+    },
+    {
+        dutch: "Angina pectoris", english: "Angina pectoris", level: "B2", category: "Conditions",
+        explanation: "Chest pain caused by reduced blood flow to the heart muscle.",
+        example: "Angina pectoris treedt op bij inspanning."
+    },
+    {
+        dutch: "Bypass", english: "Bypass surgery", level: "B2", category: "Treatment",
+        explanation: "Surgery to create an alternative channel for the flow of blood around a blocked artery.",
+        example: "De cardioloog adviseert een bypass vanwege de vernauwde kransslagaders."
+    },
+    {
+        dutch: "Dotterbehandeling", english: "Angioplasty/PCI", level: "B2", category: "Treatment",
+        explanation: "A procedure to open narrowed or blocked blood vessels using a balloon catheter.",
+        example: "De dotterbehandeling heeft de bloedstroom hersteld."
+    },
+    {
+        dutch: "Stent", english: "Stent", level: "B2", category: "Equipment",
+        explanation: "A small mesh tube placed in a blood vessel to keep it open.",
+        example: "Er is een stent geplaatst in de kransslagader."
+    },
+    {
+        dutch: "Hartbewaking", english: "Cardiac monitoring unit", level: "B1", category: "Facilities",
+        explanation: "A specialized unit for monitoring heart function in patients with cardiac problems.",
+        example: "De patiënt wordt opgenomen op de hartbewaking."
+    },
+    {
+        dutch: "Beroerte", english: "Stroke", level: "B1", category: "Conditions",
+        explanation: "A sudden interruption of blood supply to the brain causing brain damage.",
+        example: "Bij een beroerte is snel handelen essentieel."
+    },
+    {
+        dutch: "Halfzijdige verlamming", english: "Hemiplegia", level: "B2", category: "Conditions",
+        explanation: "Paralysis of one side of the body, often caused by a stroke.",
+        example: "Na de beroerte heeft de patiënt een halfzijdige verlamming."
+    },
+    {
+        dutch: "Afasie", english: "Aphasia", level: "B2", category: "Conditions",
+        explanation: "Loss of ability to understand or express speech, caused by brain damage.",
+        example: "De afasie maakt communicatie met de patiënt lastig."
+    },
+    {
+        dutch: "Neglect", english: "Hemispatial neglect", level: "C1", category: "Conditions",
+        explanation: "A neurological condition where a patient ignores one side of space after brain injury.",
+        example: "Door het neglect merkt de patiënt de linkerzijde niet op."
+    },
+    {
+        dutch: "Hersenoedeem", english: "Cerebral edema", level: "C1", category: "Conditions",
+        explanation: "Swelling of the brain due to fluid accumulation.",
+        example: "Hersenoedeem is een levensbedreigende complicatie na hoofdletsel."
+    },
+    {
+        dutch: "Tumor", english: "Tumor", level: "B1", category: "Conditions",
+        explanation: "An abnormal growth of tissue that can be benign or malignant.",
+        example: "De scan toont een tumor in de long."
+    },
+    {
+        dutch: "Goedaardig", english: "Benign", level: "B1", category: "General",
+        explanation: "Not harmful or cancerous.",
+        example: "De tumor is goedaardig en hoeft niet behandeld te worden."
+    },
+    {
+        dutch: "Kwaadaardig", english: "Malignant", level: "B1", category: "General",
+        explanation: "Tending to spread and invade surrounding tissue; cancerous.",
+        example: "Helaas is de tumor kwaadaardig."
+    },
+    {
+        dutch: "Chemotherapie", english: "Chemotherapy", level: "B1", category: "Treatment",
+        explanation: "Treatment of cancer using chemical substances.",
+        example: "De chemotherapie duurt zes maanden."
+    },
+    {
+        dutch: "Bestraling", english: "Radiation therapy", level: "B1", category: "Treatment",
+        explanation: "The use of high-energy radiation to kill cancer cells.",
+        example: "De bestraling vindt vijf keer per week plaats."
+    },
+    {
+        dutch: "Immunotherapie", english: "Immunotherapy", level: "C1", category: "Treatment",
+        explanation: "Treatment that uses the body's own immune system to fight cancer.",
+        example: "Immunotherapie is een veelbelovende behandeling voor melanoom."
+    },
+    {
+        dutch: "Remissie", english: "Remission", level: "B2", category: "General",
+        explanation: "A decrease in or disappearance of signs and symptoms of cancer.",
+        example: "Na de behandeling is de kanker in remissie."
+    },
+    {
+        dutch: "Recidief", english: "Recurrence/Relapse", level: "B2", category: "General",
+        explanation: "The return of a disease after a period of improvement.",
+        example: "Er is een recidief opgetreden van de tumor."
+    },
+    {
+        dutch: "Schildklierontsteking", english: "Thyroiditis", level: "B2", category: "Conditions",
+        explanation: "Inflammation of the thyroid gland.",
+        example: "Schildklierontsteking kan leiden tot hypothyreoïdie."
+    },
+    {
+        dutch: "Hypothyreoïdie", english: "Hypothyroidism", level: "C1", category: "Conditions",
+        explanation: "Underactive thyroid gland, producing insufficient thyroid hormones.",
+        example: "Hypothyreoïdie veroorzaakt vermoeidheid en gewichtstoename."
+    },
+    {
+        dutch: "Hyperthyreoïdie", english: "Hyperthyroidism", level: "C1", category: "Conditions",
+        explanation: "Overactive thyroid gland, producing excess thyroid hormones.",
+        example: "Hyperthyreoïdie veroorzaakt gewichtsverlies en hartkloppingen."
+    },
+    {
+        dutch: "Diabetes type 1", english: "Type 1 diabetes", level: "B1", category: "Conditions",
+        explanation: "An autoimmune condition where the pancreas produces little or no insulin.",
+        example: "Diabetes type 1 wordt altijd behandeld met insuline."
+    },
+    {
+        dutch: "Diabetes type 2", english: "Type 2 diabetes", level: "B1", category: "Conditions",
+        explanation: "A metabolic condition where the body becomes resistant to insulin.",
+        example: "Diabetes type 2 kan vaak behandeld worden met leefstijlaanpassingen."
+    },
+    {
+        dutch: "Nuchter", english: "Fasting (before tests)", level: "A2", category: "Diagnostics",
+        explanation: "Having an empty stomach, required before certain blood tests.",
+        example: "U moet nuchter zijn voor de bloedafname."
+    },
+    {
+        dutch: "Bloedafname", english: "Blood draw/Phlebotomy", level: "A2", category: "Diagnostics",
+        explanation: "The process of drawing blood for testing or donation.",
+        example: "De bloedafname vindt plaats in het laboratorium."
+    },
+    {
+        dutch: "Urineonderzoek", english: "Urinalysis", level: "A2", category: "Diagnostics",
+        explanation: "Laboratory examination of urine for various substances.",
+        example: "Een urineonderzoek kan infecties aantonen."
+    },
+    {
+        dutch: "Kweek", english: "Culture (laboratory)", level: "B1", category: "Diagnostics",
+        explanation: "Growing microorganisms in a laboratory to identify infections.",
+        example: "De kweek toont een bacteriële infectie aan."
+    },
+    {
+        dutch: "Antibioticaresistentie", english: "Antibiotic resistance", level: "C1", category: "General",
+        explanation: "The ability of bacteria to resist the effects of antibiotics.",
+        example: "Antibioticaresistentie is een groeiend wereldwijd probleem."
+    },
+    {
+        dutch: "Handhygiëne", english: "Hand hygiene", level: "A2", category: "General",
+        explanation: "The practice of cleaning hands to prevent infection transmission.",
+        example: "Goede handhygiëne is de basis van infectiepreventie."
+    },
+    {
+        dutch: "Beschermende kleding", english: "Protective clothing/PPE", level: "B1", category: "Equipment",
+        explanation: "Clothing worn to protect against exposure to infectious agents.",
+        example: "Draag beschermende kleding bij het betreden van de isolatiekamer."
+    },
+
+    // --- Dutch Healthcare System (A2-B2) ---
+    {
+        dutch: "Zorgverzekering", english: "Health insurance", level: "A2", category: "General",
+        explanation: "Insurance that covers medical expenses in the Netherlands.",
+        example: "In Nederland is een zorgverzekering verplicht."
+    },
+    {
+        dutch: "Eigen risico", english: "Deductible/Excess", level: "B1", category: "General",
+        explanation: "The amount a patient must pay out of pocket before insurance covers costs.",
+        example: "Het eigen risico is dit jaar 385 euro."
+    },
+    {
+        dutch: "Verwijzing", english: "Referral", level: "A2", category: "General",
+        explanation: "Direction of a patient to a specialist by a general practitioner.",
+        example: "U heeft een verwijzing nodig van de huisarts."
+    },
+    {
+        dutch: "Specialist", english: "Specialist", level: "A2", category: "Personnel",
+        explanation: "A doctor who has specialized in a particular field of medicine.",
+        example: "De huisarts verwijst u door naar een specialist."
+    },
+    {
+        dutch: "Opname", english: "Admission (hospital)", level: "A2", category: "General",
+        explanation: "The formal acceptance of a patient into a hospital for treatment.",
+        example: "De opname is gepland voor maandagochtend."
+    },
+    {
+        dutch: "Dagbehandeling", english: "Day treatment/Outpatient procedure", level: "B1", category: "Treatment",
+        explanation: "Medical treatment that does not require an overnight hospital stay.",
+        example: "De ingreep vindt plaats als dagbehandeling."
+    },
+    {
+        dutch: "Nachtzorg", english: "Night care", level: "B1", category: "General",
+        explanation: "Healthcare services provided during nighttime hours.",
+        example: "De nachtzorg wordt verzorgd door een team van twee verpleegkundigen."
+    },
+    {
+        dutch: "Dienst", english: "Shift (work)", level: "A2", category: "General",
+        explanation: "A scheduled period of work, common in healthcare.",
+        example: "De nachtdienst begint om 23:00 uur."
+    },
+    {
+        dutch: "Dagdienst", english: "Day shift", level: "A2", category: "General",
+        explanation: "The work shift during daytime hours.",
+        example: "Tijdens de dagdienst zijn er meer verpleegkundigen aanwezig."
+    },
+    {
+        dutch: "Nachtdienst", english: "Night shift", level: "A2", category: "General",
+        explanation: "The work shift during nighttime hours.",
+        example: "De nachtdienst duurt van 23:00 tot 07:30 uur."
+    },
+    {
+        dutch: "Avonddienst", english: "Evening shift", level: "A2", category: "General",
+        explanation: "The work shift during evening hours.",
+        example: "De avonddienst loopt van 15:30 tot 23:00 uur."
+    },
+    {
+        dutch: "Collegiaal overleg", english: "Peer consultation", level: "B2", category: "General",
+        explanation: "Professional discussion between colleagues about patient care.",
+        example: "Bij twijfel zoek collegiaal overleg met een meer ervaren collega."
+    },
+    {
+        dutch: "Multidisciplinair overleg", english: "Multidisciplinary meeting", level: "B2", category: "General",
+        explanation: "A meeting where different healthcare professionals discuss patient care together.",
+        example: "Tijdens het multidisciplinair overleg worden complexe casussen besproken."
+    },
+    {
+        dutch: "Zorgplan", english: "Care plan", level: "B1", category: "General",
+        explanation: "A detailed plan of nursing care for an individual patient.",
+        example: "Het zorgplan wordt samen met de patiënt opgesteld."
+    },
+    {
+        dutch: "Verpleegplan", english: "Nursing care plan", level: "B1", category: "General",
+        explanation: "A specific plan documenting nursing diagnoses, goals, and interventions.",
+        example: "Het verpleegplan wordt dagelijks bijgewerkt."
+    },
+    {
+        dutch: "Pijnscore", english: "Pain score", level: "B1", category: "Diagnostics",
+        explanation: "A numerical assessment of a patient's pain level, usually on a scale of 0-10.",
+        example: "Wat is uw pijnscore op dit moment?"
+    },
+    {
+        dutch: "Bewakingsmonitor", english: "Patient monitor", level: "B1", category: "Equipment",
+        explanation: "A device that continuously monitors a patient's vital signs.",
+        example: "De bewakingsmonitor geeft een alarm bij afwijkende waarden."
+    },
+    {
+        dutch: "Zuigfles", english: "Suction bottle", level: "B1", category: "Equipment",
+        explanation: "A container used in suction devices to collect bodily fluids.",
+        example: "De zuigfles moet regelmatig geleegd worden."
+    },
+    {
+        dutch: "Urinezak", english: "Urine bag", level: "A2", category: "Equipment",
+        explanation: "A bag connected to a catheter to collect urine.",
+        example: "De urinezak moet onder het niveau van de blaas hangen."
+    },
+    {
+        dutch: "Stomazak", english: "Stoma bag/Colostomy bag", level: "B1", category: "Equipment",
+        explanation: "A bag attached to a stoma to collect waste.",
+        example: "De stomazak moet worden vervangen wanneer deze vol is."
+    },
+    {
+        dutch: "Vernevelaar", english: "Nebulizer", level: "B1", category: "Equipment",
+        explanation: "A device that turns liquid medicine into a mist for inhalation.",
+        example: "De patiënt inhaleert de medicatie via de vernevelaar."
+    },
+    {
+        dutch: "Verpleegsterpost", english: "Nursing station", level: "A2", category: "Facilities",
+        explanation: "The central work area on a hospital ward where nurses are based.",
+        example: "De verpleegsterpost is aan het einde van de gang."
+    },
+    {
+        dutch: "Spoelruimte", english: "Sluice room/Utility room", level: "B1", category: "Facilities",
+        explanation: "A room for cleaning and disinfecting medical equipment.",
+        example: "De instrumenten worden schoongemaakt in de spoelruimte."
+    },
+    {
+        dutch: "Magazijn", english: "Supply room/Storage", level: "A2", category: "Facilities",
+        explanation: "A storage room for medical supplies.",
+        example: "De handschoenen liggen in het magazijn."
+    },
+    {
+        dutch: "Medicijnkast", english: "Medicine cabinet", level: "A2", category: "Equipment",
+        explanation: "A locked cabinet where medications are stored.",
+        example: "De medicijnkast moet altijd op slot zijn."
+    },
+    {
+        dutch: "Nooduitgang", english: "Emergency exit", level: "A2", category: "Facilities",
+        explanation: "An exit for use in case of emergency.",
+        example: "De nooduitgang is aan het einde van de gang."
+    },
+    {
+        dutch: "Brandwerende deur", english: "Fire door", level: "B1", category: "Facilities",
+        explanation: "A door designed to prevent the spread of fire.",
+        example: "De brandwerende deuren moeten altijd gesloten blijven."
+    },
+    {
+        dutch: "Ontruimingsplan", english: "Evacuation plan", level: "B1", category: "General",
+        explanation: "A plan for evacuating a building in case of emergency.",
+        example: "Iedereen moet het ontruimingsplan kennen."
+    },
+    {
+        dutch: "BHV", english: "In-house emergency response", level: "B1", category: "General",
+        explanation: "Emergency response within a company or institution, mandatory in the Netherlands.",
+        example: "Alle verpleegkundigen volgen een BHV-training."
+    },
+    {
+        dutch: "Meldingsplicht", english: "Mandatory reporting", level: "B2", category: "General",
+        explanation: "The legal requirement to report certain incidents, infections, or situations.",
+        example: "Bij vermoeden van kindermishandeling geldt er een meldingsplicht."
+    },
+    {
+        dutch: "Incident", english: "Incident", level: "B1", category: "General",
+        explanation: "An unplanned event that could have or did result in harm to a patient.",
+        example: "Elk incident moet worden gemeld via het meldsysteem."
+    },
+    {
+        dutch: "Calamiteit", english: "Calamity/Serious incident", level: "B2", category: "General",
+        explanation: "A serious unintended event resulting in death or serious harm to a patient.",
+        example: "Een calamiteit moet worden gemeld bij de Inspectie voor de Gezondheidszorg."
+    },
+    {
+        dutch: "Klachtenregeling", english: "Complaints procedure", level: "B2", category: "General",
+        explanation: "A formal procedure for handling patient complaints.",
+        example: "De klachtenregeling staat beschreven in de patiëntenfolder."
+    },
+    {
+        dutch: "Patiëntenrechten", english: "Patient rights", level: "B1", category: "General",
+        explanation: "The legal rights of patients in healthcare.",
+        example: "De patiëntenrechten zijn vastgelegd in de WGBO."
+    },
+    {
+        dutch: "Beroepsgeheim", english: "Professional secrecy/Confidentiality", level: "B2", category: "General",
+        explanation: "The duty of healthcare professionals to keep patient information confidential.",
+        example: "Het beroepsgeheim is een fundamenteel recht van de patiënt."
+    },
+    {
+        dutch: "Dossierinzage", english: "Medical record access", level: "B2", category: "General",
+        explanation: "The right of patients to view their own medical records.",
+        example: "Patiënten hebben recht op dossierinzage."
+    },
+    {
+        dutch: "Zorgverzekeraar", english: "Health insurer", level: "A2", category: "General",
+        explanation: "An organization that provides health insurance.",
+        example: "De zorgverzekeraar vergoedt de kosten van de behandeling."
+    },
+    {
+        dutch: "Basispakket", english: "Basic insurance package", level: "B1", category: "General",
+        explanation: "The standard health insurance coverage mandatory for all residents.",
+        example: "De huisarts valt onder het basispakket van de zorgverzekering."
+    },
+    {
+        dutch: "Aanvullende verzekering", english: "Supplementary insurance", level: "B1", category: "General",
+        explanation: "Additional health insurance coverage beyond the basic package.",
+        example: "Fysiotherapie wordt vaak vergoed door de aanvullende verzekering."
+    },
+    {
+        dutch: "Overdracht", english: "Handover/Handoff", level: "B1", category: "General",
+        explanation: "The transfer of patient care information between healthcare workers at shift change.",
+        example: "Tijdens de overdracht worden alle patiënten besproken."
+    },
+    {
+        dutch: "Rapportage", english: "Documentation/Reporting", level: "B1", category: "General",
+        explanation: "The written record of patient observations and care provided.",
+        example: "De rapportage moet nauwkeurig en volledig zijn."
+    },
+    {
+        dutch: "Elektronisch patiëntendossier", english: "Electronic health record (EHR)", level: "B2", category: "General",
+        explanation: "A digital version of a patient's paper chart.",
+        example: "Alle gegevens worden vastgelegd in het elektronisch patiëntendossier."
+    },
+    {
+        dutch: "Triage", english: "Triage", level: "B2", category: "General",
+        explanation: "The process of prioritizing patients based on the severity of their condition.",
+        example: "Bij de triage wordt bepaald wie het eerst behandeld wordt."
+    },
+    {
+        dutch: "Saturatiemeter", english: "Pulse oximeter", level: "B1", category: "Equipment",
+        explanation: "A device that measures the oxygen saturation in the blood.",
+        example: "De saturatiemeter toont een waarde van 98%."
+    },
+    {
+        dutch: "Wondheling", english: "Wound healing", level: "B1", category: "Treatment",
+        explanation: "The process by which the body repairs damaged tissue.",
+        example: "De wondheling verloopt voorspoedig."
     }
 ];
