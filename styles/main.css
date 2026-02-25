@@ -220,12 +220,21 @@ select:focus {
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Flashcard */
+/* ======================================================
+   FLASHCARD — Complete 3D flip system
+   The key rules for CSS 3D flips:
+   1. perspective must be on the DIRECT parent of the rotating element
+   2. transform-style: preserve-3d on the rotating element
+   3. backface-visibility: hidden on BOTH faces
+   4. The back face gets rotateY(180deg) so it's pre-flipped
+   5. NO animations/transforms on ancestors that break the 3D context
+   ====================================================== */
+
 .flashcard-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    perspective: 1500px;
+    /* NO perspective here — it goes on .flashcard-container */
 }
 
 .flashcard-container {
@@ -234,20 +243,21 @@ select:focus {
     height: 400px;
     cursor: pointer;
     margin-bottom: 2rem;
+    perspective: 1000px;
+    /* perspective on DIRECT parent of rotating element */
 }
 
 .flashcard {
     width: 100%;
     height: 100%;
     position: relative;
-    transform-style: preserve-3d;
 }
 
 .flashcard-inner {
     position: relative;
     width: 100%;
     height: 100%;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.6s ease-in-out;
     transform-style: preserve-3d;
 }
 
@@ -258,31 +268,35 @@ select:focus {
 .flashcard-front,
 .flashcard-back {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 2.5rem;
     border-radius: 24px;
+    overflow: hidden;
+}
+
+.flashcard-front {
     background: white;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
-.flashcard-front {
-    z-index: 2;
-    transform: rotateY(0deg);
+.flashcard-back {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary);
+    transform: rotateY(180deg);
 }
 
-.flashcard-back {
-    transform: rotateY(180deg);
-    background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-    border: 2px solid var(--primary);
-}
+/* ====================================================== */
 
 .category-tag {
     position: absolute;
@@ -313,16 +327,16 @@ select:focus {
     font-weight: 700;
     color: var(--primary);
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .explanation-box,
 .example-box {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.7);
     padding: 0.8rem 1rem;
     border-radius: 12px;
     width: 100%;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
     text-align: left;
 }
 
@@ -342,14 +356,21 @@ select:focus {
     margin-bottom: 0.25rem;
 }
 
+#englishExplanation {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.4;
+}
+
 #exampleSentence {
     font-style: italic;
+    font-size: 0.85rem;
     color: var(--text);
 }
 
 .hint {
     position: absolute;
-    bottom: 2rem;
+    bottom: 1.5rem;
     font-size: 0.75rem;
     color: var(--text-muted);
     opacity: 0.6;
@@ -423,31 +444,6 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Animations */
-@keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-main>* {
-    animation: slideIn 0.6s ease-out forwards;
-}
-
-.game-setup {
-    animation-delay: 0.1s;
-}
-
-.flashcard-section {
-    animation-delay: 0.2s;
-}
-
 /* Responsive */
 @media (max-width: 640px) {
     .word {
@@ -459,7 +455,7 @@ main>* {
     }
 
     .flashcard-container {
-        height: 400px;
+        height: 420px;
     }
 
     .controls {

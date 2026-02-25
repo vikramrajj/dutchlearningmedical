@@ -27,11 +27,22 @@ class FlashcardGame {
     }
 
     init() {
-        // Event listeners
+        // Click on the card to flip it
         this.flashcard.addEventListener('click', () => this.flipCard());
-        this.nextBtn.addEventListener('click', () => this.nextCard());
-        this.prevBtn.addEventListener('click', () => this.prevCard());
-        this.shuffleBtn.addEventListener('click', () => this.shuffleCards());
+
+        // Navigation buttons
+        this.nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.nextCard();
+        });
+        this.prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.prevCard();
+        });
+        this.shuffleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            this.shuffleCards();
+        });
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
 
         // Keyboard support
@@ -66,11 +77,6 @@ class FlashcardGame {
     }
 
     shuffleCards() {
-        // Add a small animation effect
-        this.flashcard.style.animation = 'none';
-        void this.flashcard.offsetWidth; // trigger reflow
-        this.flashcard.style.animation = 'slideIn 0.5s ease-out';
-
         for (let i = this.filteredVocab.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [this.filteredVocab[i], this.filteredVocab[j]] = [this.filteredVocab[j], this.filteredVocab[i]];
@@ -92,7 +98,9 @@ class FlashcardGame {
         } else {
             this.currentIndex = 0; // Loop back
         }
-        this.resetAndFlip();
+        this.isFlipped = false;
+        this.flashcard.classList.remove('is-flipped');
+        this.updateCard();
     }
 
     prevCard() {
@@ -101,19 +109,9 @@ class FlashcardGame {
         } else {
             this.currentIndex = this.filteredVocab.length - 1; // Loop to end
         }
-        this.resetAndFlip();
-    }
-
-    resetAndFlip() {
         this.isFlipped = false;
         this.flashcard.classList.remove('is-flipped');
-
-        // Add a slight slide effect when changing word
-        const inner = this.flashcard.querySelector('.flashcard-inner');
-
-        setTimeout(() => {
-            this.updateCard();
-        }, 150);
+        this.updateCard();
     }
 
     updateCard() {
