@@ -347,42 +347,89 @@ class FlashcardGame {
     }
 
     // ============================================================
-    //  TEXT-TO-SPEECH — Dutch pronunciation
+    //  TEXT-TO-SPEECH — Best available Dutch voice
     // ============================================================
+
+    /**
+     * Score all available voices and return the most natural Dutch one.
+     * Priority (highest wins):
+     *   10 – "Google Nederlands"           (Chrome neural, very natural)
+     *    9 – Any other Google nl voice
+     *    8 – Microsoft nl-NL Online        (Edge neural, very natural)
+     *    7 – Any other Microsoft nl voice
+     *    5 – System nl-NL voice
+     *    2 – Any nl-* voice
+     */
+    getBestDutchVoice() {
+        const voices = window.speechSynthesis.getVoices();
+        if (!voices.length) return null;
+
+        let best = null;
+        let bestScore = -1;
+
+        voices.forEach(v => {
+            const name = v.name.toLowerCase();
+            const lang = v.lang.toLowerCase();
+            if (!lang.startsWith('nl')) return;
+
+            let score = 0;
+            if (name.includes('google') && name.includes('nederland')) score = 10;
+            else if (name.includes('google')) score = 9;
+            else if (name.includes('microsoft') && lang === 'nl-nl' && name.includes('online')) score = 8;
+            else if (name.includes('microsoft')) score = 7;
+            else if (lang === 'nl-nl') score = 5;
+            else score = 2;
+
+            if (score > bestScore) { bestScore = score; best = v; }
+        });
+
+        return best;
+    }
+
     speakCurrentWord() {
         const item = this.filteredVocab[this.currentIndex];
         if (!item) return;
+        if (!('speechSynthesis' in window)) return;
 
-        if (!('speechSynthesis' in window)) {
-            alert('Text-to-speech is not supported in your browser. Try Chrome or Edge.');
-            return;
-        }
-
-        // Cancel any ongoing speech
         window.speechSynthesis.cancel();
 
-        const utterance = new SpeechSynthesisUtterance(item.dutch);
-        utterance.lang = 'nl-NL'; // Dutch (Netherlands)
-        utterance.rate = 0.85;    // Slightly slower for learners
-        utterance.pitch = 1;
-
-        // Try to find a Dutch voice specifically
-        const voices = window.speechSynthesis.getVoices();
-        const dutchVoice = voices.find(v => v.lang.startsWith('nl'));
-        if (dutchVoice) utterance.voice = dutchVoice;
-
-        // Animate the button while speaking
         const activeBtn = this.mode === 'flashcard' ? this.speakBtnFront : this.speakBtnSpelling;
-        activeBtn.classList.add('speaking');
-        utterance.onend = () => activeBtn.classList.remove('speaking');
-        utterance.onerror = () => activeBtn.classList.remove('speaking');
 
-        window.speechSynthesis.speak(utterance);
+        const doSpeak = () => {
+            const utterance = new SpeechSynthesisUtterance(item.dutch);
+            utterance.lang = 'nl-NL';
+            utterance.rate = 0.82;   // Slightly slower — better for learners
+            utterance.pitch = 1.0;
+            utterance.volume = 1.0;
+
+            const voice = this.getBestDutchVoice();
+            if (voice) {
+                utterance.voice = voice;
+                // Show which voice is active in the tooltip
+                activeBtn.title = `\uD83D\uDD0A ${voice.name}`;
+            }
+
+            activeBtn.classList.add('speaking');
+            utterance.onend = () => activeBtn.classList.remove('speaking');
+            utterance.onerror = () => activeBtn.classList.remove('speaking');
+            window.speechSynthesis.speak(utterance);
+        };
+
+        // Voices may not be loaded yet on first visit — wait if needed
+        if (window.speechSynthesis.getVoices().length === 0) {
+            window.speechSynthesis.addEventListener('voiceschanged', doSpeak, { once: true });
+        } else {
+            doSpeak();
+        }
     }
 }
 
-// Voices load asynchronously in some browsers
-window.speechSynthesis && window.speechSynthesis.addEventListener('voiceschanged', () => { });
+// Warm-up: trigger voice list load as early as possible so the
+// first speaker-button click has no delay.
+if ('speechSynthesis' in window) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.addEventListener('voiceschanged', () => { });
+}
 
 // Initialize game on load
 document.addEventListener('DOMContentLoaded', () => {
