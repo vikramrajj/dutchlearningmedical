@@ -3,3 +3,4 @@ node_modules/
 .north-star/
 dist/
 .env
+server.js
