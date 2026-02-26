@@ -302,21 +302,31 @@ class FlashcardGame {
 
     renderHintLetters(word) {
         this.hintLetters.innerHTML = '';
-        // Show first letter + last letter + blanks + word length hint
-        // E.g. "Verpleegkundige" → V _ _ _ _ _ _ _ _ _ _ _ _ _ e (15)
         const letters = word.split('');
+        const last = letters.length - 1;
+
         letters.forEach((char, i) => {
             const span = document.createElement('span');
-            span.className = 'hint-letter';
+
             if (char === ' ') {
+                // Word separator — always show as a gap
                 span.className = 'hint-letter hint-space';
                 span.textContent = ' ';
-            } else if (i === 0 || i === letters.length - 1 || char === '-') {
-                // Reveal first, last, and hyphens
+            } else if (char === '-' || char === '/' || char === '.') {
+                // Punctuation — always reveal
+                span.className = 'hint-letter revealed';
                 span.textContent = char;
-                span.classList.add('revealed');
             } else {
-                span.textContent = '_';
+                span.className = 'hint-letter';
+                // Reveal: first letter, every 3rd letter, and last letter
+                // e.g. "Fractuur" → F r _ _ t _ _ r  (positions 0, 3, 6, 7)
+                const shouldReveal = (i === 0) || (i === last) || (i % 3 === 0);
+                if (shouldReveal) {
+                    span.textContent = char;
+                    span.classList.add('revealed');
+                } else {
+                    span.textContent = '_';
+                }
             }
             this.hintLetters.appendChild(span);
         });
