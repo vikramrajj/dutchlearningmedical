@@ -700,6 +700,21 @@ select:focus {
     background: rgba(79, 70, 229, 0.04);
 }
 
+/* ---- Challenge badge ---- */
+.challenge-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(135deg, #fffbeb, #fef3c7);
+    border: 1.5px solid #fbbf24;
+    border-radius: 10px;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #92400e;
+    animation: fadeInUp 0.3s ease;
+}
+
 /* ---- Stats row ---- */
 .spelling-stats {
     display: flex;

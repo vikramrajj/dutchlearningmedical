@@ -52,6 +52,7 @@ class FlashcardGame {
         this.statCorrect = document.getElementById('statCorrect');
         this.statWrong = document.getElementById('statWrong');
         this.statAccuracy = document.getElementById('statAccuracy');
+        this.challengeBadge = document.getElementById('challengeBadge');
 
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
@@ -220,12 +221,24 @@ class FlashcardGame {
         this.spellingFeedback.classList.add('hidden');
         this.correctAnswer.classList.add('hidden');
         this.hintLetters.innerHTML = '';
-        this.hintToggleBtn.textContent = 'Hide hint';
-        this.hintShown = true;                          // ← always open by default
-        this.spellingHints.classList.remove('hidden');  // ← always visible
-        this.renderHintLetters(item.dutch);             // ← render immediately
         this.checkSpellingBtn.textContent = 'Check';
         this.checkSpellingBtn.disabled = false;
+
+        // 35% chance of a "Challenge" round — no hint available at all
+        const isChallenge = Math.random() < 0.35;
+        if (isChallenge) {
+            this.hintShown = false;
+            this.spellingHints.classList.add('hidden');
+            this.hintToggleBtn.style.display = 'none';       // hide button entirely
+            this.challengeBadge && (this.challengeBadge.style.display = '');
+        } else {
+            this.hintShown = true;
+            this.spellingHints.classList.remove('hidden');
+            this.hintToggleBtn.style.display = '';            // show toggle button
+            this.hintToggleBtn.textContent = 'Hide hint';
+            this.renderHintLetters(item.dutch);
+            this.challengeBadge && (this.challengeBadge.style.display = 'none');
+        }
 
         // Auto-focus the input in spelling mode so user can type immediately
         if (this.mode === 'spelling') {
