@@ -66,12 +66,12 @@ class DutchAIChat {
                 <div class="chat-header-info">
                     <div class="chat-avatar" id="chatAvatar">🤖</div>
                     <div>
-                        <div class="chat-name">Dutch AI Voice Tutor</div>
-                        <div class="chat-status" id="chatStatus">Klik de microfoon om te beginnen</div>
+                        <div class="chat-name">Dutch AI Tutor</div>
+                        <div class="chat-status" id="chatStatus">Tap the mic to begin</div>
                     </div>
                 </div>
                 <div class="chat-header-actions">
-                    <button class="chat-clear-btn" id="chatClearBtn" title="Clear">
+                    <button class="chat-clear-btn" id="chatClearBtn" title="Clear chat">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                             <polyline points="3 6 5 6 21 6"/>
                             <path d="M19 6l-1 14H6L5 6"/>
@@ -87,12 +87,10 @@ class DutchAIChat {
                 </div>
             </div>
 
-            <!-- Message thread -->
+            <!-- Conversation log (always visible) -->
             <div class="chat-messages" id="chatMessages">
                 <div class="chat-welcome">
-                    <div class="welcome-emoji">🇳🇱</div>
-                    <h3>Goedendag!</h3>
-                    <p>Ik ben je Nederlandse voice-coach. Druk op de microfoon en stel een vraag in het Nederlands of Engels!</p>
+                    <p>Stel een vraag in het <strong>Nederlands</strong> of Engels:</p>
                     <div class="chat-suggestions">
                         <button class="suggestion-chip" data-msg="Wat betekent bloeddruk?">Wat betekent bloeddruk?</button>
                         <button class="suggestion-chip" data-msg="Geef me 5 ziekenhuis uitdrukkingen">5 ziekenhuis-uitdrukkingen</button>
@@ -101,48 +99,50 @@ class DutchAIChat {
                 </div>
             </div>
 
-            <!-- Live transcript bubble (shown while listening) -->
+            <!-- Live transcript (shown while listening) -->
             <div class="chat-transcript hidden" id="chatTranscript">
                 <span class="transcript-dot"></span>
-                <span id="transcriptText">Luisteren...</span>
+                <span id="transcriptText">Spreek nu...</span>
             </div>
 
-            <!-- ---- VOICE CONTROLS (primary) ---- -->
+            <!-- Voice controls -->
             <div class="voice-controls">
-                <!-- Language pill toggle -->
+                <!-- Language toggle -->
                 <div class="lang-toggle">
-                    <button class="lang-btn active" data-lang="nl-NL" id="langNL">🇳🇱 NL</button>
-                    <button class="lang-btn" data-lang="en-US" id="langEN">🇬🇧 EN</button>
+                    <button class="lang-btn active" data-lang="nl-NL" id="langNL">Nederlands</button>
+                    <button class="lang-btn" data-lang="en-US" id="langEN">English</button>
                 </div>
 
-                <!-- Big mic button -->
-                <button class="mic-btn" id="micBtn" aria-label="Hold to speak">
-                    <span class="mic-rings"></span>
-                    <svg class="mic-icon" viewBox="0 0 24 24" fill="currentColor">
-                        <rect x="9" y="2" width="6" height="11" rx="3"/>
-                        <path d="M5 10a7 7 0 0 0 14 0" fill="none" stroke="currentColor" stroke-width="2"/>
-                        <line x1="12" y1="19" x2="12" y2="23" stroke="currentColor" stroke-width="2"/>
-                        <line x1="8"  y1="23" x2="16" y2="23" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                    <span class="mic-label" id="micLabel">Tik om te spreken</span>
-                </button>
+                <!-- Mic button + label below it -->
+                <div class="mic-wrapper">
+                    <button class="mic-btn" id="micBtn" aria-label="Tap to speak">
+                        <span class="mic-rings"></span>
+                        <svg class="mic-icon" viewBox="0 0 24 24" fill="currentColor" width="26" height="26">
+                            <rect x="9" y="2" width="6" height="11" rx="3"/>
+                            <path d="M5 10a7 7 0 0 0 14 0" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="19" x2="12" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="9"  y1="22" x2="15" y2="22" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+                    <span class="mic-label-below" id="micLabel">Tap to speak</span>
+                </div>
 
-                <!-- Stop speaking button (shown when AI is talking) -->
-                <button class="stop-btn hidden" id="stopBtn" title="Stop speaking">
-                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                <!-- Stop button — only shown when AI is speaking -->
+                <button class="stop-btn hidden" id="stopBtn">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
                         <rect x="4" y="4" width="16" height="16" rx="2"/>
                     </svg>
-                    Stop
+                    Stop speaking
                 </button>
             </div>
 
-            <!-- ---- TEXT INPUT (secondary / fallback) ---- -->
+            <!-- Text input (collapsed by default) -->
             <details class="text-input-details" id="textInputDetails">
-                <summary>⌨️ Liever typen?</summary>
+                <summary>⌨️ Type instead</summary>
                 <div class="chat-input-bar">
                     <textarea id="chatInput" class="chat-input"
-                        placeholder="Typ je vraag hier..." rows="1" maxlength="800"></textarea>
-                    <button class="chat-send-btn" id="chatSendBtn" title="Stuur" disabled>
+                        placeholder="Type your question..." rows="1" maxlength="800"></textarea>
+                    <button class="chat-send-btn" id="chatSendBtn" title="Send" disabled>
                         <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
                             <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
                         </svg>
