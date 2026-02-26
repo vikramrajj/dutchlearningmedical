@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Medisch Nederlands | Dutch Medical Flashcards</title>
     <meta name="description"
-        content="Master Dutch medical terminology for A2, B1, and B2 levels with interactive flashcards.">
+        content="Master Dutch medical terminology with interactive flashcards, spelling practice, and pronunciation for nursing professionals.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -30,6 +30,7 @@
     </header>
 
     <main class="container">
+        <!-- Controls Bar -->
         <section class="game-setup">
             <div class="controls">
                 <div class="control-group">
@@ -43,6 +44,30 @@
                         <option value="C2">C2 (Proficiency)</option>
                     </select>
                 </div>
+
+                <!-- Mode Toggle -->
+                <div class="control-group">
+                    <label>Study Mode</label>
+                    <div class="mode-toggle">
+                        <button class="mode-btn active" id="modeFlashcard" data-mode="flashcard">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <rect x="2" y="4" width="20" height="16" rx="3" />
+                                <line x1="8" y1="12" x2="16" y2="12" />
+                            </svg>
+                            Flashcard
+                        </button>
+                        <button class="mode-btn" id="modeSpelling" data-mode="spelling">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M12 20h9" />
+                                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" />
+                            </svg>
+                            Spelling
+                        </button>
+                    </div>
+                </div>
+
                 <div class="progress-container">
                     <div class="progress-text">Progress: <span id="progressCount">0/0</span></div>
                     <div class="progress-bar">
@@ -52,14 +77,25 @@
             </div>
         </section>
 
-        <section class="flashcard-section">
+        <!-- ===================== FLASHCARD MODE ===================== -->
+        <section class="flashcard-section" id="flashcardSection">
             <div class="flashcard-container">
                 <div class="flashcard" id="flashcard">
                     <div class="flashcard-inner">
                         <div class="flashcard-front">
                             <span class="category-tag" id="cardCategory">Category</span>
+                            <!-- Speaker button on front -->
+                            <button class="speak-btn" id="speakBtnFront" title="Pronounce in Dutch"
+                                aria-label="Pronounce Dutch word">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                                </svg>
+                            </button>
                             <h2 class="word" id="dutchWord">Dutch Word</h2>
-                            <p class="hint">Click to flip</p>
+                            <p class="hint">Click card to flip • Space to flip • → / ← to navigate</p>
                         </div>
                         <div class="flashcard-back">
                             <h2 class="translation" id="englishWord">English Translation</h2>
@@ -79,7 +115,7 @@
 
             <div class="action-buttons">
                 <button id="prevBtn" class="btn btn-secondary">Previous</button>
-                <button id="shuffleBtn" class="btn btn-icon">
+                <button id="shuffleBtn" class="btn btn-icon" title="Shuffle cards">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                         stroke-linecap="round" stroke-linejoin="round">
                         <polyline points="16 3 21 3 21 8"></polyline>
@@ -90,6 +126,80 @@
                     </svg>
                 </button>
                 <button id="nextBtn" class="btn btn-primary">Next Card</button>
+            </div>
+        </section>
+
+        <!-- ===================== SPELLING MODE ===================== -->
+        <section class="spelling-section hidden" id="spellingSection">
+            <div class="spelling-card">
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="spellingCategory">Category</span>
+                    <button class="speak-btn" id="speakBtnSpelling" title="Pronounce in Dutch"
+                        aria-label="Pronounce Dutch word">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="spelling-prompt-label">Translate into Dutch:</p>
+                <h2 class="spelling-english" id="spellingEnglish">English Word</h2>
+
+                <!-- Hint -->
+                <div class="spelling-hints" id="spellingHints">
+                    <p class="hint-label">Hints</p>
+                    <div class="hint-letters" id="hintLetters"></div>
+                </div>
+
+                <!-- Input -->
+                <div class="spelling-input-wrapper">
+                    <input type="text" id="spellingInput" class="spelling-input" placeholder="Type the Dutch word..."
+                        autocomplete="off" autocorrect="off" spellcheck="false">
+                    <button class="btn btn-primary" id="checkSpellingBtn">Check</button>
+                </div>
+
+                <!-- Feedback -->
+                <div class="spelling-feedback hidden" id="spellingFeedback">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <p class="feedback-message" id="feedbackMessage"></p>
+                    <p class="correct-answer hidden" id="correctAnswer"></p>
+                </div>
+
+                <!-- Hint toggle -->
+                <button class="hint-toggle-btn" id="hintToggleBtn">Show hint letters</button>
+            </div>
+
+            <div class="spelling-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="statCorrect">0</span>
+                    <span class="stat-label">Correct</span>
+                </div>
+                <div class="stat-box stat-wrong">
+                    <span class="stat-num" id="statWrong">0</span>
+                    <span class="stat-label">Wrong</span>
+                </div>
+                <div class="stat-box stat-accuracy">
+                    <span class="stat-num" id="statAccuracy">–</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="spellingPrevBtn" class="btn btn-secondary">Previous</button>
+                <button id="spellingShuffleBtn" class="btn btn-icon" title="Shuffle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 3 21 3 21 8"></polyline>
+                        <line x1="4" y1="20" x2="21" y2="3"></line>
+                        <polyline points="21 16 21 21 16 21"></polyline>
+                        <line x1="15" y1="15" x2="21" y2="21"></line>
+                        <line x1="4" y1="4" x2="9" y2="9"></line>
+                    </svg>
+                </button>
+                <button id="spellingNextBtn" class="btn btn-primary">Next Word</button>
             </div>
         </section>
     </main>

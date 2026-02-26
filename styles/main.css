@@ -3,6 +3,9 @@
     --primary-hover: #4338ca;
     --secondary: #64748b;
     --accent: #06b6d4;
+    --success: #10b981;
+    --danger: #ef4444;
+    --warning: #f59e0b;
     --background: #f8fafc;
     --text: #1e293b;
     --text-muted: #64748b;
@@ -10,6 +13,7 @@
     --glass-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.4);
     --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 20px 60px -10px rgba(0, 0, 0, 0.15);
     --font-heading: 'Outfit', sans-serif;
     --font-body: 'Inter', sans-serif;
 }
@@ -37,7 +41,13 @@ body {
     padding: 0 20px;
 }
 
-/* Background Animations */
+.hidden {
+    display: none !important;
+}
+
+/* ============================================================
+   Background Animations
+   ============================================================ */
 .background-blobs {
     position: fixed;
     top: 0;
@@ -93,7 +103,9 @@ body {
     }
 }
 
-/* Header */
+/* ============================================================
+   Header
+   ============================================================ */
 header {
     padding: 2rem 0;
     margin-bottom: 2rem;
@@ -142,7 +154,9 @@ header .container {
     box-shadow: var(--shadow);
 }
 
-/* Controls */
+/* ============================================================
+   Controls bar
+   ============================================================ */
 .game-setup {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
@@ -193,6 +207,43 @@ select:focus {
     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
 }
 
+/* ---- Mode Toggle ---- */
+.mode-toggle {
+    display: flex;
+    background: rgba(241, 245, 249, 0.9);
+    border-radius: 12px;
+    padding: 4px;
+    gap: 4px;
+}
+
+.mode-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 9px;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: transparent;
+    color: var(--text-muted);
+    transition: all 0.25s ease;
+}
+
+.mode-btn.active {
+    background: white;
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mode-btn:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.5);
+    color: var(--text);
+}
+
+/* ---- Progress ---- */
 .progress-container {
     flex: 1;
     max-width: 400px;
@@ -220,21 +271,13 @@ select:focus {
     transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ======================================================
-   FLASHCARD — Complete 3D flip system
-   The key rules for CSS 3D flips:
-   1. perspective must be on the DIRECT parent of the rotating element
-   2. transform-style: preserve-3d on the rotating element
-   3. backface-visibility: hidden on BOTH faces
-   4. The back face gets rotateY(180deg) so it's pre-flipped
-   5. NO animations/transforms on ancestors that break the 3D context
-   ====================================================== */
-
+/* ============================================================
+   FLASHCARD — 3D flip system (unchanged from working version)
+   ============================================================ */
 .flashcard-section {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* NO perspective here — it goes on .flashcard-container */
 }
 
 .flashcard-container {
@@ -244,7 +287,6 @@ select:focus {
     cursor: pointer;
     margin-bottom: 2rem;
     perspective: 1000px;
-    /* perspective on DIRECT parent of rotating element */
 }
 
 .flashcard {
@@ -296,8 +338,59 @@ select:focus {
     transform: rotateY(180deg);
 }
 
-/* ====================================================== */
+/* ============================================================
+   Speaker / Pronunciation Button
+   ============================================================ */
+.speak-btn {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #e2e8f0;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.25s ease;
+    backdrop-filter: blur(4px);
+    z-index: 10;
+}
 
+.speak-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: rgba(79, 70, 229, 0.05);
+    transform: scale(1.1);
+}
+
+.speak-btn.speaking {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: rgba(79, 70, 229, 0.1);
+    animation: pulse-speaker 0.8s ease-in-out infinite;
+}
+
+@keyframes pulse-speaker {
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.3);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 8px rgba(79, 70, 229, 0);
+    }
+}
+
+/* ============================================================
+   Card text styles
+   ============================================================ */
 .category-tag {
     position: absolute;
     top: 2rem;
@@ -376,7 +469,293 @@ select:focus {
     opacity: 0.6;
 }
 
-/* Buttons */
+/* ============================================================
+   SPELLING MODE
+   ============================================================ */
+.spelling-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.spelling-card {
+    background: white;
+    border-radius: 24px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 580px;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.spelling-card-header {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    min-height: 2.5rem;
+}
+
+/* The category tag inside spelling card */
+.spelling-card .category-tag {
+    position: static;
+    display: inline-block;
+}
+
+/* The speak button in spelling card header */
+.spelling-card .speak-btn {
+    position: static;
+    margin-left: auto;
+}
+
+.spelling-prompt-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.spelling-english {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1.2;
+}
+
+/* ---- Hints area ---- */
+.spelling-hints {
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 14px;
+    padding: 1rem 1.25rem;
+}
+
+.hint-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 0.75rem;
+}
+
+.hint-letters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    align-items: center;
+}
+
+.hint-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 38px;
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #94a3b8;
+    transition: all 0.2s;
+}
+
+.hint-letter.revealed {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: #eef2ff;
+}
+
+.hint-letter.hint-space {
+    width: 18px;
+    background: transparent;
+    border: none;
+}
+
+.hint-length {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    margin-left: 4px;
+}
+
+/* ---- Input row ---- */
+.spelling-input-wrapper {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.spelling-input {
+    flex: 1;
+    padding: 0.875rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text);
+    background: white;
+    transition: all 0.25s ease;
+    outline: none;
+}
+
+.spelling-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.08);
+}
+
+.spelling-input.input-correct {
+    border-color: var(--success);
+    background: #f0fdf4;
+    color: var(--success);
+}
+
+.spelling-input.input-wrong {
+    border-color: var(--danger);
+    background: #fef2f2;
+    color: var(--danger);
+}
+
+/* ---- Feedback ---- */
+.spelling-feedback {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 1rem;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    text-align: center;
+    animation: fadeInUp 0.3s ease;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.feedback-icon {
+    font-size: 1.5rem;
+}
+
+.feedback-message {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.feedback-correct {
+    color: var(--success);
+}
+
+.feedback-wrong {
+    color: var(--danger);
+}
+
+.correct-answer {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: 0.25rem;
+}
+
+/* ---- Hint toggle ---- */
+.hint-toggle-btn {
+    align-self: flex-start;
+    border: 1.5px solid #e2e8f0;
+    background: transparent;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.hint-toggle-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: rgba(79, 70, 229, 0.04);
+}
+
+/* ---- Stats row ---- */
+.spelling-stats {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+    max-width: 580px;
+    margin-bottom: 1.5rem;
+}
+
+.stat-box {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    border: 1.5px solid #e2e8f0;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.stat-box.stat-wrong {
+    border-color: rgba(239, 68, 68, 0.25);
+}
+
+.stat-box.stat-accuracy {
+    border-color: rgba(79, 70, 229, 0.25);
+}
+
+.stat-num {
+    font-family: var(--font-heading);
+    font-size: 1.75rem;
+    font-weight: 800;
+    color: var(--text);
+}
+
+.stat-box.stat-wrong .stat-num {
+    color: var(--danger);
+}
+
+.stat-box.stat-accuracy .stat-num {
+    color: var(--primary);
+}
+
+.stat-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+/* ============================================================
+   Action Buttons (shared)
+   ============================================================ */
 .action-buttons {
     display: flex;
     gap: 1.5rem;
@@ -435,7 +814,9 @@ select:focus {
     transform: rotate(180deg);
 }
 
-/* Footer */
+/* ============================================================
+   Footer
+   ============================================================ */
 footer {
     margin-top: auto;
     padding: 3rem 0;
@@ -444,7 +825,9 @@ footer {
     font-size: 0.875rem;
 }
 
-/* Responsive */
+/* ============================================================
+   Responsive
+   ============================================================ */
 @media (max-width: 640px) {
     .word {
         font-size: 2.25rem;
@@ -461,5 +844,26 @@ footer {
     .controls {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .spelling-english {
+        font-size: 1.9rem;
+    }
+
+    .spelling-card {
+        padding: 1.5rem;
+    }
+
+    .spelling-stats {
+        gap: 0.5rem;
+    }
+
+    .mode-toggle {
+        width: 100%;
+    }
+
+    .mode-btn {
+        flex: 1;
+        justify-content: center;
     }
 }
