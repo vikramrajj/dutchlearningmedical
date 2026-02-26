@@ -2,10 +2,5 @@
     "framework": null,
     "buildCommand": null,
     "outputDirectory": ".",
-    "installCommand": null,
-    "functions": {
-        "api/chat.js": {
-            "runtime": "nodejs20.x"
-        }
-    }
+    "installCommand": null
 }
