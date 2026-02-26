@@ -138,7 +138,18 @@ class DutchAIChat {
 
             <!-- Text input (collapsed by default) -->
             <details class="text-input-details" id="textInputDetails">
-                <summary>⌨️ Type instead</summary>
+                <summary class="type-toggle-btn">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                         stroke-linecap="round" stroke-linejoin="round" width="18" height="18">
+                        <rect x="2" y="6" width="20" height="13" rx="2"/>
+                        <path d="M6 10h.01M10 10h.01M14 10h.01M18 10h.01M6 14h.01M18 14h.01M10 14h4"/>
+                    </svg>
+                    Type instead
+                    <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
+                        <polyline points="6 9 12 15 18 9"/>
+                    </svg>
+                </summary>
                 <div class="chat-input-bar">
                     <textarea id="chatInput" class="chat-input"
                         placeholder="Type your question..." rows="1" maxlength="800"></textarea>

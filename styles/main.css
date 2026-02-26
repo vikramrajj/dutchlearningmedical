@@ -1628,37 +1628,68 @@ footer {
     display: none;
 }
 
-/* ---- Text input (secondary — collapsible) ---- */
+/* ---- Text input (secondary — collapsible keyboard button) ---- */
 .text-input-details {
     border-top: 1px solid #f1f5f9;
     flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.text-input-details summary {
-    padding: 0.55rem 1rem;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    cursor: pointer;
-    font-weight: 600;
-    user-select: none;
-    list-style: none;
+.type-toggle-btn {
     display: flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.45rem;
+    padding: 0.5rem 1.2rem;
+    margin: 0.5rem auto;
+    background: #f1f5f9;
+    border: 1.5px solid #e2e8f0;
+    border-radius: 24px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    transition: all 0.2s;
+    font-family: var(--font-body);
 }
 
-.text-input-details summary::-webkit-details-marker {
+.type-toggle-btn::-webkit-details-marker {
     display: none;
 }
 
-.text-input-details summary:hover {
+.type-toggle-btn:hover {
+    background: #ede9fe;
+    border-color: var(--primary);
     color: var(--primary);
+}
+
+details[open]>.type-toggle-btn {
+    color: var(--primary);
+    border-color: var(--primary);
+    background: #ede9fe;
+}
+
+.chevron-icon {
+    transition: transform 0.25s ease;
+    opacity: 0.55;
+    flex-shrink: 0;
+}
+
+details[open]>.type-toggle-btn .chevron-icon {
+    transform: rotate(180deg);
+    opacity: 1;
 }
 
 .text-input-details .chat-input-bar {
     border-top: none;
     padding-top: 0;
+    padding-bottom: 0.75rem;
+    width: 100%;
 }
+
 
 /* ---- Remove old chat-typing (replaced by mic states) ---- */
 .chat-typing {
