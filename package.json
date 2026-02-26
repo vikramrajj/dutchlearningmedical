@@ -2,12 +2,9 @@
   "name": "dutch-medical-flashcards",
   "version": "1.0.0",
   "description": "Flashcard game for learning Dutch medical terminology",
-  "main": "index.html",
+  "type": "module",
   "scripts": {
-    "start": "serve .",
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node server.js"
   },
   "keywords": [
     "dutch",
@@ -16,9 +13,5 @@
     "education"
   ],
   "author": "",
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "^14.2.0",
-    "vite": "^5.0.0"
-  }
+  "license": "MIT"
 }
