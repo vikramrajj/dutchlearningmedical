@@ -270,18 +270,23 @@ class DutchAIChat {
         if (!('speechSynthesis' in window)) return;
         window.speechSynthesis.cancel();
 
-        // Strip markdown for cleaner speech
+        // 1. Strip markdown for cleaner speech
+        // 2. IMPORTANT: Remove English translations inside parens () or brackets []
+        //    Otherwise the Dutch voice tries to read English words and sounds extremely robotic.
         const clean = text
+            .replace(/\([^)]+\)/g, ' ')  // Remove anything between ( )
+            .replace(/\[[^\]]+\]/g, ' ') // Remove anything between [ ]
             .replace(/\*\*(.*?)\*\*/g, '$1')
             .replace(/\*(.*?)\*/g, '$1')
             .replace(/`(.*?)`/g, '$1')
             .replace(/<[^>]+>/g, ' ')
+            .replace(/\n\n/g, '. ')
             .replace(/\s+/g, ' ')
             .trim();
 
         const utterance = new SpeechSynthesisUtterance(clean);
         utterance.lang = 'nl-NL';
-        utterance.rate = 0.88;
+        utterance.rate = 0.96; // Slightly faster, more natural human pace 
         utterance.pitch = 1.0;
         utterance.volume = 1.0;
 
