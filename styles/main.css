@@ -887,7 +887,7 @@ footer {
    AI CHAT — Floating Action Button + Panel
    ============================================================ */
 
-/* ---- Floating Action Button ---- */
+/* ---- Floating Action Button (Base) ---- */
 .chat-fab {
     position: fixed;
     bottom: 2rem;
@@ -895,12 +895,10 @@ footer {
     z-index: 1000;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem 1.25rem;
+    justify-content: center;
     background: linear-gradient(135deg, #4f46e5, #7c3aed);
     color: white;
     border: none;
-    border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 8px 25px rgba(79, 70, 229, 0.45);
     font-family: var(--font-body);
@@ -933,19 +931,45 @@ footer {
     animation: none;
 }
 
-.chat-fab-icon {
-    width: 22px;
-    height: 22px;
-    flex-shrink: 0;
+/* ---- Round Bot FAB (Prominent Circle) ---- */
+.round-bot-fab {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    padding: 0;
 }
 
-.chat-fab-icon svg {
-    width: 100%;
-    height: 100%;
+.chat-fab-avatar {
+    font-size: 2.2rem;
+    line-height: 1;
+    z-index: 2;
+    transition: transform 0.3s ease;
 }
 
-.chat-fab-label {
-    white-space: nowrap;
+.chat-fab:hover .chat-fab-avatar {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Pulsing rings behind the bot face */
+.chat-fab-pulse-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(124, 58, 237, 0.4);
+    z-index: 1;
+    animation: pulse-ring 2s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
 }
 
 .chat-unread-dot {

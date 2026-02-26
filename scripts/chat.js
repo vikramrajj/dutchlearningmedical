@@ -38,20 +38,12 @@ class DutchAIChat {
         // ---- FAB ----
         const fab = document.createElement('button');
         fab.id = 'chatFab';
-        fab.className = 'chat-fab';
+        fab.className = 'chat-fab round-bot-fab';
         fab.setAttribute('aria-label', 'Open Dutch AI Voice Tutor');
         fab.title = 'Dutch AI Voice Tutor';
         fab.innerHTML = `
-            <span class="chat-fab-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
-                     stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="9" y="2" width="6" height="11" rx="3"/>
-                    <path d="M5 10a7 7 0 0 0 14 0"/>
-                    <line x1="12" y1="19" x2="12" y2="23"/>
-                    <line x1="8"  y1="23" x2="16" y2="23"/>
-                </svg>
-            </span>
-            <span class="chat-fab-label">AI Tutor</span>
+            <span class="chat-fab-pulse-ring"></span>
+            <span class="chat-fab-avatar">🤖</span>
             <span class="chat-unread-dot hidden" id="chatUnreadDot"></span>
         `;
 
