@@ -215,6 +215,7 @@ class FlashcardGame {
         this.spellingEnglish.textContent = item.english;
         this.spellingCategory.textContent = item.category;
         this.spellingInput.value = '';
+        this.spellingInput.disabled = false;           // ← fix: re-enable for next word
         this.spellingInput.classList.remove('input-correct', 'input-wrong');
         this.spellingFeedback.classList.add('hidden');
         this.correctAnswer.classList.add('hidden');
@@ -224,6 +225,11 @@ class FlashcardGame {
         this.hintShown = false;
         this.checkSpellingBtn.textContent = 'Check';
         this.checkSpellingBtn.disabled = false;
+
+        // Auto-focus the input in spelling mode so user can type immediately
+        if (this.mode === 'spelling') {
+            setTimeout(() => this.spellingInput.focus(), 50);
+        }
 
         // Progress
         const total = this.filteredVocab.length;
