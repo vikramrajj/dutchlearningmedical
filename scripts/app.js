@@ -215,14 +215,15 @@ class FlashcardGame {
         this.spellingEnglish.textContent = item.english;
         this.spellingCategory.textContent = item.category;
         this.spellingInput.value = '';
-        this.spellingInput.disabled = false;           // ← fix: re-enable for next word
+        this.spellingInput.disabled = false;
         this.spellingInput.classList.remove('input-correct', 'input-wrong');
         this.spellingFeedback.classList.add('hidden');
         this.correctAnswer.classList.add('hidden');
-        this.spellingHints.classList.add('hidden');
         this.hintLetters.innerHTML = '';
-        this.hintToggleBtn.textContent = 'Show hint letters';
-        this.hintShown = false;
+        this.hintToggleBtn.textContent = 'Hide hint';
+        this.hintShown = true;                          // ← always open by default
+        this.spellingHints.classList.remove('hidden');  // ← always visible
+        this.renderHintLetters(item.dutch);             // ← render immediately
         this.checkSpellingBtn.textContent = 'Check';
         this.checkSpellingBtn.disabled = false;
 
