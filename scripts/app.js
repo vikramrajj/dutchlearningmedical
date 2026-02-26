@@ -283,7 +283,10 @@ class FlashcardGame {
 
     toggleHint() {
         const item = this.filteredVocab[this.currentIndex];
-        if (!item || this.spellingChecked) return;
+        if (!item) return;
+
+        // Allow hiding even after answer checked; only block *showing* after check
+        if (this.spellingChecked && !this.hintShown) return;
 
         this.hintShown = !this.hintShown;
 
