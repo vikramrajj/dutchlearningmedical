@@ -5043,4 +5043,9094 @@ export const medicalVocab = [
         explanation: "The process by which the body repairs damaged tissue.",
         example: "De wondheling verloopt voorspoedig."
     }
+    ,
+    {
+    "dutch": "de auscultatie",
+    "english": "auscultation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of listening to the sounds within the body, typically with a stethoscope.",
+    "example": "De arts voerde een auscultatie van de longen uit om abnormale ademhalingsgeluiden te detecteren."
+},
+    {
+    "dutch": "de pathologie",
+    "english": "pathology",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The science of the causes and effects of diseases, especially the branch of medicine that deals with the laboratory examination of samples of body tissue for diagnostic or forensic purposes.",
+    "example": "De pathologie-afdeling analyseert weefselmonsters om de aard van de ziekte te bepalen."
+},
+    {
+    "dutch": "het elektromyogram (EMG)",
+    "english": "electromyogram (EMG)",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A diagnostic procedure to assess the health of muscles and the nerve cells that control them (motor neurons).",
+    "example": "Het elektromyogram werd uitgevoerd om de oorzaak van de spierzwakte te onderzoeken."
+},
+    {
+    "dutch": "de comorbiditeit",
+    "english": "comorbidity",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De comorbiditeit van diabetes en hartfalen vereist een multidisciplinaire aanpak."
+},
+    {
+    "dutch": "de hemodialyse",
+    "english": "hemodialysis",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A process of purifying the blood of a person whose kidneys are not working normally by removing waste products and excess fluids from the blood.",
+    "example": "De patiënt ondergaat drie keer per week hemodialyse in het ziekenhuis."
+},
+    {
+    "dutch": "de laparoscopie",
+    "english": "laparoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure performed using a laparoscope, a fiber-optic instrument inserted through a small incision in the abdominal wall to view the organs inside.",
+    "example": "De laparoscopie werd gebruikt om de oorzaak van de buikpijn te achterhalen."
+},
+    {
+    "dutch": "de neuroloog",
+    "english": "neurologist",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A medical doctor specializing in the diagnosis and treatment of disorders of the nervous system.",
+    "example": "De neuroloog heeft de patiënt onderzocht op tekenen van een neurologische aandoening."
+},
+    {
+    "dutch": "de contra-indicatie",
+    "english": "contraindication",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A condition or factor that serves as a reason to withhold a certain medical treatment due to the harm that it would cause the patient.",
+    "example": "Allergie voor penicilline is een contra-indicatie voor het gebruik van dit antibioticum."
+},
+    {
+    "dutch": "de anesthesioloog",
+    "english": "anesthesiologist",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A medical doctor specializing in the administration of anesthesia.",
+    "example": "De anesthesioloog bewaakt de vitale functies van de patiënt tijdens de operatie."
+},
+    {
+    "dutch": "de revalidatie",
+    "english": "rehabilitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of helping a person regain maximum self-sufficiency through therapy and training after an illness or injury.",
+    "example": "Na de operatie is de patiënt gestart met een intensief revalidatieprogramma."
+},
+    {
+    "dutch": "het atrium",
+    "english": "atrium",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "A chamber of the heart that receives blood from the veins and forces it into a ventricle.",
+    "example": "Het rechter atrium ontvangt zuurstofarm bloed van het lichaam."
+},
+    {
+    "dutch": "de ventrikel",
+    "english": "ventricle",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "A chamber of the heart which receives blood from a corresponding atrium and from which blood is forced out into the arteries.",
+    "example": "De linker ventrikel pompt zuurstofrijk bloed naar de aorta."
+},
+    {
+    "dutch": "de endoscopie",
+    "english": "endoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure in which an endoscope (a long, thin, flexible tube with a camera and light source) is used to examine the interior of a hollow organ or cavity of the body.",
+    "example": "De endoscopie werd uitgevoerd om de slokdarm en de maag te onderzoeken."
+},
+    {
+    "dutch": "de biopsie",
+    "english": "biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal and examination of a sample of tissue from a living body for diagnostic purposes.",
+    "example": "Er werd een biopsie genomen van de verdachte plek op de huid."
+},
+    {
+    "dutch": "het aneurysma",
+    "english": "aneurysm",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A bulge in the wall of an artery.",
+    "example": "Een aneurysma in de hersenen kan levensbedreigend zijn."
+},
+    {
+    "dutch": "de tracheotomie",
+    "english": "tracheotomy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which an incision is made into the trachea to create an artificial airway.",
+    "example": "De patiënt onderging een tracheotomie om de ademhaling te vergemakkelijken."
+},
+    {
+    "dutch": "de angiografie",
+    "english": "angiography",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "An X-ray examination of blood vessels after the injection of a contrast medium.",
+    "example": "De angiografie werd gebruikt om vernauwingen in de bloedvaten op te sporen."
+},
+    {
+    "dutch": "de immunotherapie",
+    "english": "immunotherapy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Treatment that uses your body's own immune system to help fight cancer.",
+    "example": "De patiënt wordt behandeld met immunotherapie om de groei van de tumor te remmen."
+},
+    {
+    "dutch": "de radioloog",
+    "english": "radiologist",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A medical doctor specializing in the use of imaging techniques such as X-rays, CT scans, and MRI to diagnose and treat diseases.",
+    "example": "De radioloog interpreteerde de MRI-scan en stelde de diagnose."
+},
+    {
+    "dutch": "het infuus",
+    "english": "intravenous drip",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A method of administering fluids or medication directly into a vein.",
+    "example": "De patiënt kreeg een infuus met antibiotica toegediend."
+},
+    {
+    "dutch": "de symptoom",
+    "english": "symptom",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "A physical or mental feature that is regarded as indicating a condition of disease.",
+    "example": "Hoofdpijn is een veelvoorkomend symptoom van stress."
+},
+    {
+    "dutch": "de diagnose",
+    "english": "diagnosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The identification of the nature of an illness or other problem by examination of the symptoms.",
+    "example": "Na grondig onderzoek werd de diagnose gesteld: longontsteking."
+},
+    {
+    "dutch": "de prognose",
+    "english": "prognosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The likely course of a medical condition.",
+    "example": "De prognose voor de patiënt met deze zeldzame ziekte is onzeker."
+},
+    {
+    "dutch": "de terminale zorg",
+    "english": "terminal care",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Care given to patients who are terminally ill and approaching the end of their lives.",
+    "example": "De patiënt ontving terminale zorg in een hospice."
+},
+    {
+    "dutch": "het cardiovasculaire systeem",
+    "english": "cardiovascular system",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The circulatory system of an animal, comprising the heart, blood vessels, and blood.",
+    "example": "Roken kan ernstige schade toebrengen aan het cardiovasculaire systeem."
+},
+    {
+    "dutch": "het respiratoire systeem",
+    "english": "respiratory system",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The set of organs responsible for gas exchange in animals and plants.",
+    "example": "Astma is een aandoening van het respiratoire systeem."
+},
+    {
+    "dutch": "de osteoporose",
+    "english": "osteoporosis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D.",
+    "example": "Osteoporose komt vaker voor bij vrouwen na de menopauze."
+},
+    {
+    "dutch": "de hyperventilatie",
+    "english": "hyperventilation",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Excessively rapid and deep breathing.",
+    "example": "De patiënt kreeg een aanval van hyperventilatie als gevolg van de paniek."
+},
+    {
+    "dutch": "de hypotensie",
+    "english": "hypotension",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Abnormally low blood pressure.",
+    "example": "De patiënt klaagde over duizeligheid als gevolg van hypotensie."
+},
+    {
+    "dutch": "de hypertensie",
+    "english": "hypertension",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Abnormally high blood pressure.",
+    "example": "Hypertensie is een belangrijke risicofactor voor hart- en vaatziekten."
+},
+    {
+    "dutch": "het delirium",
+    "english": "delirium",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "An acutely disturbed state of mind that occurs in fever, intoxication, and other disorders and is characterized by restlessness, illusions, and incoherence of thought and speech.",
+    "example": "De patiënt vertoonde symptomen van delirium na de operatie."
+},
+    {
+    "dutch": "de anamnese",
+    "english": "anamnesis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A patient's account of their medical history.",
+    "example": "De arts nam een gedetailleerde anamnese af van de patiënt."
+},
+    {
+    "dutch": "de palliatieve zorg",
+    "english": "palliative care",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Care given to improve the quality of life of patients who have a serious or life-threatening disease.",
+    "example": "Palliatieve zorg richt zich op het verlichten van pijn en andere symptomen."
+},
+    {
+    "dutch": "de farmacokinetiek",
+    "english": "pharmacokinetics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The branch of pharmacology concerned with the movement of drugs within the body.",
+    "example": "De farmacokinetiek van dit medicijn is complex."
+},
+    {
+    "dutch": "de farmacodynamiek",
+    "english": "pharmacodynamics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The branch of pharmacology concerned with the effects of drugs and the mechanism of their action.",
+    "example": "De farmacodynamiek van dit medicijn verklaart de bijwerkingen."
+},
+    {
+    "dutch": "de medicatiebewaking",
+    "english": "medication monitoring",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The ongoing assessment and evaluation of the appropriateness, effectiveness, and safety of a medication regimen.",
+    "example": "Medicatiebewaking is essentieel om bijwerkingen te voorkomen."
+},
+    {
+    "dutch": "de resistentie",
+    "english": "resistance",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The ability of an organism to withstand the effects of a drug or other agent.",
+    "example": "Antibioticaresistentie is een groeiend probleem in de gezondheidszorg."
+},
+    {
+    "dutch": "de complicatie",
+    "english": "complication",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A secondary disease or condition aggravating an already existing one.",
+    "example": "Een infectie is een mogelijke complicatie na een operatie."
+},
+    {
+    "dutch": "de immobilisatie",
+    "english": "immobilization",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The act of preventing movement of a limb or other body part.",
+    "example": "Immobilisatie van de gebroken arm is noodzakelijk voor een goede genezing."
+},
+    {
+    "dutch": "de incubatie",
+    "english": "incubation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Maintaining someone in an incubator in order to provide controlled environmental conditions.",
+    "example": "Premature baby needs incubation for proper development."
+},
+    {
+    "dutch": "de intubatie",
+    "english": "intubation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The insertion of a tube into the trachea, used to provide mechanical ventilation.",
+    "example": "De patiënt werd geïntubeerd om de ademhaling te ondersteunen."
+},
+    {
+    "dutch": "de larynx",
+    "english": "larynx",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The voice box, located in the neck.",
+    "example": "De larynx speelt een cruciale rol bij het spreken."
+},
+    {
+    "dutch": "de thorax",
+    "english": "thorax",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The part of the body of humans between the neck and the abdomen.",
+    "example": "Een röntgenfoto van de thorax werd gemaakt om de longen te beoordelen."
+},
+    {
+    "dutch": "het peritoneum",
+    "english": "peritoneum",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The serous membrane lining the cavity of the abdomen and covering the abdominal organs.",
+    "example": "Het peritoneum beschermt de organen in de buikholte."
+},
+    {
+    "dutch": "de perifeer ingebrachte centraal veneuze catheter (PICC)",
+    "english": "peripherally inserted central catheter (PICC)",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A catheter inserted into a peripheral vein (e.g., in the arm) and advanced so that the tip lies in a central vein (e.g., the superior vena cava).",
+    "example": "De patiënt kreeg een PICC-lijn voor langdurige intraveneuze toediening van medicatie."
+},
+    {
+    "dutch": "de screening",
+    "english": "screening",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A preliminary diagnostic examination to detect the presence of a disease or condition.",
+    "example": "Bevolkingsonderzoek is een vorm van screening om borstkanker vroegtijdig op te sporen."
+},
+    {
+    "dutch": "de transfusie",
+    "english": "transfusion",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of transferring blood or blood products from one person to another.",
+    "example": "De patiënt had een bloedtransfusie nodig na het ongeluk."
+},
+    {
+    "dutch": "de triage",
+    "english": "triage",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of determining the priority of patients' treatments based on the severity of their condition.",
+    "example": "De triageverpleegkundige beoordeelde de ernst van de verwondingen van de patiënten."
+},
+    {
+    "dutch": "de reanimatie",
+    "english": "resuscitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The act of reviving someone from unconsciousness or apparent death.",
+    "example": "De reanimatie werd gestart nadat de patiënt een hartstilstand had gekregen."
+},
+    {
+    "dutch": "de anamnestische gegevens",
+    "english": "anamnestic data",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Information obtained from a patient's medical history.",
+    "example": "De arts baseerde de diagnose mede op de anamnestische gegevens."
+},
+    {
+    "dutch": "Aanvullend onderzoek",
+    "english": "Additional examination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Further testing or evaluation performed to clarify a diagnosis or assess a patient's condition more thoroughly.",
+    "example": "Na de eerste bevindingen is aanvullend onderzoek nodig om de oorzaak vast te stellen."
+},
+    {
+    "dutch": "Ambulante zorg",
+    "english": "Outpatient care",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Medical care provided to patients who are not admitted to a hospital or other inpatient facility.",
+    "example": "De patiënt ontvangt ambulante zorg na de operatie om het herstel te bevorderen."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A degenerative joint disease characterized by the breakdown of cartilage and underlying bone.",
+    "example": "Artrose kan leiden tot pijn en stijfheid in de gewrichten."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The act of listening to internal sounds of the body, typically with a stethoscope.",
+    "example": "De arts gebruikte auscultatie om de longen van de patiënt te beoordelen."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal and examination of a sample of tissue from a living body for diagnostic purposes.",
+    "example": "Er werd een biopsie uitgevoerd om te bepalen of de tumor kwaadaardig was."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A disease of the heart muscle that makes it harder for the heart to pump blood to the rest of the body.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen en andere complicaties."
+},
+    {
+    "dutch": "Chronische aandoening",
+    "english": "Chronic condition",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A long-lasting health condition that cannot be cured but can be controlled.",
+    "example": "Diabetes is een voorbeeld van een chronische aandoening die levenslange zorg vereist."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A specific situation in which a drug, procedure, or surgery should not be used because it may be harmful to the person.",
+    "example": "Er is een contra-indicatie voor dit medicijn vanwege de allergie van de patiënt."
+},
+    {
+    "dutch": "Computertomografie (CT)",
+    "english": "Computed tomography (CT)",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "An imaging technique that uses X-rays to create detailed cross-sectional images of the body.",
+    "example": "De CT-scan toonde een kleine laesie in de lever."
+},
+    {
+    "dutch": "Differentiële diagnose",
+    "english": "Differential diagnosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of distinguishing between diseases or conditions with similar signs and symptoms.",
+    "example": "De arts overweegt verschillende aandoeningen bij de differentiële diagnose."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "De patiënt klaagde over dyspneu na inspanning."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time using electrodes placed on the skin.",
+    "example": "Het ECG toonde een afwijkend hartritme."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube with a camera is inserted into the body to view internal organs or tissues.",
+    "example": "Een endoscopie werd uitgevoerd om de maag te onderzoeken."
+},
+    {
+    "dutch": "Epidemiologie",
+    "english": "Epidemiology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The study and analysis of the distribution, patterns, and determinants of health and disease conditions in defined populations.",
+    "example": "Epidemiologie is belangrijk voor het begrijpen van de verspreiding van infectieziekten."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The study of how the body absorbs, distributes, metabolizes, and eliminates drugs.",
+    "example": "Farmacokinetiek is cruciaal bij het bepalen van de juiste dosering van een medicijn."
+},
+    {
+    "dutch": "Fractuur",
+    "english": "Fracture",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A break or crack in a bone.",
+    "example": "De röntgenfoto bevestigde een fractuur in het scheenbeen."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the health and care of older adults.",
+    "example": "Geriatrie is een belangrijk specialisme gezien de vergrijzing van de bevolking."
+},
+    {
+    "dutch": "Histologie",
+    "english": "Histology",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The study of the microscopic structure of tissues.",
+    "example": "De histologie van het weefselmonster toonde afwijkende cellen."
+},
+    {
+    "dutch": "Homeostase",
+    "english": "Homeostasis",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The tendency toward a relatively stable equilibrium between interdependent elements, especially as maintained by physiological processes.",
+    "example": "Het lichaam streeft naar homeostase om optimaal te functioneren."
+},
+    {
+    "dutch": "Immunosuppressie",
+    "english": "Immunosuppression",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The suppression of the immune system, often induced by drugs to prevent rejection of transplanted organs or treat autoimmune diseases.",
+    "example": "Na de transplantatie is immunosuppressie noodzakelijk om afstoting te voorkomen."
+},
+    {
+    "dutch": "Incisie",
+    "english": "Incision",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical cut made in skin or flesh.",
+    "example": "De chirurg maakte een incisie om de appendix te verwijderen."
+},
+    {
+    "dutch": "Infectieziekte",
+    "english": "Infectious disease",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A disease caused by pathogenic microorganisms, such as bacteria, viruses, fungi, or parasites.",
+    "example": "COVID-19 is een voorbeeld van een zeer besmettelijke infectieziekte."
+},
+    {
+    "dutch": "Interventie",
+    "english": "Intervention",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "An action taken to improve a medical disorder.",
+    "example": "Een chirurgische interventie was noodzakelijk om het probleem te corrigeren."
+},
+    {
+    "dutch": "Katheterisatie",
+    "english": "Catheterization",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of inserting a catheter into a body cavity, duct, or vessel.",
+    "example": "Katheterisatie van de blaas was nodig om de urine af te voeren."
+},
+    {
+    "dutch": "Klinisch onderzoek",
+    "english": "Clinical trial",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A research study in which participants receive new medical treatments, interventions, or tests.",
+    "example": "De patiënt nam deel aan een klinisch onderzoek naar een nieuw medicijn tegen kanker."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a fiber-optic instrument is inserted through the abdominal wall to view the organs in the abdomen or to permit a surgical procedure.",
+    "example": "De laparoscopie werd gebruikt om de galblaas te verwijderen."
+},
+    {
+    "dutch": "Longfunctieonderzoek",
+    "english": "Pulmonary function test",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A test that measures how well the lungs take in and release air and how well they move gases such as oxygen from the air into the body's circulation.",
+    "example": "Het longfunctieonderzoek toonde een verminderde longcapaciteit."
+},
+    {
+    "dutch": "Maligniteit",
+    "english": "Malignancy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The presence of cancerous cells that have the ability to spread to other sites in the body (metastasize) or to invade and destroy tissues.",
+    "example": "De diagnose was een maligniteit in de borst."
+},
+    {
+    "dutch": "Medicatiebewaking",
+    "english": "Medication monitoring",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The process of observing and managing the effects of medications, especially adverse reactions and interactions.",
+    "example": "Medicatiebewaking is essentieel om de veiligheid van de patiënt te waarborgen."
+},
+    {
+    "dutch": "MRI-scan",
+    "english": "MRI scan",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "Magnetic Resonance Imaging, a medical imaging technique that uses magnetic fields and radio waves to create detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scan gaf een duidelijk beeld van de hersenen."
+},
+    {
+    "dutch": "Neurologie",
+    "english": "Neurology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with disorders of the nervous system.",
+    "example": "De patiënt werd doorverwezen naar de neurologie voor verder onderzoek."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by excess fluid trapped in the body's tissues.",
+    "example": "De patiënt had oedeem in de benen en enkels."
+},
+    {
+    "dutch": "Oncologie",
+    "english": "Oncology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the prevention, diagnosis, and treatment of cancer.",
+    "example": "De oncologieafdeling biedt uitgebreide zorg aan kankerpatiënten."
+},
+    {
+    "dutch": "Pathologie",
+    "english": "Pathology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The study of the causes and effects of disease or injury.",
+    "example": "De patholoog onderzocht het weefselmonster om de diagnose te stellen."
+},
+    {
+    "dutch": "Pijnmanagement",
+    "english": "Pain management",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of providing medical care that helps alleviate pain.",
+    "example": "Pijnmanagement is belangrijk voor patiënten met chronische pijn."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor de patiënt is gunstig na de behandeling."
+},
+    {
+    "dutch": "Psychiatrie",
+    "english": "Psychiatry",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the diagnosis, treatment, and prevention of mental disorders.",
+    "example": "De patiënt werd doorverwezen naar de psychiatrie voor een beoordeling."
+},
+    {
+    "dutch": "Radiologie",
+    "english": "Radiology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with the use of radiant energy in the diagnosis and treatment of disease.",
+    "example": "De radiologieafdeling voert verschillende beeldvormende onderzoeken uit."
+},
+    {
+    "dutch": "Revalidatie",
+    "english": "Rehabilitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of restoring someone to health or normal life through training and therapy after illness or injury.",
+    "example": "De patiënt volgde revalidatie na de beroerte."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A period when the signs and symptoms of a disease are reduced or have disappeared.",
+    "example": "De kanker is in remissie na de chemotherapie."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory failure",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition in which the lungs cannot adequately perform their function of providing oxygen to the body and removing carbon dioxide.",
+    "example": "Respiratoire insufficiëntie kan levensbedreigend zijn."
+},
+    {
+    "dutch": "Screening",
+    "english": "Screening",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Testing for a disease or condition in people who do not have symptoms.",
+    "example": "Bevolkingsonderzoek is een vorm van screening om kanker vroegtijdig op te sporen."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie van een infectie."
+},
+    {
+    "dutch": "Stomamateriaal",
+    "english": "Stoma supplies",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "Medical products used by individuals who have undergone ostomy surgery, including pouches, barriers, and adhesives.",
+    "example": "De verpleegkundige adviseerde over het juiste gebruik van stomamateriaal."
+},
+    {
+    "dutch": "Thoraxfoto",
+    "english": "Chest X-ray",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A radiographic image of the chest used to diagnose conditions affecting the lungs, heart, and other structures in the chest.",
+    "example": "De thoraxfoto liet een longontsteking zien."
+},
+    {
+    "dutch": "Toxicologie",
+    "english": "Toxicology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The study of the adverse effects of chemical, physical, or biological agents on living organisms.",
+    "example": "De toxicologieafdeling onderzocht de oorzaak van de vergiftiging."
+},
+    {
+    "dutch": "Ulcus",
+    "english": "Ulcer",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "An open sore on an external or internal surface of the body, caused by a break in the skin or mucous membrane which fails to heal.",
+    "example": "De patiënt had een ulcus aan de voet als gevolg van diabetes."
+},
+    {
+    "dutch": "Urologie",
+    "english": "Urology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the male and female urinary tract system and the male reproductive organs.",
+    "example": "De patiënt werd doorverwezen naar de urologie voor een prostaatonderzoek."
+},
+    {
+    "dutch": "Vasculaire aandoening",
+    "english": "Vascular disease",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Any condition that affects the circulatory system, including diseases of the arteries, veins, and lymphatic vessels.",
+    "example": "Roken is een belangrijke risicofactor voor vasculaire aandoeningen."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A disease of the arteries characterized by the deposition of plaques of fatty material on their inner walls.",
+    "example": "Risicofactoren voor atherosclerose omvatten een hoge bloeddruk en een verhoogd cholesterolgehalte."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure using a fiber-optic instrument inserted through the abdominal wall to view the organs inside.",
+    "example": "De chirurg besloot tot een laparoscopie om de oorzaak van de buikpijn te onderzoeken."
+},
+    {
+    "dutch": "Stentplaatsing",
+    "english": "Stent Placement",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The insertion of a small mesh tube (stent) into a blocked artery to keep it open.",
+    "example": "Na de hartaanval onderging de patiënt een stentplaatsing om de kransslagader te openen."
+},
+    {
+    "dutch": "Electrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A recording of the electrical activity of the heart.",
+    "example": "Het electrocardiogram toonde significante afwijkingen in het hartritme aan."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory Failure",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which the lungs cannot adequately oxygenate the blood or remove carbon dioxide.",
+    "example": "De patiënt werd opgenomen op de intensive care met acute respiratoire insufficiëntie."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial Infarction",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Also known as a heart attack, it occurs when blood flow decreases or stops to a part of the heart, causing damage to the heart muscle.",
+    "example": "Een snel ingrijpen is cruciaal bij een myocardinfarct om blijvende schade te voorkomen."
+},
+    {
+    "dutch": "Hemato-encefalische barrière",
+    "english": "Blood-Brain Barrier",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "A highly selective semipermeable border of endothelial cells that prevents solutes in the circulating blood from non-selectively crossing into the extracellular fluid of the central nervous system where neurons reside.",
+    "example": "Bepaalde medicijnen kunnen de hemato-encefalische barrière niet passeren."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical History",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A patient's account of past illnesses, injuries, surgeries, hospitalizations, medications, allergies, and habits.",
+    "example": "Het is belangrijk om een grondige anamnese af te nemen bij elke nieuwe patiënt."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Examining the body by touch, usually to detect abnormalities.",
+    "example": "Door palpatie kon de arts een verdikking in de buik vaststellen."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "Na het trauma ontwikkelde de patiënt een pneumothorax en had een thoraxdrain nodig."
+},
+    {
+    "dutch": "Hypoxemie",
+    "english": "Hypoxemia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "An abnormally low level of oxygen in the blood.",
+    "example": "De patiënt vertoonde tekenen van hypoxemie, zoals cyanose en kortademigheid."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Medications used to prevent blood clots.",
+    "example": "Patiënten met atriumfibrilleren krijgen vaak anticoagulantia voorgeschreven."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D.",
+    "example": "Osteoporose kan leiden tot fracturen, vooral bij oudere vrouwen."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Disease or dysfunction of one or more peripheral nerves, typically causing numbness or weakness.",
+    "example": "Diabetische neuropathie is een veel voorkomende complicatie van diabetes."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure to remove waste products and excess fluid from the blood when the kidneys are not functioning properly.",
+    "example": "Patiënten met nierfalen zijn afhankelijk van dialyse om te overleven."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A noninvasive ultrasound of the heart, used to assess heart function and structure.",
+    "example": "De echocardiografie liet zien dat de hartklep niet goed functioneerde."
+},
+    {
+    "dutch": "Pathofysiologie",
+    "english": "Pathophysiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The study of abnormal physiological processes that cause, result from, or are otherwise associated with disease or injury.",
+    "example": "Het begrijpen van de pathofysiologie van een ziekte is essentieel voor de behandeling."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The treatment of disease by the use of chemical substances, especially the treatment of cancer.",
+    "example": "Chemotherapie kan leiden tot verschillende bijwerkingen, zoals haaruitval en misselijkheid."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that inhibit or prevent activity of the immune system.",
+    "example": "Na de transplantatie moet de patiënt immunosuppressiva gebruiken om afstoting te voorkomen."
+},
+    {
+    "dutch": "Thoraxdrain",
+    "english": "Chest Tube",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A flexible plastic tube that is inserted through the chest wall and into the pleural space or mediastinum to remove air, fluid, or pus.",
+    "example": "De thoraxdrain werd geplaatst om de pneumothorax te behandelen."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial Fibrillation",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase your risk of strokes, heart failure and other heart-related complications.",
+    "example": "Atriumfibrilleren kan worden behandeld met medicatie of ablatie."
+},
+    {
+    "dutch": "Gastroscopie",
+    "english": "Gastroscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube with a camera is inserted into the esophagus, stomach, and duodenum to view the lining of these organs.",
+    "example": "De gastroscopie werd uitgevoerd om de oorzaak van de maagklachten te achterhalen."
+},
+    {
+    "dutch": "Peritonitis",
+    "english": "Peritonitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of the peritoneum, the membrane lining the abdominal cavity.",
+    "example": "Een perforatie van de darm kan leiden tot peritonitis."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "An examination of the colon using a flexible tube with a camera.",
+    "example": "Een coloscopie is belangrijk voor de screening op darmkanker."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis vereist snelle en agressieve behandeling met antibiotica en ondersteunende zorg."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The widening of blood vessels, which decreases blood pressure.",
+    "example": "Bepaalde medicijnen kunnen vasodilatatie veroorzaken als bijwerking."
+},
+    {
+    "dutch": "Diuretica",
+    "english": "Diuretics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Medications that increase the amount of urine produced, helping to remove excess fluid from the body.",
+    "example": "Diuretica worden vaak voorgeschreven bij de behandeling van hartfalen en hoge bloeddruk."
+},
+    {
+    "dutch": "Intubatie",
+    "english": "Intubation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The insertion of a tube into the trachea to maintain an open airway.",
+    "example": "De patiënt moest worden geïntubeerd vanwege ernstige ademhalingsproblemen."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which you don't have enough healthy red blood cells to carry adequate oxygen to your body's tissues.",
+    "example": "Anemie kan leiden tot vermoeidheid, zwakte en kortademigheid."
+},
+    {
+    "dutch": "Endocriene systeem",
+    "english": "Endocrine System",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The collection of glands that produce hormones that regulate metabolism, growth and development, tissue function, sexual function, reproduction, sleep, and mood, among other things.",
+    "example": "Het endocriene systeem speelt een cruciale rol bij de regulatie van verschillende lichaamsfuncties."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the health and care of old people.",
+    "example": "Geriatrie is een belangrijk specialisme gezien de vergrijzing van de bevolking."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie wordt vaak gebruikt in combinatie met chirurgie en chemotherapie bij de behandeling van kanker."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The act of listening to sounds within the body, usually with a stethoscope.",
+    "example": "Door auscultatie kon de arts abnormale hart- en longgeluiden vaststellen."
+},
+    {
+    "dutch": "Vasoconstrictie",
+    "english": "Vasoconstriction",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The narrowing of blood vessels, which increases blood pressure.",
+    "example": "Bij blootstelling aan koude treedt vasoconstrictie op om warmteverlies te beperken."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor de patiënt met longkanker is afhankelijk van het stadium van de ziekte."
+},
+    {
+    "dutch": "Cerebrovasculair accident (CVA)",
+    "english": "Cerebrovascular Accident (CVA)",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A stroke; damage to the brain from interruption of its blood supply.",
+    "example": "Een snelle behandeling is cruciaal na een cerebrovasculair accident om blijvende schade te minimaliseren."
+},
+    {
+    "dutch": "Spirometrie",
+    "english": "Spirometry",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A common office test used to assess how well your lungs work by measuring how much air you inhale, how much you exhale and how quickly you exhale.",
+    "example": "De spirometrie liet zien dat de patiënt een verminderde longfunctie had."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The study of the movement of drugs within the body, including absorption, distribution, metabolism, and excretion.",
+    "example": "Een goed begrip van de farmacokinetiek van een medicijn is essentieel voor een veilige en effectieve dosering."
+},
+    {
+    "dutch": "Hyperglykemie",
+    "english": "Hyperglycemia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "High blood sugar; a condition in which an excessive amount of glucose circulates in the blood plasma.",
+    "example": "Ongecontroleerde diabetes kan leiden tot hyperglykemie."
+},
+    {
+    "dutch": "Hypoglykemie",
+    "english": "Hypoglycemia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Low blood sugar; a condition in which blood glucose concentrations are abnormally low.",
+    "example": "Hypoglykemie kan optreden als een bijwerking van insuline bij diabetespatiënten."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar Puncture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A diagnostic procedure in which a needle is inserted into the spinal canal to collect cerebrospinal fluid.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om meningitis uit te sluiten."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The presence of one or more additional diseases or disorders co-occurring with (that is, concomitant with) a primary disease or disorder.",
+    "example": "De patiënt heeft een hoge comorbiditeit, wat de behandeling bemoeilijkt."
+},
+    {
+    "dutch": "Ablatie",
+    "english": "Ablation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The removal of a body part or the destruction of its function.",
+    "example": "De ablatie van het aritmogene focus heeft de hartritmestoornis verholpen."
+},
+    {
+    "dutch": "Angiografie",
+    "english": "Angiography",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "An X-ray examination of blood vessels after the injection of a contrast medium.",
+    "example": "De angiografie toonde een vernauwing in de kransslagader aan."
+},
+    {
+    "dutch": "Prostaglandinen",
+    "english": "Prostaglandins",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "A group of lipids made at sites of tissue damage or infection that are involved in dealing with injury and illness.",
+    "example": "NSAID's werken door de productie van prostaglandinen te remmen."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Linkerventrikelhypertrofie kan een gevolg zijn van langdurige hoge bloeddruk."
+},
+    {
+    "dutch": "Vasculitis",
+    "english": "Vasculitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of blood vessels.",
+    "example": "Vasculitis kan verschillende organen aantasten."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "De patiënt klaagde over dyspneu bij inspanning."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A state of absence of disease activity in patients known to have a chronic illness that cannot be cured.",
+    "example": "Na de behandeling is de kanker in remissie."
+},
+    {
+    "dutch": "Klinisch redeneren",
+    "english": "Clinical Reasoning",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process by which nurses and other clinicians collect cues, process the information, come to an understanding of a patient problem or situation, plan and implement interventions, evaluate outcomes, and reflect on and learn from the process.",
+    "example": "Klinisch redeneren is essentieel voor het stellen van de juiste diagnose en het bepalen van de beste behandeling."
+},
+    {
+    "dutch": "Differentiaaldiagnose",
+    "english": "Differential diagnosis",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases or conditions with similar signs or symptoms.",
+    "example": "De arts stelde een breed differentiaaldiagnose op om alle mogelijke oorzaken te onderzoeken."
+},
+    {
+    "dutch": "Perifeer zenuwstelsel",
+    "english": "Peripheral nervous system",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The nervous system outside the brain and spinal cord.",
+    "example": "Neuropathie tast vaak het perifeer zenuwstelsel aan, wat leidt tot pijn en gevoelloosheid."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the gallbladder using a laparoscope.",
+    "example": "De patiënt onderging een laparoscopische cholecystectomie vanwege galstenen."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Na de transplantatie moet de patiënt levenslang immunosuppressiva slikken."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The cause or set of causes of a disease or condition.",
+    "example": "De etiologie van multiple sclerose is nog niet volledig begrepen."
+},
+    {
+    "dutch": "Aneurysma",
+    "english": "Aneurysm",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A bulge in the wall of an artery.",
+    "example": "Een gescheurd aneurysma in de hersenen kan levensbedreigend zijn."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical incision into the chest wall.",
+    "example": "De patiënt moest een thoracotomie ondergaan om de longtumor te verwijderen."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Disease of the heart muscle.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen en ritmestoornissen."
+},
+    {
+    "dutch": "Stethoscoop",
+    "english": "Stethoscope",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A medical instrument for listening to the sounds generated inside the body.",
+    "example": "De arts luisterde met de stethoscoop naar de longen van de patiënt."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A patient's account of past events related to their medical condition.",
+    "example": "Een grondige anamnese is essentieel voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Hypoxie",
+    "english": "Hypoxia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Deficiency in the amount of oxygen reaching the tissues.",
+    "example": "Door de longembolie ontstond er acute hypoxie."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory failure",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition where the lungs cannot adequately oxygenate the blood or remove carbon dioxide.",
+    "example": "Chronische obstructieve longziekte kan leiden tot respiratoire insufficiëntie."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A process for removing waste and excess water from the blood and is used primarily to provide an artificial replacement for lost kidney function.",
+    "example": "De patiënt met nierfalen is afhankelijk van dialyse."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart.",
+    "example": "Het ECG toonde afwijkingen aan, wat duidde op een hartinfarct."
+},
+    {
+    "dutch": "Hematologie",
+    "english": "Hematology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The study of blood and blood disorders.",
+    "example": "De hematoloog onderzocht het beenmerg van de patiënt."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase your risk of strokes, heart failure and other heart-related complications.",
+    "example": "Atriumfibrilleren kan worden behandeld met medicijnen of ablatie."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube that has a light and a camera at one end is used to view the inside of the body.",
+    "example": "Tijdens de endoscopie werden poliepen in de dikke darm verwijderd."
+},
+    {
+    "dutch": "Neurologie",
+    "english": "Neurology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with disorders of the nervous system.",
+    "example": "De patiënt werd doorverwezen naar de neurologie voor verder onderzoek."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A decrease in or disappearance of signs and symptoms of a disease.",
+    "example": "Na de chemotherapie is de kanker in remissie."
+},
+    {
+    "dutch": "Palliative zorg",
+    "english": "Palliative care",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people with serious illnesses. It focuses on providing relief from the symptoms and stress of a serious illness.",
+    "example": "Palliative zorg is gericht op het verbeteren van de kwaliteit van leven van de patiënt."
+},
+    {
+    "dutch": "Reanimatie",
+    "english": "Cardiopulmonary resuscitation (CPR)",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "An emergency procedure that combines chest compressions often with artificial ventilation in an effort to manually preserve intact brain function until further measures are taken to restore spontaneous blood circulation and breathing in a person who is in cardiac arrest.",
+    "example": "De verpleegkundigen begonnen direct met de reanimatie."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Heart attack. Occurs when blood flow decreases or stops to a part of the heart, causing damage to the heart muscle.",
+    "example": "Door de vernauwing in de kransslagader kreeg de patiënt een myocardinfarct."
+},
+    {
+    "dutch": "Radiologie",
+    "english": "Radiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine concerned with the use of radiant energy (such as X-rays or ultrasound) in the diagnosis and treatment of disease.",
+    "example": "De radioloog beoordeelde de CT-scan van de buik."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine or social science dealing with the health and care of old people.",
+    "example": "De geriatrische patiënt had complexe medische problemen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De comorbiditeit van diabetes en hypertensie vergroot het risico op hart- en vaatziekten."
+},
+    {
+    "dutch": "Aseptisch",
+    "english": "Aseptic",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Free from contamination caused by harmful bacteria, viruses, or other microorganisms.",
+    "example": "Het operatiegebied moet volledig aseptisch zijn."
+},
+    {
+    "dutch": "Anesthesie",
+    "english": "Anesthesia",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Insensitivity to pain, especially as artificially induced by the administration of gases or the injection of drugs before surgical operations.",
+    "example": "De patiënt werd onder algehele anesthesie gebracht voor de operatie."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "An examination of tissue removed from a living body to discover the presence, cause, or extent of a disease.",
+    "example": "De biopsie bevestigde de diagnose van kanker."
+},
+    {
+    "dutch": "Chronische obstructieve longziekte (COPD)",
+    "english": "Chronic obstructive pulmonary disease (COPD)",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A chronic inflammatory lung disease that causes obstructed airflow from the lungs.",
+    "example": "Roken is de belangrijkste oorzaak van COPD."
+},
+    {
+    "dutch": "Euthanasie",
+    "english": "Euthanasia",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The painless killing of a patient suffering from an incurable and painful disease or in an irreversible coma.",
+    "example": "Euthanasie is een complex ethisch vraagstuk."
+},
+    {
+    "dutch": "Fonendoscoop",
+    "english": "Phonendoscope",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A type of stethoscope that amplifies sounds, used for auscultation.",
+    "example": "De arts gebruikte de fonendoscoop om nauwkeuriger harttonen te beluisteren."
+},
+    {
+    "dutch": "Hyperglykemie",
+    "english": "Hyperglycemia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "An excess of glucose in the bloodstream, often associated with diabetes mellitus.",
+    "example": "Na een grote maaltijd kan een diabeet last krijgen van hyperglykemie."
+},
+    {
+    "dutch": "Immunotherapie",
+    "english": "Immunotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Treatment that uses your body's own immune system to help fight cancer.",
+    "example": "Immunotherapie is een veelbelovende behandeling voor bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Katheterisatie",
+    "english": "Catheterization",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of inserting a catheter.",
+    "example": "Na de operatie werd een katheterisatie uitgevoerd om de urine te draineren."
+},
+    {
+    "dutch": "Melanoom",
+    "english": "Melanoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A type of skin cancer that develops from melanocytes.",
+    "example": "Vroegtijdige detectie van melanoom is cruciaal voor een succesvolle behandeling."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Chemical substances that transmit nerve impulses across a synapse.",
+    "example": "Depressie wordt vaak geassocieerd met een tekort aan bepaalde neurotransmitters."
+},
+    {
+    "dutch": "Oncologie",
+    "english": "Oncology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with the prevention, diagnosis, and treatment of cancer.",
+    "example": "De oncologieafdeling is gespecialiseerd in de behandeling van verschillende soorten kanker."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Examination of the body using touch, typically to detect abnormalities.",
+    "example": "De arts voerde palpatie van de buik uit om de organen te onderzoeken."
+},
+    {
+    "dutch": "Quarantaine",
+    "english": "Quarantine",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A state, period, or place of isolation in which people or animals that have arrived from elsewhere or been exposed to infectious or contagious disease are placed.",
+    "example": "Tijdens de epidemie werden mensen met symptomen in quarantaine geplaatst."
+},
+    {
+    "dutch": "Revalidatie",
+    "english": "Rehabilitation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of helping someone to recover from an illness or injury.",
+    "example": "Na de beroerte volgde de patiënt een intensief revalidatieprogramma."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis kan snel leiden tot orgaanfalen en de dood."
+},
+    {
+    "dutch": "Trombose",
+    "english": "Thrombosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The formation of a blood clot inside a blood vessel, obstructing the flow of blood through the circulatory system.",
+    "example": "Na een lange vliegreis is er een verhoogd risico op trombose."
+},
+    {
+    "dutch": "Urineanalyse",
+    "english": "Urinalysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Laboratory examination of urine to aid in the diagnosis of medical conditions.",
+    "example": "De urineanalyse toonde een infectie aan."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels.",
+    "example": "Bepaalde medicijnen kunnen vasodilatatie veroorzaken."
+},
+    {
+    "dutch": "Wervelkolom",
+    "english": "Spine",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The bony structure that supports the body and protects the spinal cord.",
+    "example": "Een hernia kan leiden tot pijn in de wervelkolom."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues, or organs from one species to another.",
+    "example": "Xenotransplantatie biedt potentieel een oplossing voor het tekort aan donororganen."
+},
+    {
+    "dutch": "Ziektegeschiedenis",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A record of a person's health information.",
+    "example": "De ziektegeschiedenis van de patiënt werd zorgvuldig doorgenomen."
+},
+    {
+    "dutch": "Palliatieve sedatie",
+    "english": "Palliative sedation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The controlled use of sedative medications to relieve intractable suffering in a terminally ill patient.",
+    "example": "Palliatieve sedatie werd overwogen om het lijden van de patiënt te verlichten."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of the movement of drugs within the body.",
+    "example": "De farmacokinetiek van dit medicijn is complex en vereist zorgvuldige dosering."
+},
+    {
+    "dutch": "Peritonitis",
+    "english": "Peritonitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of the peritoneum, the membrane lining the abdominal wall and covering the abdominal organs.",
+    "example": "Een geperforeerde appendix kan leiden tot peritonitis."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The act of gathering information about a patient's medical history through interviews and examination.",
+    "example": "Een grondige anamnese is cruciaal voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Differentiaaldiagnose",
+    "english": "Differential diagnosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar signs and symptoms.",
+    "example": "De differentiaaldiagnose omvat diverse aandoeningen, waaronder infecties en auto-immuunziekten."
+},
+    {
+    "dutch": "Iatrogeen",
+    "english": "Iatrogenic",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Relating to illness caused by medical examination or treatment.",
+    "example": "Iatrogene schade kan ontstaan door complicaties tijdens een chirurgische ingreep."
+},
+    {
+    "dutch": "Nosocomiale infectie",
+    "english": "Nosocomial infection",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An infection acquired in a hospital or other healthcare facility.",
+    "example": "Nosocomiale infecties vormen een serieuze bedreiging voor patiënten met een verzwakt immuunsysteem."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A type of dialysis that uses the peritoneum in a patient's abdomen as a membrane through which fluid and dissolved substances are exchanged with the blood.",
+    "example": "Peritoneale dialyse kan thuis worden uitgevoerd, waardoor patiënten meer autonomie hebben."
+},
+    {
+    "dutch": "Magnetische resonantie angiografie (MRA)",
+    "english": "Magnetic resonance angiography (MRA)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A type of MRI scan that uses magnetic fields and radio waves to provide detailed images of blood vessels.",
+    "example": "De MRA werd gebruikt om de mate van vernauwing in de halsslagader te beoordelen."
+},
+    {
+    "dutch": "Cardiopulmonale bypass",
+    "english": "Cardiopulmonary bypass",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A technique in which a machine temporarily takes over the function of the heart and lungs during surgery, maintaining the circulation of blood and oxygen content of the body.",
+    "example": "Tijdens de openhartoperatie werd cardiopulmonale bypass gebruikt om het hart stil te leggen."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical procedure to remove the gallbladder using a laparoscope.",
+    "example": "De patiënt onderging een laparoscopische cholecystectomie om galstenen te verwijderen."
+},
+    {
+    "dutch": "Elektro-encefalogram (EEG)",
+    "english": "Electroencephalogram (EEG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that detects electrical activity in your brain using small, metal discs (electrodes) attached to your scalp.",
+    "example": "Het EEG toonde abnormale hersenactiviteit, wat duidde op epilepsie."
+},
+    {
+    "dutch": "Positronemissietomografie (PET)",
+    "english": "Positron emission tomography (PET)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A nuclear medicine imaging technique that produces a three-dimensional image of functional processes in the body.",
+    "example": "De PET-scan werd gebruikt om de activiteit van de tumorcellen in kaart te brengen."
+},
+    {
+    "dutch": "Extracorporele membraan oxygenatie (ECMO)",
+    "english": "Extracorporeal membrane oxygenation (ECMO)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A life support system used for patients with severe respiratory or cardiac failure, where blood is pumped outside the body to be oxygenated and returned to the patient.",
+    "example": "ECMO werd ingezet om de patiënt te ondersteunen totdat de longen hersteld waren."
+},
+    {
+    "dutch": "Intracraniële druk (ICP) monitor",
+    "english": "Intracranial pressure (ICP) monitor",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A device used to measure the pressure inside the skull.",
+    "example": "De ICP-monitor werd gebruikt om de hersendruk na het trauma te controleren."
+},
+    {
+    "dutch": "Truncus brachiocephalicus",
+    "english": "Brachiocephalic trunk",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "An artery of the mediastinum that supplies blood to the right arm and the head and neck.",
+    "example": "De truncus brachiocephalicus is de eerste aftakking van de aortaboog."
+},
+    {
+    "dutch": "Foramen ovale",
+    "english": "Foramen ovale",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A small hole in the atrial septum, allowing blood to flow from the right atrium to the left atrium in the fetal heart.",
+    "example": "Na de geboorte sluit het foramen ovale zich meestal spontaan."
+},
+    {
+    "dutch": "De plexus choroideus",
+    "english": "Choroid plexus",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A network of blood vessels in each ventricle of the brain that produces cerebrospinal fluid.",
+    "example": "De plexus choroideus produceert het hersenvocht dat de hersenen beschermt."
+},
+    {
+    "dutch": "De ductus thoracicus",
+    "english": "Thoracic duct",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The largest lymphatic vessel in the body, which collects lymph from most of the body and drains it into the bloodstream.",
+    "example": "De ductus thoracicus voert lymfe af uit het grootste deel van het lichaam."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A disease in which plaque builds up inside your arteries.",
+    "example": "Atherosclerose is een belangrijke risicofactor voor hart- en vaatziekten."
+},
+    {
+    "dutch": "Pancreatitis necroticans",
+    "english": "Necrotizing pancreatitis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A severe form of pancreatitis characterized by necrosis of the pancreatic tissue.",
+    "example": "Pancreatitis necroticans is een levensbedreigende aandoening die intensieve behandeling vereist."
+},
+    {
+    "dutch": "Multipele sclerose (MS)",
+    "english": "Multiple sclerosis (MS)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic, typically progressive disease involving damage to the myelin sheaths of nerve cells in the brain and spinal cord.",
+    "example": "Multipele sclerose kan leiden tot verschillende neurologische symptomen."
+},
+    {
+    "dutch": "Ziekte van Parkinson",
+    "english": "Parkinson's disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive disorder of the nervous system that affects movement.",
+    "example": "De ziekte van Parkinson wordt gekenmerkt door tremoren, rigiditeit en bradykinesie."
+},
+    {
+    "dutch": "Exacerbatie",
+    "english": "Exacerbation",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A worsening of a disease or its symptoms.",
+    "example": "De patiënt ervoer een exacerbatie van de astmasymptomen na blootstelling aan allergenen."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A decrease in or disappearance of signs and symptoms of a disease.",
+    "example": "Na de behandeling trad een volledige remissie van de kanker op."
+},
+    {
+    "dutch": "Prodromale fase",
+    "english": "Prodromal phase",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "The period between the appearance of initial symptoms and the full development of a disease.",
+    "example": "Tijdens de prodromale fase van schizofrenie kunnen subtiele veranderingen in gedrag worden waargenomen."
+},
+    {
+    "dutch": "Febriele convulsie",
+    "english": "Febrile seizure",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A seizure associated with a high fever in infants or young children.",
+    "example": "Een febriele convulsie kan beangstigend zijn voor ouders, maar is meestal onschuldig."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Medications that prevent blood clots from forming.",
+    "example": "Anticoagulantia worden voorgeschreven om trombose te voorkomen."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Na een orgaantransplantatie zijn immunosuppressiva essentieel om afstoting te voorkomen."
+},
+    {
+    "dutch": "Corticosteroïden",
+    "english": "Corticosteroids",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A class of steroid hormones that reduce inflammation in the body.",
+    "example": "Corticosteroïden worden vaak gebruikt bij de behandeling van auto-immuunziekten."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The treatment of disease by the use of chemical substances, especially the treatment of cancer.",
+    "example": "Chemotherapie kan bijwerkingen veroorzaken, zoals haaruitval en vermoeidheid."
+},
+    {
+    "dutch": "Consilium",
+    "english": "Medical consultation/Second opinion",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A consultation with another doctor or specialist to obtain a second opinion on a diagnosis or treatment plan.",
+    "example": "Gezien de complexiteit van de casus werd een consilium aangevraagd bij een expert."
+},
+    {
+    "dutch": "Ethische dilemma's",
+    "english": "Ethical dilemmas",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Situations in healthcare that involve conflicting moral principles or values.",
+    "example": "Ethische dilemma's komen vaak voor bij het behandelen van patiënten in de terminale fase."
+},
+    {
+    "dutch": "Evidence-based medicine",
+    "english": "Evidence-based medicine",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The conscientious, explicit, and judicious use of current best evidence in making decisions about the care of individual patients.",
+    "example": "Evidence-based medicine is essentieel voor het leveren van kwalitatief hoogwaardige zorg."
+},
+    {
+    "dutch": "Interprofessionele samenwerking",
+    "english": "Interprofessional collaboration",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Collaboration between healthcare professionals from different disciplines to provide comprehensive patient care.",
+    "example": "Interprofessionele samenwerking is cruciaal voor een optimale patiëntenzorg."
+},
+    {
+    "dutch": "Subarachnoïdale bloeding",
+    "english": "Subarachnoid hemorrhage",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Bleeding in the space between the brain and the surrounding membrane (the subarachnoid space).",
+    "example": "Een subarachnoïdale bloeding kan leiden tot ernstige neurologische schade."
+},
+    {
+    "dutch": "Hypertrofische cardiomyopathie",
+    "english": "Hypertrophic cardiomyopathy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A disease in which the heart muscle (myocardium) becomes abnormally thick (hypertrophied).",
+    "example": "Hypertrofische cardiomyopathie kan leiden tot plotselinge hartdood bij jonge atleten."
+},
+    {
+    "dutch": "Syndroom van Cushing",
+    "english": "Cushing's syndrome",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A hormonal disorder caused by prolonged exposure of the body's tissues to high levels of the hormone cortisol.",
+    "example": "Het syndroom van Cushing kan verschillende symptomen veroorzaken, waaronder gewichtstoename en een rond gezicht."
+},
+    {
+    "dutch": "Auto-immuun hepatitis",
+    "english": "Autoimmune hepatitis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A disease in which the body's immune system attacks the liver cells, causing inflammation and liver damage.",
+    "example": "Auto-immuun hepatitis kan leiden tot cirrose en leverfalen."
+},
+    {
+    "dutch": "Pericardcentese",
+    "english": "Pericardiocentesis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a needle is used to remove fluid from the pericardial sac, the sac around the heart.",
+    "example": "Pericardcentese was noodzakelijk om de tamponnade te verlichten."
+},
+    {
+    "dutch": "Bronchoscopie",
+    "english": "Bronchoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube (bronchoscope) is inserted through the nose or mouth into the airways (bronchi) of the lungs.",
+    "example": "Een bronchoscopie werd uitgevoerd om een biopsie te nemen van de longmassa."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube (colonoscope) is inserted through the rectum to examine the colon.",
+    "example": "De coloscopie toonde meerdere poliepen, die werden verwijderd voor biopsie."
+},
+    {
+    "dutch": "Endoscopische retrograde cholangiopancreatografie (ERCP)",
+    "english": "Endoscopic retrograde cholangiopancreatography (ERCP)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure that combines upper gastrointestinal endoscopy and X-rays to treat problems of the bile and pancreatic ducts.",
+    "example": "ERCP werd gebruikt om een galsteen in de galwegen te verwijderen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electric shock to the heart to restore a normal heartbeat.",
+    "example": "De defibrillator werd gebruikt om de patiënt te reanimeren na een hartstilstand."
+},
+    {
+    "dutch": "Beademingsapparaat",
+    "english": "Ventilator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A machine that helps a patient breathe when they are unable to breathe on their own.",
+    "example": "De patiënt werd aangesloten op een beademingsapparaat vanwege acuut respiratoir falen."
+},
+    {
+    "dutch": "Dialyseapparaat",
+    "english": "Dialysis machine",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A machine that filters waste and excess fluid from the blood when the kidneys are unable to do so.",
+    "example": "Het dialyseapparaat zorgt ervoor dat de patiënt met nierfalen een acceptabele kwaliteit van leven heeft."
+},
+    {
+    "dutch": "Operatiemicroscoop",
+    "english": "Surgical microscope",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A microscope used during surgery to provide a magnified view of the surgical site.",
+    "example": "De operatiemicroscoop werd gebruikt voor een nauwkeurige dissectie tijdens de hersenoperatie."
+},
+    {
+    "dutch": "Arteria carotis interna",
+    "english": "Internal carotid artery",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "An artery that supplies blood to the brain, eyes, forehead, and nose.",
+    "example": "De arteria carotis interna is een belangrijke bloedtoevoer naar de hersenen."
+},
+    {
+    "dutch": "Vena portae hepatis",
+    "english": "Hepatic portal vein",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A blood vessel that carries blood from the gastrointestinal tract, gallbladder, pancreas, and spleen to the liver.",
+    "example": "De vena portae hepatis zorgt voor de toevoer van voedingsstoffen en afvalstoffen naar de lever."
+},
+    {
+    "dutch": "De hippocampus",
+    "english": "Hippocampus",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A part of the brain located inside the temporal lobe and is important for learning and memory.",
+    "example": "De hippocampus speelt een cruciale rol bij het vormen van nieuwe herinneringen."
+},
+    {
+    "dutch": "Het cerebellum",
+    "english": "Cerebellum",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A major structure of the hindbrain that is located near the brainstem, and responsible for coordinating voluntary movements.",
+    "example": "Het cerebellum coördineert bewegingen en handhaaft het evenwicht."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A prediction of the likely course of a disease or ailment.",
+    "example": "De prognose voor patiënten met gemetastaseerde kanker is vaak somber."
+},
+    {
+    "dutch": "Compliance",
+    "english": "Compliance (Medical)",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The extent to which a patient follows a doctor's orders, whether taking medication, adhering to a diet, or following other prescribed treatments.",
+    "example": "Gebrek aan compliance met de medicatie kan leiden tot een verslechtering van de symptomen."
+},
+    {
+    "dutch": "Placebo-effect",
+    "english": "Placebo effect",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A beneficial effect produced by a placebo drug or treatment, which cannot be attributed to the properties of the placebo itself, and must therefore be due to the patient's belief in that treatment.",
+    "example": "Het placebo-effect kan een significante impact hebben op de resultaten van klinisch onderzoek."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A disease of the arteries characterized by the deposition of plaques of fatty material on their inner walls.",
+    "example": "De patiënt is gediagnosticeerd met gevorderde atherosclerose in de kransslagaders."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of removing waste products from the blood when the kidneys can no longer do so; a catheter is surgically implanted into the abdomen and a sterile solution is infused, left in place for a period, and then drained, removing waste and excess fluid.",
+    "example": "Peritoneale dialyse biedt de patiënt de mogelijkheid om de behandeling thuis uit te voeren."
+},
+    {
+    "dutch": "Elektro-encefalogram (EEG)",
+    "english": "Electroencephalogram (EEG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that detects electrical activity in your brain using small, flat metal discs (electrodes) attached to your scalp.",
+    "example": "Het EEG toonde significante afwijkingen in de hersenactiviteit van de patiënt."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A heart attack; a blockage of blood flow to the heart muscle.",
+    "example": "De acute behandeling na een myocardinfarct is essentieel om blijvende schade te minimaliseren."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Collapsed lung; the presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "Een traumatische pneumothorax vereist onmiddellijke interventie met een thoraxdrain."
+},
+    {
+    "dutch": "Hematoom",
+    "english": "Hematoma",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A localized collection of blood outside the blood vessels, usually in liquid form within the tissue.",
+    "example": "Na de operatie ontstond er een aanzienlijk hematoom op de incisieplaats."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure used to examine the organs inside the abdomen. A thin tube with a camera is inserted through a small incision.",
+    "example": "De diagnose werd bevestigd door middel van een diagnostische laparoscopie."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D.",
+    "example": "Regelmatige botdichtheidsmetingen zijn cruciaal voor de vroege detectie van osteoporose."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of obtaining a patient's medical history.",
+    "example": "Een grondige anamnese is essentieel voor een accurate diagnose."
+},
+    {
+    "dutch": "Prevalentie",
+    "english": "Prevalence",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The proportion of a population found to have a condition (typically a disease or a risk factor) at a specific time.",
+    "example": "De prevalentie van diabetes type 2 stijgt in de westerse wereld."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The presence of one or more additional diseases or disorders co-occurring with (that is, comorbid with) a primary disease or disorder.",
+    "example": "Comorbiditeit kan de behandeling van chronische ziekten aanzienlijk compliceren."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A condition or factor that serves as a reason to withhold a certain medical treatment due to the harm that it would cause the patient.",
+    "example": "Zwangerschap is een absolute contra-indicatie voor dit medicijn."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The cause, set of causes, or manner of causation of a disease or condition.",
+    "example": "De etiologie van de auto-immuunziekte is nog niet volledig begrepen."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of feeling with the fingers or hands during a physical examination.",
+    "example": "Palpatie van de buik onthulde een duidelijke massa in de rechter onderbuik."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The action of listening to the sounds from the heart, lungs, or other organs with a stethoscope as part of a medical diagnosis.",
+    "example": "Auscultatie van de longen onthulde crepitaties, wat kan wijzen op pneumonie."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An examination of tissue removed from a living body to discover the presence, cause, or extent of a disease.",
+    "example": "De biopsie resultaten bevestigden de diagnose van maligne melanoom."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie is een belangrijke component van de behandeling van deze vorm van kanker."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The treatment of disease by the use of chemical substances, especially the treatment of cancer.",
+    "example": "Chemotherapie kan leiden tot verschillende bijwerkingen, zoals misselijkheid en haarverlies."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Degenerative joint disease; a type of arthritis that occurs when flexible tissue at the ends of bones wears down.",
+    "example": "Artrose van de knie kan leiden tot chronische pijn en verminderde mobiliteit."
+},
+    {
+    "dutch": "Reuma",
+    "english": "Rheumatism",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Any disease marked by inflammation and pain in the joints, muscles, or fibrous tissue.",
+    "example": "Reuma kan verschillende vormen aannemen, waaronder reumatoïde artritis en artrose."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition of increased pressure within the eyeball, causing gradual loss of sight.",
+    "example": "Vroege detectie en behandeling zijn cruciaal om visusverlies door glaucoom te voorkomen."
+},
+    {
+    "dutch": "Cataract",
+    "english": "Cataract",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the lens of the eye becomes progressively opaque, resulting in blurred vision.",
+    "example": "Een cataractoperatie is een veelvoorkomende en succesvolle procedure om het zicht te herstellen."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues.",
+    "example": "Anemie kan verschillende oorzaken hebben, waaronder ijzertekort en bloedverlies."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Disease of the heart muscle.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen en ritmestoornissen."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which an endoscope is used for visual examination of a hollow organ or body cavity.",
+    "example": "Een endoscopie van de dikke darm wordt uitgevoerd om poliepen op te sporen."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical removal of all or part of an organ, structure, or tissue.",
+    "example": "De tumor werd succesvol verwijderd door middel van een chirurgische resectie."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor patiënten met uitgezaaide kanker is vaak somber."
+},
+    {
+    "dutch": "Trauma",
+    "english": "Trauma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A deeply distressing or disturbing experience.",
+    "example": "De patiënt vertoonde symptomen van een posttraumatische stressstoornis na het ernstige trauma."
+},
+    {
+    "dutch": "Diagnostiek",
+    "english": "Diagnostics",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The art or act of identifying a disease from its signs and symptoms.",
+    "example": "Geavanceerde diagnostiek is essentieel voor een accurate diagnose van complexe aandoeningen."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The branch of pharmacology concerned with the movement of drugs within the body.",
+    "example": "Begrip van de farmacokinetiek van een medicijn is cruciaal voor veilige en effectieve dosering."
+},
+    {
+    "dutch": "Farmacodynamiek",
+    "english": "Pharmacodynamics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The branch of pharmacology concerned with the effects of drugs and the mechanism of their action.",
+    "example": "De farmacodynamiek van dit medicijn verklaart de waargenomen therapeutische effecten."
+},
+    {
+    "dutch": "Placebo-effect",
+    "english": "Placebo effect",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A beneficial effect produced by a placebo drug or treatment, which cannot be attributed to the properties of the placebo itself, and must therefore be due to the patient's belief in that treatment.",
+    "example": "Het placebo-effect kan een significante invloed hebben op de resultaten van klinische studies."
+},
+    {
+    "dutch": "Immunotherapie",
+    "english": "Immunotherapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Treatment of disease by activating or suppressing the immune system.",
+    "example": "Immunotherapie is een veelbelovende nieuwe benadering voor de behandeling van bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people with serious illnesses. It focuses on providing patients with relief from the symptoms and stress of a serious illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven van patiënten met een terminale ziekte."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall.",
+    "example": "Een thoracotomie werd uitgevoerd om de tumor in de long te verwijderen."
+},
+    {
+    "dutch": "Hysterectomie",
+    "english": "Hysterectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the uterus.",
+    "example": "Na herhaalde bloedingen werd een hysterectomie overwogen."
+},
+    {
+    "dutch": "Adenoom",
+    "english": "Adenoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A benign tumor of glandular origin.",
+    "example": "Het adenoom in de schildklier werd goedaardig bevonden."
+},
+    {
+    "dutch": "Carcinoma",
+    "english": "Carcinoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A cancer arising in the epithelial tissue of the skin or of the lining of the internal organs.",
+    "example": "Het onderzoek bevestigde de diagnose van een plaveiselcelcarcinoom."
+},
+    {
+    "dutch": "Fysiotherapie",
+    "english": "Physical therapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, injury, or deformity by physical methods such as massage, heat treatment, and exercise rather than by drugs or surgery.",
+    "example": "Fysiotherapie is essentieel voor het herstel na een knieoperatie."
+},
+    {
+    "dutch": "Ergotherapie",
+    "english": "Occupational therapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A form of therapy for those recuperating from illness or injury that encourages rehabilitation through the performance of activities required in daily life.",
+    "example": "Ergotherapie helpt patiënten om hun dagelijkse activiteiten zelfstandig te blijven uitvoeren."
+},
+    {
+    "dutch": "Prothese",
+    "english": "Prosthesis",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "An artificial body part, such as a limb, a heart, or a breast implant.",
+    "example": "Na de amputatie kreeg de patiënt een geavanceerde prothese."
+},
+    {
+    "dutch": "Stent",
+    "english": "Stent",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A tubular support placed inside a blood vessel, canal, or duct to aid healing or relieve an obstruction.",
+    "example": "Er werd een stent geplaatst om de vernauwing in de kransslagader te verhelpen."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The procedure of taking fluid from the spine in the lower back through a hollow needle, usually done for diagnostic purposes.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om meningitis uit te sluiten."
+},
+    {
+    "dutch": "ECMO (Extracorporele Membraan Oxygenatie)",
+    "english": "ECMO (Extracorporeal Membrane Oxygenation)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "An extracorporeal technique of providing prolonged cardiac and respiratory support to persons whose lungs and heart are so severely damaged or diseased that they can no longer serve their function.",
+    "example": "ECMO werd ingezet als laatste redmiddel voor de patiënt met ernstig acuut respiratoir falen."
+},
+    {
+    "dutch": "Intubatie",
+    "english": "Intubation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The insertion of a tube into the trachea to provide an airway.",
+    "example": "De patiënt moest worden geïntubeerd vanwege ademhalingsproblemen."
+},
+    {
+    "dutch": "Excisie",
+    "english": "Excision",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical removal of something.",
+    "example": "De excisie van de huidlaesie werd uitgevoerd onder lokale verdoving."
+},
+    {
+    "dutch": "Anesthesie",
+    "english": "Anesthesia",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Insensitivity to pain, especially as artificially induced by the administration of gases or the injection of drugs before surgical operations.",
+    "example": "De operatie werd uitgevoerd onder algehele anesthesie."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Vroege herkenning en behandeling van sepsis zijn essentieel om sterfte te voorkomen."
+},
+    {
+    "dutch": "Cervicale spondylose",
+    "english": "Cervical spondylosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A common, age-related condition that affects the joints in the neck. It develops as the bones and cartilage that make up your neck gradually break down.",
+    "example": "Cervicale spondylose kan leiden tot nekpijn en stijfheid."
+},
+    {
+    "dutch": "Corpus callosum",
+    "english": "Corpus callosum",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A broad band of nerve fibers joining the two hemispheres of the brain.",
+    "example": "Het corpus callosum verbindt de linker en rechter hersenhelft."
+},
+    ,
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of a doctor gathering information about a patient's past and present health, including symptoms, treatments, and lifestyle factors.",
+    "example": "De arts begon de afspraak met een uitgebreide anamnese om een volledig beeld van de patiënt te krijgen."
+},
+    {
+    "dutch": "Differentiaaldiagnose",
+    "english": "Differential diagnosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of distinguishing between diseases or conditions with similar signs and symptoms.",
+    "example": "De arts overwoog verschillende aandoeningen in de differentiaaldiagnose alvorens tot een conclusie te komen."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The study of the causes or origins of diseases or conditions.",
+    "example": "Het onderzoek richt zich op de etiologie van deze zeldzame aandoening."
+},
+    {
+    "dutch": "Pathofysiologie",
+    "english": "Pathophysiology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The study of the disordered physiological processes associated with disease or injury.",
+    "example": "Een goed begrip van de pathofysiologie is essentieel voor een effectieve behandeling."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Examining the body by touch, usually to detect abnormalities or assess organ size and consistency.",
+    "example": "De arts voerde een palpatie van de buik uit om te zoeken naar afwijkingen."
+},
+    {
+    "dutch": "Percussie",
+    "english": "Percussion",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A diagnostic procedure designed to determine the density of a body part by the sound produced by tapping the surface with the fingers.",
+    "example": "Door percussie van de longen kon de arts vaststellen of er sprake was van vochtophoping."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Listening to sounds within the body, usually with a stethoscope, to diagnose various conditions.",
+    "example": "De auscultatie van het hart onthulde een onregelmatige hartslag."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a fiber-optic instrument is inserted through the abdominal wall to view the organs in the abdomen or to permit a surgical procedure.",
+    "example": "De laparoscopie werd uitgevoerd om de oorzaak van de buikpijn te achterhalen."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube with a camera is inserted into the body to view internal organs or tissues.",
+    "example": "Een endoscopie van de maag werd aanbevolen om de bloeding te onderzoeken."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal of a small tissue sample for examination under a microscope.",
+    "example": "De biopsie werd uitgevoerd om te bepalen of de tumor kwaadaardig was."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A disease of the heart muscle that makes it harder for the heart to pump blood to the rest of the body.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen en ritmestoornissen."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A degenerative joint disease that causes pain, swelling, and stiffness.",
+    "example": "Artrose in de knie kan de mobiliteit van de patiënt aanzienlijk beperken."
+},
+    {
+    "dutch": "Diabetes Mellitus",
+    "english": "Diabetes Mellitus",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A metabolic disorder characterized by hyperglycemia resulting from defects in insulin secretion, insulin action, or both.",
+    "example": "Diabetes Mellitus vereist vaak een combinatie van dieet, lichaamsbeweging en medicatie."
+},
+    {
+    "dutch": "Hypertensie",
+    "english": "Hypertension",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Abnormally high blood pressure.",
+    "example": "Onbehandelde hypertensie kan leiden tot ernstige complicaties zoals hartfalen en beroerte."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A disease in which plaque builds up inside the arteries, hardening and narrowing them.",
+    "example": "Atherosclerose is een belangrijke risicofactor voor hart- en vaatziekten."
+},
+    {
+    "dutch": "Oesofagus",
+    "english": "Esophagus",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The muscular tube that carries food and liquids from the throat to the stomach.",
+    "example": "De oesofagus is een essentieel onderdeel van het spijsverteringsstelsel."
+},
+    {
+    "dutch": "Diafragma",
+    "english": "Diaphragm",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The dome-shaped muscle located at the base of the chest cavity that separates the chest from the abdomen and plays a crucial role in breathing.",
+    "example": "Het diafragma trekt samen tijdens het inademen, waardoor de longen zich kunnen vullen met lucht."
+},
+    {
+    "dutch": "Cerebellum",
+    "english": "Cerebellum",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The part of the brain at the back of the skull that coordinates and regulates muscular activity.",
+    "example": "Beschadiging van het cerebellum kan leiden tot problemen met de coördinatie en het evenwicht."
+},
+    {
+    "dutch": "Aorta",
+    "english": "Aorta",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The main artery of the body, supplying oxygenated blood to the circulatory system.",
+    "example": "De aorta ontspringt aan het hart en verdeelt zich in kleinere slagaders."
+},
+    {
+    "dutch": "Lymfeklier",
+    "english": "Lymph node",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "Small, bean-shaped structures that filter lymph, a fluid containing white blood cells, and play a role in the immune system.",
+    "example": "Opgezwollen lymfeklieren kunnen een teken zijn van een infectie."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heart rhythm.",
+    "example": "Een defibrillator kan levens redden bij een hartstilstand."
+},
+    {
+    "dutch": "Beademingsapparaat",
+    "english": "Ventilator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A machine that assists or controls breathing by forcing air into the lungs.",
+    "example": "De patiënt werd aan een beademingsapparaat aangesloten vanwege ademhalingsproblemen."
+},
+    {
+    "dutch": "Stethoscoop",
+    "english": "Stethoscope",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A medical instrument for listening to the sounds generated inside the body.",
+    "example": "De arts gebruikte de stethoscoop om naar de longen van de patiënt te luisteren."
+},
+    {
+    "dutch": "MRI-scanner",
+    "english": "MRI scanner",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses magnetic fields and radio waves to produce detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scanner gaf een duidelijk beeld van de schade aan de hersenen."
+},
+    {
+    "dutch": "ECG-apparaat",
+    "english": "ECG machine",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A machine that records the electrical activity of the heart over a period of time.",
+    "example": "Het ECG-apparaat werd gebruikt om de hartritmestoornissen te diagnosticeren."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "De patiënt klaagde over dyspneu bij inspanning."
+},
+    {
+    "dutch": "Erytheem",
+    "english": "Erythema",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Redness of the skin caused by increased blood flow in the capillaries.",
+    "example": "Er was sprake van erytheem rondom de wond."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by fluid retention in the body tissues.",
+    "example": "Oedeem in de benen kan een teken zijn van hartfalen."
+},
+    {
+    "dutch": "Koortsstuipen",
+    "english": "Febrile seizures",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Seizures that occur in infants and young children associated with a fever.",
+    "example": "Het kind had koortsstuipen als gevolg van een hoge temperatuur."
+},
+    {
+    "dutch": "Hematurie",
+    "english": "Hematuria",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "The presence of blood in the urine.",
+    "example": "Hematurie kan een symptoom zijn van een infectie of een niersteen."
+},
+    {
+    "dutch": "Placebo",
+    "english": "Placebo",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "An inactive substance or treatment that is given to a patient instead of an active drug or treatment.",
+    "example": "In de studie werd een groep patiënten behandeld met een placebo om het effect van het nieuwe medicijn te vergelijken."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Drugs that prevent blood clots from forming or growing larger.",
+    "example": "Anticoagulantia worden gebruikt om trombose te voorkomen."
+},
+    {
+    "dutch": "Analgetica",
+    "english": "Analgesics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Drugs that relieve pain.",
+    "example": "Analgetica werden voorgeschreven om de pijn na de operatie te verminderen."
+},
+    {
+    "dutch": "Antibiotica",
+    "english": "Antibiotics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Drugs that fight bacterial infections.",
+    "example": "Antibiotica zijn niet effectief tegen virale infecties."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or weaken the immune system.",
+    "example": "Immunosuppressiva worden gebruikt om afstoting van transplantaten te voorkomen."
+},
+    {
+    "dutch": "Overdracht van zorg",
+    "english": "Handover of care",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of transferring responsibility for a patient's care from one healthcare provider to another.",
+    "example": "Een goede overdracht van zorg is essentieel voor de continuïteit van de behandeling."
+},
+    {
+    "dutch": "Geïnformeerde toestemming",
+    "english": "Informed consent",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor for treatment with full knowledge of the possible risks and benefits.",
+    "example": "De patiënt gaf geïnformeerde toestemming voor de operatie na uitleg over de risico's."
+},
+    {
+    "dutch": "Interdisciplinair team",
+    "english": "Interdisciplinary team",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A group of healthcare professionals from different disciplines who work together to provide comprehensive patient care.",
+    "example": "Het interdisciplinaire team kwam bijeen om het behandelplan voor de patiënt te bespreken."
+},
+    {
+    "dutch": "Evidence-based medicine",
+    "english": "Evidence-based medicine",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The conscientious, explicit, and judicious use of current best evidence in making decisions about the care of individual patients.",
+    "example": "De behandeling is gebaseerd op evidence-based medicine en de meest recente onderzoeksresultaten."
+},
+    {
+    "dutch": "Casuïstiek",
+    "english": "Case study",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A detailed analysis of a specific case or situation, often used for learning and training purposes.",
+    "example": "De casuïstiek werd besproken om te leren van de ervaringen van andere artsen."
+},
+    {
+    "dutch": "Intraveneus infuus",
+    "english": "Intravenous infusion",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The administration of fluids, medications, or nutrients directly into a vein.",
+    "example": "De patiënt kreeg een intraveneus infuus om uitdroging te voorkomen."
+},
+    {
+    "dutch": "Röntgenfoto",
+    "english": "X-ray",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A form of electromagnetic radiation used for medical imaging to visualize bones and other dense tissues.",
+    "example": "De röntgenfoto liet een breuk in het been zien."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure to remove waste products and excess fluid from the blood when the kidneys are not functioning properly.",
+    "example": "De patiënt onderging dialyse vanwege nierfalen."
+},
+    {
+    "dutch": "Reanimatie",
+    "english": "Resuscitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of restoring consciousness or life to someone who has stopped breathing or whose heart has stopped beating.",
+    "example": "De reanimatie werd direct gestart nadat de patiënt was ingestort."
+},
+    {
+    "dutch": "Vaccinatie",
+    "english": "Vaccination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The administration of a vaccine to stimulate the immune system and provide protection against a specific disease.",
+    "example": "Vaccinatie is een effectieve manier om infectieziekten te voorkomen."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A heart attack; a condition in which blood flow to part of the heart is blocked, causing damage to the heart muscle.",
+    "example": "De patiënt werd opgenomen met een vermoedelijk myocardinfarct."
+},
+    {
+    "dutch": "Cerebrovasculair accident (CVA)",
+    "english": "Cerebrovascular accident (CVA)",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A stroke; damage to the brain caused by interruption of its blood supply.",
+    "example": "Na het CVA had de patiënt moeite met spreken."
+},
+    {
+    "dutch": "Astma",
+    "english": "Asthma",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A chronic respiratory disease characterized by inflammation and narrowing of the airways, causing wheezing, shortness of breath, chest tightness, and coughing.",
+    "example": "Astma kan worden behandeld met inhalers."
+},
+    {
+    "dutch": "Ziekte van Parkinson",
+    "english": "Parkinson's disease",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A progressive neurological disorder that affects movement, causing tremors, stiffness, slow movement, and postural instability.",
+    "example": "De ziekte van Parkinson kan de kwaliteit van leven aanzienlijk beïnvloeden."
+},
+    {
+    "dutch": "Multiple sclerose (MS)",
+    "english": "Multiple sclerosis (MS)",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A chronic, autoimmune disease that affects the brain and spinal cord, causing a wide range of symptoms, including fatigue, vision problems, muscle weakness, and difficulty with coordination and balance.",
+    "example": "Multiple sclerose is een complexe aandoening met verschillende vormen."
+},
+    {
+    "dutch": "Aangeboren afwijking",
+    "english": "Congenital anomaly",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition that is present from birth, often involving a malformation of an organ or body part.",
+    "example": "De echoscopiste ontdekte een aangeboren afwijking aan het hart van de foetus tijdens de 20-weken echo."
+},
+    {
+    "dutch": "Anamnese afnemen",
+    "english": "Taking a medical history",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of gathering information about a patient's past and present health conditions.",
+    "example": "De arts begon met het afnemen van een gedetailleerde anamnese om een volledig beeld van de patiënt te krijgen."
+},
+    {
+    "dutch": "Arteriële bloeddruk",
+    "english": "Arterial blood pressure",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The pressure of blood in the arteries.",
+    "example": "Een verhoogde arteriële bloeddruk kan leiden tot hart- en vaatziekten."
+},
+    {
+    "dutch": "Beademingsapparaat",
+    "english": "Ventilator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A machine that assists or replaces spontaneous breathing.",
+    "example": "De patiënt werd aangesloten op een beademingsapparaat op de intensive care."
+},
+    {
+    "dutch": "Benigne tumor",
+    "english": "Benign tumor",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A non-cancerous tumor that does not spread to other parts of the body.",
+    "example": "De radioloog bevestigde dat het om een benigne tumor ging en geen verdere behandeling nodig was."
+},
+    {
+    "dutch": "Biopsie verrichten",
+    "english": "Performing a biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal and examination of a tissue sample for diagnostic purposes.",
+    "example": "De chirurg zal een biopsie verrichten om te bepalen of de tumor kwaadaardig is."
+},
+    {
+    "dutch": "Chronische pijn",
+    "english": "Chronic pain",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Pain that persists for a long period of time, typically longer than three months.",
+    "example": "Patiënten met chronische pijn hebben vaak baat bij een multidisciplinaire behandeling."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The presence of one or more additional diseases or disorders co-occurring with a primary disease or disorder.",
+    "example": "Comorbiditeit kan de behandeling van diabetes compliceren."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A specific situation in which a drug, procedure, or surgery should not be used because it may be harmful to the person.",
+    "example": "Er is een contra-indicatie voor dit medicijn bij patiënten met een nierfunctiestoornis."
+},
+    {
+    "dutch": "Dialysebehandeling",
+    "english": "Dialysis treatment",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure to remove waste products and excess fluid from the blood when the kidneys are not functioning properly.",
+    "example": "De patiënt ondergaat drie keer per week dialysebehandeling."
+},
+    {
+    "dutch": "Differentiële diagnose",
+    "english": "Differential diagnosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar symptoms to arrive at a correct diagnosis.",
+    "example": "De arts overwoog verschillende aandoeningen in de differentiële diagnose."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A test that uses ultrasound to create moving pictures of the heart.",
+    "example": "De cardioloog heeft een echocardiografie aangevraagd om de hartfunctie te beoordelen."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A test that records the electrical activity of the heart.",
+    "example": "Het ECG toonde geen afwijkingen aan."
+},
+    {
+    "dutch": "Emfyseem",
+    "english": "Emphysema",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A lung condition that causes shortness of breath.",
+    "example": "Roken is een belangrijke risicofactor voor emfyseem."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The study of how the body absorbs, distributes, metabolizes, and eliminates drugs.",
+    "example": "Kennis van de farmacokinetiek van een medicijn is essentieel voor een veilige dosering."
+},
+    {
+    "dutch": "Fractuur stabilisatie",
+    "english": "Fracture stabilization",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of holding a broken bone in place to allow it to heal properly.",
+    "example": "De fractuur stabilisatie werd uitgevoerd met behulp van een gipsverband."
+},
+    {
+    "dutch": "Gastro-intestinale aandoening",
+    "english": "Gastrointestinal disorder",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition affecting the digestive system.",
+    "example": "De patiënt klaagde over symptomen die wijzen op een gastro-intestinale aandoening."
+},
+    {
+    "dutch": "Geriatrische patiënt",
+    "english": "Geriatric patient",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "An elderly patient requiring specialized medical care.",
+    "example": "De geriatrische patiënt had complexe medische behoeften."
+},
+    {
+    "dutch": "Histopathologisch onderzoek",
+    "english": "Histopathological examination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The microscopic examination of tissue to diagnose diseases.",
+    "example": "Het histopathologisch onderzoek van het weefsel toonde aan dat het om kanker ging."
+},
+    {
+    "dutch": "Hormonale disbalans",
+    "english": "Hormonal imbalance",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition in which the levels of hormones in the body are too high or too low.",
+    "example": "De gynaecoloog vermoedde een hormonale disbalans als oorzaak van de klachten."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Na de transplantatie moet de patiënt immunosuppressiva gebruiken om afstoting te voorkomen."
+},
+    {
+    "dutch": "Incisie en drainage",
+    "english": "Incision and drainage",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A minor surgical procedure to release pus or fluid from an abscess or boil.",
+    "example": "De arts voerde een incisie en drainage uit om de infectie te behandelen."
+},
+    {
+    "dutch": "Infuuspomp",
+    "english": "Infusion pump",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A medical device used to deliver fluids, such as nutrients and medications, into a patient's body in controlled amounts.",
+    "example": "De infuuspomp zorgde voor een constante toediening van de medicatie."
+},
+    {
+    "dutch": "Intermitterende claudicatio",
+    "english": "Intermittent claudication",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Pain in the leg muscles that occurs during exercise and is relieved by rest.",
+    "example": "Intermitterende claudicatio is een symptoom van perifeer arterieel vaatlijden."
+},
+    {
+    "dutch": "Klinisch onderzoek",
+    "english": "Clinical examination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A systematic evaluation of a patient's physical condition.",
+    "example": "Na het klinisch onderzoek werd de patiënt doorverwezen voor verder onderzoek."
+},
+    {
+    "dutch": "Laparoscopische chirurgie",
+    "english": "Laparoscopic surgery",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical technique in which operations are performed through small incisions with the aid of a camera and specialized instruments.",
+    "example": "De galblaas werd verwijderd via laparoscopische chirurgie."
+},
+    {
+    "dutch": "Maligne tumor",
+    "english": "Malignant tumor",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A cancerous tumor that can invade and destroy nearby tissues and spread to other parts of the body.",
+    "example": "Het histologisch onderzoek bevestigde dat het om een maligne tumor ging."
+},
+    {
+    "dutch": "Neurologisch deficit",
+    "english": "Neurological deficit",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Impairment of neurological function, such as weakness, numbness, or loss of coordination.",
+    "example": "De patiënt vertoonde een neurologisch deficit aan de linkerzijde van het lichaam."
+},
+    {
+    "dutch": "Nierinsufficiëntie",
+    "english": "Renal insufficiency",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition in which the kidneys are not functioning properly.",
+    "example": "Chronische nierinsufficiëntie kan leiden tot dialyse."
+},
+    {
+    "dutch": "Obstetrische complicaties",
+    "english": "Obstetric complications",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Problems that occur during pregnancy, labor, or delivery.",
+    "example": "Vroegtijdige herkenning van obstetrische complicaties is cruciaal voor de gezondheid van moeder en kind."
+},
+    {
+    "dutch": "Onderhoudsdosis",
+    "english": "Maintenance dose",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A dose of a drug that is administered regularly to maintain a desired therapeutic effect.",
+    "example": "De patiënt neemt een dagelijkse onderhoudsdosis van dit medicijn."
+},
+    {
+    "dutch": "Pathogeen",
+    "english": "Pathogen",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "A microorganism that can cause disease.",
+    "example": "Het laboratorium identificeerde de pathogeen verantwoordelijk voor de infectie."
+},
+    {
+    "dutch": "Perifere neuropathie",
+    "english": "Peripheral neuropathy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Damage to the peripheral nerves, often causing pain, numbness, and weakness in the hands and feet.",
+    "example": "Diabetes kan perifere neuropathie veroorzaken."
+},
+    {
+    "dutch": "Plaatsvervangend waarnemer",
+    "english": "Locum tenens",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A doctor who temporarily takes the place of another doctor who is absent.",
+    "example": "De plaatsvervangend waarnemer nam de taken van de huisarts over tijdens zijn vakantie."
+},
+    {
+    "dutch": "Preoperatief onderzoek",
+    "english": "Preoperative examination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A medical evaluation performed before surgery to assess a patient's health and identify any potential risks.",
+    "example": "De patiënt onderging een preoperatief onderzoek om te bepalen of hij geschikt was voor de operatie."
+},
+    {
+    "dutch": "Psychiatrische stoornis",
+    "english": "Psychiatric disorder",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A mental illness that affects a person's thoughts, feelings, and behavior.",
+    "example": "De patiënt werd doorverwezen naar een psychiater voor behandeling van zijn psychiatrische stoornis."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The use of radiation to treat cancer.",
+    "example": "De patiënt ondergaat radiotherapie om de tumor te bestrijden."
+},
+    {
+    "dutch": "Revalidatieprogramma",
+    "english": "Rehabilitation program",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A structured program designed to help patients regain lost function and improve their quality of life after an injury or illness.",
+    "example": "Na de operatie volgde de patiënt een intensief revalidatieprogramma."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory failure",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition in which the lungs are unable to adequately oxygenate the blood or remove carbon dioxide.",
+    "example": "Respiratoire insufficiëntie vereist vaak beademing."
+},
+    {
+    "dutch": "Screeningsonderzoek",
+    "english": "Screening test",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A test performed to detect diseases or conditions in people who have no symptoms.",
+    "example": "Vrouwen boven de 50 wordt aangeraden om deel te nemen aan het screeningsonderzoek naar borstkanker."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie van een infectie."
+},
+    {
+    "dutch": "Thoraxfoto",
+    "english": "Chest X-ray",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "An X-ray image of the chest used to diagnose lung and heart conditions.",
+    "example": "De thoraxfoto toonde een ontsteking in de longen."
+},
+    {
+    "dutch": "Tromboseprofylaxe",
+    "english": "Thromboprophylaxis",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "Measures taken to prevent the formation of blood clots.",
+    "example": "Na de operatie krijgt de patiënt tromboseprofylaxe."
+},
+    {
+    "dutch": "Urineanalyse",
+    "english": "Urinalysis",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A laboratory test that examines the appearance, concentration, and content of urine.",
+    "example": "De urineanalyse toonde een verhoogd aantal witte bloedcellen aan."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels.",
+    "example": "Bepaalde medicijnen veroorzaken vasodilatatie."
+},
+    {
+    "dutch": "Ventrikelfunctie",
+    "english": "Ventricular function",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The ability of the heart's ventricles to pump blood effectively.",
+    "example": "De echocardiografie werd uitgevoerd om de ventrikelfunctie te beoordelen."
+},
+    {
+    "dutch": "Wonddebridement",
+    "english": "Wound debridement",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal of dead, damaged, or infected tissue from a wound to promote healing.",
+    "example": "De wond werd gereinigd en onderging wonddebridement."
+},
+    {
+    "dutch": "Ziektegeschiedenis",
+    "english": "Medical history",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A record of a person's past and present health conditions, including illnesses, injuries, and treatments.",
+    "example": "Het is belangrijk om een complete ziektegeschiedenis van de patiënt te hebben."
+},
+    {
+    "dutch": "Zuurstofsaturatie",
+    "english": "Oxygen saturation",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "The percentage of hemoglobin in the blood that is saturated with oxygen.",
+    "example": "De zuurstofsaturatie van de patiënt was te laag en hij kreeg extra zuurstof toegediend."
+},
+    {
+    "dutch": "Psychosomatische klachten",
+    "english": "Psychosomatic complaints",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Physical symptoms caused or aggravated by mental factors such as stress or anxiety.",
+    "example": "De arts vermoedde dat de patiënt psychosomatische klachten had."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of taking a patient's medical history, including past illnesses, surgeries, and family history.",
+    "example": "De arts begon met de anamnese om een duidelijk beeld van de patiënt zijn gezondheid te krijgen."
+},
+    {
+    "dutch": "Pathologie",
+    "english": "Pathology",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The study of the causes and effects of diseases.",
+    "example": "Het pathologie rapport gaf uitsluitsel over de aard van de tumor."
+},
+    {
+    "dutch": "Echografie",
+    "english": "Ultrasonography",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A diagnostic imaging technique using ultrasound to visualize internal body structures.",
+    "example": "De echografie toonde geen afwijkingen aan de lever."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A chronic disease of the heart muscle.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure performed through small incisions using a laparoscope.",
+    "example": "De chirurg voerde een laparoscopie uit om de galblaas te verwijderen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The presence of two or more diseases or conditions in a patient at the same time.",
+    "example": "Comorbiditeit van diabetes en hart- en vaatziekten verhoogt het risico op complicaties."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The study of how the body processes a drug, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit medicijn is nog niet volledig bekend."
+},
+    {
+    "dutch": "Hematologie",
+    "english": "Hematology",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The study of blood and blood disorders.",
+    "example": "De hematologie afdeling onderzoekt bloedmonsters op afwijkingen."
+},
+    {
+    "dutch": "Neurologie",
+    "english": "Neurology",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The branch of medicine concerned with the study and treatment of disorders of the nervous system.",
+    "example": "Hij werd doorverwezen naar de neurologie voor verder onderzoek."
+},
+    {
+    "dutch": "Endocrinologie",
+    "english": "Endocrinology",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The study of the endocrine system and its hormones.",
+    "example": "De endocrinologie onderzoekt aandoeningen van de schildklier."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A prediction of the likely course of a disease or ailment.",
+    "example": "De prognose voor deze patiënt is onzeker."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A specific situation in which a drug, procedure, or surgery should not be used because it may be harmful to the person.",
+    "example": "Er is een contra-indicatie voor dit medicijn vanwege zijn hoge bloeddruk."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure to remove waste products and excess fluid from the blood when the kidneys are not functioning properly.",
+    "example": "Hij moet drie keer per week naar de dialyse."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The act of listening to internal sounds of the body, usually with a stethoscope.",
+    "example": "De arts verrichte auscultatie van de longen om de ademhaling te beoordelen."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Examining the body by feeling with the fingers or hands.",
+    "example": "Door palpatie kon de arts de grootte van de lever inschatten."
+},
+    {
+    "dutch": "Stent",
+    "english": "Stent",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A small mesh tube used to keep an artery open.",
+    "example": "Er werd een stent geplaatst om de vernauwing in het bloedvat op te heffen."
+},
+    {
+    "dutch": "Respirator",
+    "english": "Ventilator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A machine that helps a patient breathe when they are unable to breathe on their own.",
+    "example": "De patiënt werd aangesloten op een respirator om zijn ademhaling te ondersteunen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heartbeat.",
+    "example": "De defibrillator werd gebruikt om het hartritme te herstellen."
+},
+    {
+    "dutch": "Catheter",
+    "english": "Catheter",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A tube inserted into the body to drain or inject fluids.",
+    "example": "Er werd een catheter ingebracht om urine af te voeren."
+},
+    {
+    "dutch": "Monitor",
+    "english": "Monitor",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A device used to observe, measure, and record a patient's vital signs.",
+    "example": "De patiënt werd aangesloten op een monitor om zijn hartslag en bloeddruk te bewaken."
+},
+    {
+    "dutch": "Hyperglykemie",
+    "english": "Hyperglycemia",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "High blood sugar.",
+    "example": "Hyperglykemie kan leiden tot ernstige complicaties bij diabetici."
+},
+    {
+    "dutch": "Hypoglykemie",
+    "english": "Hypoglycemia",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Low blood sugar.",
+    "example": "Hypoglykemie kan optreden als gevolg van een overdosis insuline."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Shortness of breath.",
+    "example": "De patiënt klaagde over dyspneu bij inspanning."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by fluid accumulation in body tissues.",
+    "example": "Er was oedeem in zijn benen en enkels."
+},
+    {
+    "dutch": "Syncope",
+    "english": "Syncope",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Fainting or loss of consciousness.",
+    "example": "De patiënt had een episode van syncope tijdens het opstaan."
+},
+    {
+    "dutch": "Intraveneus",
+    "english": "Intravenous",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Administered into or taking place within a vein or veins.",
+    "example": "Het medicijn werd intraveneus toegediend."
+},
+    {
+    "dutch": "Subcutaan",
+    "english": "Subcutaneous",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Situated or applied under the skin.",
+    "example": "De insuline werd subcutaan geïnjecteerd."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal of a small tissue sample for examination.",
+    "example": "Er werd een biopsie genomen om de diagnose te bevestigen."
+},
+    {
+    "dutch": "Incubatietijd",
+    "english": "Incubation period",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The time between exposure to an infection and the appearance of the first symptoms.",
+    "example": "De incubatietijd van de griep is meestal 1 tot 4 dagen."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A period when the symptoms of a disease are reduced or disappear.",
+    "example": "De kanker is in remissie na de chemotherapie."
+},
+    {
+    "dutch": "Allergie",
+    "english": "Allergy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A hypersensitivity reaction to a particular substance.",
+    "example": "Hij heeft een allergie voor pinda's."
+},
+    {
+    "dutch": "Immuniteit",
+    "english": "Immunity",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The ability of the body to resist infection.",
+    "example": "Vaccinatie bevordert de immuniteit tegen infectieziekten."
+},
+    {
+    "dutch": "Anesthesie",
+    "english": "Anesthesia",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Loss of sensation or awareness, usually induced for medical procedures.",
+    "example": "De operatie werd uitgevoerd onder algehele anesthesie."
+},
+    {
+    "dutch": "Euthanasie",
+    "english": "Euthanasia",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The act of intentionally ending a life to relieve pain and suffering.",
+    "example": "Euthanasie is een gevoelig en complex onderwerp."
+},
+    {
+    "dutch": "Informed consent",
+    "english": "Informed consent",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor for treatment with full knowledge of the possible risks and benefits.",
+    "example": "De patiënt gaf informed consent voor de operatie na een uitgebreide uitleg."
+},
+    {
+    "dutch": "Terminal care",
+    "english": "Palliative care",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Care given to improve the quality of life of patients who have a serious or life-threatening disease.",
+    "example": "Palliatieve zorg is gericht op het verlichten van pijn en het bieden van comfort aan terminale patiënten."
+},
+    {
+    "dutch": "Radiologie",
+    "english": "Radiology",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The branch of medicine that uses imaging techniques to diagnose and treat diseases.",
+    "example": "De radiologie afdeling voert röntgenfoto's en MRI-scans uit."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The branch of medicine that deals with the care of elderly people.",
+    "example": "De geriatrie afdeling is gespecialiseerd in de behandeling van ouderen."
+},
+    {
+    "dutch": "Trauma",
+    "english": "Trauma",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A deeply distressing or disturbing experience.",
+    "example": "Het verkeersongeval veroorzaakte een ernstig trauma bij het slachtoffer."
+},
+    {
+    "dutch": "Vaccinatie",
+    "english": "Vaccination",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The administration of a vaccine to stimulate an immune response.",
+    "example": "Vaccinatie is belangrijk om infectieziekten te voorkomen."
+},
+    {
+    "dutch": "Revalidatie",
+    "english": "Rehabilitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of restoring someone to health or normal life through training and therapy.",
+    "example": "Na de operatie zal hij een periode van revalidatie nodig hebben."
+},
+    {
+    "dutch": "Psychiatrie",
+    "english": "Psychiatry",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The branch of medicine that deals with the diagnosis, treatment, and prevention of mental disorders.",
+    "example": "Hij werd doorverwezen naar de psychiatrie voor een beoordeling."
+},
+    {
+    "dutch": "Acute",
+    "english": "Acute",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Of abrupt onset, often intense.",
+    "example": "Hij had een acute blindedarmontsteking en moest direct geopereerd worden."
+},
+    {
+    "dutch": "Chronisch",
+    "english": "Chronic",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Persisting for a long time or constantly recurring.",
+    "example": "Chronische pijn kan een grote invloed hebben op de kwaliteit van leven."
+},
+    {
+    "dutch": "Genetica",
+    "english": "Genetics",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The study of heredity and the variation of inherited characteristics.",
+    "example": "Genetische factoren spelen een rol bij het ontstaan van deze ziekte."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition marked by a deficiency of red blood cells or of hemoglobin in the blood, resulting in pallor and weariness.",
+    "example": "De patiënt vertoonde symptomen van anemie, zoals vermoeidheid en kortademigheid."
+},
+    {
+    "dutch": "Hysterectomie",
+    "english": "Hysterectomy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the uterus.",
+    "example": "Na de diagnose van baarmoederkanker werd een hysterectomie uitgevoerd."
+},
+    {
+    "dutch": "Atrofie",
+    "english": "Atrophy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Gradual decline in effectiveness or vigor due to underuse or neglect.",
+    "example": "Lange immobilisatie kan leiden tot spieratrofie."
+},
+    {
+    "dutch": "Dementie",
+    "english": "Dementia",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A chronic or persistent disorder of the mental processes caused by brain disease or injury and marked by memory disorders, personality changes, and impaired reasoning.",
+    "example": "Alzheimer is een veel voorkomende vorm van dementie."
+},
+    {
+    "dutch": "Medicatiebewaking",
+    "english": "Medication monitoring",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of observing and tracking a patient's response to prescribed medications to ensure effectiveness and safety.",
+    "example": "Medicatiebewaking is essentieel om bijwerkingen tijdig te signaleren."
+},
+    {
+    "dutch": "Aandoening van de luchtwegen",
+    "english": "Respiratory condition",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A general term for a disease or disorder affecting the respiratory system.",
+    "example": "De patiënt heeft een chronische aandoening van de luchtwegen."
+},
+    {
+    "dutch": "Beademingsapparaat",
+    "english": "Ventilator",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A machine that provides mechanical ventilation by moving breathable air into and out of the lungs.",
+    "example": "De patiënt werd aangesloten op een beademingsapparaat na de operatie."
+},
+    {
+    "dutch": "Bloedstolling",
+    "english": "Blood coagulation",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The process by which blood changes from a liquid to a gel, forming a blood clot.",
+    "example": "Na de verwonding was er een snelle bloedstolling."
+},
+    {
+    "dutch": "Cardiopulmonale resuscitatie",
+    "english": "Cardiopulmonary resuscitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "An emergency procedure involving chest compressions and artificial ventilation to preserve brain function until further measures are taken to restore spontaneous circulation and breathing.",
+    "example": "De arts startte onmiddellijk met cardiopulmonale resuscitatie."
+},
+    {
+    "dutch": "Diagnostische procedure",
+    "english": "Diagnostic procedure",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A medical procedure performed to identify a disease or condition.",
+    "example": "De diagnostische procedure omvatte een MRI-scan en een bloedonderzoek."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time, using electrodes placed on the skin.",
+    "example": "Het elektrocardiogram toonde afwijkingen in het hartritme."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "The study of how the body processes a drug, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit medicijn is complex."
+},
+    {
+    "dutch": "Geriatrische patiënt",
+    "english": "Geriatric patient",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A patient who is elderly and requires specialized medical care.",
+    "example": "De geriatrische patiënt had meerdere comorbiditeiten."
+},
+    {
+    "dutch": "Histopathologisch onderzoek",
+    "english": "Histopathological examination",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The microscopic examination of tissue in order to study the manifestations of disease.",
+    "example": "Het histopathologisch onderzoek bevestigde de diagnose van kanker."
+},
+    {
+    "dutch": "Immunosuppressivum",
+    "english": "Immunosuppressant",
+    "level": "B2",
+    "category": "Medication",
+    "explanation": "A drug that suppresses the immune system.",
+    "example": "De patiënt kreeg een immunosuppressivum na de transplantatie."
+},
+    {
+    "dutch": "Juridische aansprakelijkheid",
+    "english": "Legal liability",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The state of being legally responsible for something.",
+    "example": "De arts was zich bewust van de juridische aansprakelijkheid bij deze procedure."
+},
+    {
+    "dutch": "Klinisch onderzoek",
+    "english": "Clinical trial",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A research study to evaluate a new medical treatment or device in humans.",
+    "example": "De patiënt nam deel aan een klinisch onderzoek voor een nieuwe medicatie."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a fiber-optic instrument is inserted through the abdominal wall to view the organs in the abdomen or permit a surgical procedure.",
+    "example": "De laparoscopie werd uitgevoerd om de galblaas te verwijderen."
+},
+    {
+    "dutch": "Medische ethiek",
+    "english": "Medical ethics",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The moral principles that apply to the practice of medicine.",
+    "example": "De discussie ging over de medische ethiek rond euthanasie."
+},
+    {
+    "dutch": "Neurodegeneratieve ziekte",
+    "english": "Neurodegenerative disease",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A disease characterized by the progressive loss of structure or function of neurons.",
+    "example": "De ziekte van Alzheimer is een neurodegeneratieve ziekte."
+},
+    {
+    "dutch": "Oncoloog",
+    "english": "Oncologist",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A doctor who specializes in the treatment of cancer.",
+    "example": "De patiënt werd doorverwezen naar een oncoloog."
+},
+    {
+    "dutch": "Pathogeen",
+    "english": "Pathogen",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A bacterium, virus, or other microorganism that can cause disease.",
+    "example": "Het pathogeen werd geïdentificeerd als een virus."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie is een veelgebruikte behandeling voor kanker."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "De patiënt ontwikkelde sepsis na de operatie."
+},
+    {
+    "dutch": "Trauma centrum",
+    "english": "Trauma center",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A hospital equipped and staffed to provide care for patients suffering from major traumatic injuries.",
+    "example": "Het slachtoffer werd direct naar het trauma centrum vervoerd."
+},
+    {
+    "dutch": "Urinekatheter",
+    "english": "Urinary catheter",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A tube inserted into the bladder to drain urine.",
+    "example": "De patiënt had een urinekatheter nodig na de operatie."
+},
+    {
+    "dutch": "Vasculaire aandoening",
+    "english": "Vascular disease",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "Any condition that affects the blood vessels.",
+    "example": "Roken is een belangrijke risicofactor voor vasculaire aandoeningen."
+},
+    {
+    "dutch": "Wonddebridement",
+    "english": "Wound debridement",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal of damaged tissue or foreign objects from a wound.",
+    "example": "Het wonddebridement werd uitgevoerd om infectie te voorkomen."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues, or organs from one species to another.",
+    "example": "Xenotransplantatie is een veelbesproken medisch onderwerp."
+},
+    {
+    "dutch": "Zenuwstelsel",
+    "english": "Nervous system",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The network of nerve cells and fibers which transmits nerve impulses between parts of the body.",
+    "example": "De ziekte tastte het zenuwstelsel aan."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "A collection of information about a patient's present and past health, including symptoms, illnesses, and treatments.",
+    "example": "De arts nam een uitgebreide anamnese af."
+},
+    {
+    "dutch": "Atrofie",
+    "english": "Atrophy",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "The wasting away of body tissue or an organ.",
+    "example": "Door gebrek aan beweging ontstond er atrofie van de spieren."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The removal of a small piece of tissue for examination under a microscope.",
+    "example": "Er werd een biopsie genomen om de diagnose te bevestigen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The presence of more than one disease or condition in a patient.",
+    "example": "De patiënt had een hoge comorbiditeit."
+},
+    {
+    "dutch": "Differentiaal diagnose",
+    "english": "Differential diagnosis",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar symptoms or signs.",
+    "example": "De arts overwoog verschillende differentiaal diagnoses."
+},
+    {
+    "dutch": "Edemateus",
+    "english": "Edematous",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "Characterized by edema, which is swelling caused by fluid accumulation.",
+    "example": "Het been was edemateus en pijnlijk."
+},
+    {
+    "dutch": "Fysiotherapie",
+    "english": "Physical therapy",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "Treatment to restore movement and function when someone is affected by injury, illness or disability.",
+    "example": "De patiënt volgde fysiotherapie om te herstellen van de blessure."
+},
+    {
+    "dutch": "Genetische predispositie",
+    "english": "Genetic predisposition",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "An increased likelihood of developing a particular disease based on a person's genetic makeup.",
+    "example": "Er is een genetische predispositie voor hart- en vaatziekten in de familie."
+},
+    {
+    "dutch": "Hyperglykemie",
+    "english": "Hyperglycemia",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "High blood sugar levels.",
+    "example": "De patiënt ervoer hyperglykemie na het eten van een zoete maaltijd."
+},
+    {
+    "dutch": "Invasieve procedure",
+    "english": "Invasive procedure",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A medical procedure that involves entering the body by cutting or puncturing the skin or inserting instruments into the body.",
+    "example": "Een operatie is een invasieve procedure."
+},
+    {
+    "dutch": "Kardiale aritmie",
+    "english": "Cardiac arrhythmia",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "An irregular heartbeat.",
+    "example": "De ECG toonde een kardiale aritmie aan."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "A procedure to collect a sample of cerebrospinal fluid by inserting a needle into the lumbar spine.",
+    "example": "De lumbaalpunctie werd uitgevoerd om een infectie uit te sluiten."
+},
+    {
+    "dutch": "Metabool syndroom",
+    "english": "Metabolic syndrome",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A cluster of conditions that occur together, increasing the risk of heart disease, stroke, and type 2 diabetes.",
+    "example": "De patiënt heeft kenmerken van het metabool syndroom."
+},
+    {
+    "dutch": "Nefrologie",
+    "english": "Nephrology",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "The branch of medicine concerned with the study and treatment of kidney diseases.",
+    "example": "De patiënt werd doorverwezen naar de afdeling nefrologie."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A condition in which bones become weak and brittle.",
+    "example": "Osteoporose kan leiden tot botbreuken."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "B2",
+    "category": "Professional",
+    "explanation": "Care focused on providing relief from the symptoms and stress of a serious illness.",
+    "example": "De patiënt ontving palliatieve zorg om de kwaliteit van leven te verbeteren."
+},
+    {
+    "dutch": "Rehabilitatie",
+    "english": "Rehabilitation",
+    "level": "B2",
+    "category": "Procedures",
+    "explanation": "The process of restoring someone to health or normal life through training and therapy after illness, injury or addiction.",
+    "example": "Na de operatie volgde een lang traject van rehabilitatie."
+},
+    {
+    "dutch": "Spierdystrofie",
+    "english": "Muscular dystrophy",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "A group of genetic diseases that cause progressive weakness and loss of muscle mass.",
+    "example": "Spierdystrofie is een progressieve ziekte."
+},
+    {
+    "dutch": "Trombose",
+    "english": "Thrombosis",
+    "level": "B2",
+    "category": "Diseases",
+    "explanation": "The formation of a blood clot inside a blood vessel, obstructing the flow of blood through the circulatory system.",
+    "example": "Diepe veneuze trombose is een ernstige aandoening."
+},
+    {
+    "dutch": "Ultrasound",
+    "english": "Ultrasound",
+    "level": "B2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses high-frequency sound waves to create images of internal body structures.",
+    "example": "Er werd een ultrasound gemaakt om de baarmoeder te bekijken."
+},
+    {
+    "dutch": "Vitaliteit",
+    "english": "Vitality",
+    "level": "B2",
+    "category": "Symptoms",
+    "explanation": "The state of being strong and active; energy.",
+    "example": "De patiënt toonde weinig vitaliteit."
+},
+    {
+    "dutch": "Wervelkolom",
+    "english": "Spinal column",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "The series of vertebrae extending from the skull to the pelvis that surrounds and protects the spinal cord.",
+    "example": "De wervelkolom werd onderzocht op afwijkingen."
+},
+    {
+    "dutch": "Zenuwimpuls",
+    "english": "Nerve impulse",
+    "level": "B2",
+    "category": "Anatomy",
+    "explanation": "An electrical signal that travels along a nerve fiber in response to a stimulus.",
+    "example": "De zenuwimpuls werd geblokkeerd door de aandoening."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall to gain access to the thoracic organs.",
+    "example": "De chirurg besloot tot een thoracotomie om de tumor in de long te verwijderen."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "Na het ongeluk werd bij de patiënt een pneumothorax geconstateerd."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Disease of the heart muscle, making it harder for the heart to pump blood to the rest of the body.",
+    "example": "Erfelijkheid speelt vaak een rol bij de ontwikkeling van cardiomyopathie."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a fiber-optic instrument is inserted through the abdominal wall to view the organs in the abdomen or to permit a variety of surgical procedures.",
+    "example": "De gynaecoloog heeft een laparoscopie uitgevoerd om de oorzaak van de pijn te achterhalen."
+},
+    {
+    "dutch": "Perfusie",
+    "english": "Perfusion",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The passage of fluid through the circulatory system or lymphatic system to an organ or a tissue, usually referring to the delivery of blood to a capillary bed in tissue.",
+    "example": "Een goede perfusie van de weefsels is essentieel voor een snel herstel na de operatie."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A test that uses sound waves to create a moving picture of the heart.",
+    "example": "De echocardiografie toonde een verdikking van de hartspier aan."
+},
+    {
+    "dutch": "Hematoom",
+    "english": "Hematoma",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A solid swelling of clotted blood within the tissues.",
+    "example": "Na de injectie ontstond er een groot hematoom op de arm van de patiënt."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Damage or dysfunction of one or more nerves, typically causing numbness, tingling, muscle weakness, and pain in the affected area.",
+    "example": "Diabetes kan leiden tot perifere neuropathie in de voeten."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A patient's account of their past illnesses, injuries, treatments, and other medical information.",
+    "example": "De arts nam een uitgebreide anamnese af om een goed beeld van de gezondheid van de patiënt te krijgen."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D.",
+    "example": "Regelmatige lichaamsbeweging en voldoende calcium kunnen osteoporose helpen voorkomen."
+},
+    {
+    "dutch": "Intraveneus",
+    "english": "Intravenous",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Administered or taking place within or by means of a vein.",
+    "example": "De medicatie werd intraveneus toegediend om een snelle werking te garanderen."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of all or part of an organ, tissue, or structure.",
+    "example": "De tumor in de darm moest door middel van een resectie worden verwijderd."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels, which decreases blood pressure.",
+    "example": "Sommige medicijnen veroorzaken vasodilatatie, waardoor de bloeddruk daalt."
+},
+    {
+    "dutch": "Bronchoscopie",
+    "english": "Bronchoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a thin tube with a light and camera at the end is used to look inside the airways.",
+    "example": "De bronchoscopie werd uitgevoerd om de oorzaak van de chronische hoest te achterhalen."
+},
+    {
+    "dutch": "Hypoxemie",
+    "english": "Hypoxemia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "An abnormally low concentration of oxygen in the blood.",
+    "example": "De patiënt vertoonde duidelijke tekenen van hypoxemie, zoals blauwe lippen en kortademigheid."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Medications that prevent blood clots from forming.",
+    "example": "Patiënten met atriumfibrilleren krijgen vaak anticoagulantia voorgeschreven."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of using one's hands to examine the body.",
+    "example": "Door palpatie kon de arts een zwelling in de buik van de patiënt voelen."
+},
+    {
+    "dutch": "Stenosering",
+    "english": "Stenosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The narrowing or constriction of a passage or orifice.",
+    "example": "De angiografie toonde een ernstige stenosering van de kransslagader aan."
+},
+    {
+    "dutch": "Morbiditeit",
+    "english": "Morbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The condition of being diseased; the rate of disease in a population.",
+    "example": "De morbiditeit van deze aandoening is relatief laag, maar de impact op de kwaliteit van leven kan groot zijn."
+},
+    {
+    "dutch": "Ambulanceprotocol",
+    "english": "Ambulance protocol",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A standardized set of procedures and guidelines followed by ambulance personnel when responding to medical emergencies.",
+    "example": "Het ambulanceprotocol schrijft voor dat bij een vermoeden van een hartinfarct direct een ECG wordt gemaakt."
+},
+    {
+    "dutch": "Articulatie",
+    "english": "Articulation (joint)",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The point at which two or more bones are joined together in the body.",
+    "example": "De fysiotherapeut behandelde de articulatie in de schouder om de beweeglijkheid te verbeteren."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heartbeat.",
+    "example": "De defibrillator werd gebruikt om het hart van de patiënt weer op gang te brengen."
+},
+    {
+    "dutch": "Atrofie",
+    "english": "Atrophy",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Gradual decline in effectiveness or vigor due to underuse or neglect; a wasting away of the body or of an organ or tissue.",
+    "example": "Langdurige immobilisatie kan leiden tot spieratrofie."
+},
+    {
+    "dutch": "Vasculitis",
+    "english": "Vasculitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of blood vessels.",
+    "example": "Vasculitis kan verschillende organen aantasten en diverse symptomen veroorzaken."
+},
+    {
+    "dutch": "Biopt",
+    "english": "Biopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "An examination of tissue removed from a living body for diagnostic study.",
+    "example": "Het biopt werd afgenomen om te bepalen of de tumor kwaadaardig was."
+},
+    {
+    "dutch": "Transplantatie",
+    "english": "Transplantation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The act of transferring cells, tissues, or organs from one site to another.",
+    "example": "Na de niertransplantatie moest de patiënt levenslang immunosuppressiva gebruiken."
+},
+    {
+    "dutch": "Diagnostiek",
+    "english": "Diagnostics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process of identifying a disease or disorder.",
+    "example": "De diagnostiek omvatte een reeks onderzoeken om de oorzaak van de klachten te achterhalen."
+},
+    {
+    "dutch": "Palliative zorg",
+    "english": "Palliative care",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people living with a serious illness. It is focused on providing relief from the symptoms and stress of the illness.",
+    "example": "Palliative zorg richt zich op het verbeteren van de kwaliteit van leven van de patiënt en zijn familie."
+},
+    {
+    "dutch": "Reanimatieprotocol",
+    "english": "Resuscitation protocol",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A standardized set of procedures for performing cardiopulmonary resuscitation (CPR) in a medical setting.",
+    "example": "Het reanimatieprotocol werd nauwgezet gevolgd om de overlevingskansen van de patiënt te maximaliseren."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that inhibit or prevent activity of the immune system.",
+    "example": "Na de orgaantransplantatie moest de patiënt levenslang immunosuppressiva gebruiken."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis.",
+    "example": "Door auscultatie hoorde de arts een abnormaal geruis in de longen."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "De patiënt onderging radiotherapie om de tumor te bestrijden."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The cause, set of causes, or manner of causation of a disease or condition.",
+    "example": "De etiologie van deze zeldzame aandoening is nog onbekend."
+},
+    {
+    "dutch": "Katheterisatie",
+    "english": "Catheterization",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of inserting a catheter into a body cavity, duct, or vessel.",
+    "example": "Na de operatie was katheterisatie noodzakelijk om de blaas te legen."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine that provides mechanical ventilation by moving breathable air into and out of the lungs, to deliver breaths to a patient who is physically unable to breathe, or breathing insufficiently.",
+    "example": "De patiënt werd aan de ventilator gelegd omdat hij niet meer zelfstandig kon ademen."
+},
+    {
+    "dutch": "Ischemie",
+    "english": "Ischemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "An inadequate blood supply to an organ or part of the body, especially the heart muscles.",
+    "example": "Ischemie van de hersenen kan leiden tot een beroerte."
+},
+    {
+    "dutch": "Epidemiologie",
+    "english": "Epidemiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The study and analysis of the distribution, patterns and determinants of health and disease conditions in defined populations.",
+    "example": "De epidemiologie van deze infectieziekte wordt nauwlettend gevolgd om verdere verspreiding te voorkomen."
+},
+    {
+    "dutch": "Traumahelikopter",
+    "english": "Trauma helicopter",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A helicopter equipped for emergency medical services, used to transport patients from trauma scenes to hospitals.",
+    "example": "De traumahelikopter landde snel op de plaats van het ongeluk om de zwaargewonde slachtoffers te vervoeren."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure used to collect a sample of cerebrospinal fluid (CSF) for diagnostic testing.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om een infectie in de hersenen uit te sluiten."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Chemical substances that transmit nerve impulses across a synapse.",
+    "example": "Een disbalans in neurotransmitters kan leiden tot psychische problemen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De comorbiditeit van diabetes en hartfalen vergroot de kans op complicaties."
+},
+    {
+    "dutch": "Hysterectomie",
+    "english": "Hysterectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the uterus.",
+    "example": "Na de bevalling werd een hysterectomie uitgevoerd vanwege ernstige bloedingen."
+},
+    {
+    "dutch": "Sedatie",
+    "english": "Sedation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The administration of a sedative drug to produce a state of calm or sleep.",
+    "example": "De patiënt kreeg sedatie voor de ingreep om hem rustiger te maken."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues.",
+    "example": "Chronische bloeding kan leiden tot anemie."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A process for removing waste and excess water from the blood and is used primarily to provide an artificial replacement for lost kidney function in people with renal failure.",
+    "example": "De patiënt met nierfalen moest drie keer per week dialyse ondergaan."
+},
+    {
+    "dutch": "Antipyretica",
+    "english": "Antipyretics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Medications used to reduce fever.",
+    "example": "Bij hoge koorts worden vaak antipyretica voorgeschreven."
+},
+    {
+    "dutch": "Cerebrovasculair accident",
+    "english": "Cerebrovascular accident (CVA)",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A stroke; damage to the brain from interruption of its blood supply.",
+    "example": "Na het cerebrovasculair accident had de patiënt moeite met spreken."
+},
+    {
+    "dutch": "ECMO (Extracorporele Membraan Oxygenatie)",
+    "english": "ECMO (Extracorporeal Membrane Oxygenation)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A technique of providing prolonged cardiac and respiratory support to persons whose lungs and heart are so severely damaged or diseased that they can no longer serve their function.",
+    "example": "In ernstige gevallen van longfalen kan ECMO worden ingezet als levensreddende behandeling."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of how the body absorbs, distributes, metabolizes, and excretes drugs.",
+    "example": "De farmacokinetiek van dit medicijn is complex, waardoor de dosering zorgvuldig moet worden afgestemd."
+},
+    {
+    "dutch": "Exacerbatie",
+    "english": "Exacerbation",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "An increase in the severity of a disease or its signs and symptoms.",
+    "example": "Tijdens de exacerbatie van de COPD had de patiënt veel last van kortademigheid."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A condition or factor that serves as a reason to withhold a certain medical treatment due to the harm that it would cause the patient.",
+    "example": "De aanwezigheid van een allergie voor penicilline is een contra-indicatie voor het gebruik van dit antibioticum."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The surgical removal of all or part of a structure, organ, or tissue.",
+    "example": "Na de diagnose van darmkanker was een resectie van het aangetaste segment noodzakelijk."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The cause, set of causes, or manner of causation of a disease or condition.",
+    "example": "De etiologie van de auto-immuunziekte is nog niet volledig begrepen."
+},
+    {
+    "dutch": "Perfusie",
+    "english": "Perfusion",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The passage of fluid through the circulatory system or lymphatic system to an organ or a tissue.",
+    "example": "Een goede perfusie van de hersenen is essentieel voor een normaal functioneren."
+},
+    {
+    "dutch": "Angiogenese",
+    "english": "Angiogenesis",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The formation of new blood vessels.",
+    "example": "Tumoren stimuleren angiogenese om hun groei te bevorderen."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure performed using a laparoscope.",
+    "example": "De laparoscopie werd uitgevoerd om de oorzaak van de buikpijn te achterhalen."
+},
+    {
+    "dutch": "Immunosuppressie",
+    "english": "Immunosuppression",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The reduction of the activation or efficacy of the immune system.",
+    "example": "Na de orgaantransplantatie is immunosupressie noodzakelijk om afstoting te voorkomen."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical History",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A patient's account of past events, symptoms, and medical history.",
+    "example": "Een grondige anamnese is cruciaal voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Pathofysiologie",
+    "english": "Pathophysiology",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The functional changes associated with disease or injury.",
+    "example": "De pathofysiologie van diabetes type 2 is complex en omvat insulineresistentie."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A test that uses sound waves to create a moving picture of the heart.",
+    "example": "De echocardiografie toonde aan dat er een vernauwing van de aortaklep was."
+},
+    {
+    "dutch": "Stent",
+    "english": "Stent",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A small mesh tube used to hold open narrowed or weak arteries.",
+    "example": "Er werd een stent geplaatst om de bloedtoevoer naar het hart te verbeteren."
+},
+    {
+    "dutch": "Atrofie",
+    "english": "Atrophy",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The wasting away of a body part or tissue.",
+    "example": "Lange inactiviteit kan leiden tot spieratrofie."
+},
+    {
+    "dutch": "Palpitatie",
+    "english": "Palpitation",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A noticeably rapid, strong, or irregular heartbeat.",
+    "example": "De patiënt klaagde over palpitaties na het drinken van koffie."
+},
+    {
+    "dutch": "Aspiratie",
+    "english": "Aspiration",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The action of drawing fluid or other substances by suction from a vessel or cavity.",
+    "example": "Er werd een aspiratie van de pleuravocht uitgevoerd om de diagnose te stellen."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Damage or dysfunction of one or more nerves, typically causing numbness, tingling, muscle weakness, and pain in the affected area.",
+    "example": "Diabetes kan leiden tot perifere neuropathie."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis.",
+    "example": "Auscultatie van de longen onthulde crepitaties."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The treatment of disease by the use of chemical substances, especially the treatment of cancer.",
+    "example": "De patiënt onderging chemotherapie als onderdeel van de kankerbehandeling."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor deze zeldzame vorm van kanker is helaas ongunstig."
+},
+    {
+    "dutch": "Homeostase",
+    "english": "Homeostasis",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The tendency toward a relatively stable equilibrium between interdependent elements, especially as maintained by physiological processes.",
+    "example": "Het lichaam streeft voortdurend naar homeostase."
+},
+    {
+    "dutch": "Emfyseem",
+    "english": "Emphysema",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which the air sacs of the lungs are damaged and enlarged, causing breathlessness.",
+    "example": "Roken is de belangrijkste oorzaak van emfyseem."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of separating molecules in solution by the difference in their rates of diffusion through a semipermeable membrane.",
+    "example": "Patiënten met nierfalen moeten dialyse ondergaan om hun bloed te zuiveren."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie van een infectie."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie kan worden gebruikt om kankercellen te vernietigen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De comorbiditeit van diabetes en hart- en vaatziekten verhoogt het risico op complicaties."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine that helps a person breathe when they are unable to breathe on their own.",
+    "example": "De patiënt werd aan de ventilator gelegd vanwege ademhalingsproblemen."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels.",
+    "example": "Bepaalde medicijnen veroorzaken vasodilatatie."
+},
+    {
+    "dutch": "Syncope",
+    "english": "Syncope",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Temporary loss of consciousness caused by a fall in blood pressure.",
+    "example": "De patiënt had een syncope-episode na het opstaan."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar Puncture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The procedure of taking fluid from the spine in the lower back through a hollow needle, usually done for diagnostic purposes.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om een infectie van het centrale zenuwstelsel uit te sluiten."
+},
+    {
+    "dutch": "Autopsie",
+    "english": "Autopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A postmortem examination to discover the cause of death or the extent of disease.",
+    "example": "De autopsie werd verricht om de doodsoorzaak vast te stellen."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The buildup of fats, cholesterol, and other substances in and on the artery walls.",
+    "example": "Atherosclerose kan leiden tot hart- en vaatziekten."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A device that gives a high-energy electric shock to the heart through the chest wall to someone who is in cardiac arrest.",
+    "example": "De defibrillator werd gebruikt om het hartritme te herstellen."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A condition characterized by an excess of watery fluid collecting in the cavities or tissues of the body.",
+    "example": "De patiënt had oedeem in de benen als gevolg van hartfalen."
+},
+    {
+    "dutch": "Resistentie",
+    "english": "Resistance",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The ability of an organism to withstand the effects of an antibiotic or other drug.",
+    "example": "De bacterie heeft resistentie ontwikkeld tegen meerdere antibiotica."
+},
+    {
+    "dutch": "Epidemiologie",
+    "english": "Epidemiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with the incidence, distribution, and possible control of diseases and other factors relating to health.",
+    "example": "Epidemiologie speelt een belangrijke rol bij het bestrijden van infectieziekten."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Linkerventrikelhypertrofie kan het gevolg zijn van hoge bloeddruk."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing.",
+    "example": "De patiënt presenteerde zich met dyspneu en hoesten."
+},
+    {
+    "dutch": "Transplantatie",
+    "english": "Transplantation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The act of transferring cells, tissues, or organs from one site to another.",
+    "example": "Na de levertransplantatie moest de patiënt immunosuppressiva gebruiken."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition that damages the optic nerve, often caused by abnormally high pressure in the eye.",
+    "example": "Glaucoom kan leiden tot blindheid als het niet wordt behandeld."
+},
+    {
+    "dutch": "Infusie",
+    "english": "Infusion",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The slow introduction of fluid into a vein or tissue.",
+    "example": "De patiënt kreeg een infusie met antibiotica."
+},
+    {
+    "dutch": "Consent",
+    "english": "Informed Consent",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor for treatment with full knowledge of the possible risks and benefits.",
+    "example": "De arts verkreeg informed consent van de patiënt voordat de operatie begon."
+},
+    {
+    "dutch": "Hysterectomie",
+    "english": "Hysterectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical operation to remove all or part of the uterus.",
+    "example": "Na aanhoudende bloedingen werd een hysterectomie uitgevoerd."
+},
+    {
+    "dutch": "Respirator",
+    "english": "Respirator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A device worn over the mouth and nose to prevent the inhalation of dangerous substances.",
+    "example": "Het medisch personeel droeg respirators tijdens de behandeling van de patiënt met een infectieziekte."
+},
+    {
+    "dutch": "Fractuur",
+    "english": "Fracture",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A break, rupture, or crack, especially in bone or cartilage.",
+    "example": "De röntgenfoto bevestigde een fractuur van het scheenbeen."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which an instrument is introduced into the body to give a view of its internal parts.",
+    "example": "Een endoscopie werd uitgevoerd om de maag te onderzoeken."
+},
+    {
+    "dutch": "Melanoom",
+    "english": "Melanoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A type of skin cancer that can spread to other organs in the body.",
+    "example": "Vroegtijdige detectie van een melanoom is essentieel voor een succesvolle behandeling."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The branch of pharmacology concerned with the movement of drugs within the body.",
+    "example": "Farmacokinetiek beschrijft hoe het lichaam het geneesmiddel absorbeert, distribueert, metaboliseert en elimineert."
+},
+    {
+    "dutch": "Hypoxie",
+    "english": "Hypoxia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Deficiency in the amount of oxygen reaching the tissues.",
+    "example": "Hypoxie kan leiden tot hersenbeschadiging."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of using one's hands to examine the body.",
+    "example": "Door palpatie van de buik werden er afwijkingen geconstateerd."
+},
+    {
+    "dutch": "Katheter",
+    "english": "Catheter",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A tube inserted into a vessel or cavity of the body to withdraw or inject fluid.",
+    "example": "Een urinekatheter werd ingebracht om de urine af te voeren."
+},
+    {
+    "dutch": "Angiogenese",
+    "english": "Angiogenesis",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The physiological process through which new blood vessels form from pre-existing vessels.",
+    "example": "De angiogenese werd geremd door de experimentele medicatie."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The removal of a small piece of tissue for examination under a microscope.",
+    "example": "Er werd een biopsie van de lever uitgevoerd om de diagnose te bevestigen."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A chronic disease of the heart muscle (myocardium), in which the heart muscle becomes abnormally enlarged, thickened, or stiffened.",
+    "example": "Dilatatieve cardiomyopathie is een van de meest voorkomende vormen van deze aandoening."
+},
+    {
+    "dutch": "Differentiële diagnose",
+    "english": "Differential diagnosis",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar signs or symptoms.",
+    "example": "De arts overwoog een brede differentiële diagnose om de oorzaak van de klachten te achterhalen."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A recording of the electrical activity of the heart.",
+    "example": "Het ECG toonde afwijkingen die verder onderzoek vereisten."
+},
+    {
+    "dutch": "Fysiotherapie",
+    "english": "Physiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Treatment to restore, maintain, and make the most of a patient's mobility, function, and well-being.",
+    "example": "Na de operatie startte de patiënt met intensieve fysiotherapie."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition that damages the optic nerve, often caused by abnormally high pressure in your eye.",
+    "example": "Glaucoom kan tot blindheid leiden als het niet op tijd wordt behandeld."
+},
+    {
+    "dutch": "Hematopoëse",
+    "english": "Hematopoiesis",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The production of blood cells and platelets, which occurs in the bone marrow.",
+    "example": "Chemotherapie kan de hematopoëse onderdrukken."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Patiënten na een transplantatie moeten immunosuppressiva innemen om afstoting te voorkomen."
+},
+    {
+    "dutch": "Jejunum",
+    "english": "Jejunum",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The middle section of the small intestine, lying between the duodenum and the ileum.",
+    "example": "De voedingsstoffen worden voornamelijk in het jejunum opgenomen."
+},
+    {
+    "dutch": "Klinische trial",
+    "english": "Clinical trial",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A research study in which human volunteers are assigned to interventions to evaluate the effects of those interventions on health outcomes.",
+    "example": "De nieuwe medicatie wordt momenteel in een klinische trial getest."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure used to examine the organs inside the abdomen.",
+    "example": "De laparoscopie toonde een ontsteking van de appendix aan."
+},
+    {
+    "dutch": "Metastase",
+    "english": "Metastasis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The spread of cancer cells from the primary tumor to other parts of the body.",
+    "example": "De metastase naar de lever maakte de prognose somber."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Chemical substances that transmit signals from a neuron to a target cell across a synapse.",
+    "example": "Serotonine en dopamine zijn belangrijke neurotransmitters in de hersenen."
+},
+    {
+    "dutch": "Oncogenese",
+    "english": "Oncogenesis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The process by which normal cells are transformed into cancer cells.",
+    "example": "De oncogenese wordt beïnvloed door verschillende genetische en omgevingsfactoren."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of examining the body using the hands and fingers.",
+    "example": "De arts verrichtte palpatie van de buik om de pijnlijke plekken te lokaliseren."
+},
+    {
+    "dutch": "Quarantaine",
+    "english": "Quarantine",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The separation and restriction of movement of people who have potentially been exposed to a contagious disease to see if they become sick.",
+    "example": "Vanwege de uitbraak van de ziekte werden verschillende gebieden in quarantaine geplaatst."
+},
+    {
+    "dutch": "Reanimatie",
+    "english": "Resuscitation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The act of reviving someone from unconsciousness or apparent death.",
+    "example": "De reanimatie werd gestart nadat de patiënt een hartstilstand had gekregen."
+},
+    {
+    "dutch": "Stethoscoop",
+    "english": "Stethoscope",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A medical instrument for listening to the sounds generated inside the body.",
+    "example": "De arts luisterde met de stethoscoop naar de longen van de patiënt."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a cut is made between the ribs to see and reach the lungs or other organs in the chest.",
+    "example": "De thoracotomie werd uitgevoerd om de tumor in de long te verwijderen."
+},
+    {
+    "dutch": "Ulceratie",
+    "english": "Ulceration",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The formation of an ulcer (an open sore) on the skin or mucous membrane.",
+    "example": "De diabetische voet vertoonde ernstige ulceratie."
+},
+    {
+    "dutch": "Ventilatie",
+    "english": "Ventilation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of moving air into and out of the lungs.",
+    "example": "De patiënt had mechanische ventilatie nodig vanwege ademhalingsproblemen."
+},
+    {
+    "dutch": "Wervelkolom",
+    "english": "Spine",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The bony structure made up of vertebrae that supports the body and protects the spinal cord.",
+    "example": "Een MRI-scan van de wervelkolom werd uitgevoerd om de oorzaak van de rugpijn te achterhalen."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues or organs from one species to another.",
+    "example": "Xenotransplantatie is een veelbelovende, maar ook controversiële behandeling."
+},
+    {
+    "dutch": "Ziektegeschiedenis",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A comprehensive record of a patient's past and present health status.",
+    "example": "De arts nam een uitgebreide ziektegeschiedenis af van de patiënt."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Patient history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The patient's account of their illness.",
+    "example": "De anamnese verschafte belangrijke informatie over de aard van de klachten."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Listening to the internal sounds of the body, usually using a stethoscope.",
+    "example": "Auscultatie van de longen toonde aanwijzingen voor pneumonie."
+},
+    {
+    "dutch": "Bradycardie",
+    "english": "Bradycardia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A slow heart rate, typically defined as below 60 beats per minute.",
+    "example": "De patiënt vertoonde bradycardie na de overdosering."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A condition or factor that serves as a reason to withhold a certain medical treatment due to the harm that it would cause the patient.",
+    "example": "Zwangerschap is een contra-indicatie voor dit medicijn."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A process for removing waste and excess water from the blood and is used primarily as an artificial replacement for lost kidney function.",
+    "example": "De patiënt met nierfalen moest regelmatig dialyse ondergaan."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube that has a light and a camera attached to it is used to view the inside of the body.",
+    "example": "De endoscopie toonde een poliep in de darm aan."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of the movement of drugs within the body, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit medicijn is complex en wordt beïnvloed door verschillende factoren."
+},
+    {
+    "dutch": "Genetica",
+    "english": "Genetics",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The study of genes, genetic variation, and heredity in living organisms.",
+    "example": "Genetisch onderzoek kan helpen om de oorzaak van de ziekte te achterhalen."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Hart hypertrofie kan een gevolg zijn van hoge bloeddruk."
+},
+    {
+    "dutch": "Incisie",
+    "english": "Incision",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical cut made in the skin or flesh.",
+    "example": "De incisie werd zorgvuldig gehecht na de operatie."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure to collect cerebrospinal fluid (CSF) for diagnostic testing.",
+    "example": "De lumbaalpunctie werd uitgevoerd om meningitis uit te sluiten."
+},
+    {
+    "dutch": "Morbiditeit",
+    "english": "Morbidity",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The condition of being diseased; the rate of disease in a population.",
+    "example": "De morbiditeit geassocieerd met deze ziekte is hoog."
+},
+    {
+    "dutch": "Nefrectomie",
+    "english": "Nephrectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of a kidney.",
+    "example": "Een nefrectomie was noodzakelijk vanwege de niertumor."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by fluid trapped in the body's tissues.",
+    "example": "De patiënt had oedeem in de benen als gevolg van hartfalen."
+},
+    {
+    "dutch": "Pathogeen",
+    "english": "Pathogen",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "A biological agent that causes disease or illness to its host.",
+    "example": "Het is belangrijk om de bron van de pathogeen te identificeren om de infectie te bestrijden."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Treatment of disease, especially cancer, with X-rays or similar forms of radiation.",
+    "example": "De patiënt onderging radiotherapie om de tumor te bestrijden."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection damages its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie van een infectie."
+},
+    {
+    "dutch": "Traumahelikopter",
+    "english": "Medical Emergency Helicopter",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A helicopter designed and equipped to transport medical personnel and equipment to accident sites, and to transport patients to hospitals.",
+    "example": "De traumahelikopter landde op de snelweg om de slachtoffers van het ongeluk naar het ziekenhuis te brengen."
+},
+    {
+    "dutch": "Urethritis",
+    "english": "Urethritis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of the urethra.",
+    "example": "De arts stelde vast dat de patiënt urethritis had als gevolg van een seksueel overdraagbare aandoening."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels.",
+    "example": "Vasodilatatie kan leiden tot een lagere bloeddruk."
+},
+    {
+    "dutch": "Weefselkweek",
+    "english": "Tissue culture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The growth of tissues or cells in an artificial medium separate from the parent organism.",
+    "example": "Weefselkweek wordt gebruikt om virussen te kweken voor onderzoek."
+},
+    {
+    "dutch": "Xylose-absorptietest",
+    "english": "Xylose absorption test",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A medical test used to diagnose malabsorption in the small intestine.",
+    "example": "De xylose-absorptietest werd uitgevoerd om te bepalen of de patiënt problemen had met de opname van voedingsstoffen."
+},
+    {
+    "dutch": "Zenuwstelsel",
+    "english": "Nervous system",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The network of nerve cells and fibers that transmits nerve impulses between parts of the body.",
+    "example": "Beschadiging van het zenuwstelsel kan leiden tot neurologische problemen."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process of taking a patient's medical history, including symptoms, previous illnesses, treatments, and family history.",
+    "example": "De arts begon de consultatie met een uitgebreide anamnese."
+},
+    {
+    "dutch": "Pathofysiologie",
+    "english": "Pathophysiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The study of the functional changes associated with disease or injury.",
+    "example": "Het begrijpen van de pathofysiologie van de aandoening is cruciaal voor de behandeling."
+},
+    {
+    "dutch": "Iatrogeen",
+    "english": "Iatrogenic",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Relating to illness caused by medical examination or treatment.",
+    "example": "De infectie was een iatrogene complicatie van de operatie."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A type of dialysis in which the peritoneum in a person's abdomen is used as the membrane through which fluid and dissolved substances are exchanged with the blood.",
+    "example": "Peritoneale dialyse kan thuis worden uitgevoerd, waardoor de patiënt meer vrijheid heeft."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure using a fiber-optic instrument inserted through the abdominal wall to view the organs or permit a variety of surgical procedures.",
+    "example": "De laparoscopie bevestigde de diagnose van endometriose."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A test that uses ultrasound to show the structure and function of the heart.",
+    "example": "De echocardiografie toonde een vernauwing van de aortaklep aan."
+},
+    {
+    "dutch": "Computertomografie (CT)",
+    "english": "Computed Tomography (CT)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses X-rays to create cross-sectional images of the body.",
+    "example": "De CT-scan onthulde een tumor in de lever."
+},
+    {
+    "dutch": "Magnetische Resonantie Imaging (MRI)",
+    "english": "Magnetic Resonance Imaging (MRI)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses strong magnetic fields and radio waves to generate detailed images of the organs and tissues in the body.",
+    "example": "De MRI werd gebruikt om de omvang van de hersenbeschadiging te bepalen."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time, using electrodes placed on the skin.",
+    "example": "Het ECG toonde een aritmie aan."
+},
+    {
+    "dutch": "Cerebrale ischemie",
+    "english": "Cerebral ischemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which there is insufficient blood flow to the brain to meet metabolic demand.",
+    "example": "Cerebrale ischemie kan leiden tot een beroerte."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A heart attack, caused by a blockage of blood flow to the heart muscle.",
+    "example": "De patiënt werd opgenomen met een acuut myocardinfarct."
+},
+    {
+    "dutch": "Chronische obstructieve longziekte (COPD)",
+    "english": "Chronic Obstructive Pulmonary Disease (COPD)",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A chronic inflammatory lung disease that causes obstructed airflow from the lungs.",
+    "example": "Roken is de belangrijkste risicofactor voor COPD."
+},
+    {
+    "dutch": "Oesofagus",
+    "english": "Esophagus",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The muscular tube connecting the throat to the stomach.",
+    "example": "De oesofagus transporteert voedsel van de mond naar de maag."
+},
+    {
+    "dutch": "Pancreas",
+    "english": "Pancreas",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "A gland located behind the stomach that produces enzymes and hormones, including insulin.",
+    "example": "De pancreas speelt een belangrijke rol in de spijsvertering en de regulatie van de bloedsuikerspiegel."
+},
+    {
+    "dutch": "Uterus",
+    "english": "Uterus",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The womb, the organ in the female reproductive system where offspring are conceived and incubated.",
+    "example": "De uterus is waar de baby zich tijdens de zwangerschap ontwikkelt."
+},
+    {
+    "dutch": "Aneurysma",
+    "english": "Aneurysm",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A localized, blood-filled balloon-like bulge in the wall of a blood vessel.",
+    "example": "Een aneurysma kan rupturen en levensbedreigend zijn."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A degenerative joint disease caused by the breakdown of cartilage.",
+    "example": "Artrose veroorzaakt pijn en stijfheid in de gewrichten."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A group of eye diseases that damage the optic nerve, often caused by abnormally high pressure inside the eye.",
+    "example": "Glaucoom kan leiden tot blindheid als het niet behandeld wordt."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Hart hypertrofie kan een gevolg zijn van hoge bloeddruk."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "De patiënt klaagde over dyspneu na inspanning."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by fluid trapped in your body's tissues.",
+    "example": "Oedeem in de benen kan een teken zijn van hartfalen."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of how the body processes a drug, including absorption, distribution, metabolism, and excretion (ADME).",
+    "example": "Kennis van farmacokinetiek is essentieel voor het doseren van medicijnen."
+},
+    {
+    "dutch": "Farmacodynamiek",
+    "english": "Pharmacodynamics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of the biochemical and physiological effects of drugs on the body or on microorganisms or parasites within or on the body.",
+    "example": "De farmacodynamiek van het medicijn beschrijft hoe het de bloeddruk verlaagt."
+},
+    {
+    "dutch": "Placebo-effect",
+    "english": "Placebo effect",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "A beneficial effect produced by a placebo drug or treatment, which cannot be attributed to the properties of the placebo itself, and must therefore be due to the patient's belief in that treatment.",
+    "example": "Het placebo-effect kan aanzienlijk zijn in klinische studies."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall.",
+    "example": "Een thoracotomie was noodzakelijk om de longtumor te verwijderen."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube with a camera is inserted into the rectum to examine the colon.",
+    "example": "De coloscopie werd uitgevoerd om de oorzaak van de bloeding te achterhalen."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The removal of a sample of tissue for examination under a microscope.",
+    "example": "De biopsie bevestigde de aanwezigheid van kankercellen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heart rhythm.",
+    "example": "De defibrillator werd gebruikt om de patiënt te reanimeren."
+},
+    {
+    "dutch": "Beademingsapparaat",
+    "english": "Ventilator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine that provides mechanical ventilation to patients who are unable to breathe on their own.",
+    "example": "De patiënt was afhankelijk van een beademingsapparaat vanwege ernstig longfalen."
+},
+    {
+    "dutch": "Dialyseapparaat",
+    "english": "Dialysis machine",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine that filters waste products from the blood of patients with kidney failure.",
+    "example": "De dialyseapparaat verwijderde effectief de toxinen uit het bloed."
+},
+    {
+    "dutch": "Alzheimer",
+    "english": "Alzheimer's disease",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A progressive disease that destroys memory and other important mental functions.",
+    "example": "De diagnose van Alzheimer werd gesteld op basis van cognitieve testen en hersenscans."
+},
+    {
+    "dutch": "Parkinson",
+    "english": "Parkinson's disease",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A progressive disorder of the nervous system that affects movement.",
+    "example": "Parkinson wordt gekenmerkt door tremoren, stijfheid en traagheid van bewegingen."
+},
+    {
+    "dutch": "Diabetes Mellitus",
+    "english": "Diabetes Mellitus",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A metabolic disorder characterized by high blood sugar levels over a prolonged period.",
+    "example": "Diabetes mellitus vereist een zorgvuldige controle van de bloedsuikerspiegel."
+},
+    {
+    "dutch": "Hepatomegalie",
+    "english": "Hepatomegaly",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "Abnormal enlargement of the liver.",
+    "example": "Hepatomegalie kan worden veroorzaakt door verschillende aandoeningen, waaronder infecties en leverziekte."
+},
+    {
+    "dutch": "Ascites",
+    "english": "Ascites",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The accumulation of fluid in the peritoneal cavity, causing abdominal swelling.",
+    "example": "Ascites is een veel voorkomende complicatie van levercirrose."
+},
+    {
+    "dutch": "Icterus",
+    "english": "Jaundice",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A yellowing of the skin and whites of the eyes, caused by a buildup of bilirubin in the blood.",
+    "example": "Icterus kan een teken zijn van een leveraandoening of galwegobstructie."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that prevent blood clots from forming.",
+    "example": "Anticoagulantia worden vaak voorgeschreven na een hartaanval of beroerte."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that suppress the immune system.",
+    "example": "Immunosuppressiva worden gebruikt om afstoting van getransplanteerde organen te voorkomen."
+},
+    {
+    "dutch": "Antidepressiva",
+    "english": "Antidepressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs used to treat depression and other mood disorders.",
+    "example": "Antidepressiva kunnen de stemming en het energieniveau verbeteren."
+},
+    {
+    "dutch": "Diafragma",
+    "english": "Diaphragm",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The dome-shaped muscle located at the base of the chest cavity that separates the chest from the abdomen and plays a major role in breathing.",
+    "example": "Het diafragma trekt samen om lucht in de longen te laten stromen."
+},
+    {
+    "dutch": "Milt",
+    "english": "Spleen",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "An organ located in the upper left abdomen that filters blood and helps fight infection.",
+    "example": "De milt speelt een rol in het immuunsysteem en de afbraak van rode bloedcellen."
+},
+    {
+    "dutch": "Nieren",
+    "english": "Kidneys",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Two bean-shaped organs located in the lower back that filter waste products from the blood and produce urine.",
+    "example": "De nieren spelen een cruciale rol in de regulatie van de vocht- en elektrolytenbalans."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people with serious illnesses. It focuses on providing relief from the symptoms and stress of a serious illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven van patiënten met een ongeneeslijke ziekte."
+},
+    {
+    "dutch": "Evidence-based medicine",
+    "english": "Evidence-based medicine",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The conscientious, explicit, and judicious use of current best evidence in making decisions about the care of individual patients.",
+    "example": "De behandeling is gebaseerd op evidence-based medicine en de nieuwste wetenschappelijke inzichten."
+},
+    {
+    "dutch": "Multidisciplinair overleg (MDO)",
+    "english": "Multidisciplinary Team (MDT) meeting",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A meeting involving different healthcare professionals to discuss and plan a patient's care.",
+    "example": "Tijdens het MDO werd de behandelstrategie voor de patiënt besproken."
+},
+    {
+    "dutch": "Revalidatie",
+    "english": "Rehabilitation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of helping someone recover from an illness or injury so they can regain their abilities and independence.",
+    "example": "Na de operatie volgde een intensief revalidatieprogramma."
+},
+    {
+    "dutch": "Vasculitis",
+    "english": "Vasculitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of blood vessels.",
+    "example": "Vasculitis kan verschillende organen aantasten."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The cause or set of causes of a disease or condition.",
+    "example": "De etiologie van deze zeldzame aandoening is nog onbekend."
+},
+    {
+    "dutch": "Remissie",
+    "english": "Remission",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A period when the symptoms of a disease are reduced or have disappeared.",
+    "example": "Na de behandeling is de kanker in remissie gegaan."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A patient's account of past medical events, including illnesses, surgeries, and treatments.",
+    "example": "De arts nam een gedetailleerde anamnese af om de oorzaak van de klachten te achterhalen."
+},
+    {
+    "dutch": "Atherosclerose",
+    "english": "Atherosclerosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A disease in which plaque builds up inside your arteries.",
+    "example": "Atherosclerose kan leiden tot ernstige cardiovasculaire problemen, zoals een hartinfarct."
+},
+    {
+    "dutch": "Biopt",
+    "english": "Biopsy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The removal of a small piece of tissue for examination under a microscope.",
+    "example": "Na het biopt werd het weefsel naar het laboratorium gestuurd voor analyse."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "A specific situation in which a drug, procedure, or surgery should not be used because it may be harmful to the person.",
+    "example": "Zwangerschap is een contra-indicatie voor het gebruik van dit medicijn."
+},
+    {
+    "dutch": "Decompensatie",
+    "english": "Decompensation",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The failure of an organ to maintain its function, often in the context of heart or lung failure.",
+    "example": "Bij acute decompensatie van het hart is onmiddellijke medische interventie noodzakelijk."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The cause or set of causes of a disease or condition.",
+    "example": "De etiologie van deze zeldzame aandoening is nog onbekend."
+},
+    {
+    "dutch": "Fysiotherapie",
+    "english": "Physiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Treatment to restore, maintain, and make the most of a patient’s mobility, function, and well-being.",
+    "example": "Na de operatie kreeg de patiënt fysiotherapie om de mobiliteit te herstellen."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A group of eye diseases that damage the optic nerve, often caused by abnormally high pressure inside your eye.",
+    "example": "Glaucoom kan tot blindheid leiden als het niet tijdig wordt behandeld."
+},
+    {
+    "dutch": "Hematoom",
+    "english": "Hematoma",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A localized collection of blood outside the blood vessels, usually in the form of a bruise.",
+    "example": "Na de injectie ontstond er een klein hematoom op de arm."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body’s immune system.",
+    "example": "Patiënten na een transplantatie moeten levenslang immunosuppressiva gebruiken."
+},
+    {
+    "dutch": "Jejunum",
+    "english": "Jejunum",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The part of the small intestine between the duodenum and ileum.",
+    "example": "Het jejunum speelt een cruciale rol in de absorptie van voedingsstoffen."
+},
+    {
+    "dutch": "Karyotype",
+    "english": "Karyotype",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The number and appearance of chromosomes in the nucleus of a eukaryotic cell.",
+    "example": "Het karyotype werd geanalyseerd om chromosomale afwijkingen op te sporen."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical diagnostic procedure used to examine the organs inside the abdomen.",
+    "example": "De laparoscopie werd uitgevoerd om de oorzaak van de buikpijn te achterhalen."
+},
+    {
+    "dutch": "Maligniteit",
+    "english": "Malignancy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The state or condition of being malignant.",
+    "example": "De diagnose maligniteit vereist een agressieve behandeling."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Chemical messengers that transmit signals across a chemical synapse.",
+    "example": "Neurotransmitters spelen een belangrijke rol bij de regulatie van stemming en gedrag."
+},
+    {
+    "dutch": "Oesofagus",
+    "english": "Esophagus",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The muscular tube that carries food and liquids from the throat to the stomach.",
+    "example": "De oesofagus vertoonde tekenen van ontsteking."
+},
+    {
+    "dutch": "Palpitatie",
+    "english": "Palpitation",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A noticeably rapid, strong, or irregular heartbeat.",
+    "example": "De patiënt klaagde over palpitaties en kortademigheid."
+},
+    {
+    "dutch": "Quarantaine",
+    "english": "Quarantine",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A strict isolation imposed to prevent the spread of disease.",
+    "example": "Vanwege het besmettingsgevaar werd de patiënt in quarantaine geplaatst."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie is een effectieve behandeling voor bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body’s response to an infection damages its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie die snel behandeld moet worden."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall.",
+    "example": "Een thoracotomie was noodzakelijk om de tumor te verwijderen."
+},
+    {
+    "dutch": "Ulcera",
+    "english": "Ulcers",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A sore that develops on the lining of the stomach, small intestine, or esophagus.",
+    "example": "Langdurig gebruik van NSAID's kan leiden tot ulcera."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine that helps patients breathe when they cannot breathe on their own.",
+    "example": "De patiënt werd aan de ventilator gelegd vanwege ademhalingsproblemen."
+},
+    {
+    "dutch": "Wervelkolom",
+    "english": "Spine",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The bony structure extending from the skull to the pelvis, providing support and protecting the spinal cord.",
+    "example": "De wervelkolom bestond uit zeven halswervels, twaalf borstwervels en vijf lendenwervels."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues, or organs from one species to another.",
+    "example": "Xenotransplantatie biedt mogelijk een oplossing voor het tekort aan donororganen."
+},
+    {
+    "dutch": "Zenuwstelsel",
+    "english": "Nervous system",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The network of nerve cells and fibers which transmits nerve impulses between parts of the body.",
+    "example": "Het zenuwstelsel is essentieel voor de communicatie tussen de hersenen en de rest van het lichaam."
+},
+    {
+    "dutch": "Analgesie",
+    "english": "Analgesia",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The inability to feel pain.",
+    "example": "Epidurale analgesie wordt vaak gebruikt tijdens de bevalling."
+},
+    {
+    "dutch": "Ascites",
+    "english": "Ascites",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The accumulation of fluid in the peritoneal cavity, causing abdominal swelling.",
+    "example": "Ascites kan een symptoom zijn van levercirrose."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Disease of the heart muscle that makes it harder for the heart to pump blood to the rest of the body.",
+    "example": "Cardiomyopathie kan leiden tot hartfalen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heartbeat.",
+    "example": "De defibrillator werd gebruikt om het hartritme te herstellen tijdens de reanimatie."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube with a camera at the end is used to view the inside of the body.",
+    "example": "De endoscopie werd uitgevoerd om de oorzaak van de maagklachten te onderzoeken."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "The study of what the body does to a drug, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit medicijn is uitgebreid onderzocht."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine or social science dealing with the health and care of old people.",
+    "example": "Geriatrie is een belangrijk specialisme gezien de vergrijzing van de bevolking."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Hart hypertrofie kan een gevolg zijn van langdurige hoge bloeddruk."
+},
+    {
+    "dutch": "Incontinentie",
+    "english": "Incontinence",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The involuntary leakage of urine or feces.",
+    "example": "Stress-incontinentie is een veelvoorkomend probleem bij vrouwen na de bevalling."
+},
+    {
+    "dutch": "Katheter",
+    "english": "Catheter",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A thin tube inserted into the body to drain or inject fluids.",
+    "example": "Een urinekatheter werd ingebracht om de blaas te ledigen."
+},
+    {
+    "dutch": "Lymfoedeem",
+    "english": "Lymphedema",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Swelling in an arm or leg caused by a blockage in the lymphatic system.",
+    "example": "Lymfoedeem kan ontstaan na de verwijdering van lymfeklieren."
+},
+    {
+    "dutch": "Metastase",
+    "english": "Metastasis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The spread of cancer cells from the primary site to other parts of the body.",
+    "example": "De diagnose metastase betekent dat de kanker zich heeft verspreid naar andere organen."
+},
+    {
+    "dutch": "Nosocomiaal",
+    "english": "Nosocomial",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Relating to a disease originating in a hospital.",
+    "example": "Een nosocomiale infectie kan ernstige complicaties veroorzaken."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which bones become weak and brittle.",
+    "example": "Osteoporose verhoogt het risico op botbreuken."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Care that focuses on providing relief from the symptoms and stress of a serious illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven voor patiënten met een ongeneeslijke ziekte."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The surgical removal of all or part of a tissue, organ, or body part.",
+    "example": "De resectie van de tumor was succesvol."
+},
+    {
+    "dutch": "Spirometrie",
+    "english": "Spirometry",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A common office test used to assess how well your lungs work by measuring how much air you inhale, how much you exhale and how quickly you exhale.",
+    "example": "Spirometrie werd uitgevoerd om de longfunctie te meten."
+},
+    {
+    "dutch": "Trombose",
+    "english": "Thrombosis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The formation of a blood clot inside a blood vessel, obstructing the flow of blood through the circulatory system.",
+    "example": "Diep veneuze trombose kan leiden tot een longembolie."
+},
+    {
+    "dutch": "Urogenitaal",
+    "english": "Urogenital",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "Relating to the urinary and genital organs.",
+    "example": "De urogenitale tractus kan worden aangetast door infecties."
+},
+    {
+    "dutch": "Viscositeit",
+    "english": "Viscosity",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The state of being thick, sticky, and semifluid in consistency, due to internal friction.",
+    "example": "De viscositeit van het bloed was verhoogd."
+},
+    {
+    "dutch": "Wonddehiscentie",
+    "english": "Wound dehiscence",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A surgical complication in which a wound reopens along the surgical suture.",
+    "example": "Wonddehiscentie trad op enkele dagen na de operatie."
+},
+    {
+    "dutch": "Ziekteverloop",
+    "english": "Disease course",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The pattern of development of a disease, including its onset, progression, and outcome.",
+    "example": "Het ziekteverloop kan sterk variëren per individu."
+},
+    {
+    "dutch": "Angiogenese",
+    "english": "Angiogenesis",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The physiological process through which new blood vessels form from pre-existing vessels.",
+    "example": "Remming van angiogenese kan een effectieve strategie zijn in de behandeling van bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Osteoporoseprofylaxe",
+    "english": "Osteoporosis prophylaxis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Preventive measures taken to reduce the risk of developing osteoporosis.",
+    "example": "Osteoporoseprofylaxe omvat een dieet rijk aan calcium en vitamine D, evenals gewichtdragende oefeningen."
+},
+    {
+    "dutch": "Resistentiepatroon",
+    "english": "Resistance pattern",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The specific profile of antibiotic resistances shown by a bacterial strain.",
+    "example": "Het resistentiepatroon van de bacterie vereist een alternatieve behandeling met een ander antibioticum."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the gallbladder through small incisions in the abdomen.",
+    "example": "De patiënt onderging een laparoscopische cholecystectomie om galstenen te verwijderen."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A diagnostic test that uses ultrasound waves to create a moving picture of the heart.",
+    "example": "Echocardiografie werd uitgevoerd om de hartfunctie te beoordelen na het myocardinfarct."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The patient's account of their medical history, including symptoms, past illnesses, and treatments.",
+    "example": "Een grondige anamnese is essentieel voor het stellen van een juiste diagnose."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "A specific situation in which a drug, procedure, or surgery should not be used because it may be harmful to the patient.",
+    "example": "Bekende allergie voor penicilline is een contra-indicatie voor het voorschrijven van amoxicilline."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "Patiënten met comorbiditeit hebben vaak een complexere behandeling nodig."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Examination of the body using the hands to feel for abnormalities.",
+    "example": "Door palpatie van de buik kon de arts een vergrote lever vaststellen."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase the risk of stroke, heart failure and other heart-related complications.",
+    "example": "Atriumfibrilleren werd gediagnosticeerd na een ECG en de patiënt kreeg antistollingsmedicatie."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C1",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels, which decreases blood pressure.",
+    "example": "Vasodilatatie kan worden veroorzaakt door bepaalde medicijnen of warmte."
+},
+    {
+    "dutch": "Bradycardie",
+    "english": "Bradycardia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A slow heart rate, typically defined as below 60 beats per minute.",
+    "example": "De patiënt klaagde over duizeligheid en bleek een bradycardie te hebben."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A prediction of the likely course of a medical condition.",
+    "example": "De prognose voor patiënten met dit type kanker is de laatste jaren aanzienlijk verbeterd."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, with chemical substances.",
+    "example": "De patiënt onderging chemotherapie om de tumor te verkleinen."
+},
+    {
+    "dutch": "Diagnostiek",
+    "english": "Diagnostics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The process of identifying a disease or condition by its signs and symptoms.",
+    "example": "Na uitgebreide diagnostiek werd de oorzaak van de buikpijn vastgesteld."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C1",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Na de transplantatie kreeg de patiënt immunosuppressiva om afstoting te voorkomen."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A heart attack, occurring when blood flow to a part of the heart is blocked for a prolonged period of time.",
+    "example": "De patiënt werd opgenomen met een acuut myocardinfarct."
+},
+    {
+    "dutch": "Perifeer veneus infuus",
+    "english": "Peripheral venous catheter",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A small plastic tube inserted into a peripheral vein, typically in the arm or hand, to administer fluids or medications.",
+    "example": "Er werd een perifeer veneus infuus geplaatst om de patiënt te hydrateren."
+},
+    {
+    "dutch": "Hematoom",
+    "english": "Hematoma",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A localized collection of blood outside the blood vessels, usually in a clotted form.",
+    "example": "Na de val ontwikkelde de patiënt een groot hematoom op het been."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Damage or dysfunction of one or more nerves, typically causing numbness, tingling, muscle weakness, and pain in the affected area.",
+    "example": "Diabetische neuropathie is een veel voorkomende complicatie van diabetes."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people with serious illnesses, focused on providing relief from the symptoms and stress of the illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven van patiënten met een ongeneeslijke ziekte."
+},
+    {
+    "dutch": "Reanimatieprotocol",
+    "english": "Resuscitation protocol",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A standardized set of procedures and guidelines followed during resuscitation efforts.",
+    "example": "Het reanimatieprotocol werd strikt nageleefd tijdens de noodsituatie."
+},
+    {
+    "dutch": "Spirometrie",
+    "english": "Spirometry",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A common office test used to assess how well your lungs work by measuring how much air you inhale, how much you exhale and how quickly you exhale.",
+    "example": "Spirometrie werd gebruikt om de longfunctie van de patiënt te beoordelen."
+},
+    {
+    "dutch": "Tromboseprofylaxe",
+    "english": "Thrombosis prophylaxis",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Preventive measures taken to reduce the risk of developing blood clots (thrombosis).",
+    "example": "Tromboseprofylaxe is essentieel na een operatie om diepe veneuze trombose te voorkomen."
+},
+    {
+    "dutch": "Uitslag",
+    "english": "Rash",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A change of the human skin which affects its color, appearance, or texture.",
+    "example": "De patiënt vertoonde een rode uitslag over het hele lichaam."
+},
+    {
+    "dutch": "Vasovagale syncope",
+    "english": "Vasovagal syncope",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Fainting that occurs when your body overreacts to certain triggers, such as the sight of blood or extreme emotional distress.",
+    "example": "Vasovagale syncope is een veelvoorkomende oorzaak van flauwvallen."
+},
+    {
+    "dutch": "Wonddebridement",
+    "english": "Wound debridement",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The removal of dead, damaged, or infected tissue from a wound to promote healing.",
+    "example": "Wonddebridement was noodzakelijk om infectie te voorkomen en genezing te bevorderen."
+},
+    {
+    "dutch": "Ziektegeschiedenis",
+    "english": "Medical history",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A record of a patient's past and present health conditions, treatments, and medications.",
+    "example": "Het is belangrijk om een accurate ziektegeschiedenis van de patiënt te verkrijgen."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues.",
+    "example": "De patiënt werd gediagnosticeerd met anemie en kreeg ijzersupplementen voorgeschreven."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube that has a light and a camera on one end is used to view the inside of the body.",
+    "example": "Een endoscopie werd uitgevoerd om de oorzaak van de buikklachten te onderzoeken."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine that focuses on the health and well-being of older adults.",
+    "example": "Geriatrie is een belangrijk specialisme gezien de vergrijzing van de bevolking."
+},
+    {
+    "dutch": "Herseninfarct",
+    "english": "Cerebral infarction",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Death of brain tissue due to a lack of blood supply.",
+    "example": "De patiënt werd met spoed opgenomen na een herseninfarct."
+},
+    {
+    "dutch": "Ischemie",
+    "english": "Ischemia",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "An inadequate blood supply to an organ or part of the body, especially the heart muscles.",
+    "example": "Ischemie van de onderste extremiteiten kan leiden tot claudicatio intermittens."
+},
+    {
+    "dutch": "Klinische studie",
+    "english": "Clinical trial",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "A research study to evaluate the safety and effectiveness of a new medical treatment, drug, or device.",
+    "example": "De patiënt werd gevraagd deel te nemen aan een klinische studie voor een nieuw medicijn."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A procedure in which a needle is inserted into the lower back to collect cerebrospinal fluid for diagnostic testing.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om meningitis uit te sluiten."
+},
+    {
+    "dutch": "Maligniteit",
+    "english": "Malignancy",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The presence of cancerous cells that have the ability to spread to other sites in the body (metastasize) or to invade and destroy tissues.",
+    "example": "Na biopsie werd een maligniteit vastgesteld in de borst."
+},
+    {
+    "dutch": "Nefrectomie",
+    "english": "Nephrectomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "Surgical removal of a kidney.",
+    "example": "De patiënt onderging een nefrectomie vanwege een niertumor."
+},
+    {
+    "dutch": "Oncologie",
+    "english": "Oncology",
+    "level": "C1",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with the prevention, diagnosis, and treatment of cancer.",
+    "example": "De patiënt werd doorverwezen naar de afdeling oncologie voor verdere behandeling."
+},
+    {
+    "dutch": "Peritonitis",
+    "english": "Peritonitis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "Inflammation of the peritoneum, the membrane lining the abdominal cavity.",
+    "example": "Een geperforeerde appendix kan leiden tot peritonitis."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie werd ingezet om de tumor te bestrijden."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "De patiënt ontwikkelde sepsis na een infectie."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which an incision is made in the chest wall to access the organs inside.",
+    "example": "Een thoracotomie was noodzakelijk om de bloeding in de long te stoppen."
+},
+    {
+    "dutch": "Urolithiasis",
+    "english": "Urolithiasis",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "The presence of stones in the urinary tract.",
+    "example": "De patiënt werd behandeld voor urolithiasis met niersteenvergruizing."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C1",
+    "category": "Equipment",
+    "explanation": "A machine used to assist or replace spontaneous breathing.",
+    "example": "De patiënt werd aan de ventilator gelegd vanwege ademhalingsfalen."
+},
+    {
+    "dutch": "Withdrawal verschijnselen",
+    "english": "Withdrawal symptoms",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A group of symptoms that occur when a person stops using a substance or medication to which they have become addicted or dependent.",
+    "example": "Na het stoppen met de medicatie kreeg de patiënt last van withdrawal verschijnselen."
+},
+    {
+    "dutch": "Xerostomie",
+    "english": "Xerostomia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "The subjective feeling of dry mouth, which may be associated with a reduced salivary flow.",
+    "example": "Bestraling van het hoofd-halsgebied kan leiden tot xerostomie."
+},
+    {
+    "dutch": "Ziekte van Parkinson",
+    "english": "Parkinson's disease",
+    "level": "C1",
+    "category": "Diseases",
+    "explanation": "A progressive disorder of the nervous system that affects movement.",
+    "example": "De diagnose Ziekte van Parkinson werd gesteld na neurologisch onderzoek."
+},
+    {
+    "dutch": "Hypoxie",
+    "english": "Hypoxia",
+    "level": "C1",
+    "category": "Symptoms",
+    "explanation": "A condition in which the body or a region of the body is deprived of adequate oxygen supply at the tissue level.",
+    "example": "Door de longembolie ontstond er hypoxie."
+},
+    {
+    "dutch": "Gerefereerde pijn",
+    "english": "Referred pain",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Pain felt in a part of the body other than its actual source.",
+    "example": "De patiënt klaagde over gerefereerde pijn in de linkerarm, afkomstig van het hart."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A type of dialysis that uses the peritoneum in a patient's abdomen as the membrane through which fluid and dissolved substances are exchanged with the blood.",
+    "example": "Na de diagnose van nierfalen werd peritoneale dialyse gestart om de nierfunctie te vervangen."
+},
+    {
+    "dutch": "High-flow nasalecannule (HFNC)",
+    "english": "High-flow nasal cannula (HFNC)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A type of respiratory support that delivers a high flow of heated and humidified oxygen through nasal prongs.",
+    "example": "De patiënt met acute respiratoire insufficiëntie werd behandeld met een high-flow nasalecannule."
+},
+    {
+    "dutch": "De sinus caroticus",
+    "english": "Carotid sinus",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A dilated area at the bifurcation of the common carotid artery containing baroreceptors involved in blood pressure regulation.",
+    "example": "Stimulatie van de sinus caroticus kan leiden tot een verlaging van de hartslag en bloeddruk."
+},
+    {
+    "dutch": "Systemische lupus erythematosus (SLE)",
+    "english": "Systemic Lupus Erythematosus (SLE)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic autoimmune disease that can affect many different body systems, including joints, skin, kidneys, blood cells, brain, heart and lungs.",
+    "example": "Systemische lupus erythematosus vereist een multidisciplinaire aanpak vanwege de variëteit aan symptomen."
+},
+    {
+    "dutch": "Interprofessionele samenwerking",
+    "english": "Interprofessional collaboration",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Collaborative practice where healthcare professionals from different disciplines work together to provide comprehensive patient care.",
+    "example": "Interprofessionele samenwerking is essentieel voor het verbeteren van de kwaliteit van zorg voor complexe patiënten."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Na de transplantatie werden immunosuppressiva voorgeschreven om afstoting van het orgaan te voorkomen."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Examining the body by feeling with the fingers and hands.",
+    "example": "Door palpatie van de buik kon de arts een vergrote lever vaststellen."
+},
+    {
+    "dutch": "Continu nierfunctievervangende therapie (CRRT)",
+    "english": "Continuous Renal Replacement Therapy (CRRT)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A type of dialysis that is used to treat acute kidney injury by continuously filtering the blood over a prolonged period.",
+    "example": "Bij patiënten met acuut nierfalen op de intensive care is continue nierfunctievervangende therapie vaak noodzakelijk."
+},
+    {
+    "dutch": "De vena cava inferior",
+    "english": "Inferior vena cava",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A large vein that carries deoxygenated blood from the lower and middle body into the right atrium of the heart.",
+    "example": "Een trombose in de vena cava inferior kan leiden tot ernstige complicaties, zoals longembolie."
+},
+    {
+    "dutch": "Multipele sclerose (MS)",
+    "english": "Multiple Sclerosis (MS)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic, typically progressive disease involving damage to the myelin sheaths of nerve cells in the brain and spinal cord.",
+    "example": "Multipele sclerose kan leiden tot een verscheidenheid aan neurologische symptomen, afhankelijk van de locatie van de laesies."
+},
+    {
+    "dutch": "Evidence-based practice",
+    "english": "Evidence-based practice",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Medical practice that integrates clinical experience, patient values, and the best available research evidence into the decision-making process for patient care.",
+    "example": "Evidence-based practice vereist een kritische beoordeling van wetenschappelijke literatuur en de toepassing ervan in de klinische praktijk."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that prevent blood clots from forming.",
+    "example": "Patiënten met atriumfibrilleren worden vaak behandeld met anticoagulantia om het risico op een beroerte te verminderen."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Listening to the internal sounds of the body, usually using a stethoscope.",
+    "example": "Auscultatie van de longen kan aanwijzingen geven over de aanwezigheid van longontsteking of astma."
+},
+    {
+    "dutch": "Extracorporele Membraan Oxygenatie (ECMO)",
+    "english": "Extracorporeal Membrane Oxygenation (ECMO)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A life support system that oxygenates a patient's blood outside of the body, allowing the heart and lungs to rest.",
+    "example": "ECMO wordt gebruikt bij patiënten met ernstig hart- of longfalen die niet reageren op conventionele therapie."
+},
+    {
+    "dutch": "De ductus thoracicus",
+    "english": "Thoracic duct",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The largest lymphatic vessel in the body, collecting lymph from most of the body and emptying it into the left subclavian vein.",
+    "example": "Beschadiging van de ductus thoracicus tijdens een operatie kan leiden tot chylothorax."
+},
+    {
+    "dutch": "Ziekte van Parkinson",
+    "english": "Parkinson's Disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive disorder of the nervous system that affects movement, often including tremors.",
+    "example": "De ziekte van Parkinson wordt gekenmerkt door tremor, rigiditeit, bradykinesie en posturale instabiliteit."
+},
+    {
+    "dutch": "Geïnformeerde toestemming",
+    "english": "Informed consent",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A process of communication between a patient and physician that results in the patient's authorization or agreement to undergo a specific medical intervention.",
+    "example": "Voorafgaand aan de operatie moet de patiënt geïnformeerde toestemming geven, nadat de risico's en voordelen zijn uitgelegd."
+},
+    {
+    "dutch": "Diuretica",
+    "english": "Diuretics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that increase urination and help to reduce fluid retention in the body.",
+    "example": "Diuretica worden vaak voorgeschreven aan patiënten met hartfalen om oedeem te verminderen."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A test that uses ultrasound waves to create a moving picture of the heart.",
+    "example": "Echocardiografie kan worden gebruikt om de hartfunctie, klepafwijkingen en structurele abnormaliteiten van het hart te beoordelen."
+},
+    {
+    "dutch": "Ventilator-geassocieerde pneumonie (VAP)",
+    "english": "Ventilator-Associated Pneumonia (VAP)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A type of pneumonia that develops in patients who are on mechanical ventilation.",
+    "example": "Ventilator-geassocieerde pneumonie is een veel voorkomende complicatie op de intensive care en vereist agressieve behandeling."
+},
+    {
+    "dutch": "De arcus aortae",
+    "english": "Aortic arch",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The curved portion of the aorta that branches off the ascending aorta and descends toward the abdomen.",
+    "example": "Een dissectie van de arcus aortae is een levensbedreigende aandoening die onmiddellijke chirurgische interventie vereist."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people living with a serious illness. This type of care is focused on providing relief from the symptoms and stress of the illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven van patiënten met een ongeneeslijke ziekte."
+},
+    {
+    "dutch": "Vasopressoren",
+    "english": "Vasopressors",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that cause constriction of blood vessels, thereby increasing blood pressure.",
+    "example": "Vasopressoren worden gebruikt om de bloeddruk te verhogen bij patiënten met hypotensie en shock."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube with a camera attached is used to view the inside of the body.",
+    "example": "Tijdens een endoscopie kan de arts biopsies nemen voor verder onderzoek."
+},
+    {
+    "dutch": "De bloed-hersenbarrière",
+    "english": "Blood-Brain Barrier",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A highly selective semipermeable membrane barrier that separates the circulating blood from the brain extracellular fluid in the central nervous system (CNS).",
+    "example": "De bloed-hersenbarrière bemoeilijkt de toediening van bepaalde medicijnen aan de hersenen."
+},
+    {
+    "dutch": "Respiratoire distress syndrome (RDS)",
+    "english": "Respiratory Distress Syndrome (RDS)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A breathing disorder in newborns caused by immature lungs and a lack of surfactant.",
+    "example": "Respiratoire distress syndrome komt vaak voor bij premature baby's en vereist vaak beademing."
+},
+    {
+    "dutch": "Decharge",
+    "english": "Discharge Summary",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A comprehensive summary of a patient's hospital stay, including diagnosis, treatment, and follow-up recommendations.",
+    "example": "De decharge werd opgesteld door de behandelend arts en bevat alle belangrijke informatie voor de huisarts."
+},
+    {
+    "dutch": "Beta-blokkers",
+    "english": "Beta-blockers",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that block the effects of adrenaline, slowing the heart rate and lowering blood pressure.",
+    "example": "Beta-blokkers worden vaak voorgeschreven aan patiënten met hypertensie, angina pectoris of hartfalen."
+},
+    {
+    "dutch": "Bronchoscopie",
+    "english": "Bronchoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube with a camera attached is inserted into the airways to visualize the bronchi.",
+    "example": "Een bronchoscopie kan worden uitgevoerd om biopsies te nemen, vreemde voorwerpen te verwijderen of bloedingen te stoppen."
+},
+    {
+    "dutch": "Hypercapnie",
+    "english": "Hypercapnia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A condition of abnormally elevated carbon dioxide (CO2) levels in the blood.",
+    "example": "Hypercapnie kan leiden tot acidose en neurologische symptomen, en vereist vaak beademing."
+},
+    {
+    "dutch": "De pancreas",
+    "english": "Pancreas",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A glandular organ in the abdomen that secretes enzymes and hormones involved in digestion and blood sugar regulation.",
+    "example": "Een ontsteking van de pancreas, pancreatitis, kan ernstige pijn en andere complicaties veroorzaken."
+},
+    {
+    "dutch": "Cystic fibrosis (CF)",
+    "english": "Cystic Fibrosis (CF)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A genetic disorder that affects the lungs, pancreas, and other organs, causing thick mucus buildup.",
+    "example": "Cystic fibrosis vereist een multidisciplinaire behandeling, waaronder fysiotherapie, medicatie en voedingstherapie."
+},
+    {
+    "dutch": "Kwaliteitsborging",
+    "english": "Quality Assurance",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Systematic processes used to ensure the quality of healthcare services and improve patient outcomes.",
+    "example": "Kwaliteitsborging omvat het monitoren van indicatoren, het uitvoeren van audits en het implementeren van verbetermaatregelen."
+},
+    {
+    "dutch": "ACE-remmers",
+    "english": "ACE Inhibitors",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that relax blood vessels and lower blood pressure by blocking the production of angiotensin II.",
+    "example": "ACE-remmers worden vaak voorgeschreven aan patiënten met hypertensie, hartfalen of diabetes."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical technique in which operations are performed through small incisions with the aid of a camera and specialized instruments.",
+    "example": "Laparoscopie resulteert vaak in minder pijn, kortere hersteltijd en minder littekens dan traditionele open chirurgie."
+},
+    {
+    "dutch": "Hypoxemie",
+    "english": "Hypoxemia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A condition of abnormally low oxygen levels in the blood.",
+    "example": "Hypoxemie kan leiden tot schade aan organen en vereist onmiddellijke zuurstoftoediening."
+},
+    {
+    "dutch": "Het cerebellum",
+    "english": "Cerebellum",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A region of the brain located at the back of the skull that plays an important role in motor control, coordination, and balance.",
+    "example": "Beschadiging van het cerebellum kan leiden tot ataxie, tremor en andere motorische stoornissen."
+},
+    {
+    "dutch": "Alzheimer",
+    "english": "Alzheimer's Disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive neurodegenerative disease that causes memory loss, cognitive decline, and behavioral changes.",
+    "example": "De ziekte van Alzheimer is de meest voorkomende oorzaak van dementie bij ouderen."
+},
+    {
+    "dutch": "Multidisciplinair team",
+    "english": "Multidisciplinary Team",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A team of healthcare professionals from different disciplines who work together to provide comprehensive patient care.",
+    "example": "Een multidisciplinair team kan bestaan uit artsen, verpleegkundigen, fysiotherapeuten, ergotherapeuten, diëtisten en maatschappelijk werkers."
+},
+    {
+    "dutch": "NSAID's (Niet-steroïde anti-inflammatoire geneesmiddelen)",
+    "english": "NSAIDs (Nonsteroidal Anti-Inflammatory Drugs)",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A class of drugs that reduce pain, fever, and inflammation.",
+    "example": "NSAID's worden vaak gebruikt om pijn te verlichten bij artritis, spierpijn en hoofdpijn."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube with a camera attached is inserted into the rectum to visualize the colon.",
+    "example": "Coloscopie wordt gebruikt om darmpoliepen, tumoren en andere afwijkingen van de dikke darm op te sporen."
+},
+    {
+    "dutch": "Cyanose",
+    "english": "Cyanosis",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A bluish discoloration of the skin and mucous membranes caused by a lack of oxygen in the blood.",
+    "example": "Cyanose is een teken van hypoxemie en vereist onmiddellijke medische aandacht."
+},
+    {
+    "dutch": "De aorta",
+    "english": "Aorta",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The largest artery in the body, carrying oxygenated blood from the heart to the rest of the body.",
+    "example": "Een aneurysma van de aorta kan leiden tot een ruptuur met fatale gevolgen."
+},
+    {
+    "dutch": "Congestief hartfalen",
+    "english": "Congestive Heart Failure (CHF)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic condition in which the heart is unable to pump enough blood to meet the body's needs.",
+    "example": "Congestief hartfalen kan leiden tot kortademigheid, oedeem en vermoeidheid."
+},
+    {
+    "dutch": "Transfer van verantwoordelijkheid",
+    "english": "Handover",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The transfer of responsibility for a patient's care from one healthcare professional to another.",
+    "example": "Een duidelijke transfer van verantwoordelijkheid is essentieel voor de continuïteit van de zorg."
+},
+    {
+    "dutch": "Angiografie",
+    "english": "Angiography",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An X-ray imaging technique used to visualize blood vessels after injecting a contrast dye.",
+    "example": "Angiografie kan worden gebruikt om vernauwingen, aneurysmata en andere afwijkingen van de bloedvaten op te sporen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heart rhythm.",
+    "example": "De defibrillator werd gebruikt om de patiënt te reanimeren na een hartstilstand."
+},
+    {
+    "dutch": "Exacerbatie",
+    "english": "Exacerbation",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An increase in the severity of a disease or its signs and symptoms.",
+    "example": "De exacerbatie van de COPD vereiste onmiddellijke ziekenhuisopname."
+},
+    {
+    "dutch": "Perfusiedruk",
+    "english": "Perfusion pressure",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The pressure gradient driving blood flow through a tissue.",
+    "example": "De minimale perfusiedruk moet gehandhaafd blijven om orgaanschade te voorkomen."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels, resulting from relaxation of smooth muscle cells within the vessel walls.",
+    "example": "Vasodilatatie treedt op als reactie op warmte en bepaalde medicijnen."
+},
+    {
+    "dutch": "Endotracheale intubatie",
+    "english": "Endotracheal intubation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A medical procedure in which a tube is inserted into the trachea to maintain an open airway.",
+    "example": "Endotracheale intubatie was noodzakelijk vanwege de ademhalingsinsufficiëntie."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "Een traumatische pneumothorax vereist onmiddellijke drainage."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase the risk of strokes, heart failure and other heart-related complications.",
+    "example": "Atriumfibrilleren werd vastgesteld middels een ECG."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of how the body processes a drug, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit medicijn is complex en varieert per patiënt."
+},
+    {
+    "dutch": "Farmacodynamiek",
+    "english": "Pharmacodynamics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of the biochemical and physiological effects of drugs on the body or on microorganisms or parasites within or on the body.",
+    "example": "De farmacodynamiek van dit medicijn beïnvloedt direct de bloeddruk."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory failure",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which the lungs cannot adequately provide oxygen to the blood or remove carbon dioxide from the blood.",
+    "example": "Acute respiratoire insufficiëntie vereist mechanische ventilatie."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Vroege herkenning van sepsis is cruciaal voor een succesvolle behandeling."
+},
+    {
+    "dutch": "Computed Tomography (CT)",
+    "english": "Computed Tomography (CT)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "An X-ray procedure that uses computer processing to generate cross-sectional images (slices) of the body.",
+    "example": "De CT-scan toonde een duidelijke tumor in de lever."
+},
+    {
+    "dutch": "Magnetische Resonantie Imaging (MRI)",
+    "english": "Magnetic Resonance Imaging (MRI)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses magnetic fields and radio waves to create detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scan gaf een beter beeld van de weke delen dan de CT-scan."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that uses sound waves to create moving pictures of the heart.",
+    "example": "Echocardiografie is essentieel voor de beoordeling van hartklepafwijkingen."
+},
+    {
+    "dutch": "Electrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time using electrodes placed on the skin.",
+    "example": "Het ECG toonde duidelijke tekenen van een hartinfarct."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A machine that provides mechanical ventilation by moving breathable air into and out of the lungs, to deliver breaths to a patient who is physically unable to breathe, or breathing insufficiently.",
+    "example": "De patiënt is afhankelijk van de ventilator voor adequate zuurstofvoorziening."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electrical shock to the heart to restore a normal heart rhythm.",
+    "example": "De defibrillator werd gebruikt om het ventrikelfibrilleren te stoppen."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A type of dialysis that uses the peritoneum in a patient's abdomen as a membrane through which fluid and dissolved substances are exchanged with the blood.",
+    "example": "Peritoneale dialyse biedt de patiënt meer flexibiliteit dan hemodialyse."
+},
+    {
+    "dutch": "Hemodialyse",
+    "english": "Hemodialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method for removing waste products such as creatinine and urea, as well as free water from the blood when the kidneys are in renal failure.",
+    "example": "Hemodialyse wordt drie keer per week uitgevoerd."
+},
+    {
+    "dutch": "Angiografie",
+    "english": "Angiography",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An X-ray examination of blood vessels after the injection of a contrast material.",
+    "example": "Angiografie werd uitgevoerd om de vernauwing in de kransslagader te visualiseren."
+},
+    {
+    "dutch": "Artroscopie",
+    "english": "Arthroscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical procedure in which an examination and sometimes treatment of damage of the interior of a joint is performed using an arthroscope, a type of endoscope that is inserted into the joint through a small incision.",
+    "example": "Artroscopie werd gebruikt om de meniscus te repareren."
+},
+    {
+    "dutch": "Multidisciplinair overleg (MDO)",
+    "english": "Multidisciplinary team meeting (MDT)",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A meeting of healthcare professionals from different disciplines to discuss and plan the treatment of a patient.",
+    "example": "Tijdens het MDO werd de behandelstrategie voor de complexe casus besproken."
+},
+    {
+    "dutch": "Evidence-based practice (EBP)",
+    "english": "Evidence-based practice (EBP)",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The conscientious, explicit, and judicious use of current best evidence in making decisions about the care of individual patients.",
+    "example": "Evidence-based practice is essentieel voor het leveren van kwalitatief hoogwaardige zorg."
+},
+    {
+    "dutch": "Differentiaaldiagnose",
+    "english": "Differential diagnosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases or conditions with similar signs or symptoms.",
+    "example": "De differentiaaldiagnose omvatte verschillende neurologische aandoeningen."
+},
+    {
+    "dutch": "Informed consent",
+    "english": "Informed consent",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor for treatment with full knowledge of the possible risks and benefits.",
+    "example": "Informed consent werd verkregen nadat de patiënt volledig was geïnformeerd over de procedure."
+},
+    {
+    "dutch": "Patiëntendossier",
+    "english": "Patient record/medical file",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A complete record of a patient's medical history, including diagnoses, treatments, and medications.",
+    "example": "Het patiëntendossier bevat alle relevante informatie over de medische achtergrond van de patiënt."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor deze vorm van kanker is afhankelijk van het stadium bij diagnose."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "Comorbiditeit, zoals diabetes en hypertensie, kan de prognose verslechteren."
+},
+    {
+    "dutch": "Hypoxemie",
+    "english": "Hypoxemia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An abnormally low level of oxygen in the blood.",
+    "example": "Hypoxemie kan leiden tot ernstige orgaanschade."
+},
+    {
+    "dutch": "Hypercapnie",
+    "english": "Hypercapnia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Excessive carbon dioxide in the bloodstream, typically caused by inadequate respiration.",
+    "example": "Hypercapnie kan leiden tot acidose en neurologische problemen."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Damage or dysfunction of one or more nerves, typically causing numbness, tingling, muscle weakness, and pain in the affected area.",
+    "example": "Diabetische neuropathie is een veelvoorkomende complicatie van diabetes."
+},
+    {
+    "dutch": "Necrose",
+    "english": "Necrosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The death of body tissue, occurring when not enough blood flows to the tissue.",
+    "example": "Necrose van de teen kan leiden tot amputatie."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "An account of a patient's medical history given by the patient or a close relative.",
+    "example": "Een uitgebreide anamnese is essentieel voor een correcte diagnose."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The action of listening to sounds from the heart, lungs, or other organs, typically with a stethoscope, as a part of medical diagnosis.",
+    "example": "Auscultatie van de longen onthulde crepitaties."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The process of examining a part of the body by touching it, especially for medical purposes.",
+    "example": "Palpatie van de buik onthulde een vergrote lever."
+},
+    {
+    "dutch": "Percussie",
+    "english": "Percussion",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A diagnostic procedure designed to determine the size, consistency, and borders of body organs, and the presence or absence of fluid in body cavities.",
+    "example": "Percussie van de borstkas onthulde een gedempte toon in de longbasis."
+},
+    {
+    "dutch": "Palliatieve zorg",
+    "english": "Palliative care",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Specialized medical care for people living with a serious illness. This type of care is focused on providing relief from the symptoms and stress of a serious illness.",
+    "example": "Palliatieve zorg is gericht op het verbeteren van de kwaliteit van leven."
+},
+    {
+    "dutch": "Revalidatie",
+    "english": "Rehabilitation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The process of helping someone to recover from an illness or injury so that the person can live as independently as possible.",
+    "example": "Na de operatie volgde een intensief revalidatieprogramma."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Immunosuppressiva worden gebruikt na een orgaantransplantatie."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that prevent or reduce the clotting of blood.",
+    "example": "Anticoagulantia worden gebruikt om trombose te voorkomen."
+},
+    {
+    "dutch": "Bronchodilatoren",
+    "english": "Bronchodilators",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Medications that make breathing easier by relaxing the muscles in the lungs and widening the airways (bronchi).",
+    "example": "Bronchodilatoren worden gebruikt bij de behandeling van astma en COPD."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction (heart attack)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A blockage of blood flow to the heart muscle.",
+    "example": "Een myocardinfarct vereist snelle interventie om de schade te beperken."
+},
+    {
+    "dutch": "Cerebrovasculair accident (CVA)",
+    "english": "Cerebrovascular accident (stroke)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Damage to the brain from interruption of its blood supply.",
+    "example": "Na een CVA kan de patiënt blijvende neurologische schade ondervinden."
+},
+    {
+    "dutch": "Glaucoom",
+    "english": "Glaucoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition that damages the optic nerve, often caused by abnormally high pressure in your eye.",
+    "example": "Glaucoom kan leiden tot blindheid als het niet behandeld wordt."
+},
+    {
+    "dutch": "Cataract",
+    "english": "Cataract",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A clouding of the normally clear lens of your eye.",
+    "example": "Cataract kan worden verholpen door een operatie."
+},
+    {
+    "dutch": "Hypertrofie",
+    "english": "Hypertrophy",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The enlargement of an organ or tissue from the increase in size of its cells.",
+    "example": "Linkerventrikelhypertrofie kan een gevolg zijn van hypertensie."
+},
+    {
+    "dutch": "Atrofie",
+    "english": "Atrophy",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The wasting away of a body organ or tissue; any progressive decline or failure.",
+    "example": "Spieratrofie kan optreden als gevolg van immobilisatie."
+},
+    {
+    "dutch": "Stomazorg",
+    "english": "Stoma care",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The care and management of a stoma, an artificial opening in the abdomen through which waste is excreted.",
+    "example": "Stomazorg omvat het reinigen van de stoma en het verwisselen van de zak."
+},
+    {
+    "dutch": "Decubitus",
+    "english": "Pressure ulcer/bedsore",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An injury to the skin and underlying tissue resulting from prolonged pressure on the skin.",
+    "example": "Decubitus kan worden voorkomen door regelmatig van houding te veranderen."
+},
+    {
+    "dutch": "Compliance",
+    "english": "Compliance (medical)",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The extent to which a patient's behavior matches the health professional's recommendations.",
+    "example": "Gebrek aan compliance met de medicatie kan de behandeling bemoeilijken."
+},
+    {
+    "dutch": "Atherosclerotische laesie",
+    "english": "Atherosclerotic lesion",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A plaque within the artery wall composed of lipids, inflammatory cells, smooth muscle cells, and thrombus, resulting from atherosclerosis.",
+    "example": "De angiografie toonde een significante atherosclerotische laesie in de linker coronairarterie."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the gallbladder using a laparoscope, a minimally invasive surgical technique.",
+    "example": "De patiënt onderging een laparoscopische cholecystectomie vanwege symptomatische galstenen."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory failure",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition where the respiratory system fails in one or both of its gas exchange functions: oxygenation and carbon dioxide elimination.",
+    "example": "Acute respiratoire insufficiëntie vereiste onmiddellijke intubatie en mechanische ventilatie."
+},
+    {
+    "dutch": "Extracorporele membraanoxygenatie (ECMO)",
+    "english": "Extracorporeal membrane oxygenation (ECMO)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A life-support system used in patients with severe respiratory or cardiac failure to oxygenate blood outside of the body.",
+    "example": "ECMO werd ingezet om de patiënt met ernstige ARDS te stabiliseren."
+},
+    {
+    "dutch": "Subarachnoïdale bloeding",
+    "english": "Subarachnoid hemorrhage",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Bleeding into the subarachnoid space, the area between the arachnoid membrane and the pia mater surrounding the brain.",
+    "example": "Een plotselinge, hevige hoofdpijn wees op een mogelijke subarachnoïdale bloeding, die bevestigd werd door een CT-scan."
+},
+    {
+    "dutch": "Nosocomiale infectie",
+    "english": "Nosocomial infection",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An infection acquired in a hospital or other healthcare facility.",
+    "example": "Strengere hygiënemaatregelen zijn noodzakelijk om nosocomiale infecties te voorkomen."
+},
+    {
+    "dutch": "Farmacogenetica",
+    "english": "Pharmacogenetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of how genes affect a person's response to drugs.",
+    "example": "Farmacogenetica kan helpen bij het optimaliseren van de medicatie en het minimaliseren van bijwerkingen."
+},
+    {
+    "dutch": "Precordiale pijn",
+    "english": "Precordial pain",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Pain located in the anterior chest over the heart.",
+    "example": "De patiënt klaagde over precordiale pijn die uitstraalde naar zijn linkerarm."
+},
+    {
+    "dutch": "Angiogenese remmer",
+    "english": "Angiogenesis inhibitor",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A substance that inhibits the growth of new blood vessels.",
+    "example": "Angiogenese remmers worden gebruikt bij de behandeling van bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "De röntgenfoto bevestigde een pneumothorax aan de rechterzijde, vereisend een thoraxdrainage."
+},
+    {
+    "dutch": "Traumatisch hersenletsel (THL)",
+    "english": "Traumatic brain injury (TBI)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An injury to the brain caused by an external force.",
+    "example": "De patiënt heeft na het auto-ongeluk ernstig traumatisch hersenletsel opgelopen."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of removing waste products from the blood when the kidneys can no longer function adequately, using the peritoneum as a filter.",
+    "example": "Peritoneale dialyse biedt patiënten met nierfalen een mogelijkheid tot thuisbehandeling."
+},
+    {
+    "dutch": "Electro-encefalogram (EEG)",
+    "english": "Electroencephalogram (EEG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that detects electrical activity in the brain using small, flat metal discs (electrodes) attached to the scalp.",
+    "example": "Het EEG werd uitgevoerd om de oorzaak van de epileptische aanvallen te achterhalen."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Death of heart muscle due to a lack of blood supply.",
+    "example": "Een acuut myocardinfarct vereist onmiddellijke reperfusie therapie."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Immunosuppressiva worden gebruikt om afstoting van getransplanteerde organen te voorkomen."
+},
+    {
+    "dutch": "Etiologie",
+    "english": "Etiology",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The cause, set of causes, or manner of causation of a disease or condition.",
+    "example": "De etiologie van auto-immuunziekten is vaak multifactorieel en complex."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Examining the body by touch, usually to detect abnormalities.",
+    "example": "Door palpatie van de buik werden vergrote organen vastgesteld."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall.",
+    "example": "Een thoracotomie was noodzakelijk om de longtumor te verwijderen."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which you lack enough healthy red blood cells to carry adequate oxygen to your body's tissues.",
+    "example": "Laboratoriumonderzoek toonde ernstige anemie aan, waarvoor een bloedtransfusie nodig was."
+},
+    {
+    "dutch": "Hematopoëse",
+    "english": "Hematopoiesis",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The production of blood cells and platelets, which occurs in the bone marrow.",
+    "example": "Chemotherapie kan de hematopoëse onderdrukken, wat leidt tot een tekort aan bloedcellen."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor patiënten met gevorderde stadium kanker is vaak somber."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "De patiënt meldde zich met acute dyspneu en pijn op de borst."
+},
+    {
+    "dutch": "Hypoxemie",
+    "english": "Hypoxemia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An abnormally low level of oxygen in the blood.",
+    "example": "Hypoxemie werd vastgesteld door middel van pulsoximetrie en een arteriële bloedgasanalyse."
+},
+    {
+    "dutch": "Dialysekatheter",
+    "english": "Dialysis catheter",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A tube inserted into a vein to allow for dialysis treatment.",
+    "example": "Een dialysekatheter werd ingebracht in de vena jugularis interna om de hemodialyse te starten."
+},
+    {
+    "dutch": "Stomie",
+    "english": "Stoma",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgically created opening in the abdomen to allow for the elimination of waste.",
+    "example": "Na de colectomie kreeg de patiënt een ileostomie."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Surgical removal of a part of an organ or structure.",
+    "example": "Een leverresectie werd uitgevoerd om de tumor te verwijderen."
+},
+    {
+    "dutch": "Metastase",
+    "english": "Metastasis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The spread of cancer cells from the primary site to other parts of the body.",
+    "example": "De diagnose werd gesteld op uitgezaaide longkanker met metastase naar de hersenen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De patiënt presenteerde zich met ernstige comorbiditeit, waaronder diabetes en hartfalen."
+},
+    {
+    "dutch": "Hemodialyse",
+    "english": "Hemodialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of removing waste products from the blood when the kidneys can no longer function adequately, using a machine to filter the blood.",
+    "example": "De patiënt ondergaat drie keer per week hemodialyse in het ziekenhuis."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase your risk of stroke, heart failure and other heart-related complications.",
+    "example": "Atriumfibrilleren werd vastgesteld tijdens het elektrocardiogram."
+},
+    {
+    "dutch": "Biopsie",
+    "english": "Biopsy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The removal of a small piece of tissue for examination under a microscope.",
+    "example": "Een biopsie van de lever werd uitgevoerd om de diagnose te bevestigen."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "Chemical messengers that transmit signals from a neuron to a target cell across a synapse.",
+    "example": "Depressie wordt vaak geassocieerd met een disbalans in neurotransmitters zoals serotonine."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube with a camera attached is used to view the inside of the body.",
+    "example": "Een endoscopie van de maag werd uitgevoerd om de oorzaak van de buikpijn te onderzoeken."
+},
+    {
+    "dutch": "Pathofysiologie",
+    "english": "Pathophysiology",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The functional changes associated with and resulting from disease or injury.",
+    "example": "De pathofysiologie van diabetes mellitus type 2 is complex en omvat insulineresistentie."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that prevent blood clots from forming.",
+    "example": "Anticoagulantia worden voorgeschreven om trombose te voorkomen."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "De patiënt ontwikkelde sepsis als gevolg van een bacteriële infectie."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A detailed account of a patient's past and present health conditions.",
+    "example": "Een grondige anamnese is essentieel voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The use of high-energy radiation to kill cancer cells and shrink tumors.",
+    "example": "Radiotherapie werd toegepast om de tumorgroei te stoppen."
+},
+    {
+    "dutch": "Cardiomyopathie",
+    "english": "Cardiomyopathy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A disease of the heart muscle that makes it harder for your heart to pump blood to the rest of your body.",
+    "example": "Dilatatieve cardiomyopathie kan leiden tot hartfalen."
+},
+    {
+    "dutch": "Perifeer zenuwstelsel",
+    "english": "Peripheral nervous system",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The nervous system outside the brain and spinal cord.",
+    "example": "Neuropathie is een aandoening van het perifeer zenuwstelsel."
+},
+    {
+    "dutch": "Implantatie",
+    "english": "Implantation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical insertion of a device or tissue into the body.",
+    "example": "De implantatie van de pacemaker verliep zonder complicaties."
+},
+    {
+    "dutch": "Oedeem",
+    "english": "Edema",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Swelling caused by fluid trapped in your body's tissues.",
+    "example": "De patiënt had oedeem in de benen als gevolg van hartfalen."
+},
+    {
+    "dutch": "Farmacodynamiek",
+    "english": "Pharmacodynamics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of the biochemical and physiological effects of drugs on the body or on microorganisms or parasites within or on the body.",
+    "example": "Het begrijpen van de farmacodynamiek van een medicijn is cruciaal voor effectieve behandeling."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure used to collect cerebrospinal fluid (CSF) for diagnostic testing.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om meningitis uit te sluiten."
+},
+    {
+    "dutch": "Laparotomie",
+    "english": "Laparotomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the abdominal cavity.",
+    "example": "Een exploratieve laparotomie werd uitgevoerd om de oorzaak van de acute buikpijn te achterhalen."
+},
+    {
+    "dutch": "Auscultatie",
+    "english": "Auscultation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Listening to the internal sounds of the body, usually with a stethoscope.",
+    "example": "Auscultatie van de longen onthulde crepitaties en ronchi."
+},
+    {
+    "dutch": "Resistentie",
+    "english": "Resistance",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The ability of a microorganism or cell to withstand the effects of an antibiotic or other drug.",
+    "example": "Antibioticaresistentie is een groeiend probleem in de gezondheidszorg."
+},
+    {
+    "dutch": "Perfusie",
+    "english": "Perfusion",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The passage of fluid through the circulatory system or lymphatic system to an organ or a tissue, usually referring to the delivery of blood to a capillary bed in tissue.",
+    "example": "Goede perfusie van de organen is essentieel voor een gezond functioneren van het lichaam."
+},
+    {
+    "dutch": "Immunotherapie",
+    "english": "Immunotherapy",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A type of cancer treatment that helps your immune system fight cancer.",
+    "example": "Immunotherapie heeft veelbelovende resultaten laten zien bij de behandeling van bepaalde vormen van kanker."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A degenerative joint disease that causes pain, stiffness, and swelling.",
+    "example": "Artrose in de knie kan de mobiliteit van de patiënt aanzienlijk beperken."
+},
+    {
+    "dutch": "Aangeboren afwijking",
+    "english": "Congenital anomaly",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition present at birth, regardless of its cause.",
+    "example": "Echoscopisch onderzoek kan een aangeboren afwijking tijdens de zwangerschap aantonen."
+},
+    {
+    "dutch": "Adenocarcinoom",
+    "english": "Adenocarcinoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A malignant tumor formed from glandular structures in epithelial tissue.",
+    "example": "Het adenocarcinoom werd na histologisch onderzoek gediagnosticeerd."
+},
+    {
+    "dutch": "Aneurysma aortae abdominalis",
+    "english": "Abdominal aortic aneurysm",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A localized enlargement of the abdominal aorta such that the diameter is greater than 3 cm or more than 50% of the normal aortic diameter.",
+    "example": "De patiënt werd doorverwezen voor een electieve reparatie van zijn aneurysma aortae abdominalis."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase your risk of strokes, heart failure and other heart-related complications.",
+    "example": "Bij atriumfibrilleren is er sprake van een chaotische elektrische activiteit in de atria."
+},
+    {
+    "dutch": "Biopt",
+    "english": "Biopsy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An examination of tissue removed from a living body to discover the presence, cause, or extent of a disease.",
+    "example": "Er werd een biopt genomen om de aard van de tumor te bepalen."
+},
+    {
+    "dutch": "Chemotherapie",
+    "english": "Chemotherapy",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The treatment of disease by the use of chemical substances, especially the treatment of cancer.",
+    "example": "Chemotherapie is een veelgebruikte behandeling bij verschillende vormen van kanker."
+},
+    {
+    "dutch": "Computertomografie (CT-scan)",
+    "english": "Computed tomography (CT scan)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "An X-ray imaging technique that produces cross-sectional images of the body.",
+    "example": "De CT-scan van de buik toonde een gezwel in de lever aan."
+},
+    {
+    "dutch": "Contra-indicatie",
+    "english": "Contraindication",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A condition or factor that serves as a reason to withhold a certain medical treatment due to the harm that it would cause the patient.",
+    "example": "Een bekende allergie voor penicilline is een contra-indicatie voor amoxicilline."
+},
+    {
+    "dutch": "Dialyse",
+    "english": "Dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The process of removing waste products and excess fluid from the body when the kidneys are unable to do so.",
+    "example": "De patiënt met nierfalen is afhankelijk van regelmatige dialyse."
+},
+    {
+    "dutch": "Dyspneu",
+    "english": "Dyspnea",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Difficult or labored breathing; shortness of breath.",
+    "example": "Bij inspanning ervaart de patiënt ernstige dyspneu."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time using electrodes placed on the skin.",
+    "example": "Het ECG toonde afwijkingen die duidden op een myocardinfarct."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, thin, flexible tube that has a light and a camera is used to view the inside of the body.",
+    "example": "Tijdens de endoscopie werden poliepen in de dikke darm verwijderd."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of how the body processes a drug, including absorption, distribution, metabolism, and excretion.",
+    "example": "De farmacokinetiek van dit geneesmiddel is complex en wordt beïnvloed door de leverfunctie."
+},
+    {
+    "dutch": "Geriatrie",
+    "english": "Geriatrics",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The branch of medicine dealing with the health and care of old people.",
+    "example": "De geriatrie richt zich op de specifieke gezondheidsproblemen van ouderen."
+},
+    {
+    "dutch": "Hematoom",
+    "english": "Hematoma",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A solid swelling of clotted blood within the tissues.",
+    "example": "Na de operatie ontstond er een groot hematoom op de plaats van de incisie."
+},
+    {
+    "dutch": "Hyperglykemie",
+    "english": "Hyperglycemia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An excess of glucose in the bloodstream, often associated with diabetes mellitus.",
+    "example": "Ongecontroleerde diabetes kan leiden tot ernstige hyperglykemie."
+},
+    {
+    "dutch": "Hypoxie",
+    "english": "Hypoxia",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Deficiency in the amount of oxygen reaching the tissues.",
+    "example": "Prolonged hypoxie kan leiden tot hersenbeschadiging."
+},
+    {
+    "dutch": "Iatrogene schade",
+    "english": "Iatrogenic injury",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Harm caused unintentionally by a medical treatment or diagnostic procedure.",
+    "example": "De arts moet zorgvuldig handelen om iatrogene schade te voorkomen."
+},
+    {
+    "dutch": "Immunosuppressie",
+    "english": "Immunosuppression",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A reduction in the activation or efficacy of the immune system.",
+    "example": "Patiënten na een orgaantransplantatie hebben immunosuppressie nodig om afstoting te voorkomen."
+},
+    {
+    "dutch": "Incisie",
+    "english": "Incision",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical cut made in skin or flesh.",
+    "example": "De chirurg maakte een kleine incisie om de appendectomie uit te voeren."
+},
+    {
+    "dutch": "Intraveneus",
+    "english": "Intravenous",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Administered into or taking place within a vein or veins.",
+    "example": "De medicatie werd intraveneus toegediend via een infuus."
+},
+    {
+    "dutch": "Katheterisatie",
+    "english": "Catheterization",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The process of inserting a catheter.",
+    "example": "De patiënt onderging een blaaskatheterisatie vanwege urineretentie."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a fiber-optic instrument is inserted through the abdominal wall to view the organs in the abdomen or to permit a surgical procedure.",
+    "example": "Laparoscopie is een minimaal invasieve chirurgische techniek."
+},
+    {
+    "dutch": "Maligniteit",
+    "english": "Malignancy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The state or condition of being malignant.",
+    "example": "De maligniteit werd vastgesteld na pathologisch onderzoek."
+},
+    {
+    "dutch": "Metastase",
+    "english": "Metastasis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The spread of cancer cells from the place where they first formed to another part of the body.",
+    "example": "De CT-scan toonde metastasen in de lever en de longen."
+},
+    {
+    "dutch": "Morbiditeit",
+    "english": "Morbidity",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The condition of being diseased.",
+    "example": "De morbiditeit geassocieerd met deze ziekte is hoog, vooral bij ouderen."
+},
+    {
+    "dutch": "Mortaliteit",
+    "english": "Mortality",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The state of being subject to death.",
+    "example": "De mortaliteit na een harttransplantatie is significant gedaald in de afgelopen decennia."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "Chemical messengers that transmit signals across a chemical synapse, such as acetylcholine.",
+    "example": "Neurotransmitters spelen een cruciale rol in de hersenfunctie en beïnvloeden stemming en gedrag."
+},
+    {
+    "dutch": "Oesofagus",
+    "english": "Esophagus",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The muscular tube connecting the throat to the stomach.",
+    "example": "De oesofagus transporteert voedsel van de mond naar de maag."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A medical condition in which the bones become brittle and fragile from loss of tissue, typically as a result of hormonal changes, or deficiency of calcium or vitamin D.",
+    "example": "Osteoporose verhoogt het risico op fracturen, vooral bij oudere vrouwen."
+},
+    {
+    "dutch": "Palpatie",
+    "english": "Palpation",
+    "level": "C1",
+    "category": "Procedures",
+    "explanation": "The process of examining parts of the body by touching them, especially to detect medical problems.",
+    "example": "Door palpatie kon de arts een zwelling in de buik voelen."
+},
+    {
+    "dutch": "Perfusie",
+    "english": "Perfusion",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The passage of fluid through the circulatory system or lymphatic system to an organ or a tissue.",
+    "example": "Goede perfusie is essentieel voor de zuurstoftoevoer naar alle organen."
+},
+    {
+    "dutch": "Placebo-effect",
+    "english": "Placebo effect",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A beneficial effect produced by a placebo drug or treatment, which cannot be attributed to the properties of the placebo itself, and must therefore be due to the patient's belief in that treatment.",
+    "example": "Het placebo-effect kan een aanzienlijke invloed hebben op de resultaten van klinische studies."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor patiënten met uitgezaaide kanker is vaak slecht."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie kan worden gebruikt om tumoren te verkleinen of te vernietigen."
+},
+    {
+    "dutch": "Reanimatie",
+    "english": "Resuscitation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The act of reviving someone from unconsciousness or apparent death.",
+    "example": "Onmiddellijke reanimatie is cruciaal bij een hartstilstand."
+},
+    {
+    "dutch": "Screening",
+    "english": "Screening",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The systematic examination of a population at risk to detect a condition before it becomes symptomatic.",
+    "example": "Bevolkingsonderzoek is een vorm van screening om bepaalde ziekten vroegtijdig op te sporen."
+},
+    {
+    "dutch": "Sepsis",
+    "english": "Sepsis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A life-threatening condition that arises when the body's response to an infection injures its own tissues and organs.",
+    "example": "Sepsis is een ernstige complicatie van een infectie en vereist onmiddellijke behandeling."
+},
+    {
+    "dutch": "Stomie",
+    "english": "Stoma",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An artificial opening made into a hollow organ, especially one on the surface of the body leading to the bowel or trachea.",
+    "example": "Na de darmoperatie had de patiënt tijdelijk een stoma nodig."
+},
+    {
+    "dutch": "Trauma",
+    "english": "Trauma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A deeply distressing or disturbing experience.",
+    "example": "De patiënt heeft een ernstig trauma opgelopen bij het auto-ongeluk."
+},
+    {
+    "dutch": "Trombose",
+    "english": "Thrombosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Local coagulation or clotting of the blood in a part of the circulatory system.",
+    "example": "Diepe veneuze trombose (DVT) kan leiden tot een longembolie."
+},
+    {
+    "dutch": "Ulcus",
+    "english": "Ulcer",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A sore on the skin or a mucous membrane, accompanied by disintegration of tissue.",
+    "example": "De patiënt had een ulcus in de maag, veroorzaakt door een Helicobacter pylori infectie."
+},
+    {
+    "dutch": "Urogenitaal",
+    "english": "Urogenital",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "Relating to the urinary and reproductive organs.",
+    "example": "De urogenitale stelsel omvat de nieren, de blaas en de geslachtsorganen."
+},
+    {
+    "dutch": "Vaccinatie",
+    "english": "Vaccination",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The act of introducing a vaccine into the body to produce immunity to a specific disease.",
+    "example": "Vaccinatie is een effectieve manier om infectieziekten te voorkomen."
+},
+    {
+    "dutch": "Vasodilatatie",
+    "english": "Vasodilation",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The widening of blood vessels.",
+    "example": "Vasodilatatie kan optreden als reactie op warmte of bepaalde medicijnen."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues, or organs from one species to another.",
+    "example": "Xenotransplantatie biedt een mogelijke oplossing voor het tekort aan donororganen, maar roept ethische vragen op."
+},
+    {
+    "dutch": "Ziektegeschiedenis",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A record of a patient's past illnesses, operations, and other medical information.",
+    "example": "Een uitgebreide ziektegeschiedenis is essentieel voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Zuurstofsaturatie",
+    "english": "Oxygen saturation",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "The fraction of oxygen-saturated hemoglobin relative to total hemoglobin in the blood.",
+    "example": "De zuurstofsaturatie van de patiënt was laag, wat duidde op hypoxemie."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history taking",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of a healthcare professional eliciting information from a patient about their illness.",
+    "example": "Een grondige anamnese is cruciaal voor het bepalen van de differentiaal diagnose."
+},
+    {
+    "dutch": "Differentialdiagnose",
+    "english": "Differential diagnosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar symptoms.",
+    "example": "De differentiaaldiagnose voor de patiënt met buikpijn omvatte appendicitis, cholecystitis en een niersteen."
+},
+    {
+    "dutch": "Adenomateuze polyposis coli",
+    "english": "Adenomatous polyposis coli",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A genetic disorder characterized by the formation of numerous polyps in the colon, significantly increasing the risk of colon cancer.",
+    "example": "De patiënt heeft een familiegeschiedenis van adenomateuze polyposis coli, waardoor regelmatige colonoscopieën noodzakelijk zijn."
+},
+    {
+    "dutch": "Cardiopulmonale bypass",
+    "english": "Cardiopulmonary bypass",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A technique used during heart surgery in which a machine temporarily takes over the function of the heart and lungs, allowing the surgeon to operate on a still, bloodless heart.",
+    "example": "Gedurende de aortaklepvervanging werd cardiopulmonale bypass toegepast om de circulatie en oxygenatie te waarborgen."
+},
+    {
+    "dutch": "Chemoreceptortriggerzone",
+    "english": "Chemoreceptor trigger zone",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "An area in the medulla oblongata of the brain that is sensitive to toxins in the blood and cerebrospinal fluid, triggering nausea and vomiting.",
+    "example": "Medicatie tegen misselijkheid werkt vaak door de chemoreceptortriggerzone te blokkeren."
+},
+    {
+    "dutch": "Diffusiecapaciteit voor koolmonoxide",
+    "english": "Diffusing capacity for carbon monoxide",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A pulmonary function test that measures the ability of the lungs to transfer gas from the inhaled air to the red blood cells.",
+    "example": "De diffusiecapaciteit voor koolmonoxide was significant verminderd bij de patiënt met emfyseem."
+},
+    {
+    "dutch": "Elektro-encefalografie (EEG)",
+    "english": "Electroencephalography (EEG)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A neurophysiological test that measures electrical activity in the brain using electrodes placed on the scalp.",
+    "example": "De elektro-encefalografie toonde afwijkende hersengolven, wat verder onderzoek vereiste."
+},
+    {
+    "dutch": "Foramen ovale",
+    "english": "Foramen ovale",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A hole in the septum between the right and left atria of the fetal heart that allows blood to bypass the lungs.",
+    "example": "Een persisterend foramen ovale kan leiden tot paradoxale embolieën."
+},
+    {
+    "dutch": "Glomerulaire filtratiesnelheid (GFR)",
+    "english": "Glomerular filtration rate (GFR)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A measure of kidney function that estimates the volume of blood filtered by the glomeruli each minute.",
+    "example": "De glomerulaire filtratiesnelheid was verlaagd, indicatief voor nierinsufficiëntie."
+},
+    {
+    "dutch": "Hyperbilirubinemie",
+    "english": "Hyperbilirubinemia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition characterized by elevated levels of bilirubin in the blood, causing jaundice.",
+    "example": "Neonatale hyperbilirubinemie vereist vaak fototherapie om de bilirubinegehaltes te verlagen."
+},
+    {
+    "dutch": "Immunofluorescentie",
+    "english": "Immunofluorescence",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A technique that uses fluorescently labeled antibodies to detect specific antigens in tissue or cells.",
+    "example": "Immunofluorescentie werd gebruikt om de aanwezigheid van antilichamen tegen glomerulaire basaalmembranen aan te tonen."
+},
+    {
+    "dutch": "Jugulaire veneuze druk",
+    "english": "Jugular venous pressure",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An indirect measure of central venous pressure, observed as the height of the jugular vein above the sternal angle.",
+    "example": "Een verhoogde jugulaire veneuze druk kan wijzen op hartfalen of obstructie van de vena cava superior."
+},
+    {
+    "dutch": "Kruisproef",
+    "english": "Crossmatch",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A test performed before blood transfusion to determine if the donor and recipient blood are compatible.",
+    "example": "Voorafgaand aan de transfusie werd een kruisproef uitgevoerd om hemolytische reacties te voorkomen."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical procedure to remove the gallbladder using a laparoscope.",
+    "example": "De patiënt onderging een laparoscopische cholecystectomie vanwege galstenen."
+},
+    {
+    "dutch": "Magnetische resonantie imaging (MRI)",
+    "english": "Magnetic resonance imaging (MRI)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses magnetic fields and radio waves to create detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scan onthulde een tumor in de hersenen."
+},
+    {
+    "dutch": "Neurotransmitters",
+    "english": "Neurotransmitters",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "Chemical messengers that transmit signals across a chemical synapse, such as from a neuron to a target cell.",
+    "example": "Serotonine en dopamine zijn belangrijke neurotransmitters die betrokken zijn bij stemming en gedrag."
+},
+    {
+    "dutch": "Obstructief slaapapneusyndroom",
+    "english": "Obstructive sleep apnea syndrome",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A sleep disorder characterized by repeated episodes of upper airway obstruction during sleep, leading to pauses in breathing and reduced oxygen saturation.",
+    "example": "De diagnose obstructief slaapapneusyndroom werd bevestigd door polysomnografie."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of renal replacement therapy in which a catheter is placed in the peritoneal cavity and a dialysis solution is used to filter waste products from the blood.",
+    "example": "De patiënt koos voor peritoneale dialyse als een vorm van nierfunctievervangende therapie."
+},
+    {
+    "dutch": "Quarantaine",
+    "english": "Quarantine",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The separation and restriction of movement of people who have potentially been exposed to a contagious disease to see if they become ill.",
+    "example": "Na de uitbraak van ebola werd quarantaine toegepast om verdere verspreiding te voorkomen."
+},
+    {
+    "dutch": "Respiratoir syncytieel virus (RSV)",
+    "english": "Respiratory syncytial virus (RSV)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A common virus that causes infections of the lungs and respiratory tract, especially in infants and young children.",
+    "example": "RSV is een belangrijke oorzaak van bronchiolitis bij jonge kinderen."
+},
+    {
+    "dutch": "Sputumkweek",
+    "english": "Sputum culture",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A microbiological test to identify bacteria or fungi in a sample of sputum from the lower respiratory tract.",
+    "example": "De sputumkweek toonde de aanwezigheid van Pseudomonas aeruginosa aan."
+},
+    {
+    "dutch": "Trombocytenaggregatieremmers",
+    "english": "Antiplatelet drugs",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Medications that inhibit platelet aggregation, reducing the risk of blood clots.",
+    "example": "Na de stentplaatsing kreeg de patiënt trombocytenaggregatieremmers voorgeschreven."
+},
+    {
+    "dutch": "Urinezuur",
+    "english": "Uric acid",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A waste product formed from the breakdown of purines, found in blood and excreted in urine.",
+    "example": "Een verhoogd urinezuurgehalte kan leiden tot jicht."
+},
+    {
+    "dutch": "Ventrikelfibrilleren",
+    "english": "Ventricular fibrillation",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A life-threatening cardiac arrhythmia characterized by rapid, uncoordinated contractions of the ventricles, leading to loss of cardiac output.",
+    "example": "Ventrikelfibrilleren vereist onmiddellijke defibrillatie."
+},
+    {
+    "dutch": "Wonddebridement",
+    "english": "Wound debridement",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The removal of dead, damaged, or infected tissue from a wound to promote healing.",
+    "example": "Wonddebridement werd uitgevoerd om de infectie te beheersen en de genezing te bevorderen."
+},
+    {
+    "dutch": "Xenotransplantatie",
+    "english": "Xenotransplantation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The transplantation of living cells, tissues, or organs from one species to another.",
+    "example": "Xenotransplantatie wordt onderzocht als een mogelijke oplossing voor het orgaantekort."
+},
+    {
+    "dutch": "Zenuwcompressie syndroom",
+    "english": "Nerve compression syndrome",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which a nerve is compressed, causing pain, numbness, tingling, or weakness.",
+    "example": "Carpale tunnel syndroom is een voorbeeld van een zenuwcompressie syndroom."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The patient's past and present medical information, including illnesses, surgeries, medications, and family history.",
+    "example": "Een grondige anamnese is essentieel voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of how the body absorbs, distributes, metabolizes, and eliminates a drug.",
+    "example": "Kennis van farmacokinetiek is cruciaal voor het doseren van medicijnen."
+},
+    {
+    "dutch": "Idiopathische longfibrose",
+    "english": "Idiopathic pulmonary fibrosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic, progressive lung disease characterized by scarring of the lung tissue, without a known cause.",
+    "example": "Idiopathische longfibrose leidt tot een progressieve afname van de longfunctie."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A heart attack, caused by a blockage of blood flow to the heart muscle.",
+    "example": "De patiënt werd opgenomen met een acuut myocardinfarct."
+},
+    {
+    "dutch": "Reanimatieprotocol",
+    "english": "Resuscitation protocol",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A standardized set of procedures for providing emergency medical care to a person who has stopped breathing or whose heart has stopped beating.",
+    "example": "Het reanimatieprotocol werd strikt nageleefd tijdens de spoedsituatie."
+},
+    {
+    "dutch": "Status epilepticus",
+    "english": "Status epilepticus",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which a seizure lasts for more than five minutes, or when seizures occur close together and the person doesn't recover between them.",
+    "example": "Status epilepticus is een levensbedreigende aandoening die onmiddellijke behandeling vereist."
+},
+    {
+    "dutch": "Thoracoscopie",
+    "english": "Thoracoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical procedure that uses a small camera and instruments inserted through the chest wall to examine or operate on the lungs, pleura, or mediastinum.",
+    "example": "Thoracoscopie werd uitgevoerd om een biopsie van de pleura te nemen."
+},
+    {
+    "dutch": "Vasovagale syncope",
+    "english": "Vasovagal syncope",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Fainting due to a sudden drop in heart rate and blood pressure, leading to reduced blood flow to the brain.",
+    "example": "De patiënt had een vasovagale syncope na de bloedafname."
+},
+    {
+    "dutch": "Wervelkolomstenose",
+    "english": "Spinal stenosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Narrowing of the spinal canal, which can put pressure on the spinal cord and nerves, causing pain, numbness, or weakness.",
+    "example": "Wervelkolomstenose kan leiden tot claudicatio intermittens neurogenica."
+},
+    {
+    "dutch": "Ziekte van Crohn",
+    "english": "Crohn's disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic inflammatory bowel disease that can affect any part of the digestive tract.",
+    "example": "De ziekte van Crohn kan leiden tot fistels en abcessen."
+},
+    {
+    "dutch": "Atriumfibrilleren",
+    "english": "Atrial fibrillation",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "An irregular and often rapid heart rate that can increase the risk of stroke, heart failure, and other heart-related complications.",
+    "example": "Atriumfibrilleren vereist vaak antistollingstherapie."
+},
+    {
+    "dutch": "Bronchoalveolaire lavage",
+    "english": "Bronchoalveolar lavage",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which fluid is flushed into and then collected from a segment of the lung for diagnostic purposes.",
+    "example": "Bronchoalveolaire lavage werd uitgevoerd om de oorzaak van de pneumonie te achterhalen."
+},
+    {
+    "dutch": "Computertomografie (CT)",
+    "english": "Computed tomography (CT)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses X-rays to create detailed cross-sectional images of the body.",
+    "example": "De CT-scan toonde een longembolie aan."
+},
+    {
+    "dutch": "Delier",
+    "english": "Delirium",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An acute state of confusion and disorientation, often caused by illness, medication, or surgery.",
+    "example": "De patiënt vertoonde tekenen van een delier na de operatie."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A noninvasive test that uses ultrasound to create images of the heart.",
+    "example": "Echocardiografie werd gebruikt om de hartfunctie te beoordelen."
+},
+    {
+    "dutch": "Fractuurfixatie",
+    "english": "Fracture fixation",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical procedure to stabilize a broken bone using pins, screws, plates, or rods.",
+    "example": "Fractuurfixatie was noodzakelijk om de botten in de juiste positie te houden."
+},
+    {
+    "dutch": "Gastro-intestinale bloeding",
+    "english": "Gastrointestinal bleeding",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Bleeding that occurs in the digestive tract.",
+    "example": "De patiënt werd opgenomen met een ernstige gastro-intestinale bloeding."
+},
+    {
+    "dutch": "Hemodialyse",
+    "english": "Hemodialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of renal replacement therapy in which a machine filters waste products from the blood.",
+    "example": "Hemodialyse is een levensreddende behandeling voor patiënten met nierfalen."
+},
+    {
+    "dutch": "Infectiepreventie",
+    "english": "Infection control",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Measures taken to prevent the spread of infections in healthcare settings.",
+    "example": "Strikte infectiepreventie protocollen zijn essentieel om ziekenhuisinfecties te voorkomen."
+},
+    {
+    "dutch": "Kardiale resynchronisatietherapie (CRT)",
+    "english": "Cardiac resynchronization therapy (CRT)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A treatment for heart failure that uses a pacemaker to coordinate the contractions of the left and right ventricles.",
+    "example": "Kardiale resynchronisatietherapie kan de symptomen van hartfalen verbeteren."
+},
+    {
+    "dutch": "Laboratoriumuitslagen",
+    "english": "Laboratory results",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The results of blood tests, urine tests, and other laboratory analyses.",
+    "example": "De laboratoriumuitslagen waren afwijkend, wat verder onderzoek vereiste."
+},
+    {
+    "dutch": "Metastase",
+    "english": "Metastasis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The spread of cancer cells from the primary tumor to other parts of the body.",
+    "example": "De kanker had al metastase naar de lever."
+},
+    {
+    "dutch": "Nefrectomie",
+    "english": "Nephrectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical removal of a kidney.",
+    "example": "Een nefrectomie was noodzakelijk vanwege de niertumor."
+},
+    {
+    "dutch": "Oncologie",
+    "english": "Oncology",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The branch of medicine that deals with the prevention, diagnosis, and treatment of cancer.",
+    "example": "De patiënt werd doorverwezen naar de afdeling oncologie."
+},
+    {
+    "dutch": "Atherosclerotische laesies",
+    "english": "Atherosclerotic lesions",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Damage or injury to the artery wall caused by the build-up of plaque, consisting of fat, cholesterol, calcium, and other substances.",
+    "example": "De radioloog observeerde meerdere atherosclerotische laesies in de kransslagaderen van de patiënt tijdens de angiografie."
+},
+    {
+    "dutch": "Hyperbare zuurstoftherapie",
+    "english": "Hyperbaric oxygen therapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A medical treatment in which the patient breathes 100% oxygen while inside a pressurized chamber, increasing the oxygen concentration in the bloodstream.",
+    "example": "Hyperbare zuurstoftherapie wordt toegepast om de genezing van chronische wonden te bevorderen."
+},
+    {
+    "dutch": "Elektro-encefalogram (EEG)",
+    "english": "Electroencephalogram (EEG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that detects electrical activity in the brain using small, metal discs (electrodes) attached to the scalp.",
+    "example": "Het EEG toonde significante afwijkingen aan, wat duidt op epileptische activiteit."
+},
+    {
+    "dutch": "Dura mater",
+    "english": "Dura mater",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The outermost of the three layers of membrane (the meninges) that surround the brain and spinal cord.",
+    "example": "De chirurg maakte een incisie in de dura mater om toegang te krijgen tot de hersenen."
+},
+    {
+    "dutch": "Chronische obstructieve longziekte (COPD)",
+    "english": "Chronic obstructive pulmonary disease (COPD)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive lung disease that makes it hard to breathe, encompassing emphysema and chronic bronchitis.",
+    "example": "COPD wordt vaak veroorzaakt door langdurige blootstelling aan sigarettenrook."
+},
+    {
+    "dutch": "Geïnformeerde toestemming",
+    "english": "Informed consent",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Permission granted in the knowledge of the possible consequences, typically that which is given by a patient to a doctor for treatment with full knowledge of the possible risks and benefits.",
+    "example": "De patiënt gaf geïnformeerde toestemming voor de chirurgische ingreep nadat alle risico's en voordelen waren besproken."
+},
+    {
+    "dutch": "Anticoagulantia",
+    "english": "Anticoagulants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Medications that help prevent blood clots.",
+    "example": "Anticoagulantia worden voorgeschreven om het risico op trombose te verminderen."
+},
+    {
+    "dutch": "Dyspneu d'effort",
+    "english": "Exertional dyspnea",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Shortness of breath that occurs with physical activity or exertion.",
+    "example": "De patiënt klaagde over dyspneu d'effort, zelfs bij lichte inspanning."
+},
+    {
+    "dutch": "Laparoscopische cholecystectomie",
+    "english": "Laparoscopic cholecystectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A minimally invasive surgical procedure to remove the gallbladder.",
+    "example": "Een laparoscopische cholecystectomie resulteert in minder littekens en een sneller herstel."
+},
+    {
+    "dutch": "Positronemissietomografie (PET)",
+    "english": "Positron emission tomography (PET)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A nuclear medicine imaging technique that produces a three-dimensional image of functional processes in the body.",
+    "example": "Een PET-scan kan helpen bij het opsporen van kankergezwellen en het beoordelen van hun activiteit."
+},
+    {
+    "dutch": "Musculus sternocleidomastoideus",
+    "english": "Sternocleidomastoid muscle",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A paired muscle in the superficial layers of the neck that is important for head movement and posture.",
+    "example": "De fysiotherapeut masseerde de musculus sternocleidomastoideus om de spanning in de nek te verminderen."
+},
+    {
+    "dutch": "Auto-immuunziekte",
+    "english": "Autoimmune disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which the body's immune system attacks its own tissues.",
+    "example": "Reumatoïde artritis is een voorbeeld van een auto-immuunziekte."
+},
+    {
+    "dutch": "Interdisciplinair team",
+    "english": "Interdisciplinary team",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A group of healthcare professionals with different specialties working together to provide comprehensive patient care.",
+    "example": "Het interdisciplinair team kwam bijeen om de behandelingsstrategie voor de patiënt te bespreken."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that suppress or reduce the strength of the body's immune system.",
+    "example": "Immunosuppressiva worden vaak voorgeschreven na orgaantransplantaties."
+},
+    {
+    "dutch": "Nachtelijk zweten",
+    "english": "Night sweats",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Severe perspiration occurring during sleep, often associated with an underlying medical condition.",
+    "example": "De patiënt meldde nachtelijk zweten als een van de belangrijkste symptomen."
+},
+    {
+    "dutch": "Percutane coronaire interventie (PCI)",
+    "english": "Percutaneous coronary intervention (PCI)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A non-surgical procedure used to open blocked coronary arteries with a stent.",
+    "example": "Na het hartinfarct werd een percutane coronaire interventie uitgevoerd om de bloedstroom te herstellen."
+},
+    {
+    "dutch": "Computertomografie (CT)",
+    "english": "Computed tomography (CT)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A diagnostic imaging procedure that uses X-rays to create detailed cross-sectional images of the body.",
+    "example": "De CT-scan toonde een kleine tumor in de long."
+},
+    {
+    "dutch": "Arteria carotis interna",
+    "english": "Internal carotid artery",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A major artery that supplies blood to the brain.",
+    "example": "Een vernauwing in de arteria carotis interna kan leiden tot een beroerte."
+},
+    {
+    "dutch": "Diabetes mellitus type 2",
+    "english": "Type 2 diabetes mellitus",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic metabolic disorder characterized by high blood sugar, insulin resistance, and relative lack of insulin.",
+    "example": "Diabetes mellitus type 2 wordt vaak geassocieerd met overgewicht en een sedentaire levensstijl."
+},
+    {
+    "dutch": "Evidence-based practice (EBP)",
+    "english": "Evidence-based practice (EBP)",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Using the best available evidence to make informed decisions about patient care.",
+    "example": "Evidence-based practice is essentieel om de kwaliteit van de zorg te waarborgen."
+},
+    {
+    "dutch": "Antiretrovirale therapie (ART)",
+    "english": "Antiretroviral therapy (ART)",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Treatment for HIV infection that involves taking a combination of drugs to suppress the virus.",
+    "example": "Antiretrovirale therapie kan de progressie van HIV naar AIDS vertragen."
+},
+    {
+    "dutch": "Orthopneu",
+    "english": "Orthopnea",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Shortness of breath that occurs when lying flat, relieved by sitting or standing.",
+    "example": "Orthopneu is een typisch symptoom van hartfalen."
+},
+    {
+    "dutch": "Totale heuparthroplastiek",
+    "english": "Total hip arthroplasty",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Surgical procedure to replace a damaged hip joint with an artificial joint.",
+    "example": "Een totale heuparthroplastiek kan de pijn verlichten en de mobiliteit verbeteren bij patiënten met artrose."
+},
+    {
+    "dutch": "Magnetische resonantie imaging (MRI)",
+    "english": "Magnetic resonance imaging (MRI)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses strong magnetic fields and radio waves to create detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scan van de hersenen toonde een kleine laesie in de witte stof."
+},
+    {
+    "dutch": "Lobus frontalis",
+    "english": "Frontal lobe",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The largest lobe of the brain, located at the front of the head, responsible for executive functions, motor control, and personality.",
+    "example": "Schade aan de lobus frontalis kan leiden tot veranderingen in gedrag en cognitie."
+},
+    {
+    "dutch": "Ziekte van Parkinson",
+    "english": "Parkinson's disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive neurological disorder that affects movement, characterized by tremors, rigidity, and slowness of movement.",
+    "example": "De ziekte van Parkinson wordt gekenmerkt door de afbraak van dopamine-producerende neuronen in de hersenen."
+},
+    {
+    "dutch": "Patiëntgerichtheid",
+    "english": "Patient-centered care",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Providing care that is respectful of and responsive to individual patient preferences, needs, and values, and ensuring that patient values guide all clinical decisions.",
+    "example": "Patiëntgerichtheid staat centraal in de filosofie van deze zorginstelling."
+},
+    {
+    "dutch": "Analgetica",
+    "english": "Analgesics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that relieve pain.",
+    "example": "Analgetica werden voorgeschreven om de pijn na de operatie te verlichten."
+},
+    {
+    "dutch": "Hemoptyse",
+    "english": "Hemoptysis",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Coughing up blood or blood-stained mucus from the lungs or airways.",
+    "example": "Hemoptyse kan een teken zijn van een ernstige longziekte."
+},
+    {
+    "dutch": "Craniotomie",
+    "english": "Craniotomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a piece of the skull is removed to access the brain.",
+    "example": "Een craniotomie werd uitgevoerd om de hersentumor te verwijderen."
+},
+    {
+    "dutch": "Echocardiografie",
+    "english": "Echocardiography",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that uses ultrasound to create pictures of the heart.",
+    "example": "Echocardiografie wordt gebruikt om de structuur en functie van het hart te beoordelen."
+},
+    {
+    "dutch": "Medulla oblongata",
+    "english": "Medulla oblongata",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The lower half of the brainstem, which controls vital functions such as breathing, heart rate, and blood pressure.",
+    "example": "Schade aan de medulla oblongata kan levensbedreigende gevolgen hebben."
+},
+    {
+    "dutch": "Ziekte van Alzheimer",
+    "english": "Alzheimer's disease",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A progressive neurological disorder that causes the brain to shrink (atrophy) and brain cells to die, leading to memory loss and cognitive decline.",
+    "example": "De ziekte van Alzheimer is de meest voorkomende vorm van dementie."
+},
+    {
+    "dutch": "Multidisciplinaire richtlijn",
+    "english": "Multidisciplinary guideline",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A systematically developed statement to assist practitioner and patient decisions about appropriate health care for specific clinical circumstances, developed by a group of professionals from different disciplines.",
+    "example": "De multidisciplinaire richtlijn voor de behandeling van borstkanker werd recentelijk herzien."
+},
+    {
+    "dutch": "Corticosteroïden",
+    "english": "Corticosteroids",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A class of steroid hormones that reduce inflammation and suppress the immune system.",
+    "example": "Corticosteroïden worden gebruikt om een breed scala aan aandoeningen te behandelen, waaronder astma en reuma."
+},
+    {
+    "dutch": "Melena",
+    "english": "Melena",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "Black, tarry stools caused by digested blood from the upper gastrointestinal tract.",
+    "example": "Melena kan wijzen op een bloeding in de maag of darmen."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a long, flexible tube with a camera is inserted into the colon to examine the lining.",
+    "example": "Een coloscopie wordt uitgevoerd om poliepen en andere afwijkingen in de dikke darm op te sporen."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart over a period of time, using electrodes placed on the skin.",
+    "example": "Het ECG toonde tekenen van een hartritmestoornis."
+},
+    {
+    "dutch": "Nervus vagus",
+    "english": "Vagus nerve",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The tenth cranial nerve, which connects the brainstem to the organs in the abdomen and chest.",
+    "example": "De nervus vagus speelt een belangrijke rol in de regulatie van de spijsvertering en de hartslag."
+},
+    {
+    "dutch": "Multiple sclerose (MS)",
+    "english": "Multiple sclerosis (MS)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic, autoimmune disease that affects the brain and spinal cord, causing a wide range of symptoms.",
+    "example": "Multiple sclerose wordt gekenmerkt door demyelinisatie van zenuwvezels in het centrale zenuwstelsel."
+},
+    {
+    "dutch": "Professionele autonomie",
+    "english": "Professional autonomy",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The freedom and authority of healthcare professionals to make independent judgments and decisions regarding patient care, based on their knowledge and expertise.",
+    "example": "Professionele autonomie is essentieel voor het leveren van kwalitatief hoogwaardige zorg."
+},
+    {
+    "dutch": "Diuretica",
+    "english": "Diuretics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that increase urination, helping to remove excess fluid from the body.",
+    "example": "Diuretica worden vaak gebruikt om hoge bloeddruk en oedeem te behandelen."
+},
+    {
+    "dutch": "Cyanose",
+    "english": "Cyanosis",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "A bluish discoloration of the skin and mucous membranes due to insufficient oxygen in the blood.",
+    "example": "Cyanose kan een teken zijn van hypoxemie."
+},
+    {
+    "dutch": "Endoscopische retrograde cholangiopancreaticografie (ERCP)",
+    "english": "Endoscopic retrograde cholangiopancreatography (ERCP)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure that combines endoscopy and X-rays to diagnose and treat problems of the bile and pancreatic ducts.",
+    "example": "ERCP werd uitgevoerd om een galsteen in de galwegen te verwijderen."
+},
+    {
+    "dutch": "Defibrillator",
+    "english": "Defibrillator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A device that delivers an electric shock to the heart to restore a normal heart rhythm.",
+    "example": "De defibrillator werd gebruikt om de patiënt te reanimeren na een hartstilstand."
+},
+    {
+    "dutch": "Cerebellum",
+    "english": "Cerebellum",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "A major structure of the hindbrain that is located near the brainstem, responsible for motor control, coordination, and balance.",
+    "example": "Schade aan het cerebellum kan leiden tot ataxie."
+},
+    {
+    "dutch": "Hartfalen",
+    "english": "Heart failure",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic condition in which the heart is unable to pump enough blood to meet the body's needs.",
+    "example": "Hartfalen kan leiden tot kortademigheid, vermoeidheid en oedeem."
+},
+    {
+    "dutch": "Ethiekcommissie",
+    "english": "Ethics committee",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A committee established to review and approve research involving human subjects to ensure that ethical principles are followed.",
+    "example": "De ethiekcommissie keurde het onderzoeksprotocol goed na een zorgvuldige beoordeling."
+},
+    {
+    "dutch": "Beta-blokkers",
+    "english": "Beta-blockers",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "A class of drugs that block the effects of adrenaline, slowing the heart rate and lowering blood pressure.",
+    "example": "Beta-blokkers worden vaak voorgeschreven voor de behandeling van hoge bloeddruk en angina pectoris."
+},
+    {
+    "dutch": "Paresthesieën",
+    "english": "Paresthesias",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "An abnormal sensation, such as tingling, prickling, or numbness of the skin, with no apparent physical cause.",
+    "example": "De patiënt klaagde over paresthesieën in de handen en voeten."
+},
+    {
+    "dutch": "Atherosclerotische plaques",
+    "english": "Atherosclerotic plaques",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Accumulations of fats, cholesterol, and other substances in the artery walls, restricting blood flow.",
+    "example": "De aanwezigheid van uitgebreide atherosclerotische plaques in de carotisarterie werd vastgesteld middels duplexonderzoek."
+},
+    {
+    "dutch": "Peritoneale dialyse",
+    "english": "Peritoneal dialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of removing waste products from the blood by using the peritoneum as a filter.",
+    "example": "Na het falen van de niertransplantatie werd gestart met peritoneale dialyse als nierfunctievervangende therapie."
+},
+    {
+    "dutch": "Intracraniële druk",
+    "english": "Intracranial pressure",
+    "level": "C2",
+    "category": "Symptoms",
+    "explanation": "The pressure inside the skull, which must be within a normal range to maintain brain health.",
+    "example": "Verhoogde intracraniële druk vereist onmiddellijke interventie om hersenbeschadiging te voorkomen."
+},
+    {
+    "dutch": "Respiratoire insufficiëntie",
+    "english": "Respiratory insufficiency",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which the lungs cannot adequately provide oxygen to the body or remove carbon dioxide.",
+    "example": "De patiënt ontwikkelde acute respiratoire insufficiëntie na aspiratie van maaginhoud."
+},
+    {
+    "dutch": "Elektro-encefalogram (EEG)",
+    "english": "Electroencephalogram (EEG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that measures electrical activity in the brain using small metal discs (electrodes) attached to the scalp.",
+    "example": "Het elektro-encefalogram toonde epileptiforme afwijkingen in de temporale kwab."
+},
+    {
+    "dutch": "Coronairangiografie",
+    "english": "Coronary angiography",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An X-ray of the blood vessels of the heart after injecting a contrast dye.",
+    "example": "Coronairangiografie werd uitgevoerd om de ernst van de coronaire hartziekte te beoordelen."
+},
+    {
+    "dutch": "Subarachnoïdale bloeding",
+    "english": "Subarachnoid hemorrhage",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Bleeding in the space surrounding the brain, usually caused by a ruptured aneurysm.",
+    "example": "Een subarachnoïdale bloeding werd gediagnosticeerd na een plotselinge, intense hoofdpijn."
+},
+    {
+    "dutch": "Farmacokinetiek",
+    "english": "Pharmacokinetics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of how the body absorbs, distributes, metabolizes, and excretes a drug.",
+    "example": "De farmacokinetiek van dit nieuwe antibioticum is nog niet volledig onderzocht."
+},
+    {
+    "dutch": "Farmacodynamiek",
+    "english": "Pharmacodynamics",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "The study of the biochemical and physiological effects of drugs on the body.",
+    "example": "De farmacodynamiek van dit medicijn verklaart de waargenomen bijwerkingen."
+},
+    {
+    "dutch": "Hematopoëse",
+    "english": "Hematopoiesis",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The production of blood cells and platelets, which occurs in the bone marrow.",
+    "example": "Chemotherapie kan de hematopoëse onderdrukken, wat leidt tot anemie en trombocytopenie."
+},
+    {
+    "dutch": "Histopathologisch onderzoek",
+    "english": "Histopathological examination",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Microscopic examination of tissue to diagnose disease.",
+    "example": "Histopathologisch onderzoek bevestigde de diagnose van een kwaadaardig melanoom."
+},
+    {
+    "dutch": "Neuropathie",
+    "english": "Neuropathy",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Damage or dysfunction of one or more nerves, typically causing numbness, tingling, muscle weakness, and pain.",
+    "example": "Diabetische neuropathie kan leiden tot ernstige voetproblemen."
+},
+    {
+    "dutch": "Immunosuppressiva",
+    "english": "Immunosuppressants",
+    "level": "C2",
+    "category": "Medication",
+    "explanation": "Drugs that inhibit or suppress the immune system.",
+    "example": "Na de orgaantransplantatie moet de patiënt levenslang immunosuppressiva gebruiken."
+},
+    {
+    "dutch": "Osteoporose",
+    "english": "Osteoporosis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which bones become weak and brittle, increasing the risk of fractures.",
+    "example": "Osteoporose komt vaker voor bij vrouwen na de menopauze."
+},
+    {
+    "dutch": "Endoscopie",
+    "english": "Endoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a flexible tube with a camera is used to examine the internal organs.",
+    "example": "Een endoscopie van de dikke darm werd uitgevoerd om poliepen op te sporen."
+},
+    {
+    "dutch": "Myocardinfarct",
+    "english": "Myocardial infarction",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A heart attack; damage to the heart muscle caused by a blocked artery.",
+    "example": "De patiënt presenteerde zich met een acuut myocardinfarct en werd direct naar de hartkatheterisatiekamer gebracht."
+},
+    {
+    "dutch": "Arteriële bifurcatie",
+    "english": "Arterial bifurcation",
+    "level": "C2",
+    "category": "Anatomy",
+    "explanation": "The point where an artery divides into two branches.",
+    "example": "De aneurysma was gelokaliseerd bij een arteriële bifurcatie in de hersenen."
+},
+    {
+    "dutch": "Pneumothorax",
+    "english": "Pneumothorax",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The presence of air or gas in the cavity between the lungs and the chest wall, causing collapse of the lung.",
+    "example": "Een spontane pneumothorax kan optreden bij jonge, lange mannen."
+},
+    {
+    "dutch": "Radiotherapie",
+    "english": "Radiotherapy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Treatment of disease, especially cancer, using X-rays or similar forms of radiation.",
+    "example": "Radiotherapie werd voorgesteld als aanvullende behandeling na de operatie."
+},
+    {
+    "dutch": "Secundaire preventie",
+    "english": "Secondary prevention",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Measures aimed at early detection and management of existing disease to prevent complications and progression.",
+    "example": "Secundaire preventie na een hartinfarct omvat medicatie, leefstijladviezen en regelmatige controles."
+},
+    {
+    "dutch": "Klinische trial",
+    "english": "Clinical trial",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A research study that tests the effectiveness and safety of new treatments or interventions.",
+    "example": "De resultaten van de klinische trial werden gepubliceerd in een gerenommeerd medisch tijdschrift."
+},
+    {
+    "dutch": "Ethische commissie",
+    "english": "Ethics committee",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A committee that reviews research proposals to ensure that they are ethically sound and protect the rights and welfare of participants.",
+    "example": "Het onderzoeksprotocol werd goedgekeurd door de ethische commissie van het ziekenhuis."
+},
+    {
+    "dutch": "Differentiaaldiagnose",
+    "english": "Differential diagnosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The process of differentiating between diseases with similar signs and symptoms.",
+    "example": "De differentiaaldiagnose van deze symptomen omvat zowel infectieuze als auto-immuun aandoeningen."
+},
+    {
+    "dutch": "Evidence-based medicine",
+    "english": "Evidence-based medicine",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "Medical care based on the best available research evidence.",
+    "example": "Evidence-based medicine is essentieel voor het leveren van optimale patiëntenzorg."
+},
+    {
+    "dutch": "Multidisciplinair overleg",
+    "english": "Multidisciplinary consultation",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "A meeting of healthcare professionals from different disciplines to discuss a patient's care.",
+    "example": "Het behandelplan werd vastgesteld tijdens een multidisciplinair overleg met chirurgen, oncologen en radiotherapeuten."
+},
+    {
+    "dutch": "Anamnese",
+    "english": "Medical history",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The patient's account of their medical history.",
+    "example": "Een uitgebreide anamnese is cruciaal voor het stellen van de juiste diagnose."
+},
+    {
+    "dutch": "Prognose",
+    "english": "Prognosis",
+    "level": "C2",
+    "category": "Professional",
+    "explanation": "The likely course of a disease or ailment.",
+    "example": "De prognose voor patiënten met dit type kanker is aanzienlijk verbeterd door nieuwe behandelingen."
+},
+    {
+    "dutch": "Comorbiditeit",
+    "english": "Comorbidity",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "The simultaneous presence of two or more diseases or medical conditions in a patient.",
+    "example": "De comorbiditeit van diabetes en hypertensie verhoogt het risico op hart- en vaatziekten."
+},
+    {
+    "dutch": "Cerebrovasculair accident (CVA)",
+    "english": "Cerebrovascular accident (CVA)",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "Stroke. Damage to the brain from interruption of its blood supply.",
+    "example": "Na het CVA had de patiënt moeite met spreken en bewegen."
+},
+    {
+    "dutch": "Hemodialyse",
+    "english": "Hemodialysis",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A method of removing waste products from the blood by using a machine to filter the blood.",
+    "example": "Patiënten met chronisch nierfalen ondergaan regelmatig hemodialyse."
+},
+    {
+    "dutch": "Cardiopulmonale resuscitatie (CPR)",
+    "english": "Cardiopulmonary resuscitation (CPR)",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Emergency procedure that combines chest compressions often with artificial ventilation in an effort to manually preserve intact brain function until further measures are taken to restore spontaneous blood circulation and breathing in a person who is in cardiac arrest.",
+    "example": "De omstanders startten direct met cardiopulmonale resuscitatie totdat de ambulance arriveerde."
+},
+    {
+    "dutch": "Magnetische resonantie imaging (MRI)",
+    "english": "Magnetic resonance imaging (MRI)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses magnetic fields and radio waves to create detailed images of the organs and tissues in the body.",
+    "example": "De MRI-scan van de hersenen toonde een kleine laesie in de witte stof."
+},
+    {
+    "dutch": "Computertomografie (CT)",
+    "english": "Computed tomography (CT)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical imaging technique that uses X-rays to create detailed cross-sectional images of the body.",
+    "example": "Een CT-scan van de buik werd uitgevoerd om de oorzaak van de buikpijn te achterhalen."
+},
+    {
+    "dutch": "Elektrocardiogram (ECG)",
+    "english": "Electrocardiogram (ECG)",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A test that records the electrical activity of the heart.",
+    "example": "Het elektrocardiogram toonde tekenen van een recent doorgemaakt hartinfarct."
+},
+    {
+    "dutch": "Stethoscoop",
+    "english": "Stethoscope",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A medical instrument used for listening to sounds within the body.",
+    "example": "De arts luisterde met de stethoscoop naar de hart- en longgeluiden van de patiënt."
+},
+    {
+    "dutch": "Thoracotomie",
+    "english": "Thoracotomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical incision into the chest wall.",
+    "example": "Een thoracotomie werd uitgevoerd om de tumor uit de long te verwijderen."
+},
+    {
+    "dutch": "Laparoscopie",
+    "english": "Laparoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A surgical procedure in which a small incision is made in the abdomen and a camera and instruments are inserted to perform the surgery.",
+    "example": "Een laparoscopie werd uitgevoerd om de galblaas te verwijderen."
+},
+    {
+    "dutch": "Artrose",
+    "english": "Osteoarthritis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A degenerative joint disease that causes pain, stiffness, and swelling.",
+    "example": "Artrose van de knie kan de mobiliteit van de patiënt aanzienlijk beperken."
+},
+    {
+    "dutch": "Reumatoïde artritis",
+    "english": "Rheumatoid arthritis",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A chronic inflammatory disorder that affects many joints, including those in the hands and feet.",
+    "example": "Reumatoïde artritis is een auto-immuunziekte die chronische ontsteking veroorzaakt."
+},
+    {
+    "dutch": "Anemie",
+    "english": "Anemia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which there is a deficiency of red blood cells or hemoglobin in the blood.",
+    "example": "IJzergebreksanemie is een veelvoorkomende oorzaak van vermoeidheid."
+},
+    {
+    "dutch": "Trombocytopenie",
+    "english": "Thrombocytopenia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A condition in which there is a deficiency of platelets in the blood.",
+    "example": "Chemotherapie kan trombocytopenie veroorzaken, waardoor het risico op bloedingen toeneemt."
+},
+    {
+    "dutch": "Leukemie",
+    "english": "Leukemia",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A cancer of the blood or bone marrow, characterized by an abnormal proliferation of blood cells, usually white blood cells.",
+    "example": "Acute myeloïde leukemie is een agressieve vorm van kanker die snel behandeld moet worden."
+},
+    {
+    "dutch": "Melanoom",
+    "english": "Melanoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A type of skin cancer that develops from melanocytes.",
+    "example": "Vroege opsporing van melanoom is cruciaal voor een succesvolle behandeling."
+},
+    {
+    "dutch": "Adenocarcinoom",
+    "english": "Adenocarcinoma",
+    "level": "C2",
+    "category": "Diseases",
+    "explanation": "A type of cancer that originates in glandular tissue.",
+    "example": "Adenocarcinoom van de long is een veel voorkomende vorm van longkanker."
+},
+    {
+    "dutch": "Resectie",
+    "english": "Resection",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "The surgical removal of part of an organ or structure.",
+    "example": "Na de resectie van de tumor werd de patiënt nauwlettend in de gaten gehouden."
+},
+    {
+    "dutch": "Hysterectomie",
+    "english": "Hysterectomy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "Surgical removal of the uterus.",
+    "example": "Een hysterectomie werd uitgevoerd vanwege ernstige baarmoederbloedingen."
+},
+    {
+    "dutch": "Coloscopie",
+    "english": "Colonoscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An examination of the colon using a flexible tube with a camera.",
+    "example": "Een coloscopie is een belangrijk onderzoek voor de screening op darmkanker."
+},
+    {
+    "dutch": "Gastroscopie",
+    "english": "Gastroscopy",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "An examination of the esophagus, stomach, and duodenum using a flexible tube with a camera.",
+    "example": "Een gastroscopie werd uitgevoerd om de oorzaak van de dyspepsie te achterhalen."
+},
+    {
+    "dutch": "Lumbaalpunctie",
+    "english": "Lumbar puncture",
+    "level": "C2",
+    "category": "Procedures",
+    "explanation": "A procedure in which a needle is inserted into the lower back to collect cerebrospinal fluid.",
+    "example": "Een lumbaalpunctie werd uitgevoerd om een infectie van het centraal zenuwstelsel uit te sluiten."
+},
+    {
+    "dutch": "Ventilator",
+    "english": "Ventilator",
+    "level": "C2",
+    "category": "Equipment",
+    "explanation": "A machine that provides mechanical ventilation to assist or replace spontaneous breathing.",
+    "example": "De patiënt werd aan de ventilator gelegd vanwege acute respiratoire insufficiëntie."
+},
 ];

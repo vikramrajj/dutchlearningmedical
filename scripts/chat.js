@@ -24,6 +24,7 @@ class DutchAIChat {
         this.recognition = null;
         this.currentUtterance = null;
         this.interimTranscript = '';
+        this.greetingPlayed = false;
 
         this.buildUI();
         this.bindEvents();
@@ -418,21 +419,62 @@ class DutchAIChat {
         this.fab.classList.toggle('panel-open', this.isOpen);
         if (this.isOpen) {
             this.unreadDot.classList.add('hidden');
+
+            // Auto-start the conversation on first open
+            if (!this.greetingPlayed) {
+                this.greetingPlayed = true;
+                this.playGreeting();
+            }
+        }
+    }
+
+    async playGreeting() {
+        this.setState(STATE.THINKING);
+        try {
+            // Invisible prompt to trigger a conversational start from the AI
+            const prompt = "Start het gesprek door 'Hoi' of 'Hallo' te zeggen en direct een simpele 'small talk' vraag te stellen in het Nederlands (bijv. hoe gaat het, of wat ben je aan het doen vandaag?). Maximaal 2 korte zinnen.";
+
+            const response = await fetch(API_PROXY, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: [{ role: 'user', parts: [{ text: prompt }] }] })
+            });
+
+            if (!response.ok) throw new Error('Network response was not ok');
+
+            const data = await response.json();
+            const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text || 'Hallo! Leuk je te zien. Hoe gaat het met je vandaag?';
+
+            // Show and speak the AI's greeting (don't push the hidden user prompt to history)
+            this.conversationHistory.push({ role: 'model', parts: [{ text: aiText }] });
+            this.addMessage('ai', this.formatText(aiText));
+            this.speak(aiText);
+
+        } catch (err) {
+            // Fallback in case of API error
+            const fallback = 'Hallo! Ik ben online. Hoe gaat het met je vandaag?';
+            this.conversationHistory.push({ role: 'model', parts: [{ text: fallback }] });
+            this.addMessage('ai', this.formatText(fallback));
+            this.speak(fallback);
         }
     }
 
     clearConversation() {
         this.conversationHistory = [];
+        this.greetingPlayed = false; // Reset so it greets again next time
         window.speechSynthesis && window.speechSynthesis.cancel();
         this.setState(STATE.IDLE);
+
+        // Show a minimal status message instead of the huge old welcome block
         this.messagesEl.innerHTML = `
-            <div class="chat-welcome">
-                <div class="welcome-emoji">🇳🇱</div>
-                <h3>Nieuw gesprek!</h3>
-                <p>Druk op de microfoon en begin te praten.</p>
+            <div class="chat-welcome" style="margin-top:auto;">
+                <p style="font-size:0.8rem; opacity:0.7; text-align:center;">
+                    Gesprek gewist. Sluit en heropen om opnieuw te beginnen.
+                </p>
                 <div class="chat-suggestions">
                     <button class="suggestion-chip" data-msg="Wat betekent bloeddruk?">Wat betekent bloeddruk?</button>
-                    <button class="suggestion-chip" data-msg="Geef me 5 ziekenhuis uitdrukkingen">5 ziekenhuis-uitdrukkingen</button>
+                    <button class="suggestion-chip" data-msg="Oefen een medisch gesprek.">Oefen een gesprek</button>
+                    <button class="suggestion-chip" data-msg="Laten we smalltalk oefenen.">Laten we smalltalk oefenen</button>
                 </div>
             </div>`;
     }
