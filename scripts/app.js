@@ -80,6 +80,7 @@ class FlashcardGame {
         this.speakingStatAccuracy = document.getElementById('speakingStatAccuracy');
         this.speakBtnSpeakingHint = document.getElementById('speakBtnSpeakingHint');
         this.playbackDutchVoice = document.getElementById('playbackDutchVoice');
+        this.retrySpeakingBtn = document.getElementById('retrySpeakingBtn');
 
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
@@ -123,6 +124,7 @@ class FlashcardGame {
         this.speakingMicBtn.addEventListener('click', () => this.toggleSpeakingTest());
         this.speakBtnSpeakingHint.addEventListener('click', () => this.speakCurrentWordEnglish());
         this.playbackDutchVoice.addEventListener('click', () => this.speakCurrentWord());
+        this.retrySpeakingBtn.addEventListener('click', () => this.retrySpeakingTest());
 
         // ---- Keyboard shortcuts ----
         document.addEventListener('keydown', (e) => {
@@ -268,6 +270,7 @@ class FlashcardGame {
         this.speakingFeedback.classList.add('hidden');
         this.speakingCorrectAnswer.classList.add('hidden');
         this.playbackDutchVoice.style.display = 'none';
+        this.retrySpeakingBtn.style.display = 'none';
 
         // Spelling mode
         this.spellingEnglish.textContent = item.english;
@@ -577,6 +580,7 @@ class FlashcardGame {
         this.speakingFeedback.classList.add('hidden');
         this.speakingCorrectAnswer.classList.add('hidden');
         this.playbackDutchVoice.style.display = 'none';
+        this.retrySpeakingBtn.style.display = 'none';
 
         this.isSpeakingListening = true;
         this.speakingLiveTranscript.textContent = '...';
@@ -651,10 +655,33 @@ class FlashcardGame {
                 this.speakingCorrectAnswer.textContent = `It should sound like: ${item.dutch}`;
                 this.speakingCorrectAnswer.classList.remove('hidden');
                 this.playbackDutchVoice.style.display = 'block';
+                this.retrySpeakingBtn.style.display = 'block';
             }
 
             this.updateSpeakingStats();
         }
+    }
+
+    retrySpeakingTest() {
+        // Only allow retry if they failed the most recent test
+        if (!this.speakingChecked) return;
+
+        // Remove the wrong stat so they can try again
+        if (this.speakingStats.wrong > 0) {
+            this.speakingStats.wrong--;
+        }
+        this.updateSpeakingStats();
+
+        // Reset state for the current card
+        this.speakingChecked = false;
+        this.speakingLiveTranscript.textContent = '';
+        this.speakingFeedback.classList.add('hidden');
+        this.speakingCorrectAnswer.classList.add('hidden');
+        this.playbackDutchVoice.style.display = 'none';
+        this.retrySpeakingBtn.style.display = 'none';
+
+        // Immediately start listening again
+        this.startSpeakingTest();
     }
 
     updateSpeakingStats() {

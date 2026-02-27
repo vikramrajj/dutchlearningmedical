@@ -259,11 +259,17 @@
                     <div class="feedback-icon" id="speakingFeedbackIcon"></div>
                     <p class="feedback-message" id="speakingFeedbackMessage"></p>
                     <p class="correct-answer hidden" id="speakingCorrectAnswer"></p>
-                    <button class="speak-btn" id="playbackDutchVoice" title="Listen to perfect Dutch pronunciation"
-                        style="margin:10px auto; display:none;">
-                        🔊 Listen to pronunciation
-                    </button>
-                    <!-- Hidden button that shows only after attempt so they can hear what it should sound like -->
+                    <div style="display: flex; gap: 10px; justify-content: center; margin-top: 10px;">
+                        <button class="speak-btn" id="playbackDutchVoice" title="Listen to perfect Dutch pronunciation"
+                            style="display:none; padding: 0.5rem 1rem;">
+                            🔊 Listen
+                        </button>
+                        <button class="speak-btn text-blue-muted" id="retrySpeakingBtn" title="Try again"
+                            style="display:none; padding: 0.5rem 1rem; border: 1px solid var(--primary); background: transparent;">
+                            � Retry
+                        </button>
+                    </div>
+                    <!-- Hidden buttons that show only after attempt so they can hear what it should sound like or retry -->
                 </div>
             </div>
 
