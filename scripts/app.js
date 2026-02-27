@@ -120,10 +120,7 @@ class FlashcardGame {
         // ---- Speaking mode events ----
         this.speakingNextBtn.addEventListener('click', () => this.nextCard());
         this.speakingPrevBtn.addEventListener('click', () => this.prevCard());
-        this.speakingMicBtn.addEventListener('mousedown', () => this.startSpeakingTest());
-        this.speakingMicBtn.addEventListener('mouseup', () => this.stopSpeakingTest());
-        this.speakingMicBtn.addEventListener('touchstart', (e) => { e.preventDefault(); this.startSpeakingTest(); }, { passive: false });
-        this.speakingMicBtn.addEventListener('touchend', (e) => { e.preventDefault(); this.stopSpeakingTest(); }, { passive: false });
+        this.speakingMicBtn.addEventListener('click', () => this.toggleSpeakingTest());
         this.speakBtnSpeakingHint.addEventListener('click', () => this.speakCurrentWordEnglish());
         this.playbackDutchVoice.addEventListener('click', () => this.speakCurrentWord());
 
@@ -558,6 +555,14 @@ class FlashcardGame {
                 this.speakingStatusText.textContent = 'Tap to test speaking';
             }
         };
+    }
+
+    toggleSpeakingTest() {
+        if (this.isSpeakingListening) {
+            this.stopSpeakingTest();
+        } else {
+            this.startSpeakingTest();
+        }
     }
 
     startSpeakingTest() {
