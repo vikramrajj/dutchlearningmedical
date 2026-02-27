@@ -65,6 +65,16 @@
                             </svg>
                             Spelling
                         </button>
+                        <button class="mode-btn" id="modeSpeaking" data-mode="speaking">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                                <line x1="12" y1="19" x2="12" y2="23" />
+                                <line x1="8" y1="23" x2="16" y2="23" />
+                            </svg>
+                            Speaking
+                        </button>
                     </div>
                 </div>
 
@@ -205,6 +215,77 @@
                     </svg>
                 </button>
                 <button id="spellingNextBtn" class="btn btn-primary">Next Word</button>
+            </div>
+        </section>
+
+        <!-- ===================== SPEAKING MODE ===================== -->
+        <section class="speaking-section hidden" id="speakingSection">
+            <div class="spelling-card"> <!-- Reusing spelling card base wrapper style for consistency -->
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="speakingCategory">Category</span>
+                    <button class="speak-btn text-blue-muted" id="speakBtnSpeakingHint"
+                        title="Hear English Pronunciation">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="spelling-prompt-label">Translate and speak aloud in Dutch:</p>
+                <h2 class="spelling-english" id="speakingEnglish">English Word</h2>
+                <p id="speakingExplanation" class="speaking-explanation">Explanation here...</p>
+
+                <!-- Action Ring -->
+                <div class="speaking-action-wrapper">
+                    <button class="speaking-mic-btn" id="speakingMicBtn" aria-label="Hold or click to speak">
+                        <span class="pulse-ring" id="speakingPulseRing"></span>
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
+                            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
+                            <line x1="12" y1="19" x2="12" y2="23" />
+                            <line x1="8" y1="23" x2="16" y2="23" />
+                        </svg>
+                    </button>
+                    <p class="speaking-status" id="speakingStatusText">Tap to test speaking</p>
+                    <p class="speaking-transcript" id="speakingLiveTranscript"></p>
+                </div>
+
+                <!-- Feedback -->
+                <div class="spelling-feedback hidden" id="speakingFeedback">
+                    <div class="feedback-icon" id="speakingFeedbackIcon"></div>
+                    <p class="feedback-message" id="speakingFeedbackMessage"></p>
+                    <p class="correct-answer hidden" id="speakingCorrectAnswer"></p>
+                    <button class="speak-btn" id="playbackDutchVoice" title="Listen to perfect Dutch pronunciation"
+                        style="margin:10px auto; display:none;">
+                        🔊 Listen to pronunciation
+                    </button>
+                    <!-- Hidden button that shows only after attempt so they can hear what it should sound like -->
+                </div>
+            </div>
+
+            <!-- Stats & Nav -->
+            <div class="spelling-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="speakingStatCorrect">0</span>
+                    <span class="stat-label">Passed</span>
+                </div>
+                <div class="stat-box stat-wrong">
+                    <span class="stat-num" id="speakingStatWrong">0</span>
+                    <span class="stat-label">Failed</span>
+                </div>
+                <div class="stat-box stat-accuracy">
+                    <span class="stat-num" id="speakingStatAccuracy">–</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="speakingPrevBtn" class="btn btn-secondary">Previous</button>
+                <button id="speakingNextBtn" class="btn btn-primary">Next Word</button>
             </div>
         </section>
     </main>

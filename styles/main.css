@@ -830,6 +830,111 @@ select:focus {
 }
 
 /* ============================================================
+   SPEAKING MODE (Interactive Test)
+   ============================================================ */
+
+.speaking-explanation {
+    font-size: 1rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.speaking-action-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.speaking-mic-btn {
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 2;
+}
+
+.speaking-mic-btn svg {
+    z-index: 2;
+    transition: transform 0.2s ease;
+}
+
+.speaking-mic-btn:hover {
+    transform: scale(1.05);
+}
+
+.speaking-mic-btn:active,
+.speaking-mic-btn.listening {
+    transform: scale(0.95);
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+    box-shadow: 0 5px 15px rgba(239, 68, 68, 0.4);
+}
+
+.speaking-mic-btn.listening svg {
+    transform: scale(0.9);
+}
+
+/* Pulsing ring while listening */
+.speaking-mic-btn.listening .pulse-ring {
+    position: absolute;
+    inset: -15px;
+    border-radius: 50%;
+    border: 3px solid rgba(239, 68, 68, 0.5);
+    animation: speak-pulse 1.5s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+    z-index: 1;
+}
+
+@keyframes speak-pulse {
+    0% {
+        transform: scale(0.8);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        opacity: 0;
+    }
+}
+
+.speaking-status {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    min-height: 1.5rem;
+}
+
+.speaking-transcript {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--text);
+    min-height: 2rem;
+    font-style: italic;
+    opacity: 0.8;
+}
+
+.text-blue-muted {
+    color: var(--primary);
+    opacity: 0.6;
+}
+
+.text-blue-muted:hover {
+    opacity: 1;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 footer {

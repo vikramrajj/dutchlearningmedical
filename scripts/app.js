@@ -6,11 +6,17 @@ class FlashcardGame {
         this.filteredVocab = [...this.vocab];
         this.currentIndex = 0;
         this.isFlipped = false;
-        this.mode = 'flashcard'; // 'flashcard' | 'spelling'
+        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking'
 
-        // Spelling stats
+        // Stats
         this.stats = { correct: 0, wrong: 0 };
+        this.speakingStats = { correct: 0, wrong: 0 };
         this.spellingChecked = false; // prevent multiple checks per word
+        this.speakingChecked = false;
+
+        // Speech Recog for speaking test
+        this.speakingRecognition = null;
+        this.isSpeakingListening = false;
 
         // DOM — common
         this.levelSelect = document.getElementById('levelSelect');
@@ -54,6 +60,27 @@ class FlashcardGame {
         this.statAccuracy = document.getElementById('statAccuracy');
         this.challengeBadge = document.getElementById('challengeBadge');
 
+        // DOM — speaking mode
+        this.modeSpeaking = document.getElementById('modeSpeaking');
+        this.speakingSection = document.getElementById('speakingSection');
+        this.speakingEnglish = document.getElementById('speakingEnglish');
+        this.speakingCategory = document.getElementById('speakingCategory');
+        this.speakingExplanation = document.getElementById('speakingExplanation');
+        this.speakingMicBtn = document.getElementById('speakingMicBtn');
+        this.speakingStatusText = document.getElementById('speakingStatusText');
+        this.speakingLiveTranscript = document.getElementById('speakingLiveTranscript');
+        this.speakingFeedback = document.getElementById('speakingFeedback');
+        this.speakingFeedbackIcon = document.getElementById('speakingFeedbackIcon');
+        this.speakingFeedbackMessage = document.getElementById('speakingFeedbackMessage');
+        this.speakingCorrectAnswer = document.getElementById('speakingCorrectAnswer');
+        this.speakingPrevBtn = document.getElementById('speakingPrevBtn');
+        this.speakingNextBtn = document.getElementById('speakingNextBtn');
+        this.speakingStatCorrect = document.getElementById('speakingStatCorrect');
+        this.speakingStatWrong = document.getElementById('speakingStatWrong');
+        this.speakingStatAccuracy = document.getElementById('speakingStatAccuracy');
+        this.speakBtnSpeakingHint = document.getElementById('speakBtnSpeakingHint');
+        this.playbackDutchVoice = document.getElementById('playbackDutchVoice');
+
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
         this.modeSpelling = document.getElementById('modeSpelling');
@@ -62,9 +89,12 @@ class FlashcardGame {
     }
 
     init() {
+        this.initSpeakingRecognition();
+
         // ---- Mode toggle ----
         this.modeFlashcard.addEventListener('click', () => this.switchMode('flashcard'));
         this.modeSpelling.addEventListener('click', () => this.switchMode('spelling'));
+        this.modeSpeaking.addEventListener('click', () => this.switchMode('speaking'));
 
         // ---- Level filter ----
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
@@ -86,6 +116,16 @@ class FlashcardGame {
         this.spellingPrevBtn.addEventListener('click', () => this.prevCard());
         this.spellingShuffleBtn.addEventListener('click', () => this.shuffleCards());
         this.speakBtnSpelling.addEventListener('click', () => this.speakCurrentWord());
+
+        // ---- Speaking mode events ----
+        this.speakingNextBtn.addEventListener('click', () => this.nextCard());
+        this.speakingPrevBtn.addEventListener('click', () => this.prevCard());
+        this.speakingMicBtn.addEventListener('mousedown', () => this.startSpeakingTest());
+        this.speakingMicBtn.addEventListener('mouseup', () => this.stopSpeakingTest());
+        this.speakingMicBtn.addEventListener('touchstart', (e) => { e.preventDefault(); this.startSpeakingTest(); }, { passive: false });
+        this.speakingMicBtn.addEventListener('touchend', (e) => { e.preventDefault(); this.stopSpeakingTest(); }, { passive: false });
+        this.speakBtnSpeakingHint.addEventListener('click', () => this.speakCurrentWordEnglish());
+        this.playbackDutchVoice.addEventListener('click', () => this.speakCurrentWord());
 
         // ---- Keyboard shortcuts ----
         document.addEventListener('keydown', (e) => {
@@ -114,16 +154,22 @@ class FlashcardGame {
 
         this.modeFlashcard.classList.toggle('active', newMode === 'flashcard');
         this.modeSpelling.classList.toggle('active', newMode === 'spelling');
+        this.modeSpeaking.classList.toggle('active', newMode === 'speaking');
 
-        this.flashcardSection.classList.toggle('hidden', newMode === 'spelling');
-        this.spellingSection.classList.toggle('hidden', newMode === 'flashcard');
+        this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
+        this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
+        this.speakingSection.classList.toggle('hidden', newMode !== 'speaking');
 
         // Reset state for new mode
         this.currentIndex = 0;
         this.isFlipped = false;
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
+        this.speakingChecked = false;
         this.hintShown = false;
+        if (this.speakingRecognition && this.isSpeakingListening) {
+            this.stopSpeakingTest();
+        }
         this.updateCard();
     }
 
@@ -155,6 +201,7 @@ class FlashcardGame {
         this.isFlipped = false;
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
+        this.speakingChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -168,6 +215,7 @@ class FlashcardGame {
         this.isFlipped = false;
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
+        this.speakingChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -178,6 +226,7 @@ class FlashcardGame {
         this.isFlipped = false;
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
+        this.speakingChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -200,6 +249,7 @@ class FlashcardGame {
             this.dutchWord.textContent = 'No words found';
             this.englishWord.textContent = 'Select another level';
             this.spellingEnglish.textContent = 'No words found';
+            this.speakingEnglish.textContent = 'No words found';
             this.progressCount.textContent = '0/0';
             this.progressFill.style.width = '0%';
             return;
@@ -211,6 +261,16 @@ class FlashcardGame {
         this.cardCategory.textContent = item.category;
         this.englishExplanation.textContent = item.explanation || 'No explanation available.';
         this.exampleSentence.textContent = item.example || 'No example available.';
+
+        // Speaking mode
+        this.speakingEnglish.textContent = item.english;
+        this.speakingCategory.textContent = item.category;
+        this.speakingExplanation.textContent = item.explanation || 'No explanation available.';
+        this.speakingStatusText.textContent = 'Tap to test speaking';
+        this.speakingLiveTranscript.textContent = '';
+        this.speakingFeedback.classList.add('hidden');
+        this.speakingCorrectAnswer.classList.add('hidden');
+        this.playbackDutchVoice.style.display = 'none';
 
         // Spelling mode
         this.spellingEnglish.textContent = item.english;
@@ -413,7 +473,9 @@ class FlashcardGame {
 
         window.speechSynthesis.cancel();
 
-        const activeBtn = this.mode === 'flashcard' ? this.speakBtnFront : this.speakBtnSpelling;
+        let activeBtn = this.speakBtnFront;
+        if (this.mode === 'spelling') activeBtn = this.speakBtnSpelling;
+        if (this.mode === 'speaking') activeBtn = this.playbackDutchVoice;
 
         const doSpeak = () => {
             const utterance = new SpeechSynthesisUtterance(item.dutch);
@@ -441,6 +503,177 @@ class FlashcardGame {
         } else {
             doSpeak();
         }
+    }
+
+    // ============================================================
+    //  SPEAKING TEST MODE
+    // ============================================================
+    initSpeakingRecognition() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            console.warn('Speech Recognition API not supported in this browser.');
+            return;
+        }
+
+        this.speakingRecognition = new SpeechRecognition();
+        this.speakingRecognition.lang = 'nl-NL';
+        this.speakingRecognition.continuous = true;
+        this.speakingRecognition.interimResults = true;
+
+        this.speakingRecognition.onresult = (event) => {
+            let interimTranscript = '';
+            let finalTranscript = '';
+
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                } else {
+                    interimTranscript += event.results[i][0].transcript;
+                }
+            }
+
+            this.speakingLiveTranscript.textContent = finalTranscript || interimTranscript;
+
+            if (finalTranscript) {
+                this.checkSpeakingFormat(finalTranscript);
+            }
+        };
+
+        this.speakingRecognition.onerror = (event) => {
+            console.error('Speech recognition error', event.error);
+            this.speakingStatusText.textContent = 'Error: ' + event.error;
+            this.speakingMicBtn.classList.remove('listening');
+        };
+
+        this.speakingRecognition.onend = () => {
+            if (this.isSpeakingListening && !this.speakingChecked) {
+                // If we are still supposed to be listening but it ended, restart
+                try {
+                    this.speakingRecognition.start();
+                } catch (e) {
+                    console.log('Already started');
+                }
+            } else if (!this.speakingChecked) {
+                this.speakingMicBtn.classList.remove('listening');
+                this.speakingStatusText.textContent = 'Tap to test speaking';
+            }
+        };
+    }
+
+    startSpeakingTest() {
+        if (!this.speakingRecognition) {
+            alert("Your browser does not support Speech Recognition. Please try Chrome.");
+            return;
+        }
+
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item || this.speakingChecked) return;
+
+        this.speakingFeedback.classList.add('hidden');
+        this.speakingCorrectAnswer.classList.add('hidden');
+        this.playbackDutchVoice.style.display = 'none';
+
+        this.isSpeakingListening = true;
+        this.speakingLiveTranscript.textContent = '...';
+        this.speakingStatusText.textContent = 'Listening... (speak Dutch)';
+        this.speakingMicBtn.classList.add('listening');
+
+        // Stop TTS if it's currently speaking
+        window.speechSynthesis.cancel();
+
+        try {
+            this.speakingRecognition.start();
+        } catch (e) {
+            // Already started
+        }
+    }
+
+    stopSpeakingTest() {
+        if (!this.speakingRecognition || !this.isSpeakingListening) return;
+        this.isSpeakingListening = false;
+        this.speakingRecognition.stop();
+        this.speakingMicBtn.classList.remove('listening');
+        this.speakingStatusText.textContent = 'Processing...';
+
+        // Give it a short delay to see if parsing caught the final result
+        setTimeout(() => {
+            if (!this.speakingChecked) {
+                const text = this.speakingLiveTranscript.textContent;
+                if (text && text !== '...') {
+                    this.checkSpeakingFormat(text);
+                } else {
+                    this.speakingStatusText.textContent = 'Tap to test speaking';
+                }
+            }
+        }, 800);
+    }
+
+    checkSpeakingFormat(transcript) {
+        if (this.speakingChecked) return;
+
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item) return;
+
+        // Clean both strings: lower case, remove punctuation
+        const cleanStr = (s) => s.toLowerCase().replace(/[^a-z0-9àáâäçèéêëìíîïñòóôöùúûüýÿ]/gi, '').trim();
+
+        const transcriptClean = cleanStr(transcript);
+        const dutchClean = cleanStr(item.dutch);
+
+        // Simple fuzzy match: does transcript contain the correct word, or does the correct word contain the transcript (if long enough)
+        const isCorrect = transcriptClean.includes(dutchClean) || (transcriptClean.length > 3 && dutchClean.includes(transcriptClean));
+
+        // Mark as checked so it doesn't trigger multiple times per word
+        if (isCorrect || !this.isSpeakingListening) {
+            this.speakingChecked = true;
+            this.isSpeakingListening = false;
+            try { this.speakingRecognition.stop(); } catch (e) { }
+            this.speakingMicBtn.classList.remove('listening');
+
+            this.speakingFeedback.classList.remove('hidden');
+            this.speakingStatusText.textContent = 'Test Complete';
+
+            if (isCorrect) {
+                this.speakingStats.correct++;
+                this.speakingFeedback.className = 'spelling-feedback feedback-correct';
+                this.speakingFeedbackIcon.innerHTML = '✅';
+                this.speakingFeedbackMessage.textContent = 'Excellent pronunciation!';
+            } else {
+                this.speakingStats.wrong++;
+                this.speakingFeedback.className = 'spelling-feedback feedback-wrong';
+                this.speakingFeedbackIcon.innerHTML = '❌';
+                this.speakingFeedbackMessage.textContent = 'Keep practicing!';
+                this.speakingCorrectAnswer.textContent = `It should sound like: ${item.dutch}`;
+                this.speakingCorrectAnswer.classList.remove('hidden');
+                this.playbackDutchVoice.style.display = 'block';
+            }
+
+            this.updateSpeakingStats();
+        }
+    }
+
+    updateSpeakingStats() {
+        const total = this.speakingStats.correct + this.speakingStats.wrong;
+        this.speakingStatCorrect.textContent = this.speakingStats.correct;
+        this.speakingStatWrong.textContent = this.speakingStats.wrong;
+        this.speakingStatAccuracy.textContent = total > 0
+            ? `${Math.round((this.speakingStats.correct / total) * 100)}%` : '–';
+    }
+
+    speakCurrentWordEnglish() {
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item) return;
+        if (!('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+        this.speakBtnSpeakingHint.classList.add('speaking');
+
+        const utterance = new SpeechSynthesisUtterance(item.english);
+        utterance.lang = 'en-US';
+        utterance.onend = () => this.speakBtnSpeakingHint.classList.remove('speaking');
+        utterance.onerror = () => this.speakBtnSpeakingHint.classList.remove('speaking');
+
+        window.speechSynthesis.speak(utterance);
     }
 }
 
