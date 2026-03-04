@@ -343,42 +343,38 @@ class FlashcardGame {
         this.quizFeedback.classList.add('hidden');
         this.playbackQuizVoice.style.display = 'none';
 
-        // Show English word and explanation as the prompt question
-        let promptHtml = `<strong style="display:block; font-size:1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${item.english}</strong>`;
-        if (item.explanation && item.explanation.length > 5 && item.explanation !== 'No explanation available.') {
-            promptHtml += `<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400; line-height: 1.4; display: block;">${item.explanation}</span>`;
-        }
-        this.quizSentence.innerHTML = promptHtml;
+        // === QUIZ MODE ===
+        // Prompt = the full Dutch example sentence (no English hints — that's the challenge!)
+        this.quizSentence.textContent = item.example || item.dutch;
 
-        // Generate options: The correct answer should be the native Dutch sentence
+        // Build options: each is a Dutch word + its English explanation
+        // Correct answer is the word that belongs to the sentence above
         this.quizOptionsGrid.innerHTML = '';
 
-        const getDisplayHTML = (vocabItem) => {
-            const sentence = vocabItem.example || vocabItem.dutch;
-            return `<span style="font-size:1.15em; font-weight:500;">${sentence}</span>`;
+        const buildOptionHTML = (vocabItem) => {
+            let engDesc = vocabItem.english;
+            if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
+                engDesc = vocabItem.explanation;
+            }
+            return `<strong style="display:block; font-size:1.05em; font-weight:700; margin-bottom:5px;">${vocabItem.dutch}</strong>` +
+                `<span style="font-size:0.88em; font-weight:400; opacity:0.85; line-height:1.3;">${engDesc}</span>`;
         };
 
-        const correctOption = item;
-        const optionsItems = [correctOption];
+        const optionsItems = [item];
         let attempts = 0;
-
-        while (optionsItems.length < 4 && attempts < 50) {
+        while (optionsItems.length < 4 && attempts < 60) {
             attempts++;
-            const randomItem = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
-
-            // Prevent duplicate distractors
-            if (!optionsItems.find(o => o.dutch === randomItem.dutch)) {
-                optionsItems.push(randomItem);
+            const r = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
+            if (!optionsItems.find(o => o.dutch === r.dutch)) {
+                optionsItems.push(r);
             }
         }
-
-        // Shuffle options
         optionsItems.sort(() => Math.random() - 0.5);
 
         optionsItems.forEach(optItem => {
             const btn = document.createElement('button');
             btn.className = 'quiz-option-btn';
-            btn.innerHTML = getDisplayHTML(optItem);
+            btn.innerHTML = buildOptionHTML(optItem);
             btn.dataset.dutch = optItem.dutch;
             btn.addEventListener('click', () => this.checkQuizAnswer(optItem.dutch, btn));
             this.quizOptionsGrid.appendChild(btn);
