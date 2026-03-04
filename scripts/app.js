@@ -87,7 +87,6 @@ class FlashcardGame {
         this.quizSection = document.getElementById('quizSection');
         this.quizCategory = document.getElementById('quizCategory');
         this.quizSentence = document.getElementById('quizSentence');
-        this.quizEnglishWord = document.getElementById('quizEnglishWord');
         this.quizOptionsGrid = document.getElementById('quizOptionsGrid');
         this.quizFeedback = document.getElementById('quizFeedback');
         this.quizFeedbackIcon = document.getElementById('quizFeedbackIcon');
@@ -282,7 +281,7 @@ class FlashcardGame {
             this.englishWord.textContent = 'Select another level';
             this.spellingEnglish.textContent = 'No words found';
             this.speakingEnglish.textContent = 'No words found';
-            this.quizEnglishWord.textContent = 'No words found';
+            this.quizSentence.textContent = 'No words found';
             this.progressCount.textContent = '0/0';
             this.progressFill.style.width = '0%';
             return;
@@ -341,44 +340,34 @@ class FlashcardGame {
 
         // Quiz mode
         this.quizCategory.textContent = item.category;
-        this.quizEnglishWord.textContent = item.english;
         this.quizFeedback.classList.add('hidden');
         this.playbackQuizVoice.style.display = 'none';
 
-        // Try to blank out the word in the example sentence
-        let sentenceHtml = item.example || "<em>No example available for this word.</em>";
-        // Ensure regex matching safely by escaping the dutch string
-        const escapedDutch = item.dutch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-        const matchRegex = new RegExp(`\\b${escapedDutch}\\b`, 'i');
+        // Show the full Dutch sentence or full Dutch word if no example is present
+        this.quizSentence.textContent = item.example || item.dutch;
 
-        let hasBlank = false;
-        if (item.example && matchRegex.test(item.example)) {
-            sentenceHtml = item.example.replace(matchRegex, `<span class="blank-space">_____</span>`);
-            hasBlank = true;
-        } else if (item.example) {
-            // Check if strict matches without word boundaries
-            const looseRegex = new RegExp(escapedDutch, 'i');
-            if (looseRegex.test(item.example)) {
-                sentenceHtml = item.example.replace(looseRegex, `<span class="blank-space">_____</span>`);
-                hasBlank = true;
-            } else {
-                sentenceHtml = `<span class="blank-space">_____</span> : ${item.example}`;
-            }
-        } else {
-            sentenceHtml = `<span class="blank-space">_____</span>`;
-        }
-        this.quizSentence.innerHTML = sentenceHtml;
-
-        // Generate options (1 correct, 3 wrong)
+        // Generate options: The correct answer should be a complex English explanation or the English translation
         this.quizOptionsGrid.innerHTML = '';
-        const options = [item.dutch];
+
+        const getDisplayString = (vocabItem) => {
+            if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
+                return vocabItem.explanation;
+            }
+            return `Translation: ${vocabItem.english}`;
+        };
+
+        const correctOption = getDisplayString(item);
+        const options = [correctOption];
         let attempts = 0;
 
         while (options.length < 4 && attempts < 50) {
             attempts++;
             const randomItem = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
-            if (!options.includes(randomItem.dutch)) {
-                options.push(randomItem.dutch);
+            const distractorOption = getDisplayString(randomItem);
+
+            // Prevent duplicate distractors that are exactly the same
+            if (!options.includes(distractorOption)) {
+                options.push(distractorOption);
             }
         }
 
@@ -811,15 +800,15 @@ class FlashcardGame {
         const allBtns = this.quizOptionsGrid.querySelectorAll('button');
         allBtns.forEach(b => b.disabled = true);
 
-        const isCorrect = selectedAnswer === item.dutch;
+        const getDisplayString = (vocabItem) => {
+            if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
+                return vocabItem.explanation;
+            }
+            return `Translation: ${vocabItem.english}`;
+        };
 
-        // Fill in the blank visually
-        const blankEl = this.quizSentence.querySelector('.blank-space');
-        if (blankEl) {
-            blankEl.textContent = item.dutch;
-            blankEl.style.color = isCorrect ? 'var(--success)' : 'var(--danger)';
-            blankEl.style.borderBottomColor = isCorrect ? 'var(--success)' : 'var(--danger)';
-        }
+        const correctAnswerText = getDisplayString(item);
+        const isCorrect = selectedAnswer === correctAnswerText;
 
         this.quizFeedback.classList.remove('hidden');
         this.playbackQuizVoice.style.display = 'block';
@@ -836,7 +825,7 @@ class FlashcardGame {
 
             // Highlight the correct one
             allBtns.forEach(b => {
-                if (b.textContent === item.dutch) {
+                if (b.textContent === correctAnswerText) {
                     b.classList.add('correct');
                 }
             });
