@@ -349,36 +349,37 @@ class FlashcardGame {
         // Generate options: The correct answer should be a complex English explanation or the English translation
         this.quizOptionsGrid.innerHTML = '';
 
-        const getDisplayString = (vocabItem) => {
+        const getDisplayHTML = (vocabItem) => {
+            let engPart = `Translation: ${vocabItem.english}`;
             if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
-                return vocabItem.explanation;
+                engPart = vocabItem.explanation;
             }
-            return `Translation: ${vocabItem.english}`;
+            return `<strong style="display:block; margin-bottom:6px; font-size:1.15em; font-weight:700;">${vocabItem.dutch}</strong><span style="font-size:0.95em; opacity:0.9; font-weight:400;">${engPart}</span>`;
         };
 
-        const correctOption = getDisplayString(item);
-        const options = [correctOption];
+        const correctOption = item;
+        const optionsItems = [correctOption];
         let attempts = 0;
 
-        while (options.length < 4 && attempts < 50) {
+        while (optionsItems.length < 4 && attempts < 50) {
             attempts++;
             const randomItem = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
-            const distractorOption = getDisplayString(randomItem);
 
-            // Prevent duplicate distractors that are exactly the same
-            if (!options.includes(distractorOption)) {
-                options.push(distractorOption);
+            // Prevent duplicate distractors
+            if (!optionsItems.find(o => o.dutch === randomItem.dutch)) {
+                optionsItems.push(randomItem);
             }
         }
 
         // Shuffle options
-        options.sort(() => Math.random() - 0.5);
+        optionsItems.sort(() => Math.random() - 0.5);
 
-        options.forEach(optionText => {
+        optionsItems.forEach(optItem => {
             const btn = document.createElement('button');
             btn.className = 'quiz-option-btn';
-            btn.textContent = optionText;
-            btn.addEventListener('click', () => this.checkQuizAnswer(optionText, btn));
+            btn.innerHTML = getDisplayHTML(optItem);
+            btn.dataset.dutch = optItem.dutch;
+            btn.addEventListener('click', () => this.checkQuizAnswer(optItem.dutch, btn));
             this.quizOptionsGrid.appendChild(btn);
         });
 
@@ -788,7 +789,7 @@ class FlashcardGame {
     // ============================================================
     //  QUIZ MODE — LOGIC
     // ============================================================
-    checkQuizAnswer(selectedAnswer, btn) {
+    checkQuizAnswer(selectedDutch, btn) {
         if (this.quizChecked) return;
 
         const item = this.filteredVocab[this.currentIndex];
@@ -800,15 +801,7 @@ class FlashcardGame {
         const allBtns = this.quizOptionsGrid.querySelectorAll('button');
         allBtns.forEach(b => b.disabled = true);
 
-        const getDisplayString = (vocabItem) => {
-            if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
-                return vocabItem.explanation;
-            }
-            return `Translation: ${vocabItem.english}`;
-        };
-
-        const correctAnswerText = getDisplayString(item);
-        const isCorrect = selectedAnswer === correctAnswerText;
+        const isCorrect = selectedDutch === item.dutch;
 
         this.quizFeedback.classList.remove('hidden');
         this.playbackQuizVoice.style.display = 'block';
@@ -825,7 +818,7 @@ class FlashcardGame {
 
             // Highlight the correct one
             allBtns.forEach(b => {
-                if (b.textContent === correctAnswerText) {
+                if (b.dataset.dutch === item.dutch) {
                     b.classList.add('correct');
                 }
             });
