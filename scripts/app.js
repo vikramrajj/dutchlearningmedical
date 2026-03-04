@@ -343,18 +343,19 @@ class FlashcardGame {
         this.quizFeedback.classList.add('hidden');
         this.playbackQuizVoice.style.display = 'none';
 
-        // Show the full Dutch sentence or full Dutch word if no example is present
-        this.quizSentence.textContent = item.example || item.dutch;
+        // Show English word and explanation as the prompt question
+        let promptHtml = `<strong style="display:block; font-size:1.4rem; color: var(--primary); margin-bottom: 0.5rem;">${item.english}</strong>`;
+        if (item.explanation && item.explanation.length > 5 && item.explanation !== 'No explanation available.') {
+            promptHtml += `<span style="font-size: 1rem; color: var(--text-muted); font-weight: 400; line-height: 1.4; display: block;">${item.explanation}</span>`;
+        }
+        this.quizSentence.innerHTML = promptHtml;
 
-        // Generate options: The correct answer should be a complex English explanation or the English translation
+        // Generate options: The correct answer should be the native Dutch sentence
         this.quizOptionsGrid.innerHTML = '';
 
         const getDisplayHTML = (vocabItem) => {
-            let engPart = `Translation: ${vocabItem.english}`;
-            if (vocabItem.explanation && vocabItem.explanation.length > 5 && vocabItem.explanation !== 'No explanation available.') {
-                engPart = vocabItem.explanation;
-            }
-            return `<strong style="display:block; margin-bottom:6px; font-size:1.15em; font-weight:700;">${vocabItem.dutch}</strong><span style="font-size:0.95em; opacity:0.9; font-weight:400;">${engPart}</span>`;
+            const sentence = vocabItem.example || vocabItem.dutch;
+            return `<span style="font-size:1.15em; font-weight:500;">${sentence}</span>`;
         };
 
         const correctOption = item;
