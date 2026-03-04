@@ -75,6 +75,15 @@
                             </svg>
                             Speaking
                         </button>
+                        <button class="mode-btn" id="modeQuiz" data-mode="quiz">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3" />
+                                <line x1="12" y1="17" x2="12.01" y2="17" />
+                            </svg>
+                            Quiz
+                        </button>
                     </div>
                 </div>
 
@@ -292,6 +301,73 @@
             <div class="action-buttons">
                 <button id="speakingPrevBtn" class="btn btn-secondary">Previous</button>
                 <button id="speakingNextBtn" class="btn btn-primary">Next Word</button>
+            </div>
+        </section>
+        <!-- ===================== QUIZ MODE ===================== -->
+        <section class="quiz-section hidden" id="quizSection">
+            <div class="spelling-card">
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="quizCategory">Category</span>
+                    <button class="speak-btn text-blue-muted" id="speakBtnQuizHint" title="Hear English Translation">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="spelling-prompt-label">Kies het juiste woord (Fill in the blank):</p>
+                <p class="quiz-hint" id="quizHint">Hint: <span id="quizEnglishWord" style="font-weight: bold;"></span>
+                </p>
+
+                <h2 class="quiz-sentence" id="quizSentence">Sentence...</h2>
+
+                <div class="quiz-options-grid" id="quizOptionsGrid">
+                    <!-- Buttons will be injected here via JS -->
+                </div>
+
+                <!-- Feedback -->
+                <div class="spelling-feedback hidden" id="quizFeedback">
+                    <div class="feedback-icon" id="quizFeedbackIcon"></div>
+                    <p class="feedback-message" id="quizFeedbackMessage"></p>
+                    <button class="speak-btn" id="playbackQuizVoice" title="Listen to full sentence"
+                        style="margin:10px auto; display:none;">
+                        🔊 Listen to full sentence
+                    </button>
+                </div>
+            </div>
+
+            <!-- Stats & Nav -->
+            <div class="spelling-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="quizStatCorrect">0</span>
+                    <span class="stat-label">Passed</span>
+                </div>
+                <div class="stat-box stat-wrong">
+                    <span class="stat-num" id="quizStatWrong">0</span>
+                    <span class="stat-label">Failed</span>
+                </div>
+                <div class="stat-box stat-accuracy">
+                    <span class="stat-num" id="quizStatAccuracy">–</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="quizPrevBtn" class="btn btn-secondary">Previous</button>
+                <button id="quizShuffleBtn" class="btn btn-icon" title="Shuffle">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="16 3 21 3 21 8"></polyline>
+                        <line x1="4" y1="20" x2="21" y2="3"></line>
+                        <polyline points="21 16 21 21 16 21"></polyline>
+                        <line x1="15" y1="15" x2="21" y2="21"></line>
+                        <line x1="4" y1="4" x2="9" y2="9"></line>
+                    </svg>
+                </button>
+                <button id="quizNextBtn" class="btn btn-primary">Next Question</button>
             </div>
         </section>
     </main>

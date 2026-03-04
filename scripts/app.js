@@ -5,14 +5,15 @@ class FlashcardGame {
         this.vocab = medicalVocab;
         this.filteredVocab = [...this.vocab];
         this.currentIndex = 0;
-        this.isFlipped = false;
-        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking'
+        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz'
 
         // Stats
         this.stats = { correct: 0, wrong: 0 };
         this.speakingStats = { correct: 0, wrong: 0 };
+        this.quizStats = { correct: 0, wrong: 0 };
         this.spellingChecked = false; // prevent multiple checks per word
         this.speakingChecked = false;
+        this.quizChecked = false;
 
         // Speech Recog for speaking test
         this.speakingRecognition = null;
@@ -77,10 +78,28 @@ class FlashcardGame {
         this.speakingNextBtn = document.getElementById('speakingNextBtn');
         this.speakingStatCorrect = document.getElementById('speakingStatCorrect');
         this.speakingStatWrong = document.getElementById('speakingStatWrong');
-        this.speakingStatAccuracy = document.getElementById('speakingStatAccuracy');
         this.speakBtnSpeakingHint = document.getElementById('speakBtnSpeakingHint');
         this.playbackDutchVoice = document.getElementById('playbackDutchVoice');
         this.retrySpeakingBtn = document.getElementById('retrySpeakingBtn');
+
+        // DOM — quiz mode
+        this.modeQuiz = document.getElementById('modeQuiz');
+        this.quizSection = document.getElementById('quizSection');
+        this.quizCategory = document.getElementById('quizCategory');
+        this.quizSentence = document.getElementById('quizSentence');
+        this.quizEnglishWord = document.getElementById('quizEnglishWord');
+        this.quizOptionsGrid = document.getElementById('quizOptionsGrid');
+        this.quizFeedback = document.getElementById('quizFeedback');
+        this.quizFeedbackIcon = document.getElementById('quizFeedbackIcon');
+        this.quizFeedbackMessage = document.getElementById('quizFeedbackMessage');
+        this.playbackQuizVoice = document.getElementById('playbackQuizVoice');
+        this.speakBtnQuizHint = document.getElementById('speakBtnQuizHint');
+        this.quizStatCorrect = document.getElementById('quizStatCorrect');
+        this.quizStatWrong = document.getElementById('quizStatWrong');
+        this.quizStatAccuracy = document.getElementById('quizStatAccuracy');
+        this.quizPrevBtn = document.getElementById('quizPrevBtn');
+        this.quizNextBtn = document.getElementById('quizNextBtn');
+        this.quizShuffleBtn = document.getElementById('quizShuffleBtn');
 
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
@@ -96,6 +115,7 @@ class FlashcardGame {
         this.modeFlashcard.addEventListener('click', () => this.switchMode('flashcard'));
         this.modeSpelling.addEventListener('click', () => this.switchMode('spelling'));
         this.modeSpeaking.addEventListener('click', () => this.switchMode('speaking'));
+        this.modeQuiz.addEventListener('click', () => this.switchMode('quiz'));
 
         // ---- Level filter ----
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
@@ -126,6 +146,13 @@ class FlashcardGame {
         this.playbackDutchVoice.addEventListener('click', () => this.speakCurrentWord());
         this.retrySpeakingBtn.addEventListener('click', () => this.retrySpeakingTest());
 
+        // ---- Quiz mode events ----
+        this.quizNextBtn.addEventListener('click', () => this.nextCard());
+        this.quizPrevBtn.addEventListener('click', () => this.prevCard());
+        this.quizShuffleBtn.addEventListener('click', () => this.shuffleCards());
+        this.speakBtnQuizHint.addEventListener('click', () => this.speakCurrentWordEnglish());
+        this.playbackQuizVoice.addEventListener('click', () => this.speakCurrentWord());
+
         // ---- Keyboard shortcuts ----
         document.addEventListener('keydown', (e) => {
             if (this.mode === 'flashcard') {
@@ -154,10 +181,12 @@ class FlashcardGame {
         this.modeFlashcard.classList.toggle('active', newMode === 'flashcard');
         this.modeSpelling.classList.toggle('active', newMode === 'spelling');
         this.modeSpeaking.classList.toggle('active', newMode === 'speaking');
+        this.modeQuiz.classList.toggle('active', newMode === 'quiz');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
         this.speakingSection.classList.toggle('hidden', newMode !== 'speaking');
+        this.quizSection.classList.toggle('hidden', newMode !== 'quiz');
 
         // Reset state for new mode
         this.currentIndex = 0;
@@ -165,6 +194,7 @@ class FlashcardGame {
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
         this.speakingChecked = false;
+        this.quizChecked = false;
         this.hintShown = false;
         if (this.speakingRecognition && this.isSpeakingListening) {
             this.stopSpeakingTest();
@@ -201,6 +231,7 @@ class FlashcardGame {
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
         this.speakingChecked = false;
+        this.quizChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -215,6 +246,7 @@ class FlashcardGame {
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
         this.speakingChecked = false;
+        this.quizChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -226,6 +258,7 @@ class FlashcardGame {
         this.flashcard.classList.remove('is-flipped');
         this.spellingChecked = false;
         this.speakingChecked = false;
+        this.quizChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -249,6 +282,7 @@ class FlashcardGame {
             this.englishWord.textContent = 'Select another level';
             this.spellingEnglish.textContent = 'No words found';
             this.speakingEnglish.textContent = 'No words found';
+            this.quizEnglishWord.textContent = 'No words found';
             this.progressCount.textContent = '0/0';
             this.progressFill.style.width = '0%';
             return;
@@ -304,6 +338,60 @@ class FlashcardGame {
         if (this.mode === 'spelling') {
             setTimeout(() => this.spellingInput.focus(), 50);
         }
+
+        // Quiz mode
+        this.quizCategory.textContent = item.category;
+        this.quizEnglishWord.textContent = item.english;
+        this.quizFeedback.classList.add('hidden');
+        this.playbackQuizVoice.style.display = 'none';
+
+        // Try to blank out the word in the example sentence
+        let sentenceHtml = item.example || "<em>No example available for this word.</em>";
+        // Ensure regex matching safely by escaping the dutch string
+        const escapedDutch = item.dutch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const matchRegex = new RegExp(`\\b${escapedDutch}\\b`, 'i');
+
+        let hasBlank = false;
+        if (item.example && matchRegex.test(item.example)) {
+            sentenceHtml = item.example.replace(matchRegex, `<span class="blank-space">_____</span>`);
+            hasBlank = true;
+        } else if (item.example) {
+            // Check if strict matches without word boundaries
+            const looseRegex = new RegExp(escapedDutch, 'i');
+            if (looseRegex.test(item.example)) {
+                sentenceHtml = item.example.replace(looseRegex, `<span class="blank-space">_____</span>`);
+                hasBlank = true;
+            } else {
+                sentenceHtml = `<span class="blank-space">_____</span> : ${item.example}`;
+            }
+        } else {
+            sentenceHtml = `<span class="blank-space">_____</span>`;
+        }
+        this.quizSentence.innerHTML = sentenceHtml;
+
+        // Generate options (1 correct, 3 wrong)
+        this.quizOptionsGrid.innerHTML = '';
+        const options = [item.dutch];
+        let attempts = 0;
+
+        while (options.length < 4 && attempts < 50) {
+            attempts++;
+            const randomItem = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
+            if (!options.includes(randomItem.dutch)) {
+                options.push(randomItem.dutch);
+            }
+        }
+
+        // Shuffle options
+        options.sort(() => Math.random() - 0.5);
+
+        options.forEach(optionText => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option-btn';
+            btn.textContent = optionText;
+            btn.addEventListener('click', () => this.checkQuizAnswer(optionText, btn));
+            this.quizOptionsGrid.appendChild(btn);
+        });
 
         // Progress
         const total = this.filteredVocab.length;
@@ -706,6 +794,67 @@ class FlashcardGame {
         utterance.onerror = () => this.speakBtnSpeakingHint.classList.remove('speaking');
 
         window.speechSynthesis.speak(utterance);
+    }
+
+    // ============================================================
+    //  QUIZ MODE — LOGIC
+    // ============================================================
+    checkQuizAnswer(selectedAnswer, btn) {
+        if (this.quizChecked) return;
+
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item) return;
+
+        this.quizChecked = true;
+
+        // Disable all buttons in the grid
+        const allBtns = this.quizOptionsGrid.querySelectorAll('button');
+        allBtns.forEach(b => b.disabled = true);
+
+        const isCorrect = selectedAnswer === item.dutch;
+
+        // Fill in the blank visually
+        const blankEl = this.quizSentence.querySelector('.blank-space');
+        if (blankEl) {
+            blankEl.textContent = item.dutch;
+            blankEl.style.color = isCorrect ? 'var(--success)' : 'var(--danger)';
+            blankEl.style.borderBottomColor = isCorrect ? 'var(--success)' : 'var(--danger)';
+        }
+
+        this.quizFeedback.classList.remove('hidden');
+        this.playbackQuizVoice.style.display = 'block';
+
+        if (isCorrect) {
+            this.quizStats.correct++;
+            btn.classList.add('correct');
+            this.quizFeedback.className = 'spelling-feedback feedback-correct';
+            this.quizFeedbackIcon.innerHTML = '✅';
+            this.quizFeedbackMessage.textContent = 'Correct!';
+        } else {
+            this.quizStats.wrong++;
+            btn.classList.add('wrong');
+
+            // Highlight the correct one
+            allBtns.forEach(b => {
+                if (b.textContent === item.dutch) {
+                    b.classList.add('correct');
+                }
+            });
+
+            this.quizFeedback.className = 'spelling-feedback feedback-wrong';
+            this.quizFeedbackIcon.innerHTML = '❌';
+            this.quizFeedbackMessage.textContent = 'Incorrect!';
+        }
+
+        this.updateQuizStats();
+    }
+
+    updateQuizStats() {
+        const total = this.quizStats.correct + this.quizStats.wrong;
+        this.quizStatCorrect.textContent = this.quizStats.correct;
+        this.quizStatWrong.textContent = this.quizStats.wrong;
+        this.quizStatAccuracy.textContent = total > 0
+            ? `${Math.round((this.quizStats.correct / total) * 100)}%` : '–';
     }
 }
 
