@@ -1010,6 +1010,72 @@ select:focus {
 }
 
 /* ============================================================
+   VUL IN MODE
+   ============================================================ */
+.vulin-section {
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+.vulin-sentence {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.6;
+    margin: 1.5rem 0 1rem;
+}
+
+.vulin-sentence .blank-space {
+    display: inline-block;
+    min-width: 100px;
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    font-weight: 700;
+    text-align: center;
+    padding: 0 8px;
+    vertical-align: bottom;
+}
+
+.vulin-hint-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.vulin-hint-btn {
+    background: transparent;
+    border: 1px dashed var(--text-muted);
+    color: var(--text-muted);
+    border-radius: var(--radius-sm);
+    padding: 0.35rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.vulin-hint-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.vulin-hint-text {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.vulin-grid .quiz-option-btn {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 1rem 0.5rem;
+}
+
+/* ============================================================
    Footer
    ============================================================ */
 footer {

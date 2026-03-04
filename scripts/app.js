@@ -11,9 +11,10 @@ class FlashcardGame {
         this.stats = { correct: 0, wrong: 0 };
         this.speakingStats = { correct: 0, wrong: 0 };
         this.quizStats = { correct: 0, wrong: 0 };
-        this.spellingChecked = false; // prevent multiple checks per word
+        this.spellingChecked = false;
         this.speakingChecked = false;
         this.quizChecked = false;
+        this.vulinChecked = false;
 
         // Speech Recog for speaking test
         this.speakingRecognition = null;
@@ -100,6 +101,27 @@ class FlashcardGame {
         this.quizNextBtn = document.getElementById('quizNextBtn');
         this.quizShuffleBtn = document.getElementById('quizShuffleBtn');
 
+        // DOM — vul in mode
+        this.modeVulIn = document.getElementById('modeVulIn');
+        this.vulinSection = document.getElementById('vulinSection');
+        this.vulinCategory = document.getElementById('vulinCategory');
+        this.vulinSentence = document.getElementById('vulinSentence');
+        this.vulinOptionsGrid = document.getElementById('vulinOptionsGrid');
+        this.vulinFeedback = document.getElementById('vulinFeedback');
+        this.vulinFeedbackIcon = document.getElementById('vulinFeedbackIcon');
+        this.vulinFeedbackMessage = document.getElementById('vulinFeedbackMessage');
+        this.vulinCorrectAnswer = document.getElementById('vulinCorrectAnswer');
+        this.vulinHintBtn = document.getElementById('vulinHintBtn');
+        this.vulinHintText = document.getElementById('vulinHintText');
+        this.vulinStatCorrect = document.getElementById('vulinStatCorrect');
+        this.vulinStatWrong = document.getElementById('vulinStatWrong');
+        this.vulinStatAccuracy = document.getElementById('vulinStatAccuracy');
+        this.vulinPrevBtn = document.getElementById('vulinPrevBtn');
+        this.vulinNextBtn = document.getElementById('vulinNextBtn');
+        this.vulinShuffleBtn = document.getElementById('vulinShuffleBtn');
+        this.speakBtnVulinSentence = document.getElementById('speakBtnVulinSentence');
+        this.vulinStats = { correct: 0, wrong: 0 };
+
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
         this.modeSpelling = document.getElementById('modeSpelling');
@@ -115,6 +137,7 @@ class FlashcardGame {
         this.modeSpelling.addEventListener('click', () => this.switchMode('spelling'));
         this.modeSpeaking.addEventListener('click', () => this.switchMode('speaking'));
         this.modeQuiz.addEventListener('click', () => this.switchMode('quiz'));
+        this.modeVulIn.addEventListener('click', () => this.switchMode('vulin'));
 
         // ---- Level filter ----
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
@@ -152,6 +175,16 @@ class FlashcardGame {
         this.speakBtnQuizHint.addEventListener('click', () => this.speakCurrentWordEnglish());
         this.playbackQuizVoice.addEventListener('click', () => this.speakCurrentWord());
 
+        // ---- Vul In mode events ----
+        this.vulinNextBtn.addEventListener('click', () => this.nextCard());
+        this.vulinPrevBtn.addEventListener('click', () => this.prevCard());
+        this.vulinShuffleBtn.addEventListener('click', () => this.shuffleCards());
+        this.speakBtnVulinSentence.addEventListener('click', () => this.speakVulinSentence());
+        this.vulinHintBtn.addEventListener('click', () => {
+            const isHidden = this.vulinHintText.classList.toggle('hidden');
+            this.vulinHintBtn.textContent = isHidden ? '💡 Show English hint' : '🙈 Hide hint';
+        });
+
         // ---- Keyboard shortcuts ----
         document.addEventListener('keydown', (e) => {
             if (this.mode === 'flashcard') {
@@ -181,11 +214,13 @@ class FlashcardGame {
         this.modeSpelling.classList.toggle('active', newMode === 'spelling');
         this.modeSpeaking.classList.toggle('active', newMode === 'speaking');
         this.modeQuiz.classList.toggle('active', newMode === 'quiz');
+        this.modeVulIn.classList.toggle('active', newMode === 'vulin');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
         this.speakingSection.classList.toggle('hidden', newMode !== 'speaking');
         this.quizSection.classList.toggle('hidden', newMode !== 'quiz');
+        this.vulinSection.classList.toggle('hidden', newMode !== 'vulin');
 
         // Reset state for new mode
         this.currentIndex = 0;
@@ -194,6 +229,7 @@ class FlashcardGame {
         this.spellingChecked = false;
         this.speakingChecked = false;
         this.quizChecked = false;
+        this.vulinChecked = false;
         this.hintShown = false;
         if (this.speakingRecognition && this.isSpeakingListening) {
             this.stopSpeakingTest();
@@ -246,6 +282,7 @@ class FlashcardGame {
         this.spellingChecked = false;
         this.speakingChecked = false;
         this.quizChecked = false;
+        this.vulinChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -258,6 +295,7 @@ class FlashcardGame {
         this.spellingChecked = false;
         this.speakingChecked = false;
         this.quizChecked = false;
+        this.vulinChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
@@ -282,6 +320,7 @@ class FlashcardGame {
             this.spellingEnglish.textContent = 'No words found';
             this.speakingEnglish.textContent = 'No words found';
             this.quizSentence.textContent = 'No words found';
+            this.vulinSentence.textContent = 'No words found';
             this.progressCount.textContent = '0/0';
             this.progressFill.style.width = '0%';
             return;
@@ -378,6 +417,59 @@ class FlashcardGame {
             btn.dataset.dutch = optItem.dutch;
             btn.addEventListener('click', () => this.checkQuizAnswer(optItem.dutch, btn));
             this.quizOptionsGrid.appendChild(btn);
+        });
+
+        // === VUL IN MODE ===
+        this.vulinCategory.textContent = item.category;
+        this.vulinFeedback.classList.add('hidden');
+        this.vulinCorrectAnswer.classList.add('hidden');
+        // Reset hint to hidden state
+        this.vulinHintText.classList.add('hidden');
+        this.vulinHintBtn.textContent = '💡 Show English hint';
+        // Set hint text (English word + explanation)
+        let hintContent = item.english;
+        if (item.explanation && item.explanation.length > 5 && item.explanation !== 'No explanation available.') {
+            hintContent += ` — ${item.explanation}`;
+        }
+        this.vulinHintText.textContent = hintContent;
+
+        // Build sentence with blank: replace the Dutch key word with a blank
+        const escapedKey = item.dutch.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const blankRegex = new RegExp(`\\b${escapedKey}\\b`, 'i');
+        const looseRegex = new RegExp(escapedKey, 'i');
+        let sentenceWithBlank = item.example || item.dutch;
+        const hasExample = !!item.example;
+        if (hasExample && blankRegex.test(item.example)) {
+            sentenceWithBlank = item.example.replace(blankRegex,
+                `<span class="blank-space"> _____ </span>`);
+        } else if (hasExample && looseRegex.test(item.example)) {
+            sentenceWithBlank = item.example.replace(looseRegex,
+                `<span class="blank-space"> _____ </span>`);
+        } else {
+            // fallback: show word at start as blank
+            sentenceWithBlank = `<span class="blank-space"> _____ </span>: ${item.example || item.dutch}`;
+        }
+        this.vulinSentence.innerHTML = sentenceWithBlank;
+
+        // Build Dutch-only word options
+        this.vulinOptionsGrid.innerHTML = '';
+        const vulinItems = [item];
+        let vAttempts = 0;
+        while (vulinItems.length < 4 && vAttempts < 60) {
+            vAttempts++;
+            const r = this.filteredVocab[Math.floor(Math.random() * this.filteredVocab.length)];
+            if (!vulinItems.find(o => o.dutch === r.dutch)) {
+                vulinItems.push(r);
+            }
+        }
+        vulinItems.sort(() => Math.random() - 0.5);
+        vulinItems.forEach(optItem => {
+            const btn = document.createElement('button');
+            btn.className = 'quiz-option-btn';
+            btn.textContent = optItem.dutch;
+            btn.dataset.dutch = optItem.dutch;
+            btn.addEventListener('click', () => this.checkVulinAnswer(optItem.dutch, btn));
+            this.vulinOptionsGrid.appendChild(btn);
         });
 
         // Progress
@@ -834,6 +926,76 @@ class FlashcardGame {
         this.quizStatWrong.textContent = this.quizStats.wrong;
         this.quizStatAccuracy.textContent = total > 0
             ? `${Math.round((this.quizStats.correct / total) * 100)}%` : '–';
+    }
+
+    // ============================================================
+    //  VUL IN MODE — LOGIC
+    // ============================================================
+    checkVulinAnswer(selectedDutch, btn) {
+        if (this.vulinChecked) return;
+
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item) return;
+
+        this.vulinChecked = true;
+
+        const allBtns = this.vulinOptionsGrid.querySelectorAll('button');
+        allBtns.forEach(b => b.disabled = true);
+
+        const isCorrect = selectedDutch === item.dutch;
+
+        // Fill the blank visually with the selected word
+        const blankEl = this.vulinSentence.querySelector('.blank-space');
+        if (blankEl) {
+            blankEl.textContent = ` ${selectedDutch} `;
+            blankEl.style.borderColor = isCorrect ? 'var(--success)' : 'var(--danger)';
+            blankEl.style.color = isCorrect ? 'var(--success)' : 'var(--danger)';
+        }
+
+        // If wrong, also highlight the correct button green
+        if (!isCorrect) {
+            allBtns.forEach(b => {
+                if (b.dataset.dutch === item.dutch) b.classList.add('correct');
+            });
+        }
+
+        this.vulinFeedback.classList.remove('hidden');
+
+        if (isCorrect) {
+            this.vulinStats.correct++;
+            btn.classList.add('correct');
+            this.vulinFeedback.className = 'spelling-feedback feedback-correct';
+            this.vulinFeedbackIcon.innerHTML = '✅';
+            this.vulinFeedbackMessage.textContent = 'Correct! Goed gedaan!';
+        } else {
+            this.vulinStats.wrong++;
+            btn.classList.add('wrong');
+            this.vulinFeedback.className = 'spelling-feedback feedback-wrong';
+            this.vulinFeedbackIcon.innerHTML = '❌';
+            this.vulinFeedbackMessage.textContent = `Incorrect! The answer is: ${item.dutch}`;
+        }
+
+        this.updateVulinStats();
+    }
+
+    updateVulinStats() {
+        const total = this.vulinStats.correct + this.vulinStats.wrong;
+        this.vulinStatCorrect.textContent = this.vulinStats.correct;
+        this.vulinStatWrong.textContent = this.vulinStats.wrong;
+        this.vulinStatAccuracy.textContent = total > 0
+            ? `${Math.round((this.vulinStats.correct / total) * 100)}%` : '–';
+    }
+
+    speakVulinSentence() {
+        const item = this.filteredVocab[this.currentIndex];
+        if (!item || !('speechSynthesis' in window)) return;
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(item.example || item.dutch);
+        utterance.lang = 'nl-NL';
+        const voices = window.speechSynthesis.getVoices();
+        const nlVoice = voices.find(v => v.lang.startsWith('nl'));
+        if (nlVoice) utterance.voice = nlVoice;
+        window.speechSynthesis.speak(utterance);
     }
 }
 
