@@ -3,7 +3,7 @@ import { medicalVocab } from './data.js';
 class FlashcardGame {
     constructor() {
         this.vocab = medicalVocab;
-        this.filteredVocab = [...this.vocab];
+        this.filteredVocab = [...this.vocab].sort(() => Math.random() - 0.5);
         this.currentIndex = 0;
         this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz' | 'vulin' | 'writing'
 
@@ -188,7 +188,7 @@ class FlashcardGame {
                 ],
                 example: "Hallo Fariha,\n\nIk ga zo naar huis, maar er zijn nog een paar dingen die jij moet doen vanavond.\nZou jij de vloer willen vegen en de nieuwe kleren netjes in het rek willen hangen? Vergeet ook niet om de planten een beetje water te geven.\nAlvast bedankt voor je hulp!\n\nGroeten,\n[Jouw naam]"
             }
-        ];
+        ].sort(() => Math.random() - 0.5);
         this.currentWritingIndex = 0;
 
         // Stats
@@ -457,9 +457,9 @@ class FlashcardGame {
     // ============================================================
     filterByLevel(level) {
         if (level === 'all') {
-            this.filteredVocab = [...this.vocab];
+            this.filteredVocab = [...this.vocab].sort(() => Math.random() - 0.5);
         } else {
-            this.filteredVocab = this.vocab.filter(item => item.level === level);
+            this.filteredVocab = this.vocab.filter(item => item.level === level).sort(() => Math.random() - 0.5);
         }
         this.currentIndex = 0;
         this.isFlipped = false;
@@ -472,6 +472,16 @@ class FlashcardGame {
     }
 
     shuffleCards() {
+        if (this.mode === 'writing') {
+            for (let i = this.writingPrompts.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [this.writingPrompts[i], this.writingPrompts[j]] = [this.writingPrompts[j], this.writingPrompts[i]];
+            }
+            this.currentWritingIndex = 0;
+            this.updateCard();
+            return;
+        }
+
         for (let i = this.filteredVocab.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [this.filteredVocab[i], this.filteredVocab[j]] = [this.filteredVocab[j], this.filteredVocab[i]];
@@ -482,6 +492,7 @@ class FlashcardGame {
         this.spellingChecked = false;
         this.speakingChecked = false;
         this.quizChecked = false;
+        this.vulinChecked = false;
         this.hintShown = false;
         this.updateCard();
     }
