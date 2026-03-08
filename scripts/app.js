@@ -16,10 +16,10 @@ class FlashcardGame {
                     "Schrijf waarom u dat wilt. Bedenk zelf waarom.",
                     "Stel een nieuwe datum voor."
                 ],
-                example: "Beste Amber,\n\nIk schrijf je omat ik onze afspraak van morgen wil verzetten.\nIk kan helaas niet komen, want ik ben ziek. Ik heb last van hoofdpijn en koorts.\nZullen we volgende week donderdag afspreken? Ik kan om 13.00 uur. Laat me even weten of dat voor jou ook goed is.\n\nGroetjes,\n[Jouw naam]"
+                example: "Beste Amber,\n\nIk schrijf je omdat ik onze afspraak van morgen wil verzetten.\nIk kan helaas niet komen, want ik ben ziek. Ik heb last van hoofdpijn en koorts.\nZullen we volgende week donderdag afspreken? Ik kan om 13.00 uur. Laat me even weten of dat voor jou ook goed is.\n\nGroetjes,\n[Jouw naam]"
             },
             {
-                title: "Feest",
+                title: "Feest delen",
                 prompt: "U krijgt elke week een wijkkrant. Iedereen uit de buurt mag iets voor deze krant schrijven. U schrijft over een feest dat u elk jaar viert. Schrijf minimaal drie zinnen op.",
                 bullets: [
                     "Waarom viert u het feest?",
@@ -47,6 +47,105 @@ class FlashcardGame {
                     "Hoe is uw gezondheid?"
                 ],
                 example: "Ik wil graag inschrijven voor de groepsles Yoga. Ik wil graag twee keer per week komen.\n\nIk kies voor deze groepsles omdat ik wil ontspannen en flexibeler wil worden. Mijn werk is erg druk en yoga helpt mij om rustig te worden.\n\nMijn gezondheid is over het algemeen heel goed. Ik ben fit en heb geen medische problemen."
+            },
+            {
+                title: "Mooiste kleren",
+                prompt: "U krijgt elke week een wijkkrant. Iedereen uit de buurt mag iets voor deze krant schrijven. U schrijft over de kleren die u het liefst draagt. Schrijf minimaal drie zinnen op.",
+                bullets: [
+                    "Wat draagt u het liefst?",
+                    "Hoe zien de kleren eruit?",
+                    "Wanneer draagt u deze kleren?"
+                ],
+                example: "Ik draag het liefst mijn spijkerbroek en een warme, blauwe trui.\nMijn kleren zien er simpel maar heel comfortabel uit.\nIk draag deze kleren altijd in het weekend of als ik thuis ben, omdat ik dan lekker wil ontspannen."
+            },
+            {
+                title: "Boek lenen",
+                prompt: "Voor uw opleiding Techniek heeft u snel het boek 'Natuurkunde 1' nodig. In de bibliotheek is het boek niet. Een medestudente heeft het boek. U wilt het boek van haar lenen. U schrijft haar een e-mail.",
+                bullets: [
+                    "U schrijft welk boek u wilt lenen.",
+                    "U schrijft waarom u het boek van haar wilt lenen.",
+                    "U schrijft wanneer ze het boek terugkrijgt. Bedenk zelf wanneer."
+                ],
+                example: "Beste Jasmijn, \n\nIk zou heel graag het boek 'Natuurkunde 1' van jou willen lenen.\nIn de bibliotheek kan ik het niet vinden, en ik heb het morgen nodig voor de opdracht.\nAls dat mag, breng ik het volgende week maandag meteen weer terug naar school.\n\nBedankt alvast!\n\nGroetjes,\n[Jouw naam]"
+            },
+            {
+                title: "Schadeformulier (Ingebroken)",
+                prompt: "Er is ingebroken in uw huis. Dieven hebben spullen meegenomen en er is schade. U vult een schadeformulier in van uw verzekering.",
+                bullets: [
+                    "Vul uw persoonsgegevens in (bedenk deze zelf).",
+                    "Schrijf op wanneer er is ingebroken.",
+                    "Schrijf drie dingen op die zijn gebeurd (bijv. wat is gestolen of kapot)."
+                ],
+                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon]\nDatum van de schade: [Bedenk een datum, bijv: 12 maart 2026]\n\nOmschrijving gestolen spullen en schade:\n- Mijn laptop is gestolen van het bureau.\n- De gouden ketting van mijn vrouw is ook gestolen uit de slaapkamer.\n- Het raam in de woonkamer is helemaal kapot, daar zijn de dieven naar binnen gekomen."
+            },
+            {
+                title: "Vrije dag aanvragen",
+                prompt: "U wilt volgende week een dag vrij vragen. U schrijft een e-mail aan uw chef, meneer Jansen.",
+                bullets: [
+                    "U schrijft wanneer u vrij wilt hebben. Bedenk zelf een dag en datum.",
+                    "U schrijft waarom u vrij wilt hebben. Bedenk zelf waarom."
+                ],
+                example: "Beste meneer Jansen,\n\nIk schrijf deze e-mail, omdat ik graag een vrije dag wil aanvragen.\nZou ik volgende week vrijdag 20 maart vrij mogen zijn?\nMijn verzoek is omdat mijn zus gaat trouwen, en ik moet de hele dag helpen met de voorbereidingen.\nIk hoor graag of dit mogelijk is.\n\nMet vriendelijke groet,\n[Jouw naam]"
+            },
+            {
+                title: "Ziek melden (Werk)",
+                prompt: "U bent ziek. U kunt vandaag niet naar uw werk komen. U schrijft een e-mail aan uw manager, mevrouw De Jong.",
+                bullets: [
+                    "Schrijf dat u ziek bent en niet kunt werken.",
+                    "Schrijf welke klachten u heeft.",
+                    "Schrijf wanneer u denkt weer te komen werken."
+                ],
+                example: "Beste mevrouw De Jong,\n\nIk stuur een bericht, omdat ik helaas ziek ben.\nIk heb koorts en heel veel last van mijn keel, dus ik kan vandaag niet komen werken.\nIk hoop me snel beter te voelen en ik blijf de komende dagen in bed.\nIk denk dat ik me maandag weer kom melden.\n\nMet vriendelijke groet,\n[Jouw naam]"
+            },
+            {
+                title: "Een nieuw huis",
+                prompt: "U bent onlangs in deze straat komen wonen. U schrijft een stukje in de wijkkrant om uzelf voor te stellen aan de nieuwe buren.",
+                bullets: [
+                    "Wie bent u en met wie woont u?",
+                    "Waar woonde u hiervoor?",
+                    "Waarom bent u hier komen wonen?"
+                ],
+                example: "Hallo allemaal, mijn naam is [Jouw naam] en ik woon vanaf deze week in jullie straat. Ik woon hier samen met mijn man en onze twee kinderen.\nHiervoor woonden we in Amsterdam, maar dat vonden we te druk.\nWe zijn hier komen wonen omdat dit een leuke en rustige buurt is voor de kinderen. We hebben veel zin om jullie te leren kennen!"
+            },
+            {
+                title: "Uw favoriete winkel",
+                prompt: "U schrijft een stukje voor een tijdschrift. Het gaat over boodschappen doen.",
+                bullets: [
+                    "Naar welke supermarkt gaat u het liefst?",
+                    "Waarom vindt u deze winkel leuk?",
+                    "Welke dingen koopt u daar altijd?"
+                ],
+                example: "Ik ga het liefst naar de grote markt in het centrum. De supermarkt vind ik soms saai.\nIk vind dit een leuke plek omdat de groenten erg vers en goedkoop zijn. Ook staan er veel vriendelijke mensen.\nIk koop daar altijd verse appels, brood en een groot stuk kaas."
+            },
+            {
+                title: "Kapot product",
+                prompt: "U heeft vorige week een nieuwe koffiemachine gekocht. Maar het apparaat is na twee dagen kapot gegaan. U schrijft een e-mail naar de winkel 'Elektronica Nu'.",
+                bullets: [
+                    "Schrijf op wat u heeft gekocht en wanneer.",
+                    "Schrijf wat er precies kapot is.",
+                    "Schrijf wat u wilt dat de winkel doet (bijv. repareren of een nieuwe geven)."
+                ],
+                example: "Geachte heer/mevrouw,\n\nVorige week dinsdag heb ik in uw winkel een koffiemachine gekocht.\nHelaas is het apparaat nu al kapot: de machine wordt niet meer warm en het water lekt op de tafel.\nIk wil u vragen of u de koffiemachine kunt repareren of dat ik een nieuw apparaat mag krijgen.\nIk hoor graag van u.\n\nBeste groeten,\n[Jouw naam]"
+            },
+            {
+                title: "Vriend uitnodigen (Film)",
+                prompt: "U heeft twee kaartjes gekocht voor de bioscoop. U wilt uw vriend Ahmed uitnodigen om mee te gaan. U schrijft hem een e-mail.",
+                bullets: [
+                    "Welke film willen jullie bekijken en waar gaat de film over?",
+                    "Wanneer gaan jullie (dag en tijd)?",
+                    "Waar spreken jullie af voordat de film begint?"
+                ],
+                example: "Hoi Ahmed!\n\nIk heb twee kaartjes gekocht voor de nieuwe actiefilm, het gaat over een spannende bankoverval.\nZullen we aanstaande zaterdagavond samen gaan? De film begint om 20:00 uur.\nLaten we voor het station afspreken om kwart voor acht, dan fietsen we samen naar de bioscoop. Heb je zin?\n\nGroetjes,\n[Jouw naam]"
+            },
+            {
+                title: "Restaurant reserveren",
+                prompt: "U wilt een tafel in een restaurant reserveren, omdat u uw verjaardag wilt vieren met vrienden. U schrijft een e-mail naar restaurant 'De Gouden Hond'.",
+                bullets: [
+                    "Voor wanneer wilt u reserveren en hoe laat?",
+                    "Voor hoeveel personen is de reservering?",
+                    "Noteer een speciale wens (bijvoorbeeld: iemand is allergisch of u heeft een kinderstoel nodig)."
+                ],
+                example: "Beste medewerker,\n\nIk wil graag een tafel reserveren om mijn verjaardag te vieren.\nIs er een tafel beschikbaar voor komende zaterdag om 18:30 uur?\nDe reservering is voor vier personen.\nDaarnaast heb ik een speciale vraag: eén persoon is allergisch voor vis, kunt u hier rekening mee houden in de keuken?\n\nAlvast bedankt voor uw reactie,\n\n[Jouw naam]"
             }
         ];
         this.currentWritingIndex = 0;
