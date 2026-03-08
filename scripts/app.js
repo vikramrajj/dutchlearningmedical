@@ -146,6 +146,47 @@ class FlashcardGame {
                     "Noteer een speciale wens (bijvoorbeeld: iemand is allergisch of u heeft een kinderstoel nodig)."
                 ],
                 example: "Beste medewerker,\n\nIk wil graag een tafel reserveren om mijn verjaardag te vieren.\nIs er een tafel beschikbaar voor komende zaterdag om 18:30 uur?\nDe reservering is voor vier personen.\nDaarnaast heb ik een speciale vraag: eén persoon is allergisch voor vis, kunt u hier rekening mee houden in de keuken?\n\nAlvast bedankt voor uw reactie,\n\n[Jouw naam]"
+            },
+            {
+                title: "E-mail aan docent",
+                prompt: "U doet een computercursus. Morgen moet u een toets maken, maar u kunt niet naar school komen. U schrijft een e-mail aan uw docent.",
+                bullets: [
+                    "Schrijf waarom u de e-mail stuurt.",
+                    "Schrijf waarom u niet kunt komen. Bedenk het zelf.",
+                    "Bied uw excuses aan.",
+                    "Vraag wanneer u de toets kunt maken."
+                ],
+                example: "Beste docent,\n\nIk stuur u deze e-mail omdat ik morgen niet naar de les kan komen voor de toets.\nIk ben helaas erg ziek geworden en moet thuis in bed blijven.\nSorry voor het ongemak.\nKunt u mij alstublieft vertellen wanneer ik de toets kan inhalen?\n\nMet vriendelijke groet,\n[Jouw naam]"
+            },
+            {
+                title: "Problemen in de straat",
+                prompt: "In de straat waar u woont zijn twee problemen (bijvoorbeeld: een kapotte lantaarnpaal en veel afval op straat). U meldt de problemen bij de gemeente. Vul het meldingsformulier in.",
+                bullets: [
+                    "Vul uw persoonsgegevens in.",
+                    "In welke straat zijn er problemen?",
+                    "Wat zijn de problemen? Schrijf het op."
+                ],
+                example: "Persoonsgegevens: [Jouw naam, Adres, Postcode, Woonplaats, Telefoon, E-mail]\n\nIn welke straat zijn er problemen?\nDe problemen zijn in de Molenstraat.\n\nWat zijn de problemen?\nEr zijn twee grote problemen. Ten eerste is de lantaarnpaal voor nummer 12 kapot, dus het is 's nachts erg donker. Ten tweede ligt er heel veel afval en vuilnis op de stoep."
+            },
+            {
+                title: "Weekend",
+                prompt: "U krijgt elke week een wijkkrant. Iedereen uit de buurt mag iets voor deze krant schrijven. U schrijft over uw weekend. Schrijf minimaal drie zinnen op.",
+                bullets: [
+                    "Wat doet u graag in het weekend?",
+                    "Met wie doet u dat?",
+                    "Waar doet u dat?"
+                ],
+                example: "In het weekend ga ik heel graag wandelen en fietsen in de natuur.\nMeestal doe ik dat samen met mijn partner en onze hond.\nWe gaan dan vaak naar het bos hier in de buurt, of we fietsen naar het strand."
+            },
+            {
+                title: "Bericht collega",
+                prompt: "U werkt in een kledingzaak. Straks komt uw collega Fariha. Zij moet een paar dingen doen (zoals de vloer vegen, nieuwe kleren ophangen en de bloemen water geven). Schrijf een briefje voor Fariha.",
+                bullets: [
+                    "Verwelkom haar.",
+                    "Vertel wat zij moet doen. Schrijf drie dingen op.",
+                    "Sluit het briefje af met uw naam."
+                ],
+                example: "Hallo Fariha,\n\nIk ga zo naar huis, maar er zijn nog een paar dingen die jij moet doen vanavond.\nZou jij de vloer willen vegen en de nieuwe kleren netjes in het rek willen hangen? Vergeet ook niet om de planten een beetje water te geven.\nAlvast bedankt voor je hulp!\n\nGroeten,\n[Jouw naam]"
             }
         ];
         this.currentWritingIndex = 0;
