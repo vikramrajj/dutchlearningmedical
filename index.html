@@ -94,6 +94,14 @@
                             </svg>
                             Vul In
                         </button>
+                        <button class="mode-btn" id="modeWriting" data-mode="writing">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <path d="M12 20h9"></path>
+                                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                            </svg>
+                            Writing
+                        </button>
                     </div>
                 </div>
 
@@ -450,6 +458,45 @@
                 <button id="vulinNextBtn" class="btn btn-primary">Next</button>
             </div>
         </section>
+
+        <!-- ===================== WRITING MODE ===================== -->
+        <section class="writing-section hidden" id="writingSection">
+            <div class="spelling-card">
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="writingCategory">A2 Schrijfvaardigheid</span>
+                </div>
+
+                <h2 class="writing-title" id="writingTitle">Task Title</h2>
+                <div class="writing-prompt-container">
+                    <p class="writing-prompt-text" id="writingPrompt">Prompt goes here...</p>
+                    <ul class="writing-bullet-points" id="writingBullets">
+                        <!-- Bullets injected dynamically -->
+                    </ul>
+                </div>
+
+                <div class="writing-input-wrapper">
+                    <textarea class="writing-textarea" id="writingTextarea"
+                        placeholder="Schrijf hier uw e-mail of bericht..."></textarea>
+                </div>
+
+                <!-- Feedback / Example Answer -->
+                <div class="writing-actions">
+                    <button class="btn btn-secondary" id="writingShowExampleBtn">Show Example Answer</button>
+                </div>
+
+                <div class="writing-example-box hidden" id="writingExampleBox">
+                    <p class="example-label">Voorbeeld antwoord (A2 niveau):</p>
+                    <p class="writing-example-text" id="writingExampleText">Example answer...</p>
+                </div>
+            </div>
+
+            <!-- Stats & Nav -->
+            <div class="action-buttons" style="margin-top: 2rem;">
+                <button id="writingPrevBtn" class="btn btn-secondary">Previous Task</button>
+                <button id="writingNextBtn" class="btn btn-primary">Next Task</button>
+            </div>
+        </section>
+
     </main>
 
     <footer>

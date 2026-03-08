@@ -5,7 +5,51 @@ class FlashcardGame {
         this.vocab = medicalVocab;
         this.filteredVocab = [...this.vocab];
         this.currentIndex = 0;
-        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz'
+        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz' | 'vulin' | 'writing'
+
+        this.writingPrompts = [
+            {
+                title: "Afspraak verzetten",
+                prompt: "U volgt een opleiding. U hebt morgen een afspraak met Amber, een andere student. U kunt niet en wilt een andere afspraak maken. U schrijft daarom een e-mail aan Amber.",
+                bullets: [
+                    "Schrijf dat u de afspraak wilt verzetten.",
+                    "Schrijf waarom u dat wilt. Bedenk zelf waarom.",
+                    "Stel een nieuwe datum voor."
+                ],
+                example: "Beste Amber,\n\nIk schrijf je omat ik onze afspraak van morgen wil verzetten.\nIk kan helaas niet komen, want ik ben ziek. Ik heb last van hoofdpijn en koorts.\nZullen we volgende week donderdag afspreken? Ik kan om 13.00 uur. Laat me even weten of dat voor jou ook goed is.\n\nGroetjes,\n[Jouw naam]"
+            },
+            {
+                title: "Feest",
+                prompt: "U krijgt elke week een wijkkrant. Iedereen uit de buurt mag iets voor deze krant schrijven. U schrijft over een feest dat u elk jaar viert. Schrijf minimaal drie zinnen op.",
+                bullets: [
+                    "Waarom viert u het feest?",
+                    "Wie komen er op het feest?",
+                    "Wat doet u op het feest?"
+                ],
+                example: "Ik vier elk jaar op 5 december Sinterklaas. Ik vier dit feest, omdat het heel gezellig is.\nMijn hele familie en mijn vrienden komen op het feest.\nWe eten pepernoten, we zingen liedjes en we geven elkaar cadeautjes."
+            },
+            {
+                title: "Dienst ruilen",
+                prompt: "U moet zondag werken maar u wilt graag vrij. U schrijft daarom een e-mail aan uw collega Farida. U vraagt of zij met u wil ruilen.",
+                bullets: [
+                    "Schrijf op waarom u mailt.",
+                    "Schrijf waarom u wilt ruilen. Bedenk het zelf.",
+                    "Schrijf op welke dag u wel kunt werken."
+                ],
+                example: "Beste Farida,\n\nIk stuur je deze e-mail, omdat ik aanstaande zondag moet werken.\nMaar ik wil graag vrij, want mijn dochter is jarig en we geven een feest.\nZou jij mijn dienst willen overnemen of met mij willen ruilen?\nIk kan volgende week dinsdag of donderdag werken. Ik hoor graag van je.\n\nGroeten,\n[Jouw naam]"
+            },
+            {
+                title: "Inschrijven sportschool",
+                prompt: "U wilt graag sporten. U gaat naar een sportschool in uw buurt. U moet een formulier invullen. Sommige gegevens moet u zelf bedenken.",
+                bullets: [
+                    "Kies een groepsles (Fitness, Yoga of Hardlopen) en vertel hoe vaak je wilt komen.",
+                    "Waarom kiest u voor deze groepsles?",
+                    "Hoe is uw gezondheid?"
+                ],
+                example: "Ik wil graag inschrijven voor de groepsles Yoga. Ik wil graag twee keer per week komen.\n\nIk kies voor deze groepsles omdat ik wil ontspannen en flexibeler wil worden. Mijn werk is erg druk en yoga helpt mij om rustig te worden.\n\nMijn gezondheid is over het algemeen heel goed. Ik ben fit en heb geen medische problemen."
+            }
+        ];
+        this.currentWritingIndex = 0;
 
         // Stats
         this.stats = { correct: 0, wrong: 0 };
@@ -122,9 +166,23 @@ class FlashcardGame {
         this.speakBtnVulinSentence = document.getElementById('speakBtnVulinSentence');
         this.vulinStats = { correct: 0, wrong: 0 };
 
+        // DOM — writing mode
+        this.modeWriting = document.getElementById('modeWriting');
+        this.writingSection = document.getElementById('writingSection');
+        this.writingTitle = document.getElementById('writingTitle');
+        this.writingPrompt = document.getElementById('writingPrompt');
+        this.writingBullets = document.getElementById('writingBullets');
+        this.writingTextarea = document.getElementById('writingTextarea');
+        this.writingShowExampleBtn = document.getElementById('writingShowExampleBtn');
+        this.writingExampleBox = document.getElementById('writingExampleBox');
+        this.writingExampleText = document.getElementById('writingExampleText');
+        this.writingPrevBtn = document.getElementById('writingPrevBtn');
+        this.writingNextBtn = document.getElementById('writingNextBtn');
+
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
         this.modeSpelling = document.getElementById('modeSpelling');
+
 
         this.init();
     }
@@ -138,6 +196,7 @@ class FlashcardGame {
         this.modeSpeaking.addEventListener('click', () => this.switchMode('speaking'));
         this.modeQuiz.addEventListener('click', () => this.switchMode('quiz'));
         this.modeVulIn.addEventListener('click', () => this.switchMode('vulin'));
+        this.modeWriting.addEventListener('click', () => this.switchMode('writing'));
 
         // ---- Level filter ----
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
@@ -185,6 +244,20 @@ class FlashcardGame {
             this.vulinHintBtn.textContent = isHidden ? '💡 Show English hint' : '🙈 Hide hint';
         });
 
+        // ---- Writing mode events ----
+        this.writingNextBtn.addEventListener('click', () => {
+            this.currentWritingIndex = (this.currentWritingIndex + 1) % this.writingPrompts.length;
+            this.updateCard();
+        });
+        this.writingPrevBtn.addEventListener('click', () => {
+            this.currentWritingIndex = (this.currentWritingIndex > 0) ? this.currentWritingIndex - 1 : this.writingPrompts.length - 1;
+            this.updateCard();
+        });
+        this.writingShowExampleBtn.addEventListener('click', () => {
+            const isHidden = this.writingExampleBox.classList.toggle('hidden');
+            this.writingShowExampleBtn.textContent = isHidden ? 'Show Example Answer' : 'Hide Example Answer';
+        });
+
         // ---- Keyboard shortcuts ----
         document.addEventListener('keydown', (e) => {
             if (this.mode === 'flashcard') {
@@ -215,12 +288,14 @@ class FlashcardGame {
         this.modeSpeaking.classList.toggle('active', newMode === 'speaking');
         this.modeQuiz.classList.toggle('active', newMode === 'quiz');
         this.modeVulIn.classList.toggle('active', newMode === 'vulin');
+        this.modeWriting.classList.toggle('active', newMode === 'writing');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
         this.speakingSection.classList.toggle('hidden', newMode !== 'speaking');
         this.quizSection.classList.toggle('hidden', newMode !== 'quiz');
         this.vulinSection.classList.toggle('hidden', newMode !== 'vulin');
+        this.writingSection.classList.toggle('hidden', newMode !== 'writing');
 
         // Reset state for new mode
         this.currentIndex = 0;
@@ -312,9 +387,23 @@ class FlashcardGame {
     //  UPDATE CARD CONTENT
     // ============================================================
     updateCard() {
+        if (this.mode === 'writing') {
+            const wItem = this.writingPrompts[this.currentWritingIndex];
+            this.writingTitle.textContent = wItem.title;
+            this.writingPrompt.textContent = wItem.prompt;
+            this.writingBullets.innerHTML = wItem.bullets.map(b => `<li>${b}</li>`).join('');
+            this.writingExampleText.textContent = wItem.example;
+
+            // Reset state
+            this.writingTextarea.value = '';
+            this.writingExampleBox.classList.add('hidden');
+            this.writingShowExampleBtn.textContent = 'Show Example Answer';
+            return;
+        }
+
         const item = this.filteredVocab[this.currentIndex];
 
-        if (!item) {
+        if (!item && this.mode !== 'writing') {
             this.dutchWord.textContent = 'No words found';
             this.englishWord.textContent = 'Select another level';
             this.spellingEnglish.textContent = 'No words found';
