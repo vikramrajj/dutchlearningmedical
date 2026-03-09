@@ -24,7 +24,26 @@
 
     <header>
         <div class="container">
-            <h1 class="logo">Medisch<span>Nederlands</span></h1>
+            <h1 class="logo" id="appLogo">Medisch<span>Nederlands</span></h1>
+            <div class="domain-toggle" id="domainToggle">
+                <button class="domain-btn active" id="domainMedical" data-domain="medical">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                    Medical
+                </button>
+                <button class="domain-btn" id="domainGeneral" data-domain="general">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="2" y1="12" x2="22" y2="12" />
+                        <path
+                            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                    </svg>
+                    General
+                </button>
+            </div>
             <div class="level-badge" id="currentLevelDisplay">Level: A2</div>
         </div>
     </header>

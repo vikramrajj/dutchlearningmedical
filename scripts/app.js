@@ -1,9 +1,13 @@
 import { medicalVocab } from './data.js';
+import { generalVocab } from './generalData.js';
+
 
 class FlashcardGame {
     constructor() {
         this.vocab = medicalVocab;
+        this.domain = 'medical'; // 'medical' | 'general'
         this.filteredVocab = [...this.vocab].sort(() => Math.random() - 0.5);
+
         this.currentIndex = 0;
         this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz' | 'vulin' | 'writing'
 
@@ -209,6 +213,10 @@ class FlashcardGame {
         this.currentLevelDisplay = document.getElementById('currentLevelDisplay');
         this.progressFill = document.getElementById('progressFill');
         this.progressCount = document.getElementById('progressCount');
+        this.domainMedical = document.getElementById('domainMedical');
+        this.domainGeneral = document.getElementById('domainGeneral');
+        this.appLogo = document.getElementById('appLogo');
+
 
         // DOM — flashcard mode
         this.flashcardSection = document.getElementById('flashcardSection');
@@ -330,7 +338,12 @@ class FlashcardGame {
     init() {
         this.initSpeakingRecognition();
 
+        // ---- Domain Toggle (Top Bar) ----
+        this.domainMedical.addEventListener('click', () => this.switchDomain('medical'));
+        this.domainGeneral.addEventListener('click', () => this.switchDomain('general'));
+
         // ---- Mode toggle ----
+
         this.modeFlashcard.addEventListener('click', () => this.switchMode('flashcard'));
         this.modeSpelling.addEventListener('click', () => this.switchMode('spelling'));
         this.modeSpeaking.addEventListener('click', () => this.switchMode('speaking'));
@@ -450,6 +463,26 @@ class FlashcardGame {
             this.stopSpeakingTest();
         }
         this.updateCard();
+    }
+
+    // ============================================================
+    //  DOMAIN SWITCHING
+    // ============================================================
+    switchDomain(newDomain) {
+        if (this.domain === newDomain) return;
+        this.domain = newDomain;
+
+        // Switch vocab and update UI
+        this.vocab = (newDomain === 'medical') ? medicalVocab : generalVocab;
+        this.appLogo.innerHTML = (newDomain === 'medical')
+            ? 'Medisch<span>Nederlands</span>'
+            : 'Algemeen<span>Nederlands</span>';
+
+        this.domainMedical.classList.toggle('active', newDomain === 'medical');
+        this.domainGeneral.classList.toggle('active', newDomain === 'general');
+
+        // Fully reset for the new domain
+        this.filterByLevel(this.levelSelect.value);
     }
 
     // ============================================================

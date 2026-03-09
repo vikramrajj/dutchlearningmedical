@@ -142,6 +142,53 @@ header .container {
     border-radius: 2px;
 }
 
+/* Domain Toggle */
+.domain-toggle {
+    display: flex;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    padding: 0.4rem;
+    border-radius: 100px;
+    box-shadow: var(--shadow);
+    gap: 0.25rem;
+}
+
+.domain-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 0.5rem 1.25rem;
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.domain-btn:hover {
+    color: var(--primary);
+    background: rgba(99, 102, 241, 0.05);
+}
+
+.domain-btn.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.domain-btn svg {
+    opacity: 0.8;
+}
+
+.domain-btn.active svg {
+    opacity: 1;
+}
+
 .level-badge {
     background: var(--glass-bg);
     backdrop-filter: blur(10px);
