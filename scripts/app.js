@@ -195,6 +195,102 @@ class FlashcardGame {
         ].sort(() => Math.random() - 0.5);
         this.currentWritingIndex = 0;
 
+        // --- PIC WRITE PROMPTS (General domain only) ---
+        this.picWritingPrompts = [
+            {
+                title: "Problemen in de straat",
+                category: "Meldingsformulier",
+                scenario: "In de straat waar u woont zijn twee problemen. Op de foto's ziet u wat de problemen zijn. U meldt de problemen bij de gemeente. Vul het formulier van de gemeente in. Sommige gegevens moet u zelf bedenken.",
+                images: [
+                    { src: "images/street_garbage.png", label: "Probleem 1" },
+                    { src: "images/broken_pavement.png", label: "Probleem 2" }
+                ],
+                bullets: [
+                    "Vul uw persoonsgegevens in (bedenk zelf: naam, adres, postcode, woonplaats, telefoon, e-mail).",
+                    "In welke straat zijn er problemen?",
+                    "Wat zijn de twee problemen? Schrijf wat u op de foto's ziet."
+                ],
+                example: "Persoonsgegevens:\nNaam: Jan de Vries\nAdres: Molenstraat 8\nPostcode: 2600 AB\nWoonplaats: Delft\nTelefoon: 06-12345678\nE-mail: jan.devries@email.nl\n\nIn welke straat zijn er problemen?\nDe problemen zijn in de Molenstraat.\n\nWat zijn de problemen?\nEr is veel afval op de stoep. Er liggen veel vuilniszakken en er is rommel op de grond. De straat is ook kapot; er zijn stenen gebroken en er zijn gaten in de weg."
+            },
+            {
+                title: "Bericht collega (Kledingzaak)",
+                category: "Briefje schrijven",
+                scenario: "U werkt in een kledingzaak. Straks komt uw collega Fariha. Zij moet een paar dingen doen. Kijk naar de plaatjes.",
+                images: [
+                    { src: "images/vacuum_cleaner.png", label: "Stofzuigen" },
+                    { src: "images/messy_clothes.png", label: "Opruimen" },
+                    { src: "images/clothes_rack.png", label: "Ophangen" },
+                    { src: "images/store_keys.png", label: "Afsluiten" }
+                ],
+                bullets: [
+                    "Verwelkom Fariha.",
+                    "Vertel drie of vier dingen die zij moet doen (gebaseerd op de plaatjes).",
+                    "Sluit het briefje af met uw naam."
+                ],
+                example: "Hallo Fariha,\n\nBedankt dat je komt! Er zijn een paar dingen die je moet doen vanavond.\n\nEerst moet je de vloer stofzuigen, want die is vies. Daarna moet je alle kleren netjes ophangen op het rek. Vergeet ook niet om de rommel op te ruimen. Aan het einde van de dag moet je de winkel afsluiten en de sleutels meenemen.\n\nAlvast bedankt!\n\nGroeten,\n[Jouw naam]"
+            },
+            {
+                title: "Ingebroken",
+                category: "Schadeformulier",
+                scenario: "Er is ingebroken in uw huis. Dieven hebben spullen meegenomen en er is schade. U vult een schadeformulier in van uw verzekering.",
+                images: [
+                    { src: "images/stolen_laptop.jpg", label: "gestolen" },
+                    { src: "images/stolen_watch.jpg", label: "gestolen" },
+                    { src: "images/broken_window.jpg", label: "kapot" }
+                ],
+                bullets: [
+                    "Vul uw persoonsgegevens in (bedenk zelf: naam, adres, telefoon, e-mail, datum).",
+                    "Schrijf op wanneer er is ingebroken.",
+                    "Schrijf drie dingen op die zijn gestolen of kapot zijn (kijk naar de plaatjes)."
+                ],
+                example: "Persoonsgegevens:\nNaam: Ahmed Yilmaz\nAdres: Kerkstraat 22\nPostcode: 3500 HB\nWoonplaats: Utrecht\nTelefoon: 06-87654321\nDatum van de schade: 12 april 2026\n\nOmschrijving gestolen spullen en schade:\n• Mijn laptop is gestolen van het bureau in de slaapkamer.\n• Mijn zilveren horloge is ook meegenomen; het lag op het nachtkastje.\n• Het raam in de woonkamer is kapotgemaakt. Daardoor zijn de dieven naar binnen gekomen."
+            },
+            {
+                title: "Ziek melden bij werk",
+                category: "E-mail schrijven",
+                scenario: "U bent ziek. U heeft koorts en u voelt zich niet goed. U kunt vandaag niet naar uw werk komen. U schrijft een e-mail aan uw manager, mevrouw Bakker.",
+                images: [
+                    { src: "images/sick_person.jpg", label: "ziek" },
+                    { src: "images/thermometer.jpg", label: "koorts" }
+                ],
+                bullets: [
+                    "Schrijf dat u ziek bent en niet kunt werken.",
+                    "Schrijf welke klachten u heeft (kijk naar de plaatjes).",
+                    "Schrijf wanneer u denkt weer te komen werken."
+                ],
+                example: "Beste mevrouw Bakker,\n\nIk schrijf u om te zeggen dat ik vandaag helaas niet naar mijn werk kan komen.\n\nIk ben ziek. Ik heb koorts (38,5 graden) en veel hoofdpijn. Ik voel mij erg beroerd.\n\nIk hoop snel beter te worden. Ik denk dat ik overmorgen weer kan werken, maar ik laat het u weten als dat niet lukt.\n\nMet vriendelijke groet,\n[Jouw naam]"
+            },
+            {
+                title: "Kapot apparaat melden",
+                category: "Klachtenbrief",
+                scenario: "U heeft vorige week een nieuwe koffiemachine gekocht in een winkel. Maar het apparaat is kapot. U schrijft een e-mail naar de winkel 'Elektronica Nu' om te klagen.",
+                images: [
+                    { src: "images/broken_coffee_machine.jpg", label: "kapot apparaat" }
+                ],
+                bullets: [
+                    "Schrijf op wat u heeft gekocht en wanneer.",
+                    "Schrijf wat er precies mis is met het apparaat.",
+                    "Schrijf wat u wilt dat de winkel doet (repareren of een nieuw apparaat geven)."
+                ],
+                example: "Geachte medewerker,\n\nIk schrijf u omdat ik een probleem heb met een product dat ik bij u heb gekocht.\n\nVorige week dinsdag heb ik in uw winkel een koffiemachine gekocht. Helaas werkt het apparaat niet goed: het maakt veel lawaai en er lekt water uit de machine.\n\nIk zou graag willen dat u de koffiemachine repareert of dat ik een nieuwe machine krijg. Ik bewaar de kassabon nog.\n\nMet vriendelijke groet,\n[Jouw naam]"
+            },
+            {
+                title: "Verhuisbericht",
+                category: "Bericht schrijven",
+                scenario: "U gaat binnenkort verhuizen naar een nieuw huis. U schrijft een bericht aan uw vrienden en buren om het te vertellen.",
+                images: [
+                    { src: "images/moving_boxes.jpg", label: "verhuizen" }
+                ],
+                bullets: [
+                    "Vertel dat u gaat verhuizen en naar welke stad of straat (bedenk zelf).",
+                    "Vertel waarom u verhuist (bedenk zelf een reden).",
+                    "Nodig uw vrienden uit om te helpen of langs te komen."
+                ],
+                example: "Hallo allemaal!\n\nIk heb groot nieuws: ik ga volgende maand verhuizen!\n\nIk ga naar een nieuw huis in de Tulpstraat in Leiden. Ik verhuizig, omdat ik een grotere woning nodig heb voor mijn gezin.\n\nHebben jullie misschien tijd om mij te helpen met de verhuizing op zaterdag 10 mei? En jullie zijn natuurlijk ook welkom om het nieuwe huis te bekijken!\n\nGroetjes,\n[Jouw naam]"
+            }
+        ];
+        this.currentPicWritingIndex = 0;
+
         // Stats
         this.stats = { correct: 0, wrong: 0 };
         this.speakingStats = { correct: 0, wrong: 0 };
@@ -327,6 +423,27 @@ class FlashcardGame {
         this.writingPrevBtn = document.getElementById('writingPrevBtn');
         this.writingNextBtn = document.getElementById('writingNextBtn');
 
+        // DOM — pic write mode
+        this.modePicWrite = document.getElementById('modePicWrite');
+        this.picWritingSection = document.getElementById('picWritingSection');
+        this.picWritingCategory = document.getElementById('picWritingCategory');
+        this.picWritingTitle = document.getElementById('picWritingTitle');
+        this.picWritingScenario = document.getElementById('picWritingScenario');
+        this.picImagesGrid = document.getElementById('picImagesGrid');
+        this.picWritingBullets = document.getElementById('picWritingBullets');
+        this.picWritingTextarea = document.getElementById('picWritingTextarea');
+        this.picWritingSubmitBtn = document.getElementById('picWritingSubmitBtn');
+        this.picWritingLoading = document.getElementById('picWritingLoading');
+        this.grammarFeedbackPanel = document.getElementById('grammarFeedbackPanel');
+        this.grammarFeedbackTitle = document.getElementById('grammarFeedbackTitle');
+        this.grammarErrorBadges = document.getElementById('grammarErrorBadges');
+        this.grammarErrorsList = document.getElementById('grammarErrorsList');
+        this.picWritingRetryBtn = document.getElementById('picWritingRetryBtn');
+        this.picWritingExampleBox = document.getElementById('picWritingExampleBox');
+        this.picWritingExampleText = document.getElementById('picWritingExampleText');
+        this.picWritingPrevBtn = document.getElementById('picWritingPrevBtn');
+        this.picWritingNextBtn = document.getElementById('picWritingNextBtn');
+
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
         this.modeSpelling = document.getElementById('modeSpelling');
@@ -350,6 +467,29 @@ class FlashcardGame {
         this.modeQuiz.addEventListener('click', () => this.switchMode('quiz'));
         this.modeVulIn.addEventListener('click', () => this.switchMode('vulin'));
         this.modeWriting.addEventListener('click', () => this.switchMode('writing'));
+        this.modePicWrite.addEventListener('click', () => this.switchMode('picwriting'));
+
+        // ---- Pic Write mode events ----
+        this.picWritingNextBtn.addEventListener('click', () => {
+            this.currentPicWritingIndex = (this.currentPicWritingIndex + 1) % this.picWritingPrompts.length;
+            this.resetPicWriting();
+            this.updateCard();
+        });
+        this.picWritingPrevBtn.addEventListener('click', () => {
+            this.currentPicWritingIndex = this.currentPicWritingIndex > 0
+                ? this.currentPicWritingIndex - 1
+                : this.picWritingPrompts.length - 1;
+            this.resetPicWriting();
+            this.updateCard();
+        });
+        this.picWritingSubmitBtn.addEventListener('click', () => this.submitPicWriting());
+        this.picWritingRetryBtn.addEventListener('click', () => {
+            this.picWritingTextarea.disabled = false;
+            this.picWritingTextarea.focus();
+            this.grammarFeedbackPanel.classList.add('hidden');
+            this.picWritingExampleBox.classList.add('hidden');
+            this.picWritingSubmitBtn.disabled = false;
+        });
 
         // ---- Level filter ----
         this.levelSelect.addEventListener('change', (e) => this.filterByLevel(e.target.value));
@@ -442,6 +582,7 @@ class FlashcardGame {
         this.modeQuiz.classList.toggle('active', newMode === 'quiz');
         this.modeVulIn.classList.toggle('active', newMode === 'vulin');
         this.modeWriting.classList.toggle('active', newMode === 'writing');
+        this.modePicWrite.classList.toggle('active', newMode === 'picwriting');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
@@ -449,6 +590,7 @@ class FlashcardGame {
         this.quizSection.classList.toggle('hidden', newMode !== 'quiz');
         this.vulinSection.classList.toggle('hidden', newMode !== 'vulin');
         this.writingSection.classList.toggle('hidden', newMode !== 'writing');
+        this.picWritingSection.classList.toggle('hidden', newMode !== 'picwriting');
 
         // Reset state for new mode
         this.currentIndex = 0;
@@ -480,6 +622,14 @@ class FlashcardGame {
 
         this.domainMedical.classList.toggle('active', newDomain === 'medical');
         this.domainGeneral.classList.toggle('active', newDomain === 'general');
+
+        // Show Pic Write button only for General domain
+        this.modePicWrite.style.display = (newDomain === 'general') ? '' : 'none';
+        // If switching away from General while in picwriting mode, fall back to writing
+        if (newDomain === 'medical' && this.mode === 'picwriting') {
+            this.switchMode('writing');
+            return;
+        }
 
         // Fully reset for the new domain
         this.filterByLevel(this.levelSelect.value);
@@ -582,6 +732,24 @@ class FlashcardGame {
             this.writingTextarea.value = '';
             this.writingExampleBox.classList.add('hidden');
             this.writingShowExampleBtn.textContent = 'Show Example Answer';
+            return;
+        }
+
+        if (this.mode === 'picwriting') {
+            const p = this.picWritingPrompts[this.currentPicWritingIndex];
+            this.picWritingCategory.textContent = p.category;
+            this.picWritingTitle.textContent = p.title;
+            this.picWritingScenario.textContent = p.scenario;
+            this.picWritingBullets.innerHTML = p.bullets.map(b => `<li>${b}</li>`).join('');
+            this.picWritingExampleText.textContent = p.example;
+
+            // Build image grid
+            this.picImagesGrid.innerHTML = p.images.map(img => `
+                <div class="pic-image-card">
+                    <img src="${img.src}" alt="${img.label}"
+                        onerror="this.style.display='none';this.parentElement.querySelector('.pic-image-label').textContent='[${img.label}]'">
+                    <span class="pic-image-label">${img.label}</span>
+                </div>`).join('');
             return;
         }
 
@@ -1269,6 +1437,97 @@ class FlashcardGame {
         const nlVoice = voices.find(v => v.lang.startsWith('nl'));
         if (nlVoice) utterance.voice = nlVoice;
         window.speechSynthesis.speak(utterance);
+    }
+
+    // ============================================================
+    //  PIC WRITE MODE
+    // ============================================================
+    resetPicWriting() {
+        this.picWritingTextarea.value = '';
+        this.picWritingTextarea.disabled = false;
+        this.picWritingSubmitBtn.disabled = false;
+        this.picWritingLoading.classList.add('hidden');
+        this.grammarFeedbackPanel.classList.add('hidden');
+        this.picWritingExampleBox.classList.add('hidden');
+    }
+
+    async submitPicWriting() {
+        const text = this.picWritingTextarea.value.trim();
+        if (!text) { this.picWritingTextarea.focus(); return; }
+
+        this.picWritingSubmitBtn.disabled = true;
+        this.picWritingTextarea.disabled = true;
+        this.picWritingLoading.classList.remove('hidden');
+        this.grammarFeedbackPanel.classList.add('hidden');
+        this.picWritingExampleBox.classList.add('hidden');
+
+        try {
+            const res = await fetch('https://api.languagetool.org/v2/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ text, language: 'nl', enabledOnly: 'false' })
+            });
+            if (!res.ok) throw new Error('API error');
+            const data = await res.json();
+            this.displayGrammarFeedback(data.matches, text, false);
+        } catch (e) {
+            this.displayGrammarFeedback([], text, true);
+        } finally {
+            this.picWritingLoading.classList.add('hidden');
+        }
+
+        // Always reveal example answer after submit
+        this.picWritingExampleBox.classList.remove('hidden');
+        this.picWritingExampleBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    displayGrammarFeedback(matches, text, apiError) {
+        this.grammarFeedbackPanel.classList.remove('hidden');
+
+        const isSpelling = m => m.rule?.issueType === 'misspelling' ||
+            (m.rule?.category?.id || '').toUpperCase().includes('SPELL');
+        const spellingErrors = matches.filter(isSpelling);
+        const grammarErrors  = matches.filter(m => !isSpelling(m));
+
+        // Badges
+        let badges = '';
+        if (!apiError && matches.length === 0) {
+            this.grammarFeedbackTitle.textContent = '🎉 Uitstekend werk!';
+            badges = '<span class="grammar-badge no-errors-badge">✅ Geen fouten gevonden!</span>';
+        } else {
+            this.grammarFeedbackTitle.textContent = '📝 Taalfeedback';
+            if (spellingErrors.length)
+                badges += `<span class="grammar-badge spelling-badge">🔴 ${spellingErrors.length} spellingfout${spellingErrors.length > 1 ? 'en' : ''}</span>`;
+            if (grammarErrors.length)
+                badges += `<span class="grammar-badge grammar-badge-orange">🟠 ${grammarErrors.length} grammaticafout${grammarErrors.length > 1 ? 'en' : ''}</span>`;
+        }
+        this.grammarErrorBadges.innerHTML = badges;
+
+        // Error list
+        if (apiError) {
+            this.grammarErrorsList.innerHTML =
+                '<p class="grammar-api-error">⚠️ Kan nu niet controleren (netwerk). Bekijk het voorbeeldantwoord hieronder.</p>';
+            return;
+        }
+        if (matches.length === 0) {
+            this.grammarErrorsList.innerHTML =
+                '<p class="grammar-no-errors">Geweldig! Uw tekst heeft geen fouten. Bekijk het voorbeeldantwoord hieronder.</p>';
+            return;
+        }
+
+        this.grammarErrorsList.innerHTML = matches.slice(0, 10).map(m => {
+            const wrong = text.substring(m.offset, m.offset + m.length);
+            const suggestion = m.replacements?.[0]?.value || '—';
+            const spell = isSpelling(m);
+            return `<div class="grammar-error-item ${spell ? 'error-spelling' : 'error-grammar'}">
+                <span class="grammar-error-tag">${spell ? '🔴 Spelling' : '🟠 Grammatica'}</span>
+                <div class="grammar-error-body">
+                    <span class="grammar-error-word">"${wrong}"</span>
+                    ${suggestion !== '—' ? `<span class="grammar-suggestion">→ Suggestie: "${suggestion}"</span>` : ''}
+                    <span class="grammar-error-msg">${m.message || ''}</span>
+                </div>
+            </div>`;
+        }).join('');
     }
 }
 

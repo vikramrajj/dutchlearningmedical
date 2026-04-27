@@ -121,6 +121,15 @@
                             </svg>
                             Writing
                         </button>
+                        <button class="mode-btn" id="modePicWrite" data-mode="picwriting" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                <circle cx="8.5" cy="8.5" r="1.5"/>
+                                <polyline points="21 15 16 10 5 21"/>
+                            </svg>
+                            Pic Write
+                        </button>
                     </div>
                 </div>
 
@@ -513,6 +522,64 @@
             <div class="action-buttons" style="margin-top: 2rem;">
                 <button id="writingPrevBtn" class="btn btn-secondary">Previous Task</button>
                 <button id="writingNextBtn" class="btn btn-primary">Next Task</button>
+            </div>
+        </section>
+
+        <!-- ===================== PIC WRITE MODE ===================== -->
+        <section class="pic-writing-section hidden" id="picWritingSection">
+            <div class="spelling-card pic-writing-card">
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="picWritingCategory">Beeldschrijven</span>
+                </div>
+
+                <h2 class="writing-title" id="picWritingTitle">Task Title</h2>
+                <p class="pic-writing-scenario" id="picWritingScenario">Scenario text...</p>
+                <p class="pic-writing-instruction">📷 Kijk naar de plaatjes:</p>
+
+                <!-- Dynamic image grid -->
+                <div class="pic-images-grid" id="picImagesGrid"></div>
+
+                <!-- Task bullets -->
+                <ul class="writing-bullet-points" id="picWritingBullets"></ul>
+
+                <!-- Textarea -->
+                <div class="writing-input-wrapper">
+                    <textarea class="writing-textarea pic-writing-textarea" id="picWritingTextarea"
+                        placeholder="Schrijf hier uw antwoord in het Nederlands..."></textarea>
+                </div>
+
+                <!-- Submit + loading -->
+                <div class="pic-writing-actions">
+                    <button class="btn btn-primary pic-submit-btn" id="picWritingSubmitBtn">
+                        ✓ Verzenden &amp; Feedback krijgen
+                    </button>
+                    <div class="grammar-loading hidden" id="picWritingLoading">
+                        <span class="spinner"></span> Controleren...
+                    </div>
+                </div>
+
+                <!-- Grammar Feedback Panel -->
+                <div class="grammar-feedback-panel hidden" id="grammarFeedbackPanel">
+                    <div class="grammar-feedback-header">
+                        <span class="grammar-feedback-title" id="grammarFeedbackTitle">📝 Taalfeedback</span>
+                        <div class="grammar-badges" id="grammarErrorBadges"></div>
+                    </div>
+                    <div class="grammar-errors-list" id="grammarErrorsList"></div>
+                    <button class="btn btn-secondary" id="picWritingRetryBtn" style="margin-top:1rem;">
+                        ✏️ Aanpassen &amp; opnieuw verzenden
+                    </button>
+                </div>
+
+                <!-- Example answer — shown only after submit -->
+                <div class="writing-example-box hidden" id="picWritingExampleBox">
+                    <p class="example-label">✅ Voorbeeldantwoord (A2 niveau):</p>
+                    <p class="writing-example-text" id="picWritingExampleText"></p>
+                </div>
+            </div>
+
+            <div class="action-buttons" style="margin-top:2rem;">
+                <button id="picWritingPrevBtn" class="btn btn-secondary">Previous Task</button>
+                <button id="picWritingNextBtn" class="btn btn-primary">Next Task</button>
             </div>
         </section>
 

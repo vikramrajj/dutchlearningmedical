@@ -2134,3 +2134,264 @@ details[open]>.type-toggle-btn .chevron-icon {
         height: 70px;
     }
 }
+
+/* ============================================================
+   PIC WRITE MODE (Beeldschrijven)
+   ============================================================ */
+.pic-writing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.pic-writing-card {
+    max-width: 720px;
+}
+
+.pic-writing-scenario {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.7;
+    background: linear-gradient(135deg, #f0f4ff, #e8f4fd);
+    border-left: 4px solid var(--primary);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+}
+
+.pic-writing-instruction {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-top: 0.25rem;
+}
+
+/* ---- Image grid ---- */
+.pic-images-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.pic-image-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1 1 140px;
+    max-width: 200px;
+}
+
+.pic-image-card img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background: #f1f5f9;
+}
+
+.pic-image-card img:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.14);
+}
+
+.pic-image-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+    background: #f1f5f9;
+    padding: 0.2rem 0.65rem;
+    border-radius: 6px;
+}
+
+/* ---- Larger textarea for writing ---- */
+.pic-writing-textarea {
+    min-height: 160px;
+    resize: vertical;
+}
+
+/* ---- Actions row ---- */
+.pic-writing-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.pic-submit-btn {
+    flex-shrink: 0;
+}
+
+/* ---- Loading spinner ---- */
+.grammar-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.spinner {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border: 2px solid rgba(79,70,229,0.2);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    flex-shrink: 0;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ---- Grammar Feedback Panel ---- */
+.grammar-feedback-panel {
+    background: #fafbff;
+    border: 1.5px solid #dde3ff;
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    animation: fadeInUp 0.35s ease;
+}
+
+.grammar-feedback-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.grammar-feedback-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text);
+}
+
+.grammar-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.grammar-badge {
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+}
+
+.spelling-badge {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.grammar-badge-orange {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.no-errors-badge {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+/* ---- Error items ---- */
+.grammar-errors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.grammar-error-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.88rem;
+    line-height: 1.5;
+}
+
+.grammar-error-item.error-spelling {
+    background: #fff5f5;
+    border: 1px solid #fecaca;
+}
+
+.grammar-error-item.error-grammar {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+}
+
+.grammar-error-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.grammar-error-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.grammar-error-word {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--danger);
+}
+
+.grammar-suggestion {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.grammar-error-msg {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.grammar-no-errors {
+    color: var(--success);
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.grammar-api-error {
+    color: var(--warning);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* ============================================================
+   Responsive: Pic Write on small screens
+   ============================================================ */
+@media (max-width: 640px) {
+    .pic-image-card {
+        flex: 1 1 100px;
+        max-width: 150px;
+    }
+
+    .pic-image-card img {
+        height: 100px;
+    }
+
+    .pic-writing-card {
+        padding: 1.5rem 1rem;
+    }
+}
