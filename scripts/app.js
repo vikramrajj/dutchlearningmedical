@@ -1604,13 +1604,15 @@ class FlashcardGame {
             item.className = 'kns-item';
             item.innerHTML = `
                 <div class="kns-header">
-                    <h3><span class="kns-number">${idx + 1}.</span> ${topic}</h3>
-                    <span class="kns-icon">+</span>
+                    <h3><span class="kns-number">${idx + 1}</span> ${topic}</h3>
+                    <span class="kns-icon">▼</span>
                 </div>
                 <div class="kns-content">
                     <div class="topic-info">
-                        <p>Oefen met ${itemCount} vragen over ${topic.toLowerCase()}.</p>
-                        <button class="btn btn-primary start-topic-btn" data-topic="${topic}">Start Oefening</button>
+                        <p>Oefen met ${itemCount} vragen over dit onderwerp. Dit onderdeel is essentieel voor het inburgeringsexamen.</p>
+                        <button class="btn btn-primary start-topic-btn" data-topic="${topic}" style="background:#f97316; border:none; padding:1rem 2rem; font-weight:700;">
+                            Start Oefening
+                        </button>
                     </div>
                 </div>
             `;
@@ -1654,11 +1656,12 @@ class FlashcardGame {
         this.knsQuiz.selected = null;
         this.knsQuiz.isAnswered = false;
 
-        // Render options
+        // Render options with A, B, C labels
+        const letters = ['A', 'B', 'C', 'D'];
         this.knsOptionsGrid.innerHTML = q.options.map((opt, i) => `
             <div class="kns-option" data-index="${i}">
-                <input type="radio" name="kns-opt" id="opt-${i}" ${this.knsQuiz.selected === i ? 'checked' : ''}>
-                <label for="opt-${i}">${opt}</label>
+                <div class="opt-letter">${letters[i]}</div>
+                <div class="opt-text">${opt}</div>
             </div>
         `).join('');
 
@@ -1668,21 +1671,31 @@ class FlashcardGame {
                 if (this.knsQuiz.isAnswered) return;
                 this.knsOptionsGrid.querySelectorAll('.kns-option').forEach(opt => opt.classList.remove('selected'));
                 el.classList.add('selected');
-                el.querySelector('input').checked = true;
                 this.knsQuiz.selected = parseInt(el.dataset.index);
             });
         });
 
         // Progress dots
         this.knsProgressDots.innerHTML = this.knsQuiz.data.map((_, i) => `
-            <div class="dot ${i === this.knsQuiz.index ? 'active' : (i < this.knsQuiz.index ? 'completed' : '')}">
+            <div class="dot ${i === this.knsQuiz.index ? 'active' : (i < this.knsQuiz.index ? 'completed' : '')}" data-index="${i}">
                 ${i + 1}
             </div>
         `).join('');
 
+        // Make dots clickable
+        this.knsProgressDots.querySelectorAll('.dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                this.knsQuiz.index = parseInt(dot.dataset.index);
+                this.renderKnsQuestion();
+            });
+        });
+
         this.knsSubmitBtn.classList.remove('hidden');
         this.knsFeedback.classList.add('hidden');
         this.knsSubmitBtn.disabled = false;
+        
+        // Scroll to card
+        this.knsPlayContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
     submitKnsAnswer() {
