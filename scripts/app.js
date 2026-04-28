@@ -1,5 +1,6 @@
 import { medicalVocab } from './data.js';
 import { generalVocab } from './generalData.js';
+import { knsData } from './knsData.js';
 
 
 class FlashcardGame {
@@ -302,6 +303,16 @@ class FlashcardGame {
         this.quizChecked = false;
         this.vulinChecked = false;
 
+        // KNS Quiz state
+        this.knsQuiz = {
+            topic: null,
+            index: 0,
+            score: 0,
+            selected: null,
+            isAnswered: false,
+            data: []
+        };
+
         // Speech Recog for speaking test
         this.speakingRecognition = null;
         this.isSpeakingListening = false;
@@ -347,6 +358,27 @@ class FlashcardGame {
         this.spellingNextBtn = document.getElementById('spellingNextBtn');
         this.spellingShuffleBtn = document.getElementById('spellingShuffleBtn');
         this.speakBtnSpelling = document.getElementById('speakBtnSpelling');
+
+        // DOM — KNS Quiz mode
+        this.knsQuizSection = document.getElementById('knsQuizSection');
+        this.knsTopicsContainer = document.getElementById('knsTopicsContainer');
+        this.knsAccordion = document.getElementById('knsAccordion');
+        this.knsPlayContainer = document.getElementById('knsPlayContainer');
+        this.knsTopicTitle = document.getElementById('knsTopicTitle');
+        this.knsBackToTopics = document.getElementById('knsBackToTopics');
+        this.knsProgressDots = document.getElementById('knsProgressDots');
+        this.knsQuestionText = document.getElementById('knsQuestionText');
+        this.knsOptionsGrid = document.getElementById('knsOptionsGrid');
+        this.knsSubmitBtn = document.getElementById('knsSubmitBtn');
+        this.knsFeedback = document.getElementById('knsFeedback');
+        this.knsFeedbackText = document.getElementById('knsFeedbackText');
+        this.knsExplanationText = document.getElementById('knsExplanationText');
+        this.knsNextBtn = document.getElementById('knsNextBtn');
+        this.knsResultContainer = document.getElementById('knsResultContainer');
+        this.knsResultScore = document.getElementById('knsResultScore');
+        this.knsResultMsg = document.getElementById('knsResultMsg');
+        this.knsRestartTopicBtn = document.getElementById('knsRestartTopicBtn');
+        this.knsFinishBtn = document.getElementById('knsFinishBtn');
         this.statCorrect = document.getElementById('statCorrect');
         this.statWrong = document.getElementById('statWrong');
         this.statAccuracy = document.getElementById('statAccuracy');
@@ -449,6 +481,7 @@ class FlashcardGame {
         // DOM — mode toggle
         this.modeFlashcard = document.getElementById('modeFlashcard');
         this.modeSpelling = document.getElementById('modeSpelling');
+        this.modeKnsQuiz = document.getElementById('modeKnsQuiz');
 
 
         this.init();
@@ -470,6 +503,21 @@ class FlashcardGame {
         this.modeVulIn.addEventListener('click', () => this.switchMode('vulin'));
         this.modeWriting.addEventListener('click', () => this.switchMode('writing'));
         this.modePicWrite.addEventListener('click', () => this.switchMode('picwriting'));
+        this.modeKnsQuiz.addEventListener('click', () => this.switchMode('knsquiz'));
+
+        // ---- KNS Quiz events ----
+        this.knsBackToTopics.addEventListener('click', () => {
+            this.knsPlayContainer.classList.add('hidden');
+            this.knsTopicsContainer.classList.remove('hidden');
+        });
+
+        this.knsSubmitBtn.addEventListener('click', () => this.submitKnsAnswer());
+        this.knsNextBtn.addEventListener('click', () => this.nextKnsQuestion());
+        this.knsRestartTopicBtn.addEventListener('click', () => this.startKnsTopic(this.knsQuiz.topic));
+        this.knsFinishBtn.addEventListener('click', () => {
+            this.knsResultContainer.classList.add('hidden');
+            this.knsTopicsContainer.classList.remove('hidden');
+        });
 
         // ---- Pic Write mode events ----
         this.picWritingNextBtn.addEventListener('click', () => {
@@ -585,6 +633,7 @@ class FlashcardGame {
         this.modeVulIn.classList.toggle('active', newMode === 'vulin');
         this.modeWriting.classList.toggle('active', newMode === 'writing');
         this.modePicWrite.classList.toggle('active', newMode === 'picwriting');
+        this.modeKnsQuiz.classList.toggle('active', newMode === 'knsquiz');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
@@ -593,6 +642,11 @@ class FlashcardGame {
         this.vulinSection.classList.toggle('hidden', newMode !== 'vulin');
         this.writingSection.classList.toggle('hidden', newMode !== 'writing');
         this.picWritingSection.classList.toggle('hidden', newMode !== 'picwriting');
+        this.knsQuizSection.classList.toggle('hidden', newMode !== 'knsquiz');
+
+        if (newMode === 'knsquiz') {
+            this.initKnsTopics();
+        }
 
         // Reset state for new mode
         this.currentIndex = 0;
@@ -625,12 +679,20 @@ class FlashcardGame {
         this.domainMedical.classList.toggle('active', newDomain === 'medical');
         this.domainGeneral.classList.toggle('active', newDomain === 'general');
 
-        // Show Pic Write button only for General domain
+        // Show Pic Write and KNS Quiz buttons only for General domain
         this.modePicWrite.style.display = (newDomain === 'general') ? '' : 'none';
-        // If switching away from General while in picwriting mode, fall back to writing
-        if (newDomain === 'medical' && this.mode === 'picwriting') {
-            this.switchMode('writing');
-            return;
+        this.modeKnsQuiz.style.display = (newDomain === 'general') ? '' : 'none';
+
+        // If switching away from General while in specialized modes, fall back to writing or flashcard
+        if (newDomain === 'medical') {
+            if (this.mode === 'picwriting') {
+                this.switchMode('writing');
+                return;
+            }
+            if (this.mode === 'knsquiz') {
+                this.switchMode('flashcard');
+                return;
+            }
         }
 
         // Fully reset for the new domain
@@ -1529,6 +1591,147 @@ class FlashcardGame {
                 </div>
             </div>`;
         }).join('');
+    }
+
+    // ============================================================
+    //  KNS QUIZ METHODS
+    // ============================================================
+    initKnsTopics() {
+        this.knsAccordion.innerHTML = '';
+        Object.keys(knsData).forEach((topic, idx) => {
+            const itemCount = knsData[topic].length;
+            const item = document.createElement('div');
+            item.className = 'kns-item';
+            item.innerHTML = `
+                <div class="kns-header">
+                    <h3><span class="kns-number">${idx + 1}.</span> ${topic}</h3>
+                    <span class="kns-icon">+</span>
+                </div>
+                <div class="kns-content">
+                    <div class="topic-info">
+                        <p>Oefen met ${itemCount} vragen over ${topic.toLowerCase()}.</p>
+                        <button class="btn btn-primary start-topic-btn" data-topic="${topic}">Start Oefening</button>
+                    </div>
+                </div>
+            `;
+
+            // Accordion toggle
+            item.querySelector('.kns-header').addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.kns-item').forEach(el => el.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+
+            // Start btn
+            item.querySelector('.start-topic-btn').addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.startKnsTopic(topic);
+            });
+
+            this.knsAccordion.appendChild(item);
+        });
+    }
+
+    startKnsTopic(topicName) {
+        this.knsQuiz.topic = topicName;
+        this.knsQuiz.index = 0;
+        this.knsQuiz.score = 0;
+        this.knsQuiz.selected = null;
+        this.knsQuiz.isAnswered = false;
+        this.knsQuiz.data = [...knsData[topicName]].sort(() => Math.random() - 0.5);
+
+        this.knsTopicTitle.textContent = topicName;
+        this.knsTopicsContainer.classList.add('hidden');
+        this.knsResultContainer.classList.add('hidden');
+        this.knsPlayContainer.classList.remove('hidden');
+
+        this.renderKnsQuestion();
+    }
+
+    renderKnsQuestion() {
+        const q = this.knsQuiz.data[this.knsQuiz.index];
+        this.knsQuestionText.textContent = q.question;
+        this.knsQuiz.selected = null;
+        this.knsQuiz.isAnswered = false;
+
+        // Render options
+        this.knsOptionsGrid.innerHTML = q.options.map((opt, i) => `
+            <div class="kns-option" data-index="${i}">
+                <input type="radio" name="kns-opt" id="opt-${i}" ${this.knsQuiz.selected === i ? 'checked' : ''}>
+                <label for="opt-${i}">${opt}</label>
+            </div>
+        `).join('');
+
+        // Option selection
+        this.knsOptionsGrid.querySelectorAll('.kns-option').forEach(el => {
+            el.addEventListener('click', () => {
+                if (this.knsQuiz.isAnswered) return;
+                this.knsOptionsGrid.querySelectorAll('.kns-option').forEach(opt => opt.classList.remove('selected'));
+                el.classList.add('selected');
+                el.querySelector('input').checked = true;
+                this.knsQuiz.selected = parseInt(el.dataset.index);
+            });
+        });
+
+        // Progress dots
+        this.knsProgressDots.innerHTML = this.knsQuiz.data.map((_, i) => `
+            <div class="dot ${i === this.knsQuiz.index ? 'active' : (i < this.knsQuiz.index ? 'completed' : '')}">
+                ${i + 1}
+            </div>
+        `).join('');
+
+        this.knsSubmitBtn.classList.remove('hidden');
+        this.knsFeedback.classList.add('hidden');
+        this.knsSubmitBtn.disabled = false;
+    }
+
+    submitKnsAnswer() {
+        if (this.knsQuiz.selected === null) {
+            alert('Selecteer een antwoord aub.');
+            return;
+        }
+
+        const q = this.knsQuiz.data[this.knsQuiz.index];
+        const isCorrect = this.knsQuiz.selected === q.correct;
+        this.knsQuiz.isAnswered = true;
+
+        if (isCorrect) this.knsQuiz.score++;
+
+        // Show feedback
+        this.knsFeedback.className = `kns-feedback ${isCorrect ? 'correct' : 'wrong'}`;
+        this.knsFeedbackText.innerHTML = isCorrect
+            ? '<strong>✅ Correct!</strong>'
+            : `<strong>❌ Fout.</strong> Het juiste antwoord was: <em>${q.options[q.correct]}</em>`;
+        this.knsExplanationText.textContent = q.explanation || '';
+
+        this.knsFeedback.classList.remove('hidden');
+        this.knsSubmitBtn.classList.add('hidden');
+    }
+
+    nextKnsQuestion() {
+        if (this.knsQuiz.index < this.knsQuiz.data.length - 1) {
+            this.knsQuiz.index++;
+            this.renderKnsQuestion();
+        } else {
+            this.showKnsResults();
+        }
+    }
+
+    showKnsResults() {
+        this.knsPlayContainer.classList.add('hidden');
+        this.knsResultContainer.classList.remove('hidden');
+
+        const total = this.knsQuiz.data.length;
+        const score = this.knsQuiz.score;
+        this.knsResultScore.textContent = `${score}/${total}`;
+
+        if (score === total) {
+            this.knsResultMsg.textContent = "Perfect! Je kent dit onderwerp heel goed.";
+        } else if (score >= total * 0.7) {
+            this.knsResultMsg.textContent = "Goed gedaan! Je bent bijna klaar voor het examen.";
+        } else {
+            this.knsResultMsg.textContent = "Blijf oefenen. Je kunt het!";
+        }
     }
 }
 

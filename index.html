@@ -130,6 +130,13 @@
                             </svg>
                             Pic Write
                         </button>
+                        <button class="mode-btn" id="modeKnsQuiz" data-mode="knsquiz" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                            KNS Quiz
+                        </button>
                     </div>
                 </div>
 
@@ -581,6 +588,67 @@
                 <button id="picWritingPrevBtn" class="btn btn-secondary">Previous Task</button>
                 <button id="picWritingNextBtn" class="btn btn-primary">Next Task</button>
             </div>
+        <!-- ===================== KNS QUIZ MODE ===================== -->
+        <section class="kns-quiz-section hidden" id="knsQuizSection">
+            <!-- Topics Accordion -->
+            <div id="knsTopicsContainer" class="kns-topics-container">
+                <h2 class="section-title">KNS Onderwerpen</h2>
+                <div class="kns-accordion" id="knsAccordion">
+                    <!-- Topics will be injected here -->
+                </div>
+            </div>
+
+            <!-- Quiz Play Area -->
+            <div id="knsPlayContainer" class="kns-play-container hidden">
+                <div class="kns-quiz-card">
+                    <div class="kns-quiz-header">
+                        <h3 id="knsTopicTitle">Onderwerp</h3>
+                        <button class="btn-text" id="knsBackToTopics">← Terug naar onderwerpen</button>
+                    </div>
+
+                    <!-- Progress Circles -->
+                    <div class="kns-progress-dots" id="knsProgressDots">
+                        <!-- Dots like in the screenshot -->
+                    </div>
+
+                    <div class="kns-question-container">
+                        <p class="kns-question-text" id="knsQuestionText">Vraag laden...</p>
+                        <div class="kns-options-grid" id="knsOptionsGrid">
+                            <!-- Radio buttons like in the screenshot -->
+                        </div>
+                    </div>
+
+                    <div class="kns-quiz-footer">
+                        <button class="btn btn-primary btn-large" id="knsSubmitBtn">
+                            Submit Answer <span class="arrow">→</span>
+                        </button>
+                    </div>
+
+                    <!-- Result Feedback -->
+                    <div id="knsFeedback" class="kns-feedback hidden">
+                        <div class="kns-feedback-content">
+                            <p id="knsFeedbackText"></p>
+                            <p class="kns-explanation" id="knsExplanationText"></p>
+                            <button class="btn btn-secondary" id="knsNextBtn">Next Question</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quiz Results Page -->
+            <div id="knsResultContainer" class="kns-result-container hidden">
+                <div class="kns-result-card">
+                    <h2>Quiz Resultaat</h2>
+                    <div class="result-score">
+                        <span id="knsResultScore">0/10</span>
+                    </div>
+                    <p id="knsResultMsg">Goed gedaan!</p>
+                    <button class="btn btn-primary" id="knsRestartTopicBtn">Opnieuw proberen</button>
+                    <button class="btn btn-secondary" id="knsFinishBtn">Klaar</button>
+                </div>
+            </div>
+        </section>
+        
         </section>
 
     </main>
