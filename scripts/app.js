@@ -194,7 +194,6 @@ class FlashcardGame {
             }
         ].sort(() => Math.random() - 0.5);
         this.currentWritingIndex = 0;
-
         // --- PIC WRITE PROMPTS (General domain only) ---
         this.picWritingPrompts = [
             {
@@ -202,91 +201,94 @@ class FlashcardGame {
                 category: "Meldingsformulier",
                 scenario: "In de straat waar u woont zijn twee problemen. Op de foto's ziet u wat de problemen zijn. U meldt de problemen bij de gemeente. Vul het formulier van de gemeente in. Sommige gegevens moet u zelf bedenken.",
                 images: [
-                    { src: "images/street_garbage.png", label: "Probleem 1" },
-                    { src: "images/broken_pavement.png", label: "Probleem 2" }
+                    { src: "images/street_garbage.png" },
+                    { src: "images/broken_pavement.png" }
                 ],
                 bullets: [
-                    "Vul uw persoonsgegevens in (bedenk zelf: naam, adres, postcode, woonplaats, telefoon, e-mail).",
+                    "Persoonsgegevens: Bedenk zelf uw naam, adres, postcode, woonplaats, telefoonnummer en e-mail.",
                     "In welke straat zijn er problemen?",
-                    "Wat zijn de twee problemen? Schrijf wat u op de foto's ziet."
+                    "Wat zijn de twee problemen? Schrijf op wat u op de foto's ziet."
                 ],
-                example: "Persoonsgegevens:\nNaam: Jan de Vries\nAdres: Molenstraat 8\nPostcode: 2600 AB\nWoonplaats: Delft\nTelefoon: 06-12345678\nE-mail: jan.devries@email.nl\n\nIn welke straat zijn er problemen?\nDe problemen zijn in de Molenstraat.\n\nWat zijn de problemen?\nEr is veel afval op de stoep. Er liggen veel vuilniszakken en er is rommel op de grond. De straat is ook kapot; er zijn stenen gebroken en er zijn gaten in de weg."
+                example: "Persoonsgegevens:\nNaam: Jan de Vries\nAdres: Molenstraat 8\nPostcode: 2600 AB\nWoonplaats: Delft\nTelefoon: 06-12345678\nE-mail: jan.devries@email.nl\n\nIn welke straat zijn er problemen?\nDe problemen zijn in de Molenstraat.\n\nWat zijn de problemen?\nEr ligt veel afval op de stoep en er zijn vuilniszakken op straat. Ook is de straat kapot; er zitten gaten in de weg en de stenen liggen los."
             },
             {
-                title: "Bericht collega (Kledingzaak)",
+                title: "Bericht aan een collega",
                 category: "Briefje schrijven",
-                scenario: "U werkt in een kledingzaak. Straks komt uw collega Fariha. Zij moet een paar dingen doen. Kijk naar de plaatjes.",
+                scenario: "U werkt in een kledingzaak. Straks komt uw collega Fariha. Zij moet een paar dingen doen. Kijk naar de plaatjes. Schrijf een briefje voor Fariha.",
                 images: [
-                    { src: "images/vacuum_cleaner.png", label: "Stofzuigen" },
-                    { src: "images/messy_clothes.png", label: "Opruimen" },
-                    { src: "images/clothes_rack.png", label: "Ophangen" },
-                    { src: "images/store_keys.png", label: "Afsluiten" }
+                    { src: "images/vacuum_cleaner.png" },
+                    { src: "images/messy_clothes.png" },
+                    { src: "images/clothes_rack.png" },
+                    { src: "images/store_keys.png" }
                 ],
                 bullets: [
                     "Verwelkom Fariha.",
-                    "Vertel drie of vier dingen die zij moet doen (gebaseerd op de plaatjes).",
+                    "Vertel wat zij moet doen. Schrijf drie dingen op (kijk naar de plaatjes).",
+                    "Schrijf in hele zinnen.",
                     "Sluit het briefje af met uw naam."
                 ],
-                example: "Hallo Fariha,\n\nBedankt dat je komt! Er zijn een paar dingen die je moet doen vanavond.\n\nEerst moet je de vloer stofzuigen, want die is vies. Daarna moet je alle kleren netjes ophangen op het rek. Vergeet ook niet om de rommel op te ruimen. Aan het einde van de dag moet je de winkel afsluiten en de sleutels meenemen.\n\nAlvast bedankt!\n\nGroeten,\n[Jouw naam]"
+                example: "Hallo Fariha,\n\nFijn dat je er bent! Er zijn een paar dingen die je vandaag moet doen in de winkel.\nEerst moet je de vloer stofzuigen. Daarna moet je de kleding opruimen en netjes aan het rek hangen. Als laatste moet je de winkel goed afsluiten met de sleutels.\n\nAlvast bedankt!\n\nGroeten,\n[Jouw naam]"
             },
             {
                 title: "Ingebroken",
-                category: "Schadeformulier",
-                scenario: "Er is ingebroken in uw huis. Dieven hebben spullen meegenomen en er is schade. U vult een schadeformulier in van uw verzekering.",
+                category: "Schadeformulier inboedelverzekering",
+                scenario: "Er is ingebroken in uw huis. Dieven hebben spullen meegenomen en er is schade. U vult een schadeformulier in van uw verzekering. Kijk naar de plaatjes.",
                 images: [
-                    { src: "images/stolen_laptop.jpg", label: "gestolen" },
-                    { src: "images/stolen_watch.jpg", label: "gestolen" },
-                    { src: "images/broken_window.jpg", label: "kapot" }
+                    { src: "images/stolen_laptop.jpg" },
+                    { src: "images/stolen_watch.jpg" },
+                    { src: "images/broken_window.jpg" }
                 ],
                 bullets: [
-                    "Vul uw persoonsgegevens in (bedenk zelf: naam, adres, telefoon, e-mail, datum).",
+                    "Vul het formulier in. Bedenk zelf de gegevens (naam, adres, telefoon, e-mail).",
                     "Schrijf op wanneer er is ingebroken.",
-                    "Schrijf drie dingen op die zijn gestolen of kapot zijn (kijk naar de plaatjes)."
+                    "Schrijf drie dingen op die zijn gebeurd. Schrijf wat u op de plaatjes ziet."
                 ],
-                example: "Persoonsgegevens:\nNaam: Ahmed Yilmaz\nAdres: Kerkstraat 22\nPostcode: 3500 HB\nWoonplaats: Utrecht\nTelefoon: 06-87654321\nDatum van de schade: 12 april 2026\n\nOmschrijving gestolen spullen en schade:\n• Mijn laptop is gestolen van het bureau in de slaapkamer.\n• Mijn zilveren horloge is ook meegenomen; het lag op het nachtkastje.\n• Het raam in de woonkamer is kapotgemaakt. Daardoor zijn de dieven naar binnen gekomen."
+                example: "Schadeformulier inboedelverzekering:\n\nPersoonsgegevens:\nNaam: Ahmed Yilmaz\nAdres: Kerkstraat 22\nTelefoon: 06-87654321\nE-mail: ahmed.y@email.nl\n\nDatum van de schade: 12 april 2026\n\nOmschrijving van de schade:\nEr is gisteravond ingebroken in mijn huis. De dieven hebben mijn laptop gestolen van het bureau. Ook is mijn zilveren horloge meegenomen. De inbrekers zijn binnengekomen door een raam kapot te maken."
             },
             {
-                title: "Ziek melden bij werk",
-                category: "E-mail schrijven",
-                scenario: "U bent ziek. U heeft koorts en u voelt zich niet goed. U kunt vandaag niet naar uw werk komen. U schrijft een e-mail aan uw manager, mevrouw Bakker.",
+                title: "Ziek melden",
+                category: "E-mail aan uw manager",
+                scenario: "U bent ziek. U heeft koorts en u voelt zich niet goed. U kunt vandaag niet naar uw werk komen. U schrijft een e-mail aan uw manager, mevrouw Bakker. Kijk naar de plaatjes.",
                 images: [
-                    { src: "images/sick_person.jpg", label: "ziek" },
-                    { src: "images/thermometer.jpg", label: "koorts" }
+                    { src: "images/sick_person.jpg" },
+                    { src: "images/thermometer.jpg" }
                 ],
                 bullets: [
-                    "Schrijf dat u ziek bent en niet kunt werken.",
+                    "Schrijf dat u ziek bent en niet kunt komen werken.",
                     "Schrijf welke klachten u heeft (kijk naar de plaatjes).",
-                    "Schrijf wanneer u denkt weer te komen werken."
+                    "Schrijf wanneer u denkt weer te komen werken.",
+                    "Schrijf een passende aanhef en afsluiting."
                 ],
-                example: "Beste mevrouw Bakker,\n\nIk schrijf u om te zeggen dat ik vandaag helaas niet naar mijn werk kan komen.\n\nIk ben ziek. Ik heb koorts (38,5 graden) en veel hoofdpijn. Ik voel mij erg beroerd.\n\nIk hoop snel beter te worden. Ik denk dat ik overmorgen weer kan werken, maar ik laat het u weten als dat niet lukt.\n\nMet vriendelijke groet,\n[Jouw naam]"
+                example: "Beste mevrouw Bakker,\n\nIk schrijf u om te laten weten dat ik vandaag helaas niet kan komen werken.\n\nIk voel me erg ziek en ik heb koorts (39 graden). Ik moet daarom thuis blijven om uit te rusten.\n\nIk hoop dat ik me over twee dagen weer beter voel en weer kan komen werken. Ik houd u op de hoogte.\n\nMet vriendelijke groet,\n[Jouw naam]"
             },
             {
                 title: "Kapot apparaat melden",
-                category: "Klachtenbrief",
-                scenario: "U heeft vorige week een nieuwe koffiemachine gekocht in een winkel. Maar het apparaat is kapot. U schrijft een e-mail naar de winkel 'Elektronica Nu' om te klagen.",
+                category: "Klachtenbericht",
+                scenario: "U heeft vorige week een nieuwe koffiemachine gekocht in een winkel. Maar het apparaat is kapot. U schrijft een e-mail naar de winkel 'Elektronica Nu' om te klagen. Kijk naar het plaatje.",
                 images: [
-                    { src: "images/broken_coffee_machine.jpg", label: "kapot apparaat" }
+                    { src: "images/broken_coffee_machine.jpg" }
                 ],
                 bullets: [
-                    "Schrijf op wat u heeft gekocht en wanneer.",
-                    "Schrijf wat er precies mis is met het apparaat.",
-                    "Schrijf wat u wilt dat de winkel doet (repareren of een nieuw apparaat geven)."
+                    "Schrijf op wat u heeft gekocht en wanneer u dat heeft gedaan.",
+                    "Schrijf wat er precies mis is met het apparaat (kijk naar het plaatje).",
+                    "Schrijf wat u wilt dat de winkel voor u doet.",
+                    "Vraag om een snelle reactie."
                 ],
-                example: "Geachte medewerker,\n\nIk schrijf u omdat ik een probleem heb met een product dat ik bij u heb gekocht.\n\nVorige week dinsdag heb ik in uw winkel een koffiemachine gekocht. Helaas werkt het apparaat niet goed: het maakt veel lawaai en er lekt water uit de machine.\n\nIk zou graag willen dat u de koffiemachine repareert of dat ik een nieuwe machine krijg. Ik bewaar de kassabon nog.\n\nMet vriendelijke groet,\n[Jouw naam]"
+                example: "Geachte medewerker van Elektronica Nu,\n\nVorige week dinsdag heb ik bij u een nieuwe koffiemachine gekocht. Helaas heb ik een klacht over dit apparaat.\n\nDe machine werkt niet goed: er lekt overal water uit het apparaat en hij maakt geen koffie. Het is erg vervelend.\n\nIk zou graag willen dat u de machine repareert of dat ik een nieuw apparaat van u krijg.\n\nIk hoor graag snel van u.\n\nMet vriendelijke groet,\n[Jouw naam]"
             },
             {
-                title: "Verhuisbericht",
+                title: "Verhuisbericht buren",
                 category: "Bericht schrijven",
-                scenario: "U gaat binnenkort verhuizen naar een nieuw huis. U schrijft een bericht aan uw vrienden en buren om het te vertellen.",
+                scenario: "U gaat binnenkort verhuizen naar een nieuw huis. U schrijft een bericht aan uw buren om het hen te vertellen. Kijk naar het plaatje.",
                 images: [
-                    { src: "images/moving_boxes.jpg", label: "verhuizen" }
+                    { src: "images/moving_boxes.jpg" }
                 ],
                 bullets: [
-                    "Vertel dat u gaat verhuizen en naar welke stad of straat (bedenk zelf).",
-                    "Vertel waarom u verhuist (bedenk zelf een reden).",
-                    "Nodig uw vrienden uit om te helpen of langs te komen."
+                    "Vertel dat u gaat verhuizen en vertel naar welke stad of straat (bedenk zelf).",
+                    "Vertel waarom u gaat verhuizen (bedenk zelf een reden).",
+                    "Nodig uw buren uit voor een afscheidsfeestje of vraag hen om hulp."
                 ],
-                example: "Hallo allemaal!\n\nIk heb groot nieuws: ik ga volgende maand verhuizen!\n\nIk ga naar een nieuw huis in de Tulpstraat in Leiden. Ik verhuizig, omdat ik een grotere woning nodig heb voor mijn gezin.\n\nHebben jullie misschien tijd om mij te helpen met de verhuizing op zaterdag 10 mei? En jullie zijn natuurlijk ook welkom om het nieuwe huis te bekijken!\n\nGroetjes,\n[Jouw naam]"
+                example: "Hallo buren,\n\nIk heb een nieuwtje: ik ga volgende maand verhuizen! Ik ga in een groter huis wonen in de Kerkstraat in Amsterdam.\n\nIk verhuis omdat ik daar meer ruimte heb voor mijn gezin en werk. Ik ga jullie wel missen!\n\nZaterdag 20 mei geef ik een klein afscheidsfeestje in mijn tuin. Komen jullie ook een drankje doen?\n\nGroetjes,\n[Jouw naam]"
             }
         ];
         this.currentPicWritingIndex = 0;
@@ -743,12 +745,11 @@ class FlashcardGame {
             this.picWritingBullets.innerHTML = p.bullets.map(b => `<li>${b}</li>`).join('');
             this.picWritingExampleText.textContent = p.example;
 
-            // Build image grid
+            // Build image grid - labels removed as per request
             this.picImagesGrid.innerHTML = p.images.map(img => `
                 <div class="pic-image-card">
-                    <img src="${img.src}" alt="${img.label}"
-                        onerror="this.style.display='none';this.parentElement.querySelector('.pic-image-label').textContent='[${img.label}]'">
-                    <span class="pic-image-label">${img.label}</span>
+                    <img src="${img.src}" alt="Taak afbeelding"
+                        onerror="this.style.display='none'">
                 </div>`).join('');
             return;
         }
