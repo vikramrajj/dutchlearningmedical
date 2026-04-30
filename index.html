@@ -645,7 +645,11 @@
                         <span id="knsResultScore">0/10</span>
                     </div>
                     <p id="knsResultMsg">Goed gedaan!</p>
-                    <button class="btn btn-primary" id="knsRestartTopicBtn">Opnieuw proberen</button>
+                    <div id="knsWeakAreasContainer" class="hidden" style="margin-top: 20px; text-align: left; background: var(--bg-tertiary); padding: 15px; border-radius: 8px;">
+                        <h3 style="font-size: 1.1rem; color: var(--danger); margin-bottom: 10px;">Aandachtspunten (Weak Areas)</h3>
+                        <ul id="knsWeakAreasList" style="list-style: disc; margin-left: 20px; font-size: 0.9rem;"></ul>
+                    </div>
+                    <button class="btn btn-primary" id="knsRestartTopicBtn" style="margin-top: 20px;">Opnieuw proberen</button>
                     <button class="btn btn-secondary" id="knsFinishBtn">Klaar</button>
                 </div>
             </div>

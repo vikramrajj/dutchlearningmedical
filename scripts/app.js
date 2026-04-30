@@ -1640,6 +1640,7 @@ class FlashcardGame {
         this.knsQuiz.score = 0;
         this.knsQuiz.selected = null;
         this.knsQuiz.isAnswered = false;
+        this.knsQuiz.wrongQuestions = [];
         this.knsQuiz.data = [...knsData[topicName]].sort(() => Math.random() - 0.5);
 
         this.knsTopicTitle.textContent = topicName;
@@ -1708,7 +1709,11 @@ class FlashcardGame {
         const isCorrect = this.knsQuiz.selected === q.correct;
         this.knsQuiz.isAnswered = true;
 
-        if (isCorrect) this.knsQuiz.score++;
+        if (isCorrect) {
+            this.knsQuiz.score++;
+        } else {
+            this.knsQuiz.wrongQuestions.push(q);
+        }
 
         // Show feedback
         this.knsFeedback.className = `kns-feedback ${isCorrect ? 'correct' : 'wrong'}`;
@@ -1744,6 +1749,21 @@ class FlashcardGame {
             this.knsResultMsg.textContent = "Goed gedaan! Je bent bijna klaar voor het examen.";
         } else {
             this.knsResultMsg.textContent = "Blijf oefenen. Je kunt het!";
+        }
+
+        const weakAreasContainer = document.getElementById('knsWeakAreasContainer');
+        const weakAreasList = document.getElementById('knsWeakAreasList');
+        
+        if (this.knsQuiz.wrongQuestions.length > 0) {
+            weakAreasContainer.classList.remove('hidden');
+            
+            // Group by subTopic if available, otherwise just list the questions
+            weakAreasList.innerHTML = this.knsQuiz.wrongQuestions.map(q => {
+                let topicStr = q.subTopic ? `<strong>${q.subTopic}:</strong> ` : '';
+                return `<li>${topicStr}${q.question}</li>`;
+            }).join('');
+        } else {
+            weakAreasContainer.classList.add('hidden');
         }
     }
 }
