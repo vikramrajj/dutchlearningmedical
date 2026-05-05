@@ -21,7 +21,14 @@ class FlashcardGame {
                     "Schrijf waarom u dat wilt. Bedenk zelf waarom.",
                     "Stel een nieuwe datum voor."
                 ],
-                example: "Beste Amber,\n\nIk schrijf je omdat ik onze afspraak van morgen wil verzetten.\nIk kan helaas niet komen, want ik ben ziek. Ik heb last van hoofdpijn en koorts.\nZullen we volgende week donderdag afspreken? Ik kan om 13.00 uur. Laat me even weten of dat voor jou ook goed is.\n\nGroetjes,\n[Jouw naam]"
+                example: "Beste Amber,
+
+Ik wil de afspraak van morgen verzetten.
+Ik kan niet komen, want ik ben ziek. Ik heb koorts.
+Zullen we volgende week donderdag afspreken? Ik kan om 13.00 uur.
+
+Groetjes,
+[Jouw naam]"
             },
             {
                 title: "Feest delen",
@@ -31,7 +38,9 @@ class FlashcardGame {
                     "Wie komen er op het feest?",
                     "Wat doet u op het feest?"
                 ],
-                example: "Ik vier elk jaar op 5 december Sinterklaas. Ik vier dit feest, omdat het heel gezellig is.\nMijn hele familie en mijn vrienden komen op het feest.\nWe eten pepernoten, we zingen liedjes en we geven elkaar cadeautjes."
+                example: "Ik vier elk jaar Sinterklaas. Ik vind dit feest erg gezellig.
+Mijn familie en mijn vrienden komen op het feest.
+We eten pepernoten en we geven elkaar cadeautjes."
             },
             {
                 title: "Dienst ruilen",
@@ -41,7 +50,14 @@ class FlashcardGame {
                     "Schrijf waarom u wilt ruilen. Bedenk het zelf.",
                     "Schrijf op welke dag u wel kunt werken."
                 ],
-                example: "Beste Farida,\n\nIk stuur je deze e-mail, omdat ik aanstaande zondag moet werken.\nMaar ik wil graag vrij, want mijn dochter is jarig en we geven een feest.\nZou jij mijn dienst willen overnemen of met mij willen ruilen?\nIk kan volgende week dinsdag of donderdag werken. Ik hoor graag van je.\n\nGroeten,\n[Jouw naam]"
+                example: "Beste Farida,
+
+Ik stuur je deze e-mail over werk. Ik moet zondag werken, maar ik wil ruilen.
+Ik wil vrij, want mijn dochter is jarig en we geven een feest.
+Ik kan volgende week dinsdag of donderdag werken. Kun jij zondag voor mij werken?
+
+Groeten,
+[Jouw naam]"
             },
             {
                 title: "Inschrijven sportschool",
@@ -51,7 +67,11 @@ class FlashcardGame {
                     "Waarom kiest u voor deze groepsles?",
                     "Hoe is uw gezondheid?"
                 ],
-                example: "Ik wil graag inschrijven voor de groepsles Yoga. Ik wil graag twee keer per week komen.\n\nIk kies voor deze groepsles omdat ik wil ontspannen en flexibeler wil worden. Mijn werk is erg druk en yoga helpt mij om rustig te worden.\n\nMijn gezondheid is over het algemeen heel goed. Ik ben fit en heb geen medische problemen."
+                example: "Ik wil mij inschrijven voor de groepsles Yoga. Ik wil twee keer per week komen.
+
+Ik kies voor yoga, want ik wil ontspannen. Mijn werk is erg druk.
+
+Mijn gezondheid is goed. Ik ben fit en ik ben niet ziek."
             },
             {
                 title: "Mooiste kleren",
@@ -61,7 +81,9 @@ class FlashcardGame {
                     "Hoe zien de kleren eruit?",
                     "Wanneer draagt u deze kleren?"
                 ],
-                example: "Ik draag het liefst mijn spijkerbroek en een warme, blauwe trui.\nMijn kleren zien er simpel maar heel comfortabel uit.\nIk draag deze kleren altijd in het weekend of als ik thuis ben, omdat ik dan lekker wil ontspannen."
+                example: "Ik draag het liefst mijn spijkerbroek en een blauwe trui.
+Mijn kleren zijn simpel, maar ze zitten heel lekker.
+Ik draag deze kleren altijd in het weekend, want dan ben ik vrij."
             },
             {
                 title: "Boek lenen",
@@ -71,7 +93,14 @@ class FlashcardGame {
                     "U schrijft waarom u het boek van haar wilt lenen.",
                     "U schrijft wanneer ze het boek terugkrijgt. Bedenk zelf wanneer."
                 ],
-                example: "Beste Jasmijn, \n\nIk zou heel graag het boek 'Natuurkunde 1' van jou willen lenen.\nIn de bibliotheek kan ik het niet vinden, en ik heb het morgen nodig voor de opdracht.\nAls dat mag, breng ik het volgende week maandag meteen weer terug naar school.\n\nBedankt alvast!\n\nGroetjes,\n[Jouw naam]"
+                example: "Beste Jasmijn,
+
+Ik wil graag het boek 'Natuurkunde 1' van jou lenen.
+Het boek is niet in de bibliotheek en ik heb het morgen nodig.
+Je krijgt het boek volgende week maandag terug.
+
+Groetjes,
+[Jouw naam]"
             },
             {
                 title: "Schadeformulier (Ingebroken)",
@@ -81,7 +110,13 @@ class FlashcardGame {
                     "Schrijf op wanneer er is ingebroken.",
                     "Schrijf drie dingen op die zijn gebeurd (bijv. wat is gestolen of kapot)."
                 ],
-                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon]\nDatum van de schade: [Bedenk een datum, bijv: 12 maart 2026]\n\nOmschrijving gestolen spullen en schade:\n- Mijn laptop is gestolen van het bureau.\n- De gouden ketting van mijn vrouw is ook gestolen uit de slaapkamer.\n- Het raam in de woonkamer is helemaal kapot, daar zijn de dieven naar binnen gekomen."
+                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon]
+Datum van de schade: 12 maart 2026
+
+Omschrijving:
+- Mijn laptop is gestolen.
+- De ketting van mijn vrouw is gestolen.
+- Het raam in de woonkamer is kapot."
             },
             {
                 title: "Vrije dag aanvragen",
@@ -90,7 +125,14 @@ class FlashcardGame {
                     "U schrijft wanneer u vrij wilt hebben. Bedenk zelf een dag en datum.",
                     "U schrijft waarom u vrij wilt hebben. Bedenk zelf waarom."
                 ],
-                example: "Beste meneer Jansen,\n\nIk schrijf deze e-mail, omdat ik graag een vrije dag wil aanvragen.\nZou ik volgende week vrijdag 20 maart vrij mogen zijn?\nMijn verzoek is omdat mijn zus gaat trouwen, en ik moet de hele dag helpen met de voorbereidingen.\nIk hoor graag of dit mogelijk is.\n\nMet vriendelijke groet,\n[Jouw naam]"
+                example: "Beste meneer Jansen,
+
+Ik wil graag een vrije dag aanvragen.
+Ik wil volgende week vrijdag 20 maart vrij zijn.
+Ik vraag dit, want mijn zus gaat trouwen. Ik moet de hele dag helpen.
+
+Met vriendelijke groet,
+[Jouw naam]"
             },
             {
                 title: "Ziek melden (Werk)",
@@ -100,7 +142,14 @@ class FlashcardGame {
                     "Schrijf welke klachten u heeft.",
                     "Schrijf wanneer u denkt weer te komen werken."
                 ],
-                example: "Beste mevrouw De Jong,\n\nIk stuur een bericht, omdat ik helaas ziek ben.\nIk heb koorts en heel veel last van mijn keel, dus ik kan vandaag niet komen werken.\nIk hoop me snel beter te voelen en ik blijf de komende dagen in bed.\nIk denk dat ik me maandag weer kom melden.\n\nMet vriendelijke groet,\n[Jouw naam]"
+                example: "Beste mevrouw De Jong,
+
+Ik stuur deze e-mail, want ik ben ziek. Ik kan vandaag niet werken.
+Ik heb koorts en ik heb keelpijn.
+Ik denk dat ik maandag weer kom werken.
+
+Met vriendelijke groet,
+[Jouw naam]"
             },
             {
                 title: "Een nieuw huis",
@@ -110,7 +159,9 @@ class FlashcardGame {
                     "Waar woonde u hiervoor?",
                     "Waarom bent u hier komen wonen?"
                 ],
-                example: "Hallo allemaal, mijn naam is [Jouw naam] en ik woon vanaf deze week in jullie straat. Ik woon hier samen met mijn man en onze twee kinderen.\nHiervoor woonden we in Amsterdam, maar dat vonden we te druk.\nWe zijn hier komen wonen omdat dit een leuke en rustige buurt is voor de kinderen. We hebben veel zin om jullie te leren kennen!"
+                example: "Hallo allemaal! Mijn naam is [Jouw naam]. Ik woon nu in deze straat met mijn man en twee kinderen.
+Hiervoor woonden we in Amsterdam, maar dat was te druk.
+We wonen nu hier, want deze buurt is erg leuk en rustig."
             },
             {
                 title: "Uw favoriete winkel",
@@ -120,7 +171,9 @@ class FlashcardGame {
                     "Waarom vindt u deze winkel leuk?",
                     "Welke dingen koopt u daar altijd?"
                 ],
-                example: "Ik ga het liefst naar de grote markt in het centrum. De supermarkt vind ik soms saai.\nIk vind dit een leuke plek omdat de groenten erg vers en goedkoop zijn. Ook staan er veel vriendelijke mensen.\nIk koop daar altijd verse appels, brood en een groot stuk kaas."
+                example: "Ik ga het liefst naar de grote markt in het centrum.
+Ik vind dit leuk, want de groenten zijn vers en goedkoop.
+Ik koop daar altijd verse appels, brood en kaas."
             },
             {
                 title: "Kapot product",
@@ -130,7 +183,14 @@ class FlashcardGame {
                     "Schrijf wat er precies kapot is.",
                     "Schrijf wat u wilt dat de winkel doet (bijv. repareren of een nieuwe geven)."
                 ],
-                example: "Geachte heer/mevrouw,\n\nVorige week dinsdag heb ik in uw winkel een koffiemachine gekocht.\nHelaas is het apparaat nu al kapot: de machine wordt niet meer warm en het water lekt op de tafel.\nIk wil u vragen of u de koffiemachine kunt repareren of dat ik een nieuw apparaat mag krijgen.\nIk hoor graag van u.\n\nBeste groeten,\n[Jouw naam]"
+                example: "Beste medewerker,
+
+Ik heb vorige week dinsdag een koffiemachine bij u gekocht.
+Het apparaat is nu kapot. Het water lekt en de koffie wordt niet warm.
+Kunt u de koffiemachine repareren of kan ik een nieuwe krijgen?
+
+Groeten,
+[Jouw naam]"
             },
             {
                 title: "Vriend uitnodigen (Film)",
@@ -140,7 +200,14 @@ class FlashcardGame {
                     "Wanneer gaan jullie (dag en tijd)?",
                     "Waar spreken jullie af voordat de film begint?"
                 ],
-                example: "Hoi Ahmed!\n\nIk heb twee kaartjes gekocht voor de nieuwe actiefilm, het gaat over een spannende bankoverval.\nZullen we aanstaande zaterdagavond samen gaan? De film begint om 20:00 uur.\nLaten we voor het station afspreken om kwart voor acht, dan fietsen we samen naar de bioscoop. Heb je zin?\n\nGroetjes,\n[Jouw naam]"
+                example: "Hoi Ahmed,
+
+Ik heb twee kaartjes voor een nieuwe actiefilm. Het gaat over een bankoverval.
+Zullen we zaterdagavond gaan? De film begint om 20:00 uur.
+Laten we afspreken voor het station om 19:30 uur. Ga je mee?
+
+Groetjes,
+[Jouw naam]"
             },
             {
                 title: "Restaurant reserveren",
@@ -150,7 +217,15 @@ class FlashcardGame {
                     "Voor hoeveel personen is de reservering?",
                     "Noteer een speciale wens (bijvoorbeeld: iemand is allergisch of u heeft een kinderstoel nodig)."
                 ],
-                example: "Beste medewerker,\n\nIk wil graag een tafel reserveren om mijn verjaardag te vieren.\nIs er een tafel beschikbaar voor komende zaterdag om 18:30 uur?\nDe reservering is voor vier personen.\nDaarnaast heb ik een speciale vraag: eén persoon is allergisch voor vis, kunt u hier rekening mee houden in de keuken?\n\nAlvast bedankt voor uw reactie,\n\n[Jouw naam]"
+                example: "Beste medewerker,
+
+Ik wil graag een tafel reserveren voor mijn verjaardag.
+Ik wil komen op zaterdag om 18:30 uur.
+De reservering is voor vier personen.
+Eén persoon is allergisch voor vis. Kunt u daar rekening mee houden?
+
+Alvast bedankt,
+[Jouw naam]"
             },
             {
                 title: "E-mail aan docent",
@@ -161,7 +236,15 @@ class FlashcardGame {
                     "Bied uw excuses aan.",
                     "Vraag wanneer u de toets kunt maken."
                 ],
-                example: "Beste docent,\n\nIk stuur u deze e-mail omdat ik morgen niet naar de les kan komen voor de toets.\nIk ben helaas erg ziek geworden en moet thuis in bed blijven.\nSorry voor het ongemak.\nKunt u mij alstublieft vertellen wanneer ik de toets kan inhalen?\n\nMet vriendelijke groet,\n[Jouw naam]"
+                example: "Beste docent,
+
+Ik stuur u een e-mail over de toets van morgen.
+Ik kan helaas niet komen, want ik ben ziek en lig in bed.
+Sorry voor het ongemak.
+Wanneer kan ik de toets maken?
+
+Met vriendelijke groet,
+[Jouw naam]"
             },
             {
                 title: "Problemen in de straat",
@@ -171,7 +254,13 @@ class FlashcardGame {
                     "In welke straat zijn er problemen?",
                     "Wat zijn de problemen? Schrijf het op."
                 ],
-                example: "Persoonsgegevens: [Jouw naam, Adres, Postcode, Woonplaats, Telefoon, E-mail]\n\nIn welke straat zijn er problemen?\nDe problemen zijn in de Molenstraat.\n\nWat zijn de problemen?\nEr zijn twee grote problemen. Ten eerste is de lantaarnpaal voor nummer 12 kapot, dus het is 's nachts erg donker. Ten tweede ligt er heel veel afval en vuilnis op de stoep."
+                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon, E-mail]
+
+In welke straat zijn er problemen?
+In de Molenstraat.
+
+Wat zijn de problemen?
+Er is een kapotte lantaarnpaal. Het is 's nachts donker. Ook ligt er veel vuilnis op straat."
             },
             {
                 title: "Weekend",
@@ -181,7 +270,9 @@ class FlashcardGame {
                     "Met wie doet u dat?",
                     "Waar doet u dat?"
                 ],
-                example: "In het weekend ga ik heel graag wandelen en fietsen in de natuur.\nMeestal doe ik dat samen met mijn partner en onze hond.\nWe gaan dan vaak naar het bos hier in de buurt, of we fietsen naar het strand."
+                example: "Ik wandel graag in het weekend.
+Ik doe dat samen met mijn vrouw en mijn hond.
+We wandelen vaak in het bos of we gaan naar het strand."
             },
             {
                 title: "Bericht collega",
@@ -191,7 +282,65 @@ class FlashcardGame {
                     "Vertel wat zij moet doen. Schrijf drie dingen op.",
                     "Sluit het briefje af met uw naam."
                 ],
-                example: "Hallo Fariha,\n\nIk ga zo naar huis, maar er zijn nog een paar dingen die jij moet doen vanavond.\nZou jij de vloer willen vegen en de nieuwe kleren netjes in het rek willen hangen? Vergeet ook niet om de planten een beetje water te geven.\nAlvast bedankt voor je hulp!\n\nGroeten,\n[Jouw naam]"
+                example: "Hallo Fariha,
+
+Fijn dat je er bent! Jij moet vanavond nog een paar dingen doen.
+Je moet de vloer vegen en de nieuwe kleren ophangen. Je moet ook de planten water geven.
+Succes!
+
+Groeten,
+[Jouw naam]"
+            },
+            {
+                title: "Kapper afspraak maken",
+                prompt: "U wilt uw haar laten knippen. U schrijft een e-mail naar uw kapper.",
+                bullets: [
+                    "Schrijf waarom u mailt.",
+                    "Geef aan wat u met uw haar wilt doen (bijv. knippen, wassen, verven).",
+                    "Vraag op welke dag en tijd u kunt komen."
+                ],
+                example: "Beste kapper,
+
+Ik stuur deze e-mail, want ik wil een afspraak maken.
+Ik wil mijn haar graag laten wassen en knippen.
+Hebt u tijd op donderdagmiddag of vrijdagochtend?
+
+Groeten,
+[Jouw naam]"
+            },
+            {
+                title: "Nieuwe telefoon kopen",
+                prompt: "U wilt een nieuwe mobiele telefoon kopen. U schrijft een bericht naar een elektronicawinkel met een paar vragen.",
+                bullets: [
+                    "Vertel wat u zoekt.",
+                    "Stel een vraag over de prijs.",
+                    "Vraag of de telefoon op voorraad is."
+                ],
+                example: "Beste meneer/mevrouw,
+
+Ik zoek een nieuwe mobiele telefoon van Samsung.
+Wat kost deze telefoon bij u?
+En is de telefoon op dit moment in de winkel?
+
+Alvast bedankt,
+[Jouw naam]"
+            },
+            {
+                title: "Verjaardag uitnodiging",
+                prompt: "U bent binnenkort jarig en u geeft een feestje. U schrijft een uitnodiging aan uw buren.",
+                bullets: [
+                    "Vertel waarom u een feest geeft.",
+                    "Geef aan wanneer het feest is (datum en tijd).",
+                    "Vraag of ze willen laten weten of ze komen."
+                ],
+                example: "Beste buren,
+
+Ik nodig jullie uit voor mijn feestje, want ik ben zaterdag jarig!
+Het feest is aanstaande zaterdag en begint om 20:00 uur.
+Laat even weten of jullie kunnen komen.
+
+Groetjes,
+[Jouw naam]"
             }
         ].sort(() => Math.random() - 0.5);
         this.currentWritingIndex = 0;
