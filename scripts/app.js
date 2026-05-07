@@ -602,9 +602,17 @@ Groetjes,
         this.writingTextarea = document.getElementById('writingTextarea');
         this.writingShowExampleBtn = document.getElementById('writingShowExampleBtn');
         this.writingExampleBox = document.getElementById('writingExampleBox');
-        this.writingExampleText = document.getElementById('writingExampleText');
+                this.writingExampleText = document.getElementById('writingExampleText');
         this.writingPrevBtn = document.getElementById('writingPrevBtn');
         this.writingNextBtn = document.getElementById('writingNextBtn');
+        // New writing grammar elements
+        this.writingSubmitBtn = document.getElementById('writingSubmitBtn');
+        this.writingLoading = document.getElementById('writingLoading');
+        this.writingGrammarFeedbackPanel = document.getElementById('writingGrammarFeedbackPanel');
+        this.writingGrammarFeedbackTitle = document.getElementById('writingGrammarFeedbackTitle');
+        this.writingGrammarErrorBadges = document.getElementById('writingGrammarErrorBadges');
+        this.writingGrammarErrorsList = document.getElementById('writingGrammarErrorsList');
+        this.writingRetryBtn = document.getElementById('writingRetryBtn');
 
         // DOM — pic write mode
         this.modePicWrite = document.getElementById('modePicWrite');
@@ -745,9 +753,19 @@ Groetjes,
             this.currentWritingIndex = (this.currentWritingIndex > 0) ? this.currentWritingIndex - 1 : this.writingPrompts.length - 1;
             this.updateCard();
         });
-        this.writingShowExampleBtn.addEventListener('click', () => {
+                this.writingShowExampleBtn.addEventListener('click', () => {
             const isHidden = this.writingExampleBox.classList.toggle('hidden');
             this.writingShowExampleBtn.textContent = isHidden ? 'Show Example Answer' : 'Hide Example Answer';
+        });
+
+        // Writing submit events
+        this.writingSubmitBtn.addEventListener('click', () => this.submitWriting());
+        this.writingRetryBtn.addEventListener('click', () => {
+            this.writingTextarea.disabled = false;
+            this.writingTextarea.focus();
+            this.writingGrammarFeedbackPanel.classList.add('hidden');
+            this.writingExampleBox.classList.add('hidden');
+            this.writingSubmitBtn.disabled = false;
         });
 
         // ---- Keyboard shortcuts ----
@@ -941,8 +959,12 @@ Groetjes,
             this.writingBullets.innerHTML = wItem.bullets.map(b => `<li>${b}</li>`).join('');
             this.writingExampleText.textContent = wItem.example;
 
-            // Reset state
+                        // Reset state
             this.writingTextarea.value = '';
+            this.writingTextarea.disabled = false;
+            this.writingSubmitBtn.disabled = false;
+            this.writingLoading.classList.add('hidden');
+            this.writingGrammarFeedbackPanel.classList.add('hidden');
             this.writingExampleBox.classList.add('hidden');
             this.writingShowExampleBtn.textContent = 'Show Example Answer';
             return;
@@ -1662,6 +1684,34 @@ Groetjes,
         this.grammarFeedbackPanel.classList.add('hidden');
         this.picWritingExampleBox.classList.add('hidden');
     }
+    async submitWriting() {
+        const text = this.writingTextarea.value.trim();
+        if (!text) { this.writingTextarea.focus(); return; }
+
+        this.writingSubmitBtn.disabled = true;
+        this.writingTextarea.disabled = true;
+        this.writingLoading.classList.remove('hidden');
+        this.writingGrammarFeedbackPanel.classList.add('hidden');
+        this.writingExampleBox.classList.add('hidden');
+
+        try {
+            const res = await fetch('https://api.languagetool.org/v2/check', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams({ text, language: 'nl', enabledOnly: 'false' })
+            });
+            if (!res.ok) throw new Error('API error');
+            const data = await res.json();
+            this.displayGrammarFeedbackGeneric(data.matches, text, false, 'writing');
+        } catch (e) {
+            this.displayGrammarFeedbackGeneric([], text, true, 'writing');
+        } finally {
+            this.writingLoading.classList.add('hidden');
+        }
+
+        this.writingExampleBox.classList.remove('hidden');
+        this.writingExampleBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
 
     async submitPicWriting() {
         const text = this.picWritingTextarea.value.trim();
@@ -1681,9 +1731,9 @@ Groetjes,
             });
             if (!res.ok) throw new Error('API error');
             const data = await res.json();
-            this.displayGrammarFeedback(data.matches, text, false);
+            this.displayGrammarFeedbackGeneric(data.matches, text, false, 'pic');
         } catch (e) {
-            this.displayGrammarFeedback([], text, true);
+            this.displayGrammarFeedbackGeneric([], text, true, 'pic');
         } finally {
             this.picWritingLoading.classList.add('hidden');
         }
@@ -1693,8 +1743,13 @@ Groetjes,
         this.picWritingExampleBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
 
-    displayGrammarFeedback(matches, text, apiError) {
-        this.grammarFeedbackPanel.classList.remove('hidden');
+    displayGrammarFeedbackGeneric(matches, text, apiError, mode) {
+        const panel = mode === 'writing' ? this.writingGrammarFeedbackPanel : this.grammarFeedbackPanel;
+        const title = mode === 'writing' ? this.writingGrammarFeedbackTitle : this.grammarFeedbackTitle;
+        const badgesEl = mode === 'writing' ? this.writingGrammarErrorBadges : this.grammarErrorBadges;
+        const errorsList = mode === 'writing' ? this.writingGrammarErrorsList : this.grammarErrorsList;
+
+        panel.classList.remove('hidden');
 
         const isSpelling = m => m.rule?.issueType === 'misspelling' ||
             (m.rule?.category?.id || '').toUpperCase().includes('SPELL');
@@ -1704,30 +1759,30 @@ Groetjes,
         // Badges
         let badges = '';
         if (!apiError && matches.length === 0) {
-            this.grammarFeedbackTitle.textContent = '🎉 Uitstekend werk!';
+            title.textContent = '🎉 Uitstekend werk!';
             badges = '<span class="grammar-badge no-errors-badge">✅ Geen fouten gevonden!</span>';
         } else {
-            this.grammarFeedbackTitle.textContent = '📝 Taalfeedback';
+            title.textContent = '📝 Taalfeedback';
             if (spellingErrors.length)
                 badges += `<span class="grammar-badge spelling-badge">🔴 ${spellingErrors.length} spellingfout${spellingErrors.length > 1 ? 'en' : ''}</span>`;
             if (grammarErrors.length)
                 badges += `<span class="grammar-badge grammar-badge-orange">🟠 ${grammarErrors.length} grammaticafout${grammarErrors.length > 1 ? 'en' : ''}</span>`;
         }
-        this.grammarErrorBadges.innerHTML = badges;
+        badgesEl.innerHTML = badges;
 
         // Error list
         if (apiError) {
-            this.grammarErrorsList.innerHTML =
+            errorsList.innerHTML =
                 '<p class="grammar-api-error">⚠️ Kan nu niet controleren (netwerk). Bekijk het voorbeeldantwoord hieronder.</p>';
             return;
         }
         if (matches.length === 0) {
-            this.grammarErrorsList.innerHTML =
+            errorsList.innerHTML =
                 '<p class="grammar-no-errors">Geweldig! Uw tekst heeft geen fouten. Bekijk het voorbeeldantwoord hieronder.</p>';
             return;
         }
 
-        this.grammarErrorsList.innerHTML = matches.slice(0, 10).map(m => {
+        errorsList.innerHTML = matches.slice(0, 10).map(m => {
             const wrong = text.substring(m.offset, m.offset + m.length);
             const suggestion = m.replacements?.[0]?.value || '—';
             const spell = isSpelling(m);

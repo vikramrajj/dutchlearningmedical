@@ -515,8 +515,26 @@
                 </div>
 
                 <!-- Feedback / Example Answer -->
-                <div class="writing-actions">
+                <div class="writing-submit-actions" style="display: flex; gap: 15px; align-items: center; margin-top: 15px; flex-wrap: wrap;">
+                    <button class="btn btn-primary" id="writingSubmitBtn">
+                        ✓ Verzenden &amp; Feedback krijgen
+                    </button>
+                    <div class="grammar-loading hidden" id="writingLoading">
+                        <span class="spinner"></span> Controleren...
+                    </div>
                     <button class="btn btn-secondary" id="writingShowExampleBtn">Show Example Answer</button>
+                </div>
+
+                <!-- Grammar Feedback Panel -->
+                <div class="grammar-feedback-panel hidden" id="writingGrammarFeedbackPanel" style="margin-top: 20px;">
+                    <div class="grammar-feedback-header">
+                        <span class="grammar-feedback-title" id="writingGrammarFeedbackTitle">📝 Taalfeedback</span>
+                        <div class="grammar-badges" id="writingGrammarErrorBadges"></div>
+                    </div>
+                    <div class="grammar-errors-list" id="writingGrammarErrorsList"></div>
+                    <button class="btn btn-secondary" id="writingRetryBtn" style="margin-top:1rem;">
+                        ✏️ Aanpassen &amp; opnieuw verzenden
+                    </button>
                 </div>
 
                 <div class="writing-example-box hidden" id="writingExampleBox">
