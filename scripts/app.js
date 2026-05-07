@@ -21,14 +21,7 @@ class FlashcardGame {
                     "Schrijf waarom u dat wilt. Bedenk zelf waarom.",
                     "Stel een nieuwe datum voor."
                 ],
-                example: "Beste Amber,
-
-Ik wil de afspraak van morgen verzetten.
-Ik kan niet komen, want ik ben ziek. Ik heb koorts.
-Zullen we volgende week donderdag afspreken? Ik kan om 13.00 uur.
-
-Groetjes,
-[Jouw naam]"
+                example: "Beste Amber,\n\nIk wil de afspraak van morgen verzetten.\nIk kan niet komen, want ik ben ziek. Ik heb koorts.\nZullen we volgende week donderdag afspreken? Ik kan om 13.00 uur.\n\nGroetjes,\n[Jouw naam]"
             },
             {
                 title: "Feest delen",
@@ -38,9 +31,7 @@ Groetjes,
                     "Wie komen er op het feest?",
                     "Wat doet u op het feest?"
                 ],
-                example: "Ik vier elk jaar Sinterklaas. Ik vind dit feest erg gezellig.
-Mijn familie en mijn vrienden komen op het feest.
-We eten pepernoten en we geven elkaar cadeautjes."
+                example: "Ik vier elk jaar Sinterklaas. Ik vind dit feest erg gezellig.\nMijn familie en mijn vrienden komen op het feest.\nWe eten pepernoten en we geven elkaar cadeautjes."
             },
             {
                 title: "Dienst ruilen",
@@ -50,14 +41,7 @@ We eten pepernoten en we geven elkaar cadeautjes."
                     "Schrijf waarom u wilt ruilen. Bedenk het zelf.",
                     "Schrijf op welke dag u wel kunt werken."
                 ],
-                example: "Beste Farida,
-
-Ik stuur je deze e-mail over werk. Ik moet zondag werken, maar ik wil ruilen.
-Ik wil vrij, want mijn dochter is jarig en we geven een feest.
-Ik kan volgende week dinsdag of donderdag werken. Kun jij zondag voor mij werken?
-
-Groeten,
-[Jouw naam]"
+                example: "Beste Farida,\n\nIk stuur je deze e-mail over werk. Ik moet zondag werken, maar ik wil ruilen.\nIk wil vrij, want mijn dochter is jarig en we geven een feest.\nIk kan volgende week dinsdag of donderdag werken. Kun jij zondag voor mij werken?\n\nGroeten,\n[Jouw naam]"
             },
             {
                 title: "Inschrijven sportschool",
@@ -67,11 +51,7 @@ Groeten,
                     "Waarom kiest u voor deze groepsles?",
                     "Hoe is uw gezondheid?"
                 ],
-                example: "Ik wil mij inschrijven voor de groepsles Yoga. Ik wil twee keer per week komen.
-
-Ik kies voor yoga, want ik wil ontspannen. Mijn werk is erg druk.
-
-Mijn gezondheid is goed. Ik ben fit en ik ben niet ziek."
+                example: "Ik wil mij inschrijven voor de groepsles Yoga. Ik wil twee keer per week komen.\n\nIk kies voor yoga, want ik wil ontspannen. Mijn werk is erg druk.\n\nMijn gezondheid is goed. Ik ben fit en ik ben niet ziek."
             },
             {
                 title: "Mooiste kleren",
@@ -81,9 +61,7 @@ Mijn gezondheid is goed. Ik ben fit en ik ben niet ziek."
                     "Hoe zien de kleren eruit?",
                     "Wanneer draagt u deze kleren?"
                 ],
-                example: "Ik draag het liefst mijn spijkerbroek en een blauwe trui.
-Mijn kleren zijn simpel, maar ze zitten heel lekker.
-Ik draag deze kleren altijd in het weekend, want dan ben ik vrij."
+                example: "Ik draag het liefst mijn spijkerbroek en een blauwe trui.\nMijn kleren zijn simpel, maar ze zitten heel lekker.\nIk draag deze kleren altijd in het weekend, want dan ben ik vrij."
             },
             {
                 title: "Boek lenen",
@@ -93,14 +71,7 @@ Ik draag deze kleren altijd in het weekend, want dan ben ik vrij."
                     "U schrijft waarom u het boek van haar wilt lenen.",
                     "U schrijft wanneer ze het boek terugkrijgt. Bedenk zelf wanneer."
                 ],
-                example: "Beste Jasmijn,
-
-Ik wil graag het boek 'Natuurkunde 1' van jou lenen.
-Het boek is niet in de bibliotheek en ik heb het morgen nodig.
-Je krijgt het boek volgende week maandag terug.
-
-Groetjes,
-[Jouw naam]"
+                example: "Beste Jasmijn,\n\nIk wil graag het boek 'Natuurkunde 1' van jou lenen.\nHet boek is niet in de bibliotheek en ik heb het morgen nodig.\nJe krijgt het boek volgende week maandag terug.\n\nGroetjes,\n[Jouw naam]"
             },
             {
                 title: "Schadeformulier (Ingebroken)",
@@ -110,13 +81,7 @@ Groetjes,
                     "Schrijf op wanneer er is ingebroken.",
                     "Schrijf drie dingen op die zijn gebeurd (bijv. wat is gestolen of kapot)."
                 ],
-                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon]
-Datum van de schade: 12 maart 2026
-
-Omschrijving:
-- Mijn laptop is gestolen.
-- De ketting van mijn vrouw is gestolen.
-- Het raam in de woonkamer is kapot."
+                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon]\nDatum van de schade: 12 maart 2026\n\nOmschrijving:\n- Mijn laptop is gestolen.\n- De ketting van mijn vrouw is gestolen.\n- Het raam in de woonkamer is kapot."
             },
             {
                 title: "Vrije dag aanvragen",
@@ -125,14 +90,7 @@ Omschrijving:
                     "U schrijft wanneer u vrij wilt hebben. Bedenk zelf een dag en datum.",
                     "U schrijft waarom u vrij wilt hebben. Bedenk zelf waarom."
                 ],
-                example: "Beste meneer Jansen,
-
-Ik wil graag een vrije dag aanvragen.
-Ik wil volgende week vrijdag 20 maart vrij zijn.
-Ik vraag dit, want mijn zus gaat trouwen. Ik moet de hele dag helpen.
-
-Met vriendelijke groet,
-[Jouw naam]"
+                example: "Beste meneer Jansen,\n\nIk wil graag een vrije dag aanvragen.\nIk wil volgende week vrijdag 20 maart vrij zijn.\nIk vraag dit, want mijn zus gaat trouwen. Ik moet de hele dag helpen.\n\nMet vriendelijke groet,\n[Jouw naam]"
             },
             {
                 title: "Ziek melden (Werk)",
@@ -142,14 +100,7 @@ Met vriendelijke groet,
                     "Schrijf welke klachten u heeft.",
                     "Schrijf wanneer u denkt weer te komen werken."
                 ],
-                example: "Beste mevrouw De Jong,
-
-Ik stuur deze e-mail, want ik ben ziek. Ik kan vandaag niet werken.
-Ik heb koorts en ik heb keelpijn.
-Ik denk dat ik maandag weer kom werken.
-
-Met vriendelijke groet,
-[Jouw naam]"
+                example: "Beste mevrouw De Jong,\n\nIk stuur deze e-mail, want ik ben ziek. Ik kan vandaag niet werken.\nIk heb koorts en ik heb keelpijn.\nIk denk dat ik maandag weer kom werken.\n\nMet vriendelijke groet,\n[Jouw naam]"
             },
             {
                 title: "Een nieuw huis",
@@ -159,9 +110,7 @@ Met vriendelijke groet,
                     "Waar woonde u hiervoor?",
                     "Waarom bent u hier komen wonen?"
                 ],
-                example: "Hallo allemaal! Mijn naam is [Jouw naam]. Ik woon nu in deze straat met mijn man en twee kinderen.
-Hiervoor woonden we in Amsterdam, maar dat was te druk.
-We wonen nu hier, want deze buurt is erg leuk en rustig."
+                example: "Hallo allemaal! Mijn naam is [Jouw naam]. Ik woon nu in deze straat met mijn man en twee kinderen.\nHiervoor woonden we in Amsterdam, maar dat was te druk.\nWe wonen nu hier, want deze buurt is erg leuk en rustig."
             },
             {
                 title: "Uw favoriete winkel",
@@ -171,9 +120,7 @@ We wonen nu hier, want deze buurt is erg leuk en rustig."
                     "Waarom vindt u deze winkel leuk?",
                     "Welke dingen koopt u daar altijd?"
                 ],
-                example: "Ik ga het liefst naar de grote markt in het centrum.
-Ik vind dit leuk, want de groenten zijn vers en goedkoop.
-Ik koop daar altijd verse appels, brood en kaas."
+                example: "Ik ga het liefst naar de grote markt in het centrum.\nIk vind dit leuk, want de groenten zijn vers en goedkoop.\nIk koop daar altijd verse appels, brood en kaas."
             },
             {
                 title: "Kapot product",
@@ -183,14 +130,7 @@ Ik koop daar altijd verse appels, brood en kaas."
                     "Schrijf wat er precies kapot is.",
                     "Schrijf wat u wilt dat de winkel doet (bijv. repareren of een nieuwe geven)."
                 ],
-                example: "Beste medewerker,
-
-Ik heb vorige week dinsdag een koffiemachine bij u gekocht.
-Het apparaat is nu kapot. Het water lekt en de koffie wordt niet warm.
-Kunt u de koffiemachine repareren of kan ik een nieuwe krijgen?
-
-Groeten,
-[Jouw naam]"
+                example: "Beste medewerker,\n\nIk heb vorige week dinsdag een koffiemachine bij u gekocht.\nHet apparaat is nu kapot. Het water lekt en de koffie wordt niet warm.\nKunt u de koffiemachine repareren of kan ik een nieuwe krijgen?\n\nGroeten,\n[Jouw naam]"
             },
             {
                 title: "Vriend uitnodigen (Film)",
@@ -200,14 +140,7 @@ Groeten,
                     "Wanneer gaan jullie (dag en tijd)?",
                     "Waar spreken jullie af voordat de film begint?"
                 ],
-                example: "Hoi Ahmed,
-
-Ik heb twee kaartjes voor een nieuwe actiefilm. Het gaat over een bankoverval.
-Zullen we zaterdagavond gaan? De film begint om 20:00 uur.
-Laten we afspreken voor het station om 19:30 uur. Ga je mee?
-
-Groetjes,
-[Jouw naam]"
+                example: "Hoi Ahmed,\n\nIk heb twee kaartjes voor een nieuwe actiefilm. Het gaat over een bankoverval.\nZullen we zaterdagavond gaan? De film begint om 20:00 uur.\nLaten we afspreken voor het station om 19:30 uur. Ga je mee?\n\nGroetjes,\n[Jouw naam]"
             },
             {
                 title: "Restaurant reserveren",
@@ -217,15 +150,7 @@ Groetjes,
                     "Voor hoeveel personen is de reservering?",
                     "Noteer een speciale wens (bijvoorbeeld: iemand is allergisch of u heeft een kinderstoel nodig)."
                 ],
-                example: "Beste medewerker,
-
-Ik wil graag een tafel reserveren voor mijn verjaardag.
-Ik wil komen op zaterdag om 18:30 uur.
-De reservering is voor vier personen.
-Eén persoon is allergisch voor vis. Kunt u daar rekening mee houden?
-
-Alvast bedankt,
-[Jouw naam]"
+                example: "Beste medewerker,\n\nIk wil graag een tafel reserveren voor mijn verjaardag.\nIk wil komen op zaterdag om 18:30 uur.\nDe reservering is voor vier personen.\nEén persoon is allergisch voor vis. Kunt u daar rekening mee houden?\n\nAlvast bedankt,\n[Jouw naam]"
             },
             {
                 title: "E-mail aan docent",
@@ -236,15 +161,7 @@ Alvast bedankt,
                     "Bied uw excuses aan.",
                     "Vraag wanneer u de toets kunt maken."
                 ],
-                example: "Beste docent,
-
-Ik stuur u een e-mail over de toets van morgen.
-Ik kan helaas niet komen, want ik ben ziek en lig in bed.
-Sorry voor het ongemak.
-Wanneer kan ik de toets maken?
-
-Met vriendelijke groet,
-[Jouw naam]"
+                example: "Beste docent,\n\nIk stuur u een e-mail over de toets van morgen.\nIk kan helaas niet komen, want ik ben ziek en lig in bed.\nSorry voor het ongemak.\nWanneer kan ik de toets maken?\n\nMet vriendelijke groet,\n[Jouw naam]"
             },
             {
                 title: "Problemen in de straat",
@@ -254,13 +171,7 @@ Met vriendelijke groet,
                     "In welke straat zijn er problemen?",
                     "Wat zijn de problemen? Schrijf het op."
                 ],
-                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon, E-mail]
-
-In welke straat zijn er problemen?
-In de Molenstraat.
-
-Wat zijn de problemen?
-Er is een kapotte lantaarnpaal. Het is 's nachts donker. Ook ligt er veel vuilnis op straat."
+                example: "Persoonsgegevens: [Jouw naam, Adres, Telefoon, E-mail]\n\nIn welke straat zijn er problemen?\nIn de Molenstraat.\n\nWat zijn de problemen?\nEr is een kapotte lantaarnpaal. Het is 's nachts donker. Ook ligt er veel vuilnis op straat."
             },
             {
                 title: "Weekend",
@@ -270,9 +181,7 @@ Er is een kapotte lantaarnpaal. Het is 's nachts donker. Ook ligt er veel vuilni
                     "Met wie doet u dat?",
                     "Waar doet u dat?"
                 ],
-                example: "Ik wandel graag in het weekend.
-Ik doe dat samen met mijn vrouw en mijn hond.
-We wandelen vaak in het bos of we gaan naar het strand."
+                example: "Ik wandel graag in het weekend.\nIk doe dat samen met mijn vrouw en mijn hond.\nWe wandelen vaak in het bos of we gaan naar het strand."
             },
             {
                 title: "Bericht collega",
@@ -282,14 +191,7 @@ We wandelen vaak in het bos of we gaan naar het strand."
                     "Vertel wat zij moet doen. Schrijf drie dingen op.",
                     "Sluit het briefje af met uw naam."
                 ],
-                example: "Hallo Fariha,
-
-Fijn dat je er bent! Jij moet vanavond nog een paar dingen doen.
-Je moet de vloer vegen en de nieuwe kleren ophangen. Je moet ook de planten water geven.
-Succes!
-
-Groeten,
-[Jouw naam]"
+                example: "Hallo Fariha,\n\nFijn dat je er bent! Jij moet vanavond nog een paar dingen doen.\nJe moet de vloer vegen en de nieuwe kleren ophangen. Je moet ook de planten water geven.\nSucces!\n\nGroeten,\n[Jouw naam]"
             },
             {
                 title: "Kapper afspraak maken",
@@ -299,14 +201,7 @@ Groeten,
                     "Geef aan wat u met uw haar wilt doen (bijv. knippen, wassen, verven).",
                     "Vraag op welke dag en tijd u kunt komen."
                 ],
-                example: "Beste kapper,
-
-Ik stuur deze e-mail, want ik wil een afspraak maken.
-Ik wil mijn haar graag laten wassen en knippen.
-Hebt u tijd op donderdagmiddag of vrijdagochtend?
-
-Groeten,
-[Jouw naam]"
+                example: "Beste kapper,\n\nIk stuur deze e-mail, want ik wil een afspraak maken.\nIk wil mijn haar graag laten wassen en knippen.\nHebt u tijd op donderdagmiddag of vrijdagochtend?\n\nGroeten,\n[Jouw naam]"
             },
             {
                 title: "Nieuwe telefoon kopen",
@@ -316,14 +211,7 @@ Groeten,
                     "Stel een vraag over de prijs.",
                     "Vraag of de telefoon op voorraad is."
                 ],
-                example: "Beste meneer/mevrouw,
-
-Ik zoek een nieuwe mobiele telefoon van Samsung.
-Wat kost deze telefoon bij u?
-En is de telefoon op dit moment in de winkel?
-
-Alvast bedankt,
-[Jouw naam]"
+                example: "Beste meneer/mevrouw,\n\nIk zoek een nieuwe mobiele telefoon van Samsung.\nWat kost deze telefoon bij u?\nEn is de telefoon op dit moment in de winkel?\n\nAlvast bedankt,\n[Jouw naam]"
             },
             {
                 title: "Verjaardag uitnodiging",
@@ -333,14 +221,7 @@ Alvast bedankt,
                     "Geef aan wanneer het feest is (datum en tijd).",
                     "Vraag of ze willen laten weten of ze komen."
                 ],
-                example: "Beste buren,
-
-Ik nodig jullie uit voor mijn feestje, want ik ben zaterdag jarig!
-Het feest is aanstaande zaterdag en begint om 20:00 uur.
-Laat even weten of jullie kunnen komen.
-
-Groetjes,
-[Jouw naam]"
+                example: "Beste buren,\n\nIk nodig jullie uit voor mijn feestje, want ik ben zaterdag jarig!\nHet feest is aanstaande zaterdag en begint om 20:00 uur.\nLaat even weten of jullie kunnen komen.\n\nGroetjes,\n[Jouw naam]"
             }
         ].sort(() => Math.random() - 0.5);
         this.currentWritingIndex = 0;
