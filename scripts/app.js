@@ -1569,27 +1569,39 @@ class FlashcardGame {
         const text = this.writingTextarea.value.trim();
         if (!text) { this.writingTextarea.focus(); return; }
 
+        const prompt = this.writingPrompts[this.currentWritingIndex];
         this.writingSubmitBtn.disabled = true;
         this.writingTextarea.disabled = true;
         this.writingLoading.classList.remove('hidden');
         this.writingGrammarFeedbackPanel.classList.add('hidden');
         this.writingExampleBox.classList.add('hidden');
 
-        try {
-            const res = await fetch('https://api.languagetool.org/v2/check', {
+        // Run LanguageTool + AI feedback in parallel
+        const [ltResult, aiResult] = await Promise.allSettled([
+            fetch('https://api.languagetool.org/v2/check', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: new URLSearchParams({ text, language: 'nl', enabledOnly: 'false' })
-            });
-            if (!res.ok) throw new Error('API error');
-            const data = await res.json();
-            this.displayGrammarFeedbackGeneric(data.matches, text, false, 'writing');
-        } catch (e) {
-            this.displayGrammarFeedbackGeneric([], text, true, 'writing');
-        } finally {
-            this.writingLoading.classList.add('hidden');
-        }
+            }).then(r => r.ok ? r.json() : Promise.reject(new Error('LT error'))),
+            fetch('/api/writing-feedback', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    userAnswer: text,
+                    prompt: prompt.prompt,
+                    bullets: prompt.bullets,
+                    example: prompt.example
+                })
+            }).then(r => r.ok ? r.json() : Promise.reject(new Error('AI error')))
+        ]);
 
+        this.writingLoading.classList.add('hidden');
+
+        const ltMatches = ltResult.status === 'fulfilled' ? ltResult.value.matches : [];
+        const ltError = ltResult.status === 'rejected';
+        const aiFeedback = aiResult.status === 'fulfilled' ? aiResult.value : null;
+
+        this.displayWritingFeedback(ltMatches, aiFeedback, text, ltError);
         this.writingExampleBox.classList.remove('hidden');
         this.writingExampleBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     }
@@ -1676,6 +1688,134 @@ class FlashcardGame {
                 </div>
             </div>`;
         }).join('');
+    }
+
+    displayWritingFeedback(ltMatches, aiFeedback, text, ltError) {
+        const panel = this.writingGrammarFeedbackPanel;
+        const title = this.writingGrammarFeedbackTitle;
+        const badgesEl = this.writingGrammarErrorBadges;
+        const errorsList = this.writingGrammarErrorsList;
+
+        panel.classList.remove('hidden');
+
+        // ---- Build badges row ----
+        const isSpelling = m => m.rule?.issueType === 'misspelling' ||
+            (m.rule?.category?.id || '').toUpperCase().includes('SPELL');
+        const ltSpelling = ltMatches.filter(isSpelling);
+        const ltGrammar = ltMatches.filter(m => !isSpelling(m));
+
+        let badges = '';
+        const totalErrors = ltMatches.length + (aiFeedback?.spellingErrors?.length || 0) + (aiFeedback?.grammarErrors?.length || 0);
+
+        if (!ltError && totalErrors === 0) {
+            title.textContent = '🎉 Uitstekend werk!';
+            badges = '<span class="grammar-badge no-errors-badge">✅ Geen fouten gevonden!</span>';
+        } else {
+            title.textContent = '📝 Taalfeedback';
+            if (ltSpelling.length)
+                badges += `<span class="grammar-badge spelling-badge">🔴 ${ltSpelling.length} spellingfout${ltSpelling.length > 1 ? 'en' : ''}</span>`;
+            if (ltGrammar.length)
+                badges += `<span class="grammar-badge grammar-badge-orange">🟠 ${ltGrammar.length} grammaticafout${ltGrammar.length > 1 ? 'en' : ''}</span>`;
+            if (aiFeedback?.overallScore)
+                badges += `<span class="grammar-badge score-badge">⭐ ${aiFeedback.overallScore}/10</span>`;
+            if (aiFeedback?.levelAssessment)
+                badges += `<span class="grammar-badge level-badge">📊 ${aiFeedback.levelAssessment}</span>`;
+        }
+        badgesEl.innerHTML = badges;
+
+        // ---- Build full feedback HTML ----
+        let html = '';
+
+        // LanguageTool errors
+        if (ltError) {
+            html += '<p class="grammar-api-error">⚠️ LanguageTool niet beschikbaar. AI-feedback hieronder.</p>';
+        } else if (ltMatches.length === 0 && !aiFeedback) {
+            html += '<p class="grammar-no-errors">Geweldig! Uw tekst heeft geen fouten. Bekijk het voorbeeldantwoord hieronder.</p>';
+            errorsList.innerHTML = html;
+            return;
+        } else if (ltMatches.length > 0) {
+            html += '<div class="feedback-section"><h4>🔍 Spelling & Grammatica (LanguageTool)</h4>';
+            html += ltMatches.slice(0, 8).map(m => {
+                const wrong = text.substring(m.offset, m.offset + m.length);
+                const suggestion = m.replacements?.[0]?.value || '—';
+                const spell = isSpelling(m);
+                return `<div class="grammar-error-item ${spell ? 'error-spelling' : 'error-grammar'}">
+                    <span class="grammar-error-tag">${spell ? '🔴 Spelling' : '🟠 Grammatica'}</span>
+                    <div class="grammar-error-body">
+                        <span class="grammar-error-word">"${wrong}"</span>
+                        ${suggestion !== '—' ? `<span class="grammar-suggestion">→ "${suggestion}"</span>` : ''}
+                        <span class="grammar-error-msg">${m.message || ''}</span>
+                    </div>
+                </div>`;
+            }).join('');
+            html += '</div>';
+        }
+
+        // AI Content Feedback
+        if (aiFeedback) {
+            // Bullet coverage
+            if (aiFeedback.bulletCoverage && aiFeedback.bulletCoverage.length > 0) {
+                html += '<div class="feedback-section"><h4>📋 Heeft u alle punten beantwoord?</h4>';
+                html += aiFeedback.bulletCoverage.map(b => {
+                    const icon = b.covered ? '✅' : '❌';
+                    return `<div class="grammar-error-item ${b.covered ? 'error-spelling' : 'error-grammar'}" style="border-left-color: ${b.covered ? 'var(--success)' : 'var(--danger)'}">
+                        <span class="grammar-error-tag">${icon}</span>
+                        <div class="grammar-error-body">
+                            <span class="grammar-error-word">${b.bullet}</span>
+                            ${b.comment ? `<span class="grammar-error-msg">${b.comment}</span>` : ''}
+                        </div>
+                    </div>`;
+                }).join('');
+                html += '</div>';
+            }
+
+            // AI-detected spelling
+            if (aiFeedback.spellingErrors && aiFeedback.spellingErrors.length > 0) {
+                html += '<div class="feedback-section"><h4>🔤 AI Spelling Suggesties</h4>';
+                html += aiFeedback.spellingErrors.map(e =>
+                    `<div class="grammar-error-item error-spelling">
+                        <span class="grammar-error-tag">🔴 Spelling</span>
+                        <div class="grammar-error-body">
+                            <span class="grammar-error-word">"${e.word}"</span>
+                            ${e.suggestion ? `<span class="grammar-suggestion">→ "${e.suggestion}"</span>` : ''}
+                            ${e.comment ? `<span class="grammar-error-msg">${e.comment}</span>` : ''}
+                        </div>
+                    </div>`
+                ).join('');
+                html += '</div>';
+            }
+
+            // AI-detected grammar
+            if (aiFeedback.grammarErrors && aiFeedback.grammarErrors.length > 0) {
+                html += '<div class="feedback-section"><h4>📝 AI Grammatica Suggesties</h4>';
+                html += aiFeedback.grammarErrors.map(e =>
+                    `<div class="grammar-error-item error-grammar">
+                        <span class="grammar-error-tag">🟠 Grammatica</span>
+                        <div class="grammar-error-body">
+                            <span class="grammar-error-word">"${e.error}"</span>
+                            ${e.suggestion ? `<span class="grammar-suggestion">→ "${e.suggestion}"</span>` : ''}
+                            ${e.comment ? `<span class="grammar-error-msg">${e.comment}</span>` : ''}
+                        </div>
+                    </div>`
+                ).join('');
+                html += '</div>';
+            }
+
+            // Strengths & Improvements
+            html += '<div class="feedback-section">';
+            if (aiFeedback.strengths) {
+                html += `<div class="feedback-strength"><strong>💪 Wat ging goed:</strong> ${aiFeedback.strengths}</div>`;
+            }
+            if (aiFeedback.improvements) {
+                html += `<div class="feedback-improve"><strong>📈 Wat kan beter:</strong> ${aiFeedback.improvements}</div>`;
+            }
+            if (aiFeedback.correctedAnswer) {
+                html += `<div class="feedback-corrected"><strong>✏️ Gecorrigeerd antwoord (A2):</strong><br><em>${aiFeedback.correctedAnswer}</em></div>`;
+            }
+            html += '</div>';
+        }
+
+        errorsList.innerHTML = html || '<p class="grammar-no-errors">Geweldig! Uw tekst heeft geen fouten. Bekijk het voorbeeldantwoord hieronder.</p>';
     }
 
     // ============================================================
