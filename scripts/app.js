@@ -409,6 +409,11 @@ class FlashcardGame {
         this.knsResultMsg = document.getElementById('knsResultMsg');
         this.knsRestartTopicBtn = document.getElementById('knsRestartTopicBtn');
         this.knsFinishBtn = document.getElementById('knsFinishBtn');
+        this.knsScoreTracker = document.getElementById('knsScoreTracker');
+        this.knsScoreFill = document.getElementById('knsScoreFill');
+        this.knsScoreCount = document.getElementById('knsScoreCount');
+        this.knsScorePct = document.getElementById('knsScorePct');
+        this.knsScoreStatus = document.getElementById('knsScoreStatus');
         this.statCorrect = document.getElementById('statCorrect');
         this.statWrong = document.getElementById('statWrong');
         this.statAccuracy = document.getElementById('statAccuracy');
@@ -1874,6 +1879,7 @@ class FlashcardGame {
         this.knsPlayContainer.classList.remove('hidden');
 
         this.renderKnsQuestion();
+        this.updateKnsScoreTracker();
     }
 
     renderKnsQuestion() {
@@ -1940,6 +1946,8 @@ class FlashcardGame {
             this.knsQuiz.wrongQuestions.push(q);
         }
 
+        this.updateKnsScoreTracker();
+
         // Show feedback
         this.knsFeedback.className = `kns-feedback ${isCorrect ? 'correct' : 'wrong'}`;
         this.knsFeedbackText.innerHTML = isCorrect
@@ -1966,30 +1974,104 @@ class FlashcardGame {
 
         const total = this.knsQuiz.data.length;
         const score = this.knsQuiz.score;
-        this.knsResultScore.textContent = `${score}/${total}`;
-
+        const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+        const passed = pct >= 80;
+        
+        this.knsResultScore.textContent = `${score}/${total} (${pct}%)`;
+        
         if (score === total) {
-            this.knsResultMsg.textContent = "Perfect! Je kent dit onderwerp heel goed.";
-        } else if (score >= total * 0.7) {
-            this.knsResultMsg.textContent = "Goed gedaan! Je bent bijna klaar voor het examen.";
+            this.knsResultMsg.innerHTML = `${passed ? '✅' : ''} Perfect! Je kent dit onderwerp heel goed.`;
+        } else if (pct >= 80) {
+            this.knsResultMsg.innerHTML = '✅ Geslaagd! Je hebt de 80% norm gehaald.';
+        } else if (pct >= 70) {
+            this.knsResultMsg.innerHTML = '⚠️ Bijna! Je bent dicht bij de 80% norm. Blijf oefenen.';
+        } else if (pct >= 50) {
+            this.knsResultMsg.innerHTML = '❌ Onvoldoende. Je moet nog flink oefenen om de 80% norm te halen.';
         } else {
-            this.knsResultMsg.textContent = "Blijf oefenen. Je kunt het!";
+            this.knsResultMsg.innerHTML = '❌ Onvoldoende. Begin opnieuw en leer de stof beter.';
         }
 
         const weakAreasContainer = document.getElementById('knsWeakAreasContainer');
         const weakAreasList = document.getElementById('knsWeakAreasList');
         
+        // Build per-subTopic breakdown from all answered questions
+        const subTopicStats = {};
+        this.knsQuiz.data.forEach(q => {
+            const st = q.subTopic || 'Algemeen';
+            if (!subTopicStats[st]) subTopicStats[st] = { total: 0, correct: 0 };
+            subTopicStats[st].total++;
+        });
+        // Add wrong questions to track which subTopics were missed
+        this.knsQuiz.wrongQuestions.forEach(q => {
+            const st = q.subTopic || 'Algemeen';
+            if (subTopicStats[st]) subTopicStats[st].correct = subTopicStats[st].total - 
+                (this.knsQuiz.wrongQuestions.filter(w => (w.subTopic || 'Algemeen') === st).length);
+        });
+        // Fill correct for subTopics with no wrong answers
+        Object.keys(subTopicStats).forEach(st => {
+            const wrongCount = this.knsQuiz.wrongQuestions.filter(w => (w.subTopic || 'Algemeen') === st).length;
+            subTopicStats[st].correct = subTopicStats[st].total - wrongCount;
+        });
+
         if (this.knsQuiz.wrongQuestions.length > 0) {
             weakAreasContainer.classList.remove('hidden');
             
-            // Group by subTopic if available, otherwise just list the questions
-            weakAreasList.innerHTML = this.knsQuiz.wrongQuestions.map(q => {
-                let topicStr = q.subTopic ? `<strong>${q.subTopic}:</strong> ` : '';
-                return `<li>${topicStr}${q.question}</li>`;
+            // Show subTopic breakdown
+            const breakdownHtml = Object.entries(subTopicStats).map(([st, stats]) => {
+                const stPct = Math.round((stats.correct / stats.total) * 100);
+                const icon = stPct >= 80 ? '✅' : (stPct >= 50 ? '⚠️' : '❌');
+                const color = stPct >= 80 ? '#16a34a' : (stPct >= 50 ? '#d97706' : '#dc2626');
+                return `<li style="margin-bottom:6px;color:${color}">${icon} <strong>${st}:</strong> ${stats.correct}/${stats.total} (${stPct}%) ${stPct >= 80 ? '— gehaald' : '— oefenen'}</li>`;
             }).join('');
+            
+            weakAreasList.innerHTML = `
+                <div style="margin-bottom:12px;font-size:0.85rem;color:#64748b;">
+                    Resultaat per onderdeel (80% norm):
+                </div>
+                <ul style="list-style:none;margin-left:0;">${breakdownHtml}</ul>
+                <div style="margin-top:12px;border-top:1px solid #e2e8f0;padding-top:10px;font-size:0.8rem;color:#64748b;">
+                    Gemiste vragen:
+                </div>
+                <ul style="list-style:disc;margin-left:20px;margin-top:6px;">
+                    ${this.knsQuiz.wrongQuestions.map(q => {
+                        let topicStr = q.subTopic ? `<strong>${q.subTopic}:</strong> ` : '';
+                        return `<li>${topicStr}${q.question}</li>`;
+                    }).join('')}
+                </ul>
+            `;
         } else {
             weakAreasContainer.classList.add('hidden');
         }
+    }
+
+    updateKnsScoreTracker() {
+        const total = this.knsQuiz.data.length;
+        const answered = this.knsQuiz.wrongQuestions.length + this.knsQuiz.score;
+        const pct = answered > 0 ? Math.round((this.knsQuiz.score / answered) * 100) : 0;
+        let cls, statusText;
+
+        if (answered === 0) {
+            cls = 'excellent';
+            statusText = 'Start';
+        } else if (pct >= 80) {
+            cls = 'excellent';
+            statusText = `✅ ${pct}% — Op koers`;
+        } else if (pct >= 50) {
+            cls = 'good';
+            statusText = `⚠️ ${pct}% — Let op`;
+        } else {
+            cls = 'weak';
+            statusText = `❌ ${pct}% — Oefenen!`;
+        }
+
+        this.knsScoreTracker.classList.remove('hidden');
+        this.knsScoreFill.style.width = answered > 0 ? `${pct}%` : '0%';
+        this.knsScoreFill.className = `kns-score-fill ${cls}`;
+        this.knsScoreCount.textContent = `${this.knsQuiz.score}/${answered} goed`;
+        this.knsScorePct.textContent = `${pct}%`;
+        this.knsScorePct.className = `kns-score-pct ${cls}`;
+        this.knsScoreStatus.textContent = statusText;
+        this.knsScoreStatus.className = `kns-score-status ${cls}`;
     }
 }
 
