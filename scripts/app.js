@@ -1,6 +1,7 @@
 import { medicalVocab } from './data.js';
 import { generalVocab } from './generalData.js';
 import { knsData } from './knsData.js';
+import { oefenexamensData } from './oefenexamensData.js';
 
 
 class FlashcardGame {
@@ -342,6 +343,7 @@ class FlashcardGame {
             isAnswered: false,
             data: []
         };
+        this.knsDataSource = 'current'; // 'current' | 'oefenexamens'
 
         // Speech Recog for speaking test
         this.speakingRecognition = null;
@@ -1828,8 +1830,35 @@ class FlashcardGame {
     // ============================================================
     initKnsTopics() {
         this.knsAccordion.innerHTML = '';
-        Object.keys(knsData).forEach((topic, idx) => {
-            const itemCount = knsData[topic].length;
+
+        const dataSource = this.knsDataSource === 'current' ? knsData : oefenexamensData;
+
+        // Build toggle bar
+        const toggleBar = document.createElement('div');
+        toggleBar.className = 'kns-source-toggle';
+        toggleBar.innerHTML = `
+            <button class="kns-source-btn ${this.knsDataSource === 'current' ? 'active' : ''}" data-source="current">
+                📚 Huidige Vragen
+            </button>
+            <button class="kns-source-btn ${this.knsDataSource === 'oefenexamens' ? 'active' : ''}" data-source="oefenexamens">
+                📝 Oefenexamens
+            </button>
+        `;
+        this.knsAccordion.appendChild(toggleBar);
+
+        toggleBar.querySelectorAll('.kns-source-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const newSource = btn.dataset.source;
+                if (newSource !== this.knsDataSource) {
+                    this.knsDataSource = newSource;
+                    this.initKnsTopics();
+                }
+            });
+        });
+
+        // Build accordion items
+        Object.keys(dataSource).forEach((topic, idx) => {
+            const itemCount = dataSource[topic].length;
             const item = document.createElement('div');
             item.className = 'kns-item';
             item.innerHTML = `
@@ -1847,14 +1876,12 @@ class FlashcardGame {
                 </div>
             `;
 
-            // Accordion toggle
             item.querySelector('.kns-header').addEventListener('click', () => {
                 const isActive = item.classList.contains('active');
                 document.querySelectorAll('.kns-item').forEach(el => el.classList.remove('active'));
                 if (!isActive) item.classList.add('active');
             });
 
-            // Start btn
             item.querySelector('.start-topic-btn').addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.startKnsTopic(topic);
@@ -1865,13 +1892,15 @@ class FlashcardGame {
     }
 
     startKnsTopic(topicName) {
+        const dataSource = this.knsDataSource === 'current' ? knsData : oefenexamensData;
+
         this.knsQuiz.topic = topicName;
         this.knsQuiz.index = 0;
         this.knsQuiz.score = 0;
         this.knsQuiz.selected = null;
         this.knsQuiz.isAnswered = false;
         this.knsQuiz.wrongQuestions = [];
-        this.knsQuiz.data = [...knsData[topicName]].sort(() => Math.random() - 0.5);
+        this.knsQuiz.data = [...dataSource[topicName]].sort(() => Math.random() - 0.5);
 
         this.knsTopicTitle.textContent = topicName;
         this.knsTopicsContainer.classList.add('hidden');
