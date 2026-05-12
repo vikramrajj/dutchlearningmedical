@@ -2594,6 +2594,33 @@ details[open]>.type-toggle-btn .chevron-icon {
     color: var(--primary);
 }
 
+#knsBackToTopics {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #475569;
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+#knsBackToTopics:hover {
+    background: #e2e8f0;
+    color: #1e293b;
+    transform: translateY(-1px);
+}
+
+#knsBackToTopics:active {
+    transform: translateY(0);
+    background: #cbd5e1;
+}
+
 .kns-progress-dots {
     display: flex;
     flex-wrap: wrap;
