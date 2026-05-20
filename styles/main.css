@@ -2909,6 +2909,110 @@ details[open]>.type-toggle-btn .chevron-icon {
     margin: 2.5rem 0;
 }
 
+/* ---- KNS Exam Mode ---- */
+.kns-exam-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 1rem;
+}
+
+.kns-exam-heading {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.kns-exam-heading h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+    margin: 0 0 0.4rem;
+}
+
+.kns-exam-heading p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.kns-exam-random-btn {
+    background: linear-gradient(135deg, #f97316, #ea580c) !important;
+    color: white !important;
+    font-size: 1.15rem !important;
+    padding: 1rem 2rem !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 4px 15px rgba(249,115,22,0.3);
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.kns-exam-random-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(249,115,22,0.4);
+}
+
+.kns-exam-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.6rem;
+}
+
+.kns-exam-btn {
+    background: white;
+    border: 2px solid #e2e8f0;
+    border-radius: 0.75rem;
+    padding: 0.8rem 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-family: var(--font-body);
+}
+
+.kns-exam-btn:hover {
+    border-color: #f97316;
+    background: #fff7ed;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.kns-exam-btn .exam-num {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #f97316;
+}
+
+.kns-exam-btn .exam-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Exam Timer (in quiz header) */
+.kns-exam-timer {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+}
+
+.kns-timer-ring {
+    flex-shrink: 0;
+}
+
+.kns-timer-text {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    min-width: 3.5em;
+}
+
 @keyframes slideUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }

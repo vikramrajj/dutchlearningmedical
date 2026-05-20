@@ -342,9 +342,10 @@ class FlashcardGame {
             score: 0,
             selected: null,
             isAnswered: false,
+            isExam: false,
             data: []
         };
-        this.knsDataSource = 'current'; // 'current' | 'oefenexamens'
+        this.knsDataSource = 'current'; // 'current' | 'oefenexamens' | 'exam'
 
         // Speaking Exam state
         this.speakingExam = {
@@ -617,14 +618,26 @@ class FlashcardGame {
 
         // ---- KNS Quiz events ----
         this.knsBackToTopics.addEventListener('click', () => {
+            this.clearExamTimer();
+            this.hideExamTimer();
+            this.knsQuiz.isExam = false;
             this.knsPlayContainer.classList.add('hidden');
             this.knsTopicsContainer.classList.remove('hidden');
         });
 
         this.knsSubmitBtn.addEventListener('click', () => this.submitKnsAnswer());
         this.knsNextBtn.addEventListener('click', () => this.nextKnsQuestion());
-        this.knsRestartTopicBtn.addEventListener('click', () => this.startKnsTopic(this.knsQuiz.topic));
+        this.knsRestartTopicBtn.addEventListener('click', () => {
+            if (this.knsQuiz.isExam) {
+                this.startKnsExam(this.knsQuiz.examNumber);
+            } else {
+                this.startKnsTopic(this.knsQuiz.topic);
+            }
+        });
         this.knsFinishBtn.addEventListener('click', () => {
+            this.clearExamTimer();
+            this.hideExamTimer();
+            this.knsQuiz.isExam = false;
             this.knsResultContainer.classList.add('hidden');
             this.knsTopicsContainer.classList.remove('hidden');
         });
@@ -1924,8 +1937,6 @@ class FlashcardGame {
     initKnsTopics() {
         this.knsAccordion.innerHTML = '';
 
-        const dataSource = this.knsDataSource === 'current' ? knsData : oefenexamensData;
-
         // Build toggle bar
         const toggleBar = document.createElement('div');
         toggleBar.className = 'kns-source-toggle';
@@ -1935,6 +1946,9 @@ class FlashcardGame {
             </button>
             <button class="kns-source-btn ${this.knsDataSource === 'oefenexamens' ? 'active' : ''}" data-source="oefenexamens">
                 📝 Oefenexamens
+            </button>
+            <button class="kns-source-btn ${this.knsDataSource === 'exam' ? 'active' : ''}" data-source="exam">
+                📋 Examens
             </button>
         `;
         this.knsAccordion.appendChild(toggleBar);
@@ -1949,8 +1963,13 @@ class FlashcardGame {
             });
         });
 
-        // Build accordion items
-        Object.keys(dataSource).forEach((topic, idx) => {
+        // Exam mode: show exam selection grid instead of accordion
+        if (this.knsDataSource === 'exam') {
+            this.renderExamSelection();
+            return;
+        }
+
+        const dataSource = this.knsDataSource === 'current' ? knsData : oefenexamensData;
             const itemCount = dataSource[topic].length;
             const item = document.createElement('div');
             item.className = 'kns-item';
@@ -1982,6 +2001,169 @@ class FlashcardGame {
 
             this.knsAccordion.appendChild(item);
         });
+    }
+
+    // ============================================================
+    //  KNS EXAM MODE
+    // ============================================================
+    renderExamSelection() {
+        const totalExams = 25;
+
+        const container = document.createElement('div');
+        container.className = 'kns-exam-selection';
+
+        const heading = document.createElement('div');
+        heading.className = 'kns-exam-heading';
+        heading.innerHTML = `
+            <h3>📋 KNS Proefexamens</h3>
+            <p>Elk examen bevat 40 vragen — 5 uit elk van de 8 KNS onderwerpen. Tijdslimiet: 25 minuten.</p>
+        `;
+        container.appendChild(heading);
+
+        const randomBtn = document.createElement('button');
+        randomBtn.className = 'btn btn-primary btn-large kns-exam-random-btn';
+        randomBtn.innerHTML = '🎲 Start Willekeurig Examen';
+        randomBtn.addEventListener('click', () => {
+            const examNum = Math.floor(Math.random() * totalExams) + 1;
+            this.startKnsExam(examNum);
+        });
+        container.appendChild(randomBtn);
+
+        const grid = document.createElement('div');
+        grid.className = 'kns-exam-grid';
+
+        for (let i = 1; i <= totalExams; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'kns-exam-btn';
+            btn.innerHTML = `<span class="exam-num">${i}</span><span class="exam-label">Examen ${i}</span>`;
+            btn.addEventListener('click', () => this.startKnsExam(i));
+            grid.appendChild(btn);
+        }
+
+        container.appendChild(grid);
+        this.knsAccordion.appendChild(container);
+    }
+
+    generateExamSet(examNumber) {
+        const topics = Object.keys(oefenexamensData);
+        const questions = [];
+
+        topics.forEach(topic => {
+            const pool = [...oefenexamensData[topic]];
+            const picked = this.seededShuffle(pool, examNumber * 1000 + topics.indexOf(topic)).slice(0, 5);
+            questions.push(...picked);
+        });
+
+        return this.seededShuffle(questions, examNumber);
+    }
+
+    seededShuffle(arr, seed) {
+        const result = [...arr];
+        let s = seed;
+        const mulberry32 = () => {
+            s |= 0; s = s + 0x6D2B79F5 | 0;
+            let t = Math.imul(s ^ s >>> 15, 1 | s);
+            t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+            return ((t ^ t >>> 14) >>> 0) / 4294967296;
+        };
+
+        for (let i = result.length - 1; i > 0; i--) {
+            const j = Math.floor(mulberry32() * (i + 1));
+            [result[i], result[j]] = [result[j], result[i]];
+        }
+        return result;
+    }
+
+    startKnsExam(examNumber) {
+        this.knsDataSource = 'exam';
+        this.knsQuiz.topic = `Examen ${examNumber}`;
+        this.knsQuiz.index = 0;
+        this.knsQuiz.score = 0;
+        this.knsQuiz.selected = null;
+        this.knsQuiz.isAnswered = false;
+        this.knsQuiz.wrongQuestions = [];
+        this.knsQuiz.data = this.generateExamSet(examNumber);
+        this.knsQuiz.isExam = true;
+        this.knsQuiz.examNumber = examNumber;
+        this.knsQuiz.examTimerSeconds = 25 * 60; // 25 minutes
+        this.knsQuiz.examTimerInterval = null;
+
+        this.knsTopicTitle.textContent = `Examen ${examNumber} (40 vragen)`;
+        this.knsTopicsContainer.classList.add('hidden');
+        this.knsResultContainer.classList.add('hidden');
+        this.knsPlayContainer.classList.remove('hidden');
+
+        this.showExamTimer();
+        this.startExamTimer();
+        this.renderKnsQuestion();
+    }
+
+    showExamTimer() {
+        let timerEl = document.getElementById('knsExamTimer');
+        if (!timerEl) {
+            timerEl = document.createElement('div');
+            timerEl.id = 'knsExamTimer';
+            timerEl.className = 'kns-exam-timer';
+            timerEl.innerHTML = `
+                <svg width="44" height="44" viewBox="0 0 44 44" class="kns-timer-ring">
+                    <circle cx="22" cy="22" r="18" fill="none" stroke="var(--bg-tertiary)" stroke-width="3"/>
+                    <circle cx="22" cy="22" r="18" fill="none" stroke="var(--primary)" stroke-width="3"
+                        stroke-dasharray="113.1" stroke-dashoffset="0" stroke-linecap="round"
+                        transform="rotate(-90 22 22)" id="knsTimerCircle"/>
+                </svg>
+                <span class="kns-timer-text" id="knsTimerText">25:00</span>
+            `;
+            const header = this.knsPlayContainer.querySelector('.kns-quiz-header');
+            header.appendChild(timerEl);
+        }
+        timerEl.style.display = 'flex';
+    }
+
+    hideExamTimer() {
+        const timerEl = document.getElementById('knsExamTimer');
+        if (timerEl) timerEl.style.display = 'none';
+    }
+
+    startExamTimer() {
+        this.clearExamTimer();
+        this.knsQuiz.examTimerInterval = setInterval(() => {
+            this.knsQuiz.examTimerSeconds--;
+
+            const mins = Math.floor(this.knsQuiz.examTimerSeconds / 60);
+            const secs = this.knsQuiz.examTimerSeconds % 60;
+            const timerText = document.getElementById('knsTimerText');
+            if (timerText) {
+                timerText.textContent = `${mins}:${secs.toString().padStart(2, '0')}`;
+            }
+
+            const circle = document.getElementById('knsTimerCircle');
+            if (circle) {
+                const total = 25 * 60;
+                const remaining = this.knsQuiz.examTimerSeconds;
+                const circumference = 113.1;
+                const offset = circumference * (1 - remaining / total);
+                circle.setAttribute('stroke-dashoffset', offset);
+                if (remaining <= 300) {
+                    circle.setAttribute('stroke', 'var(--danger)');
+                    timerText && (timerText.style.color = 'var(--danger)');
+                } else if (remaining <= 600) {
+                    circle.setAttribute('stroke', 'var(--warning)');
+                    timerText && (timerText.style.color = 'var(--warning)');
+                }
+            }
+
+            if (this.knsQuiz.examTimerSeconds <= 0) {
+                this.clearExamTimer();
+                this.showKnsResults(); // Auto-submit when time runs out
+            }
+        }, 1000);
+    }
+
+    clearExamTimer() {
+        if (this.knsQuiz.examTimerInterval) {
+            clearInterval(this.knsQuiz.examTimerInterval);
+            this.knsQuiz.examTimerInterval = null;
+        }
     }
 
     startKnsTopic(topicName) {
@@ -2091,14 +2273,71 @@ class FlashcardGame {
     }
 
     showKnsResults() {
+        this.clearExamTimer();
+        this.hideExamTimer();
+
         this.knsPlayContainer.classList.add('hidden');
         this.knsResultContainer.classList.remove('hidden');
 
         const total = this.knsQuiz.data.length;
         const score = this.knsQuiz.score;
+        const wrong = total - score;
         const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+
+        // Exam mode: show correct/incorrect counts and per-topic breakdown
+        if (this.knsQuiz.isExam) {
+            this.knsResultScore.textContent = `${score}/${total} (${pct}%)`;
+            const passed = pct >= 60;
+            this.knsResultMsg.innerHTML = passed
+                ? `✅ Geslaagd! ${score} goed, ${wrong} fout.`
+                : `❌ Nog niet geslaagd. ${score} goed, ${wrong} fout. Oefen verder.`;
+            this.knsResultMsg.style.color = passed ? 'var(--success)' : 'var(--danger)';
+
+            // Per-topic breakdown
+            const topicStats = {};
+            const topicNames = Object.keys(oefenexamensData);
+            this.knsQuiz.data.forEach(q => {
+                const t = q.theme || 'Onbekend';
+                if (!topicStats[t]) topicStats[t] = { total: 0, correct: 0 };
+                topicStats[t].total++;
+            });
+            this.knsQuiz.wrongQuestions.forEach(q => {
+                const t = q.theme || 'Onbekend';
+                if (topicStats[t]) topicStats[t].correct = topicStats[t].total -
+                    this.knsQuiz.wrongQuestions.filter(w => (w.theme || 'Onbekend') === t).length;
+            });
+            Object.keys(topicStats).forEach(t => {
+                const wc = this.knsQuiz.wrongQuestions.filter(w => (w.theme || 'Onbekend') === t).length;
+                topicStats[t].correct = topicStats[t].total - wc;
+            });
+
+            const weakContainer = document.getElementById('knsWeakAreasContainer');
+            const weakList = document.getElementById('knsWeakAreasList');
+            weakContainer.classList.remove('hidden');
+            weakList.innerHTML = `
+                <div style="margin-bottom:12px;font-size:0.85rem;color:#64748b;">
+                    Resultaat per onderwerp:
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px;">
+                    ${Object.entries(topicStats).map(([t, s]) => {
+                        const tpct = s.total > 0 ? Math.round((s.correct / s.total) * 100) : 0;
+                        const icon = tpct >= 80 ? '✅' : (tpct >= 50 ? '⚠️' : '❌');
+                        return `<div style="background:#f8fafc; padding:8px 10px; border-radius:6px; font-size:0.8rem;">
+                            ${icon} <strong>${t}:</strong> ${s.correct}/${s.total}
+                        </div>`;
+                    }).join('')}
+                </div>
+                ${wrong > 0 ? `<div style="border-top:1px solid #e2e8f0; padding-top:10px; font-size:0.8rem; color:#64748b;">
+                    ✅ Correct: ${score} | ❌ Incorrect: ${wrong}
+                </div>` : ''}
+            `;
+
+            this.knsQuiz.isExam = false;
+            return;
+        }
+
         const passed = pct >= 80;
-        
+
         this.knsResultScore.textContent = `${score}/${total} (${pct}%)`;
         
         if (score === total) {
