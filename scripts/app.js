@@ -841,8 +841,6 @@ class FlashcardGame {
                 this.switchMode('flashcard');
                 return;
             }
-                return;
-            }
         }
 
         // Fully reset for the new domain
