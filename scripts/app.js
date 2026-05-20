@@ -1970,6 +1970,9 @@ class FlashcardGame {
         }
 
         const dataSource = this.knsDataSource === 'current' ? knsData : oefenexamensData;
+
+        // Build accordion items
+        Object.keys(dataSource).forEach((topic, idx) => {
             const itemCount = dataSource[topic].length;
             const item = document.createElement('div');
             item.className = 'kns-item';
