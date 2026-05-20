@@ -2,6 +2,7 @@ import { medicalVocab } from './data.js';
 import { generalVocab } from './generalData.js';
 import { knsData } from './knsData.js';
 import { oefenexamensData } from './oefenexamensData.js';
+import { speakingExamData } from './speakingExamData.js';
 
 
 class FlashcardGame {
@@ -345,6 +346,26 @@ class FlashcardGame {
         };
         this.knsDataSource = 'current'; // 'current' | 'oefenexamens'
 
+        // Speaking Exam state
+        this.speakingExam = {
+            mode: null,        // 'full' | 'topic'
+            topic: null,       // topic name if mode='topic'
+            index: 0,
+            score: 0,
+            maxScore: 0,
+            isRecording: false,
+            isAnswered: false,
+            isStarted: false,
+            transcript: '',
+            selectedChoice: null,
+            data: [],          // flat array of questions
+            wrongQuestions: [],
+            scores: [],        // per-question score tracking
+            timerInterval: null,
+            timerSeconds: 20
+        };
+        this.speakingExamRecognition = null;
+
         // Speech Recog for speaking test
         this.speakingRecognition = null;
         this.isSpeakingListening = false;
@@ -528,12 +549,56 @@ class FlashcardGame {
         this.modeSpelling = document.getElementById('modeSpelling');
         this.modeKnsQuiz = document.getElementById('modeKnsQuiz');
 
+        // DOM — speaking exam mode
+        this.modeSpeakingExam = document.getElementById('modeSpeakingExam');
+        this.speakingExamSection = document.getElementById('speakingExamSection');
+        this.seTopicsContainer = document.getElementById('seTopicsContainer');
+        this.seAccordion = document.getElementById('seAccordion');
+        this.seStartFullExamBtn = document.getElementById('seStartFullExamBtn');
+        this.sePlayContainer = document.getElementById('sePlayContainer');
+        this.seTopicBadge = document.getElementById('seTopicBadge');
+        this.seBackToTopics = document.getElementById('seBackToTopics');
+        this.seTimer = document.getElementById('seTimer');
+        this.seTimerCircle = document.getElementById('seTimerCircle');
+        this.seTimerText = document.getElementById('seTimerText');
+        this.seProgressDots = document.getElementById('seProgressDots');
+        this.seScoreTracker = document.getElementById('seScoreTracker');
+        this.seScoreFill = document.getElementById('seScoreFill');
+        this.seScoreCount = document.getElementById('seScoreCount');
+        this.seScorePct = document.getElementById('seScorePct');
+        this.sePromptText = document.getElementById('sePromptText');
+        this.seReplayPromptBtn = document.getElementById('seReplayPromptBtn');
+        this.seImagesGrid = document.getElementById('seImagesGrid');
+        this.seChoicePrompt = document.getElementById('seChoicePrompt');
+        this.seChoiceGrid = document.getElementById('seChoiceGrid');
+        this.seMicBtn = document.getElementById('seMicBtn');
+        this.sePulseRing = document.getElementById('sePulseRing');
+        this.seStatusText = document.getElementById('seStatusText');
+        this.seLiveTranscript = document.getElementById('seLiveTranscript');
+        this.seFeedback = document.getElementById('seFeedback');
+        this.seFeedbackScore = document.getElementById('seFeedbackScore');
+        this.seFeedbackKeywords = document.getElementById('seFeedbackKeywords');
+        this.seFeedbackModel = document.getElementById('seFeedbackModel');
+        this.seModelText = document.getElementById('seModelText');
+        this.seListenModelBtn = document.getElementById('seListenModelBtn');
+        this.seNextBtn = document.getElementById('seNextBtn');
+        this.seResultContainer = document.getElementById('seResultContainer');
+        this.seResultRing = document.getElementById('seResultRing');
+        this.seResultPct = document.getElementById('seResultPct');
+        this.seResultMsg = document.getElementById('seResultMsg');
+        this.seResultBreakdown = document.getElementById('seResultBreakdown');
+        this.seResultWeak = document.getElementById('seResultWeak');
+        this.seWeakList = document.getElementById('seWeakList');
+        this.seRestartBtn = document.getElementById('seRestartBtn');
+        this.seFinishBtn = document.getElementById('seFinishBtn');
+
 
         this.init();
     }
 
     init() {
         this.initSpeakingRecognition();
+        this.initSpeakingExamRecognition();
 
         // ---- Domain Toggle (Top Bar) ----
         this.domainMedical.addEventListener('click', () => this.switchDomain('medical'));
@@ -563,6 +628,23 @@ class FlashcardGame {
             this.knsResultContainer.classList.add('hidden');
             this.knsTopicsContainer.classList.remove('hidden');
         });
+
+        // ---- Speaking Exam events ----
+        this.modeSpeakingExam.addEventListener('click', () => this.switchMode('speakingexam'));
+        this.seStartFullExamBtn.addEventListener('click', () => this.startSpeakingExam('full'));
+        this.seBackToTopics.addEventListener('click', () => this.showSpeakingExamTopics());
+        this.seMicBtn.addEventListener('click', () => this.toggleSpeakingExamRecording());
+        this.seReplayPromptBtn.addEventListener('click', () => this.speakExamPrompt());
+        this.seNextBtn.addEventListener('click', () => this.nextSpeakingExamQuestion());
+        this.seRestartBtn.addEventListener('click', () => {
+            if (this.speakingExam.topic) {
+                this.startSpeakingExam('topic', this.speakingExam.topic);
+            } else {
+                this.startSpeakingExam('full');
+            }
+        });
+        this.seFinishBtn.addEventListener('click', () => this.showSpeakingExamTopics());
+        this.seListenModelBtn.addEventListener('click', () => this.speakModelAnswer());
 
         // ---- Pic Write mode events ----
         this.picWritingNextBtn.addEventListener('click', () => {
@@ -689,6 +771,7 @@ class FlashcardGame {
         this.modeWriting.classList.toggle('active', newMode === 'writing');
         this.modePicWrite.classList.toggle('active', newMode === 'picwriting');
         this.modeKnsQuiz.classList.toggle('active', newMode === 'knsquiz');
+        this.modeSpeakingExam.classList.toggle('active', newMode === 'speakingexam');
 
         this.flashcardSection.classList.toggle('hidden', newMode !== 'flashcard');
         this.spellingSection.classList.toggle('hidden', newMode !== 'spelling');
@@ -698,9 +781,14 @@ class FlashcardGame {
         this.writingSection.classList.toggle('hidden', newMode !== 'writing');
         this.picWritingSection.classList.toggle('hidden', newMode !== 'picwriting');
         this.knsQuizSection.classList.toggle('hidden', newMode !== 'knsquiz');
+        this.speakingExamSection.classList.toggle('hidden', newMode !== 'speakingexam');
 
         if (newMode === 'knsquiz') {
             this.initKnsTopics();
+        }
+
+        if (newMode === 'speakingexam') {
+            this.initSpeakingExamTopics();
         }
 
         // Reset state for new mode
@@ -734,9 +822,10 @@ class FlashcardGame {
         this.domainMedical.classList.toggle('active', newDomain === 'medical');
         this.domainGeneral.classList.toggle('active', newDomain === 'general');
 
-        // Show Pic Write and KNS Quiz buttons only for General domain
+        // Show Pic Write, KNS Quiz, and Speaking Exam buttons only for General domain
         this.modePicWrite.style.display = (newDomain === 'general') ? '' : 'none';
         this.modeKnsQuiz.style.display = (newDomain === 'general') ? '' : 'none';
+        this.modeSpeakingExam.style.display = (newDomain === 'general') ? '' : 'none';
 
         // If switching away from General while in specialized modes, fall back to writing or flashcard
         if (newDomain === 'medical') {
@@ -746,6 +835,12 @@ class FlashcardGame {
             }
             if (this.mode === 'knsquiz') {
                 this.switchMode('flashcard');
+                return;
+            }
+            if (this.mode === 'speakingexam') {
+                this.switchMode('flashcard');
+                return;
+            }
                 return;
             }
         }
@@ -2101,6 +2196,602 @@ class FlashcardGame {
         this.knsScorePct.className = `kns-score-pct ${cls}`;
         this.knsScoreStatus.textContent = statusText;
         this.knsScoreStatus.className = `kns-score-status ${cls}`;
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — INIT & TOPICS
+    // ============================================================
+    initSpeakingExamRecognition() {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (!SpeechRecognition) {
+            console.warn('Speech Recognition API not supported in this browser.');
+            return;
+        }
+
+        this.speakingExamRecognition = new SpeechRecognition();
+        this.speakingExamRecognition.lang = 'nl-NL';
+        this.speakingExamRecognition.continuous = true;
+        this.speakingExamRecognition.interimResults = true;
+        this.speakingExamRecognition.maxAlternatives = 1;
+
+        this.speakingExamRecognition.onresult = (event) => {
+            let interimTranscript = '';
+            let finalTranscript = '';
+
+            for (let i = event.resultIndex; i < event.results.length; ++i) {
+                if (event.results[i].isFinal) {
+                    finalTranscript += event.results[i][0].transcript;
+                } else {
+                    interimTranscript += event.results[i][0].transcript;
+                }
+            }
+
+            this.seLiveTranscript.textContent = finalTranscript || interimTranscript;
+            if (finalTranscript) {
+                this.speakingExam.transcript = finalTranscript;
+            }
+        };
+
+        this.speakingExamRecognition.onerror = (event) => {
+            console.error('Speaking exam speech error', event.error);
+            this.seStatusText.textContent = 'Fout bij spraakherkenning: ' + event.error;
+            this.seMicBtn.classList.remove('listening');
+        };
+
+        this.speakingExamRecognition.onend = () => {
+            if (this.speakingExam.isRecording && !this.speakingExam.isAnswered) {
+                try { this.speakingExamRecognition.start(); } catch (e) { }
+            } else if (!this.speakingExam.isAnswered) {
+                this.seMicBtn.classList.remove('listening');
+                this.seStatusText.textContent = 'Klik op de microfoon om te spreken';
+            }
+        };
+    }
+
+    initSpeakingExamTopics() {
+        this.seTopicsContainer.classList.remove('hidden');
+        this.sePlayContainer.classList.add('hidden');
+        this.seResultContainer.classList.add('hidden');
+
+        this.seAccordion.innerHTML = '';
+
+        const topics = Object.keys(speakingExamData);
+        topics.forEach(topic => {
+            const qCount = speakingExamData[topic].length;
+            const sampleQ = speakingExamData[topic][0];
+
+            const item = document.createElement('div');
+            item.className = 'se-accordion-item';
+
+            const header = document.createElement('div');
+            header.className = 'se-accordion-header';
+            header.innerHTML = `
+                <h4>${topic}</h4>
+                <span class="se-qcount">${qCount} vragen</span>
+                <svg class="se-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+            `;
+            header.addEventListener('click', () => {
+                item.classList.toggle('open');
+            });
+
+            const body = document.createElement('div');
+            body.className = 'se-accordion-body';
+            body.innerHTML = `
+                <div class="se-accordion-body-inner">
+                    <p>Voorbeeld: <em>"${sampleQ.promptNLShort}"</em></p>
+                    <button class="btn btn-secondary">Oefen ${topic} (${qCount} vragen)</button>
+                </div>
+            `;
+            body.querySelector('button').addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.startSpeakingExam('topic', topic);
+            });
+
+            item.appendChild(header);
+            item.appendChild(body);
+            this.seAccordion.appendChild(item);
+        });
+    }
+
+    showSpeakingExamTopics() {
+        if (this.speakingExam.isRecording) {
+            this.stopSpeakingExamRecording();
+        }
+        this.clearSpeakingExamTimer();
+        this.sePlayContainer.classList.add('hidden');
+        this.seResultContainer.classList.add('hidden');
+        this.seTopicsContainer.classList.remove('hidden');
+        this.speakingExam.isStarted = false;
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — START & FLOW
+    // ============================================================
+    startSpeakingExam(mode, topicName = null) {
+        this.speakingExam.mode = mode;
+        this.speakingExam.topic = topicName;
+        this.speakingExam.index = 0;
+        this.speakingExam.score = 0;
+        this.speakingExam.maxScore = 0;
+        this.speakingExam.isAnswered = false;
+        this.speakingExam.isRecording = false;
+        this.speakingExam.selectedChoice = null;
+        this.speakingExam.transcript = '';
+        this.speakingExam.wrongQuestions = [];
+        this.speakingExam.scores = [];
+        this.speakingExam.isStarted = true;
+
+        this.clearSpeakingExamTimer();
+
+        if (mode === 'topic' && topicName) {
+            this.speakingExam.data = [...speakingExamData[topicName]].sort(() => Math.random() - 0.5);
+        } else {
+            this.speakingExam.data = [];
+            const topics = Object.keys(speakingExamData);
+            topics.forEach(t => {
+                this.speakingExam.data.push(...speakingExamData[t]);
+            });
+            this.speakingExam.data.sort(() => Math.random() - 0.5);
+        }
+
+        this.seTopicsContainer.classList.add('hidden');
+        this.seResultContainer.classList.add('hidden');
+        this.sePlayContainer.classList.remove('hidden');
+        this.seScoreTracker.classList.add('hidden');
+        this.seFeedback.classList.add('hidden');
+
+        this.seTopicBadge.textContent = topicName || 'Volledig Examen';
+        this.renderSEProgressDots();
+        this.renderSpeakingExamQuestion();
+    }
+
+    renderSpeakingExamQuestion() {
+        const q = this.speakingExam.data[this.speakingExam.index];
+        if (!q) return;
+
+        this.speakingExam.isAnswered = false;
+        this.speakingExam.isRecording = false;
+        this.speakingExam.transcript = '';
+        this.speakingExam.selectedChoice = null;
+        this.speakingExam.timerSeconds = 20;
+        this.clearSpeakingExamTimer();
+
+        this.seMicBtn.classList.remove('listening');
+        this.seStatusText.textContent = 'Klik op de microfoon om te spreken';
+        this.seLiveTranscript.textContent = '';
+        this.seFeedback.classList.add('hidden');
+        this.seTimer.classList.remove('warning', 'danger');
+
+        this.sePromptText.textContent = q.promptNL;
+
+        if (q.images && q.images.length > 0) {
+            this.seImagesGrid.classList.remove('hidden');
+            this.seImagesGrid.innerHTML = q.images.map(img => `
+                <div class="se-image-card">
+                    ${this.getPlaceholderSVG(img.svg, img.alt)}
+                </div>
+            `).join('');
+        } else {
+            this.seImagesGrid.classList.add('hidden');
+            this.seImagesGrid.innerHTML = '';
+        }
+
+        if (q.type === 'kiezenUitleggen') {
+            this.seChoicePrompt.classList.remove('hidden');
+            this.seChoicePrompt.textContent = q.choicePrompt || 'Kies één van de plaatjes:';
+            this.seChoiceGrid.classList.remove('hidden');
+            this.seChoiceGrid.innerHTML = q.images.map((img, i) => `
+                <button class="se-choice-btn" data-choice="${i}">
+                    ${this.getPlaceholderSVG(img.svg, img.alt)}
+                    <span class="se-choice-label">Keuze ${i + 1}</span>
+                </button>
+            `).join('');
+
+            this.seChoiceGrid.querySelectorAll('.se-choice-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    this.seChoiceGrid.querySelectorAll('.se-choice-btn').forEach(b => b.classList.remove('selected'));
+                    btn.classList.add('selected');
+                    this.speakingExam.selectedChoice = parseInt(btn.dataset.choice);
+                });
+            });
+        } else {
+            this.seChoicePrompt.classList.add('hidden');
+            this.seChoiceGrid.classList.add('hidden');
+            this.seChoiceGrid.innerHTML = '';
+        }
+
+        this.seNextBtn.parentElement.classList.add('hidden');
+
+        setTimeout(() => this.speakExamPrompt(), 500);
+    }
+
+    speakExamPrompt() {
+        const q = this.speakingExam.data[this.speakingExam.index];
+        if (!q || !('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(q.promptNL);
+        const voices = window.speechSynthesis.getVoices();
+        const dutchVoice = voices.find(v => v.lang.startsWith('nl')) || voices.find(v => v.lang.startsWith('nl-NL'));
+        if (dutchVoice) utterance.voice = dutchVoice;
+        utterance.lang = 'nl-NL';
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    speakModelAnswer() {
+        const q = this.speakingExam.data[this.speakingExam.index];
+        if (!q || !('speechSynthesis' in window)) return;
+
+        window.speechSynthesis.cancel();
+        const utterance = new SpeechSynthesisUtterance(q.modelAnswer);
+        const voices = window.speechSynthesis.getVoices();
+        const dutchVoice = voices.find(v => v.lang.startsWith('nl')) || voices.find(v => v.lang.startsWith('nl-NL'));
+        if (dutchVoice) utterance.voice = dutchVoice;
+        utterance.lang = 'nl-NL';
+        utterance.rate = 0.85;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — RECORDING & TIMER
+    // ============================================================
+    toggleSpeakingExamRecording() {
+        if (this.speakingExam.isAnswered) return;
+
+        if (this.speakingExam.isRecording) {
+            this.stopSpeakingExamRecording();
+        } else {
+            this.startSpeakingExamRecording();
+        }
+    }
+
+    startSpeakingExamRecording() {
+        if (!this.speakingExamRecognition || this.speakingExam.isRecording || this.speakingExam.isAnswered) return;
+
+        const q = this.speakingExam.data[this.speakingExam.index];
+        if (!q) return;
+
+        window.speechSynthesis.cancel();
+        this.speakingExam.isRecording = true;
+        this.speakingExam.transcript = '';
+        this.seLiveTranscript.textContent = '...';
+        this.seStatusText.textContent = 'Aan het luisteren... spreek Nederlands';
+        this.seMicBtn.classList.add('listening');
+        this.speakingExam.timerSeconds = 20;
+        this.seTimer.classList.remove('warning', 'danger');
+        this.updateSETimerDisplay();
+
+        try {
+            this.speakingExamRecognition.start();
+        } catch (e) { }
+
+        this.clearSpeakingExamTimer();
+        this.speakingExam.timerInterval = setInterval(() => {
+            this.speakingExam.timerSeconds--;
+            this.updateSETimerDisplay();
+
+            if (this.speakingExam.timerSeconds <= 0) {
+                this.stopSpeakingExamRecording();
+            }
+        }, 1000);
+    }
+
+    stopSpeakingExamRecording() {
+        if (!this.speakingExamRecognition || !this.speakingExam.isRecording) return;
+
+        this.speakingExam.isRecording = false;
+        this.clearSpeakingExamTimer();
+
+        try { this.speakingExamRecognition.stop(); } catch (e) { }
+        this.seMicBtn.classList.remove('listening');
+        this.seStatusText.textContent = 'Verwerken...';
+
+        setTimeout(() => {
+            const transcript = this.speakingExam.transcript || this.seLiveTranscript.textContent || '';
+            if (transcript && transcript !== '...' && !this.speakingExam.isAnswered) {
+                this.evaluateSpeakingAnswer(transcript);
+            } else if (!this.speakingExam.isAnswered) {
+                this.seStatusText.textContent = 'Geen antwoord gehoord. Probeer opnieuw.';
+            }
+        }, 600);
+    }
+
+    updateSETimerDisplay() {
+        const total = 20;
+        const remaining = this.speakingExam.timerSeconds;
+        const circle = this.seTimerCircle;
+        const circumference = 131.95;
+        const offset = circumference * (1 - remaining / total);
+        circle.setAttribute('stroke-dashoffset', offset);
+
+        if (remaining <= 5) {
+            circle.setAttribute('stroke', 'var(--danger)');
+            this.seTimer.classList.add('danger');
+            this.seTimer.classList.remove('warning');
+        } else if (remaining <= 10) {
+            circle.setAttribute('stroke', 'var(--warning)');
+            this.seTimer.classList.add('warning');
+            this.seTimer.classList.remove('danger');
+        }
+
+        this.seTimerText.textContent = remaining;
+    }
+
+    clearSpeakingExamTimer() {
+        if (this.speakingExam.timerInterval) {
+            clearInterval(this.speakingExam.timerInterval);
+            this.speakingExam.timerInterval = null;
+        }
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — EVALUATION
+    // ============================================================
+    evaluateSpeakingAnswer(transcript) {
+        const q = this.speakingExam.data[this.speakingExam.index];
+        if (!q) return;
+
+        this.speakingExam.isAnswered = true;
+        if (this.speakingExam.isRecording) {
+            this.stopSpeakingExamRecording();
+        }
+
+        const cleaned = transcript.toLowerCase().replace(/[.,!?;:(){}[\]'"«»„""'…–—]/g, ' ').replace(/\s+/g, ' ').trim();
+        const words = cleaned.split(' ').filter(w => w.length > 1);
+
+        const matchedKeywords = q.keywords.filter(kw => cleaned.includes(kw.toLowerCase()));
+
+        let wordWeight = 25;
+        let keywordWeight = 75;
+        let choiceWeight = 0;
+
+        if (q.type === 'kiezenUitleggen') {
+            wordWeight = 15;
+            keywordWeight = 60;
+            choiceWeight = 25;
+        } else if (q.type === 'vraagAntwoord') {
+            wordWeight = 25;
+            keywordWeight = 75;
+        } else if (q.type === 'plaatjesBeschrijven') {
+            wordWeight = 20;
+            keywordWeight = 80;
+        } else if (q.type === 'verhaalVertellen') {
+            wordWeight = 20;
+            keywordWeight = 80;
+        }
+
+        const wordScore = Math.min(words.length / Math.max(q.minWords, 1), 1.0) * wordWeight;
+        const keywordScore = q.keywords.length > 0
+            ? (matchedKeywords.length / q.keywords.length) * keywordWeight
+            : keywordWeight;
+        let choiceScore = 0;
+        if (choiceWeight > 0) {
+            choiceScore = this.speakingExam.selectedChoice !== null ? choiceWeight : 0;
+        }
+
+        const totalScore = Math.round(wordScore + keywordScore + choiceScore);
+        const passed = totalScore >= 60;
+
+        this.speakingExam.score += totalScore;
+        this.speakingExam.maxScore += 100;
+        this.speakingExam.scores.push({ totalScore, passed, qId: q.id });
+
+        if (!passed) {
+            this.speakingExam.wrongQuestions.push({ question: q, score: totalScore });
+        }
+
+        this.showSpeakingExamFeedback(totalScore, passed, matchedKeywords, q, words.length);
+        this.updateSEScoreTracker();
+        this.updateSEProgressDots();
+
+        this.seNextBtn.parentElement.classList.remove('hidden');
+        this.seNextBtn.focus();
+    }
+
+    showSpeakingExamFeedback(score, passed, matchedKeywords, q, wordCount) {
+        this.seFeedback.classList.remove('hidden');
+        this.seFeedback.className = `se-feedback ${passed ? 'correct' : 'wrong'}`;
+        this.seFeedbackScore.textContent = `${score}/100`;
+
+        const foundList = matchedKeywords.map(k => `<span class="kw-found">✓${k}</span>`).join(', ');
+        const missedList = q.keywords.filter(k => !matchedKeywords.includes(k)).map(k => `<span class="kw-missed">${k}</span>`).join(', ');
+        this.seFeedbackKeywords.innerHTML = `
+            ${foundList ? 'Gevonden: ' + foundList + '<br>' : ''}
+            Gemist: ${missedList}<br>
+            Woorden: ${wordCount} (min. ${q.minWords})
+        `;
+
+        this.seFeedbackModel.classList.remove('hidden');
+        this.seModelText.textContent = q.modelAnswer;
+        this.seListenModelBtn.style.display = 'inline-block';
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — NAVIGATION & RESULTS
+    // ============================================================
+    nextSpeakingExamQuestion() {
+        this.speakingExam.index++;
+
+        this.seFeedback.classList.add('hidden');
+        this.seListenModelBtn.style.display = 'none';
+
+        if (this.speakingExam.index >= this.speakingExam.data.length) {
+            this.showSpeakingExamResults();
+        } else {
+            this.seScoreTracker.classList.remove('hidden');
+            this.renderSEProgressDots();
+            this.renderSpeakingExamQuestion();
+        }
+    }
+
+    renderSEProgressDots() {
+        const total = this.speakingExam.data.length;
+        this.seProgressDots.innerHTML = '';
+
+        for (let i = 0; i < total; i++) {
+            const dot = document.createElement('span');
+            dot.className = 'se-dot';
+            if (i === this.speakingExam.index) dot.classList.add('current');
+            else if (i < this.speakingExam.index) {
+                const record = this.speakingExam.scores[i];
+                if (record) {
+                    dot.classList.add(record.passed ? 'correct' : 'wrong');
+                }
+            }
+            this.seProgressDots.appendChild(dot);
+        }
+    }
+
+    updateSEProgressDots() {
+        this.renderSEProgressDots();
+    }
+
+    updateSEScoreTracker() {
+        const total = this.speakingExam.data.length;
+        const answered = this.speakingExam.scores.length;
+        const avgScore = answered > 0
+            ? Math.round(this.speakingExam.scores.reduce((s, r) => s + r.totalScore, 0) / answered)
+            : 0;
+
+        this.seScoreTracker.classList.remove('hidden');
+        this.seScoreFill.style.width = answered > 0 ? `${(answered / total) * 100}%` : '0%';
+        this.seScoreCount.textContent = `${answered}/${total} beantwoord`;
+        this.seScorePct.textContent = `Gem. ${avgScore}%`;
+    }
+
+    showSpeakingExamResults() {
+        this.sePlayContainer.classList.add('hidden');
+        this.seResultContainer.classList.remove('hidden');
+
+        const total = this.speakingExam.scores.length;
+        const avgScore = total > 0
+            ? Math.round(this.speakingExam.scores.reduce((s, r) => s + r.totalScore, 0) / total)
+            : 0;
+        const passedCount = this.speakingExam.scores.filter(r => r.passed).length;
+        const overallPassed = avgScore >= 60;
+
+        const circumference = 364.4;
+        const offset = circumference * (1 - avgScore / 100);
+        this.seResultRing.setAttribute('stroke-dashoffset', offset);
+        this.seResultRing.setAttribute('stroke', overallPassed ? 'var(--success)' : 'var(--danger)');
+        this.seResultPct.textContent = `${avgScore}%`;
+
+        this.seResultMsg.textContent = overallPassed
+            ? `✅ Geslaagd! (${passedCount}/${total} vragen ≥60%)`
+            : `❌ Nog niet geslaagd (${passedCount}/${total} vragen ≥60%)`;
+        this.seResultMsg.className = `se-result-msg ${overallPassed ? 'passed' : 'failed'}`;
+
+        const byType = {};
+        this.speakingExam.data.forEach((q, i) => {
+            const record = this.speakingExam.scores[i];
+            if (!record) return;
+            if (!byType[q.type]) byType[q.type] = { total: 0, count: 0 };
+            byType[q.type].total += record.totalScore;
+            byType[q.type].count++;
+        });
+
+        const typeLabels = {
+            'vraagAntwoord': 'Vraag & Antwoord',
+            'plaatjesBeschrijven': 'Plaatjes Beschrijven',
+            'kiezenUitleggen': 'Kiezen & Uitleggen',
+            'verhaalVertellen': 'Verhaal Vertellen'
+        };
+
+        this.seResultBreakdown.innerHTML = Object.entries(byType).map(([type, data]) => {
+            const avg = Math.round(data.total / data.count);
+            let cls = 'bad';
+            if (avg >= 80) cls = 'good';
+            else if (avg >= 60) cls = 'ok';
+            return `<div class="se-breakdown-row">
+                <span class="se-bd-label">${typeLabels[type] || type}</span>
+                <span class="se-bd-score ${cls}">${avg}%</span>
+            </div>`;
+        }).join('');
+
+        if (this.speakingExam.wrongQuestions.length > 0) {
+            this.seResultWeak.classList.remove('hidden');
+            this.seWeakList.innerHTML = this.speakingExam.wrongQuestions.map(wq =>
+                `<li><strong>${wq.question.promptNLShort}</strong> — ${wq.score}%</li>`
+            ).join('');
+        } else {
+            this.seResultWeak.classList.add('hidden');
+        }
+    }
+
+    // ============================================================
+    //  SPEAKING EXAM — SVG PLACEHOLDERS
+    // ============================================================
+    getPlaceholderSVG(type, alt) {
+        const svgs = {
+            // Deel 2 placeholders
+            womanRunning: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#eef2ff"/><circle cx="100" cy="55" r="14" stroke-width="2.5"/><line x1="100" y1="69" x2="100" y2="105"/><line x1="100" y1="80" x2="80" y2="95"/><line x1="100" y1="80" x2="120" y2="95"/><line x1="100" y1="105" x2="78" y2="130"/><line x1="100" y1="105" x2="118" y2="118"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">park</text></svg>`,
+            carAccident: `<svg viewBox="0 0 200 150" fill="none" stroke="#ef4444" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#fef2f2"/><rect x="30" y="55" width="60" height="30" rx="5" fill="#fca5a5"/><rect x="100" y="65" width="60" height="30" rx="5" fill="#fca5a5"/><circle cx="45" cy="90" r="8" stroke-width="2"/><circle cx="115" cy="95" r="8" stroke-width="2"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">ongeluk</text></svg>`,
+            brokenLeg: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#eef2ff"/><rect x="60" y="35" width="70" height="55" rx="6" fill="#c7d2fe" stroke-width="2"/><line x1="70" y1="90" x2="50" y2="120"/><line x1="70" y1="90" x2="110" y2="130" stroke="#ef4444"/><circle cx="120" cy="110" r="3" fill="#ef4444"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">ziekenhuis</text></svg>`,
+            schoolLunch: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#f0fdf4"/><rect x="60" y="40" width="80" height="45" rx="8" fill="#bbf7d0" stroke-width="2"/><circle cx="80" cy="62" r="5" fill="#ef4444"/><circle cx="110" cy="60" r="5" fill="#f59e0b"/><rect x="70" y="72" width="40" height="8" rx="2" fill="#d4d4d8"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">school lunch</text></svg>`,
+            trafficJam: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#fefce8"/><rect x="20" y="55" width="50" height="25" rx="4" fill="#fcd34d" stroke-width="2"/><rect x="80" y="50" width="50" height="25" rx="4" fill="#fcd34d" stroke-width="2"/><rect x="135" y="60" width="50" height="25" rx="4" fill="#fcd34d" stroke-width="2"/><circle cx="35" cy="85" r="6"/><circle cx="95" cy="80" r="6"/><circle cx="150" cy="90" r="6"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">file</text></svg>`,
+            brushingTeeth: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#eef2ff"/><circle cx="100" cy="55" r="14" stroke-width="2.5"/><line x1="100" y1="69" x2="100" y2="100"/><line x1="100" y1="80" x2="130" y2="60" stroke="#06b6d4" stroke-width="4"/><rect x="125" y="52" width="20" height="12" rx="3" fill="#cbd5e1" stroke-width="1.5"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">tanden poetsen</text></svg>`,
+            spilledCoffee: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#fef2f2"/><rect x="50" y="50" width="100" height="50" rx="6" fill="#e2e8f0" stroke-width="2"/><line x1="70" y1="60" x2="130" y2="60" stroke-width="1.5"/><line x1="70" y1="70" x2="130" y2="70" stroke-width="1.5"/><line x1="70" y1="80" x2="100" y2="80" stroke-width="1.5"/><ellipse cx="130" cy="75" rx="15" ry="6" fill="#a16207" opacity="0.7"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">koffie op toetsenbord</text></svg>`,
+            atCinema: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#1e1b4b"/><rect x="30" y="25" width="140" height="75" rx="4" fill="#312e81" stroke="#818cf8"/><circle cx="130" cy="45" r="10" fill="#818cf8"/><rect x="30" y="105" width="140" height="20" rx="3" fill="#4c1d95" stroke="#818cf8" stroke-width="1.5"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#a5b4fc">bioscoop</text></svg>`,
+            bikingToWork: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#eef2ff"/><circle cx="80" cy="55" r="10" stroke-width="2"/><line x1="80" y1="65" x2="80" y2="95"/><line x1="80" y1="78" x2="60" y2="88"/><line x1="80" y1="78" x2="100" y2="88"/><circle cx="60" cy="108" r="10" stroke-width="2"/><circle cx="105" cy="108" r="10" stroke-width="2"/><line x1="60" y1="108" x2="105" y2="108"/><line x1="80" y1="95" x2="60" y2="108"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">fiets naar werk</text></svg>`,
+            butcher: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="130" height="100"><rect x="10" y="10" width="180" height="130" rx="8" fill="#fef2f2"/><circle cx="100" cy="50" r="14" stroke-width="2.5"/><line x1="100" y1="64" x2="100" y2="95"/><line x1="100" y1="75" x2="70" y2="85"/><line x1="100" y1="75" x2="130" y2="75"/><line x1="130" y1="75" x2="150" y2="65" stroke="#94a3b8" stroke-width="4"/><text x="100" y="145" text-anchor="middle" font-size="9" fill="#64748b">slager</text></svg>`,
+
+            // Deel 3 & 4 placeholders
+            shower: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#f0f9ff"/><circle cx="100" cy="55" r="14" stroke-width="2"/><line x1="100" y1="69" x2="100" y2="100"/><line x1="100" y1="80" x2="80" y2="95"/><line x1="100" y1="80" x2="120" y2="95"/><line x1="100" y1="35" x2="100" y2="25" stroke="#06b6d4"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">douche</text></svg>`,
+            bathtub: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#f0f9ff"/><ellipse cx="100" cy="80" rx="55" ry="25" fill="#bae6fd" stroke-width="2"/><circle cx="100" cy="55" r="10" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">bad</text></svg>`,
+            modernSchool: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="30" y="20" width="140" height="100" rx="4" fill="#eef2ff"/><rect x="50" y="50" width="40" height="35" rx="2" fill="#c7d2fe"/><rect x="110" y="50" width="40" height="35" rx="2" fill="#c7d2fe"/><text x="100" y="15" text-anchor="middle" font-size="9" fill="#64748b">modern gebouw</text></svg>`,
+            oldSchool: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="30" y="20" width="140" height="100" rx="4" fill="#fefce8"/><polygon points="100,10 60,45 140,45" fill="#fcd34d"/><rect x="65" y="60" width="30" height="35" fill="#fef3c7"/><rect x="105" y="60" width="30" height="35" fill="#fef3c7"/><text x="100" y="140" text-anchor="middle" font-size="9" fill="#64748b">oud gebouw</text></svg>`,
+            coffee: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#fefce8"/><path d="M80 30 L70 90 Q70 105 100 105 Q130 105 130 90 L120 30Z" fill="#a16207" stroke-width="2"/><path d="M120 40 Q140 40 140 60 Q140 80 120 80" fill="none" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">koffie</text></svg>`,
+            milk: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="75" y="25" width="50" height="90" rx="6" fill="#e0f2fe"/><rect x="65" y="20" width="8" height="15" rx="2" fill="#bae6fd"/><line x1="70" y1="35" x2="130" y2="35" stroke="#94a3b8"/><line x1="70" y1="80" x2="130" y2="80" stroke="#94a3b8"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">melk</text></svg>`,
+            dunes: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#fefce8"/><path d="M10 110 Q40 60 70 105 Q100 55 130 100 Q160 70 190 105" fill="#fcd34d" stroke-width="2"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">duinen</text></svg>`,
+            cityBike: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="40" y="15" width="50" height="60" rx="3" fill="#e2e8f0"/><rect x="100" y="25" width="50" height="50" rx="3" fill="#e2e8f0"/><rect x="50" y="85" width="30" height="30" rx="3" fill="#cbd5e1"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">stad</text></svg>`,
+            salad: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><ellipse cx="100" cy="70" rx="50" ry="20" fill="#bbf7d0"/><circle cx="85" cy="62" r="7" fill="#ef4444" opacity="0.8"/><circle cx="115" cy="65" r="5" fill="#f59e0b" opacity="0.8"/><ellipse cx="100" cy="68" rx="25" ry="10" fill="#22c55e" opacity="0.6"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">salade</text></svg>`,
+            hamburger: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="100" cy="45" r="25" fill="#f59e0b" stroke-width="2"/><rect x="75" y="48" width="50" height="6" rx="2" fill="#a16207"/><rect x="75" y="58" width="50" height="6" rx="2" fill="#22c55e"/><rect x="78" y="68" width="44" height="6" rx="2" fill="#ef4444"/><circle cx="100" cy="80" r="22" fill="#f59e0b" stroke-width="2"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">hamburger</text></svg>`,
+            train: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="30" y="40" width="140" height="55" rx="8" fill="#e0e7ff"/><rect x="50" y="35" width="30" height="15" rx="3" fill="#a5b4fc"/><rect x="110" y="35" width="30" height="15" rx="3" fill="#a5b4fc"/><circle cx="65" cy="100" r="9"/><circle cx="135" cy="100" r="9"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">trein</text></svg>`,
+            car: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="35" y="50" width="130" height="40" rx="10" fill="#dbeafe"/><rect x="60" y="35" width="55" height="20" rx="5" fill="#bfdbfe"/><circle cx="65" cy="95" r="10"/><circle cx="135" cy="95" r="10"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">auto</text></svg>`,
+            teacher: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="100" cy="35" r="14"/><line x1="100" y1="50" x2="100" y2="85"/><rect x="30" y="90" width="140" height="35" rx="5" fill="#e2e8f0"/><line x1="100" y1="75" x2="50" y2="90" stroke-width="2"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">leraar</text></svg>`,
+            nurse: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="100" cy="35" r="14"/><line x1="100" y1="50" x2="100" y2="85"/><line x1="100" y1="65" x2="70" y2="80" stroke="#ef4444" stroke-width="2"/><rect x="70" y="75" width="20" height="12" rx="3" fill="#fef2f2"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">zorg</text></svg>`,
+            hotAirBalloon: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#f0f9ff"/><circle cx="100" cy="50" r="30" fill="#fbbf24" stroke-width="2"/><line x1="100" y1="50" x2="100" y2="15" stroke="#a16207"/><rect x="90" y="80" width="20" height="25" rx="3" fill="#a16207" stroke-width="2"/><line x1="90" y1="105" x2="75" y2="115"/><line x1="110" y1="105" x2="125" y2="115"/><text x="100" y="140" text-anchor="middle" font-size="9" fill="#64748b">heteluchtballon</text></svg>`,
+            parachute: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><path d="M100 15 L40 70 L160 70Z" fill="#fca5a5" stroke-width="2"/><line x1="100" y1="15" x2="100" y2="100"/><circle cx="100" cy="95" r="6"/><line x1="100" y1="100" x2="85" y2="120"/><line x1="100" y1="100" x2="115" y2="120"/><text x="100" y="140" text-anchor="middle" font-size="9" fill="#64748b">parachute</text></svg>`,
+            laptop: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="50" y="35" width="100" height="55" rx="4" fill="#e2e8f0"/><rect x="60" y="40" width="80" height="40" rx="2" fill="#cbd5e1"/><rect x="45" y="90" width="110" height="8" rx="3" fill="#94a3b8"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">laptop</text></svg>`,
+            desktop: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="30" width="80" height="50" rx="4" fill="#e2e8f0"/><rect x="65" y="35" width="70" height="38" rx="2" fill="#818cf8" opacity="0.3"/><rect x="75" y="85" width="50" height="8" rx="3" fill="#94a3b8"/><rect x="85" y="93" width="30" height="18" rx="3" fill="#cbd5e1"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">desktop</text></svg>`,
+            snackbar: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="30" y="50" width="140" height="70" rx="8" fill="#fef3c7"/><rect x="40" y="60" width="50" height="25" rx="4" fill="#fcd34d"/><text x="100" y="40" text-anchor="middle" font-size="12" font-weight="700" fill="#f59e0b">SNACKBAR</text><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">snackbar</text></svg>`,
+            restaurant: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="30" y="50" width="140" height="70" rx="8" fill="#f0fdf4"/><circle cx="70" cy="75" r="12" stroke-width="2"/><circle cx="130" cy="75" r="12" stroke-width="2"/><rect x="80" y="100" width="40" height="12" rx="3" fill="#bbf7d0"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">restaurant</text></svg>`,
+
+            // Deel 4 placeholders
+            birth: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="25" width="80" height="45" rx="8" fill="#fce7f3"/><circle cx="100" cy="55" r="10" fill="#f9a8d4"/><text x="100" y="120" text-anchor="middle" font-size="9" fill="#64748b">geboorte</text></svg>`,
+            wedding: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="100" cy="50" r="12" fill="none"/><line x1="100" y1="62" x2="100" y2="80"/><path d="M100 80 L70 110 L130 110Z" fill="#ffffff" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">bruiloft</text></svg>`,
+            funeral: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><cross cx="100" cy="60" size="25" stroke-width="3"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">begrafenis</text></svg>`,
+            groceries: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="50" y="30" width="45" height="50" rx="5" fill="#fef3c7"/><circle cx="65" cy="50" r="6" fill="#ef4444" opacity="0.7"/><rect x="105" y="40" width="45" height="40" rx="5" fill="#fef3c7"/><ellipse cx="125" cy="55" rx="10" ry="6" fill="#22c55e" opacity="0.7"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">boodschappen</text></svg>`,
+            cooking: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="35" width="80" height="45" rx="8" fill="#fef2f2"/><line x1="70" y1="50" x2="130" y2="50"/><circle cx="85" cy="60" r="10" fill="#fca5a5" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">koken</text></svg>`,
+            washing: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="70" y="30" width="60" height="50" rx="8" fill="#e0f2fe"/><line x1="80" y1="45" x2="120" y2="45"/><line x1="100" y1="60" x2="100" y2="20" stroke="#06b6d4" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">afwassen</text></svg>`,
+            rain: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#e0f2fe"/><ellipse cx="100" cy="45" rx="40" ry="15" fill="#93c5fd" stroke-width="2"/><line x1="70" y1="60" x2="65" y2="80" stroke="#60a5fa"/><line x1="100" y1="60" x2="95" y2="80" stroke="#60a5fa"/><line x1="130" y1="60" x2="125" y2="80" stroke="#60a5fa"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">regen</text></svg>`,
+            wind: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#fefce8"/><path d="M30 60 Q60 45 90 60" stroke="#94a3b8"/><path d="M50 80 Q80 65 110 80" stroke="#94a3b8"/><path d="M40 100 Q70 85 100 100" stroke="#94a3b8"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">wind</text></svg>`,
+            snow: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="10" y="5" width="180" height="140" rx="8" fill="#f8fafc"/><ellipse cx="100" cy="45" rx="45" ry="18" fill="#e2e8f0" stroke-width="2"/><circle cx="70" cy="75" r="3" fill="#cbd5e1"/><circle cx="100" cy="85" r="3" fill="#cbd5e1"/><circle cx="130" cy="72" r="3" fill="#cbd5e1"/><circle cx="85" cy="95" r="3" fill="#cbd5e1"/><text x="100" y="135" text-anchor="middle" font-size="9" fill="#64748b">sneeuw</text></svg>`,
+            hairWash: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="80" cy="45" r="14"/><line x1="80" y1="59" x2="80" y2="80"/><line x1="80" y1="68" x2="120" y2="55" stroke="#06b6d4"/><circle cx="120" cy="55" r="8" fill="#e0f2fe" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">haren wassen</text></svg>`,
+            hairCut: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="80" cy="45" r="14"/><line x1="80" y1="59" x2="80" y2="80"/><line x1="80" y1="60" x2="120" y2="50" stroke="#94a3b8"/><line x1="80" y1="62" x2="120" y2="55" stroke="#94a3b8"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">haren knippen</text></svg>`,
+            sweep: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><line x1="130" y1="45" x2="130" y2="95" stroke="#94a3b8"/><line x1="110" y1="70" x2="60" y2="100" stroke="#cbd5e1"/><line x1="70" y1="80" x2="40" y2="95"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">vegen</text></svg>`,
+            soap: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="50" y="40" width="40" height="30" rx="8" fill="#a5f3fc" stroke-width="2"/><line x1="80" y1="55" x2="120" y2="60" stroke="#67e8f9" stroke-width="3"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">zeep</text></svg>`,
+            washHands: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><ellipse cx="100" cy="50" rx="30" ry="10" fill="#e0f2fe"/><line x1="100" y1="50" x2="100" y2="70" stroke="#06b6d4" stroke-width="3"/><circle cx="80" cy="45" r="5"/><circle cx="120" cy="45" r="5"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">handen wassen</text></svg>`,
+            dryHands: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="50" y="45" width="100" height="35" rx="5" fill="#fef3c7"/><line x1="60" y1="55" x2="90" y2="55"/><line x1="60" y1="65" x2="90" y2="65"/><circle cx="110" cy="60" r="8"/><circle cx="130" cy="60" r="8"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">handen drogen</text></svg>`,
+            laptopBag: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="45" y="30" width="110" height="65" rx="10" fill="#e2e8f0"/><rect x="55" y="40" width="90" height="40" rx="3" fill="#cbd5e1"/><path d="M45 45 Q100 30 155 45" fill="none" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">laptoptas</text></svg>`,
+            toiletryBag: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="55" y="40" width="90" height="45" rx="8" fill="#fce7f3"/><rect x="65" y="50" width="20" height="25" rx="3" fill="#f9a8d4"/><circle cx="110" cy="60" r="8" fill="#d8b4fe"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">toilettas</text></svg>`,
+            suitcase: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="55" y="35" width="90" height="60" rx="8" fill="#dbeafe"/><rect x="75" y="30" width="50" height="12" rx="4" fill="#bfdbfe"/><line x1="85" y1="55" x2="115" y2="55"/><line x1="85" y1="70" x2="115" y2="70"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">rolkoffer</text></svg>`,
+            sandwich: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><polygon points="60,40 140,40 120,80 80,80" fill="#fcd34d"/><polygon points="65,45 135,45 118,75 82,75" fill="#22c55e" opacity="0.5"/><rect x="80" y="55" width="40" height="15" rx="2" fill="#a16207"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">broodje</text></svg>`,
+            coffeeCup: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><path d="M70 35 L65 95 Q65 105 100 105 Q135 105 135 95 L130 35Z" fill="#a16207" stroke-width="2"/><path d="M130 45 Q150 45 150 65 Q150 85 130 85" fill="none" stroke-width="2"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">koffie</text></svg>`,
+            atComputer: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="45" width="80" height="45" rx="4" fill="#e2e8f0"/><rect x="65" y="50" width="70" height="33" rx="2" fill="#818cf8" opacity="0.3"/><circle cx="100" cy="35" r="10"/><line x1="100" y1="45" x2="100" y2="60"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">computer</text></svg>`,
+            fruit: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="80" cy="55" r="15" fill="#ef4444" opacity="0.7"/><circle cx="120" cy="50" r="12" fill="#f59e0b" opacity="0.7"/><ellipse cx="100" cy="75" rx="18" ry="10" fill="#22c55e" opacity="0.7"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">fruit</text></svg>`,
+            vegetables: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="70" cy="55" r="15" fill="#f97316" opacity="0.7"/><ellipse cx="120" cy="50" rx="10" ry="18" fill="#ef4444" opacity="0.7"/><rect x="85" y="70" width="30" height="15" rx="4" fill="#22c55e" opacity="0.7"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">groenten</text></svg>`,
+            cookies: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="40" width="80" height="50" rx="6" fill="#fcd34d"/><circle cx="80" cy="60" r="6" fill="#a16207"/><circle cx="105" cy="55" r="6" fill="#a16207"/><circle cx="120" cy="68" r="6" fill="#a16207"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">koekjes</text></svg>`,
+            bricks: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="40" width="30" height="18" rx="2" fill="#f87171"/><rect x="95" y="40" width="30" height="18" rx="2" fill="#f87171"/><rect x="130" y="40" width="30" height="18" rx="2" fill="#f87171"/><rect x="70" y="62" width="30" height="18" rx="2" fill="#f87171"/><rect x="105" y="62" width="30" height="18" rx="2" fill="#f87171"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">stenen</text></svg>`,
+            wall: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="50" y="35" width="100" height="65" rx="2" fill="#fecaca"/><line x1="75" y1="35" x2="75" y2="100"/><line x1="100" y1="35" x2="100" y2="100"/><line x1="125" y1="35" x2="125" y2="100"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">muur</text></svg>`,
+            roof: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><polygon points="100,25 40,70 160,70" fill="#fca5a5"/><rect x="60" y="70" width="80" height="35" fill="#fecaca"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">dak</text></svg>`,
+            eating: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><rect x="60" y="55" width="80" height="35" rx="6" fill="#f0fdf4"/><circle cx="85" cy="72" r="8" fill="#d4d4d8"/><line x1="110" y1="65" x2="130" y2="75"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">eten</text></svg>`,
+            wine: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><path d="M85 35 L95 95 L105 95 L115 35Z" fill="#dc2626" opacity="0.6" stroke-width="2"/><line x1="85" y1="35" x2="115" y2="35"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">rode wijn</text></svg>`,
+            withBrother: `<svg viewBox="0 0 200 150" fill="none" stroke="#6366f1" stroke-width="3" width="100" height="80"><circle cx="70" cy="50" r="12"/><line x1="70" y1="62" x2="70" y2="85"/><circle cx="130" cy="55" r="12"/><line x1="130" y1="67" x2="130" y2="85"/><line x1="70" y1="75" x2="130" y2="78"/><text x="100" y="130" text-anchor="middle" font-size="9" fill="#64748b">met broer</text></svg>`,
+        };
+
+        return svgs[type] || `<svg viewBox="0 0 200 150" fill="none" stroke="#94a3b8" stroke-width="2" width="100" height="80"><rect x="10" y="10" width="180" height="130" rx="8" fill="#f8fafc"/><text x="100" y="80" text-anchor="middle" font-size="12" fill="#94a3b8">${alt || type}</text></svg>`;
     }
 }
 

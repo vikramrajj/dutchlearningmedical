@@ -137,6 +137,15 @@
                             </svg>
                             KNS Quiz
                         </button>
+                        <button class="mode-btn" id="modeSpeakingExam" data-mode="speakingexam" style="display:none;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                <line x1="12" y1="19" x2="12" y2="23"/>
+                                <line x1="8" y1="23" x2="16" y2="23"/>
+                            </svg>
+                            Sprek Examen
+                        </button>
                     </div>
                 </div>
 
@@ -684,6 +693,150 @@
                     </div>
                     <button class="btn btn-primary" id="knsRestartTopicBtn" style="margin-top: 20px;">Opnieuw proberen</button>
                     <button class="btn btn-secondary" id="knsFinishBtn">Klaar</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SPEAKING EXAM MODE ===================== -->
+        <section class="speaking-exam-section hidden" id="speakingExamSection">
+            <!-- TOPICS SCREEN -->
+            <div id="seTopicsContainer" class="se-topics-container">
+                <h2 class="section-title">🗣️ Spreken Examen (A2)</h2>
+                <p class="section-subtitle">Oefen voor het officiële A2 Spreekexamen — 4 vraagtypen, 42 vragen</p>
+
+                <!-- Full Exam Hero Button -->
+                <div class="full-exam-hero">
+                    <p class="hero-hint">Doe een volledig proefexamen met willekeurige vragen</p>
+                    <button class="btn btn-primary btn-large" id="seStartFullExamBtn">
+                        🎯 Start Volledig Examen (16 vragen)
+                    </button>
+                </div>
+
+                <!-- Per-Type Accordion -->
+                <div class="se-accordion" id="seAccordion">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- PLAY SCREEN -->
+            <div id="sePlayContainer" class="se-play-container hidden">
+                <div class="se-card">
+                    <div class="se-header">
+                        <div class="se-header-left">
+                            <span class="se-topic-badge" id="seTopicBadge">Vraagtype</span>
+                            <button class="btn-text se-back-btn" id="seBackToTopics">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                                Terug naar onderwerpen
+                            </button>
+                        </div>
+                        <div class="se-timer" id="seTimer">
+                            <svg width="50" height="50" viewBox="0 0 50 50" class="se-timer-ring">
+                                <circle cx="25" cy="25" r="21" fill="none" stroke="var(--bg-tertiary)" stroke-width="4"/>
+                                <circle cx="25" cy="25" r="21" fill="none" stroke="var(--primary)" stroke-width="4"
+                                    stroke-dasharray="131.95" stroke-dashoffset="0" stroke-linecap="round"
+                                    transform="rotate(-90 25 25)" id="seTimerCircle"/>
+                            </svg>
+                            <span class="se-timer-text" id="seTimerText">20</span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Dots -->
+                    <div class="se-progress-dots" id="seProgressDots"></div>
+
+                    <!-- Score Tracker -->
+                    <div class="se-score-tracker hidden" id="seScoreTracker">
+                        <div class="se-score-bar">
+                            <div class="se-score-fill" id="seScoreFill"></div>
+                        </div>
+                        <div class="se-score-info">
+                            <span class="se-score-count" id="seScoreCount">0/0</span>
+                            <span class="se-score-pct" id="seScorePct">0%</span>
+                        </div>
+                    </div>
+
+                    <!-- Question Content -->
+                    <div class="se-question-container">
+                        <!-- Prompt (auto-spoken) -->
+                        <div class="se-prompt-box">
+                            <p class="se-prompt-text" id="sePromptText"></p>
+                            <button class="speak-btn se-replay-btn" id="seReplayPromptBtn" title="Herhaal de vraag">
+                                🔊 Herhalen
+                            </button>
+                        </div>
+
+                        <!-- Images Grid (for types 2, 3, 4) -->
+                        <div class="se-images-grid hidden" id="seImagesGrid"></div>
+
+                        <!-- Choice Buttons (for type 3) -->
+                        <div class="se-choice-prompt hidden" id="seChoicePrompt"></div>
+                        <div class="se-choice-grid hidden" id="seChoiceGrid"></div>
+
+                        <!-- Recording Area -->
+                        <div class="se-recording-area">
+                            <button class="se-mic-btn" id="seMicBtn" aria-label="Klik om te spreken">
+                                <span class="se-pulse-ring" id="sePulseRing"></span>
+                                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+                                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+                                    <line x1="12" y1="19" x2="12" y2="23"/>
+                                    <line x1="8" y1="23" x2="16" y2="23"/>
+                                </svg>
+                            </button>
+                            <p class="se-status" id="seStatusText">Klik op de microfoon om te spreken</p>
+                            <p class="se-transcript" id="seLiveTranscript"></p>
+                        </div>
+                    </div>
+
+                    <!-- Feedback Panel -->
+                    <div class="se-feedback hidden" id="seFeedback">
+                        <div class="se-feedback-content">
+                            <div class="se-feedback-score" id="seFeedbackScore"></div>
+                            <p class="se-feedback-keywords" id="seFeedbackKeywords"></p>
+                            <div class="se-feedback-model hidden" id="seFeedbackModel">
+                                <p class="se-model-label">✅ Voorbeeld antwoord:</p>
+                                <p class="se-model-text" id="seModelText"></p>
+                            </div>
+                            <button class="btn btn-secondary" id="seListenModelBtn" style="margin-top: 8px; display: none;">
+                                🔊 Beluister voorbeeld
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="se-footer">
+                        <button class="btn btn-primary btn-large" id="seNextBtn">
+                            Volgende Vraag <span class="arrow">→</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS SCREEN -->
+            <div id="seResultContainer" class="se-result-container hidden">
+                <div class="se-result-card">
+                    <h2>Examen Resultaat</h2>
+                    <div class="se-result-circle" id="seResultCircle">
+                        <svg width="140" height="140" viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="58" fill="none" stroke="var(--bg-tertiary)" stroke-width="12"/>
+                            <circle cx="70" cy="70" r="58" fill="none" stroke="var(--primary)" stroke-width="12"
+                                stroke-dasharray="364.4" stroke-dashoffset="364.4" stroke-linecap="round"
+                                transform="rotate(-90 70 70)" id="seResultRing"/>
+                        </svg>
+                        <span class="se-result-pct" id="seResultPct">0%</span>
+                    </div>
+                    <p class="se-result-msg" id="seResultMsg"></p>
+
+                    <div class="se-result-breakdown" id="seResultBreakdown"></div>
+
+                    <div class="se-result-weak hidden" id="seResultWeak">
+                        <h3>Aandachtspunten</h3>
+                        <ul id="seWeakList"></ul>
+                    </div>
+
+                    <div class="se-result-actions">
+                        <button class="btn btn-primary" id="seRestartBtn">Opnieuw proberen</button>
+                        <button class="btn btn-secondary" id="seFinishBtn">Terug naar onderwerpen</button>
+                    </div>
                 </div>
             </div>
         </section>
