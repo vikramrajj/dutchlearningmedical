@@ -2019,7 +2019,7 @@ class FlashcardGame {
         heading.className = 'kns-exam-heading';
         heading.innerHTML = `
             <h3>📋 KNS Proefexamens</h3>
-            <p>Elk examen bevat 40 vragen — 5 uit elk van de 8 KNS onderwerpen. Tijdslimiet: 25 minuten.</p>
+            <p>Elk examen bevat 40 vragen — 5 uit elk van de 8 KNS onderwerpen. Tijdslimiet: 45 minuten.</p>
         `;
         container.appendChild(heading);
 
@@ -2088,7 +2088,7 @@ class FlashcardGame {
         this.knsQuiz.data = this.generateExamSet(examNumber);
         this.knsQuiz.isExam = true;
         this.knsQuiz.examNumber = examNumber;
-        this.knsQuiz.examTimerSeconds = 25 * 60; // 25 minutes
+        this.knsQuiz.examTimerSeconds = 45 * 60; // 45 minutes
         this.knsQuiz.examTimerInterval = null;
 
         this.knsTopicTitle.textContent = `Examen ${examNumber} (40 vragen)`;
@@ -2141,7 +2141,7 @@ class FlashcardGame {
 
             const circle = document.getElementById('knsTimerCircle');
             if (circle) {
-                const total = 25 * 60;
+                const total = 45 * 60;
                 const remaining = this.knsQuiz.examTimerSeconds;
                 const circumference = 113.1;
                 const offset = circumference * (1 - remaining / total);
