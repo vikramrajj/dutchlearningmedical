@@ -2010,7 +2010,7 @@ class FlashcardGame {
     //  KNS EXAM MODE
     // ============================================================
     renderExamSelection() {
-        const totalExams = 8;
+        const totalExams = 25;
 
         const container = document.createElement('div');
         container.className = 'kns-exam-selection';
