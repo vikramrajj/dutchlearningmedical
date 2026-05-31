@@ -346,6 +346,7 @@ class FlashcardGame {
             data: []
         };
         this.knsDataSource = 'current'; // 'current' | 'oefenexamens' | 'exam'
+        this.knsExamSets = null; // Pre-generated unique non-overlapping exam sets for Exam Test Mode
 
         // Speaking Exam state
         this.speakingExam = {
@@ -622,13 +623,21 @@ class FlashcardGame {
             this.hideExamTimer();
             this.knsQuiz.isExam = false;
             this.knsPlayContainer.classList.add('hidden');
-            this.knsTopicsContainer.classList.remove('hidden');
+            if (this.knsDataSource === 'examTest') {
+                this.knsDataSource = 'exam';
+                this.knsTopicsContainer.classList.remove('hidden');
+                this.initKnsTopics();
+            } else {
+                this.knsTopicsContainer.classList.remove('hidden');
+            }
         });
 
         this.knsSubmitBtn.addEventListener('click', () => this.submitKnsAnswer());
         this.knsNextBtn.addEventListener('click', () => this.nextKnsQuestion());
         this.knsRestartTopicBtn.addEventListener('click', () => {
-            if (this.knsQuiz.isExam) {
+            if (this.knsDataSource === 'examTest') {
+                this.startKnsExamTest(this.knsQuiz.examNumber);
+            } else if (this.knsQuiz.isExam) {
                 this.startKnsExam(this.knsQuiz.examNumber);
             } else {
                 this.startKnsTopic(this.knsQuiz.topic);
@@ -639,7 +648,13 @@ class FlashcardGame {
             this.hideExamTimer();
             this.knsQuiz.isExam = false;
             this.knsResultContainer.classList.add('hidden');
-            this.knsTopicsContainer.classList.remove('hidden');
+            if (this.knsDataSource === 'examTest') {
+                this.knsDataSource = 'exam';
+                this.knsTopicsContainer.classList.remove('hidden');
+                this.initKnsTopics();
+            } else {
+                this.knsTopicsContainer.classList.remove('hidden');
+            }
         });
 
         // ---- Speaking Exam events ----
@@ -2044,6 +2059,32 @@ class FlashcardGame {
         }
 
         container.appendChild(grid);
+
+        // --- Exam Test Mode section ---
+        const testHeading = document.createElement('div');
+        testHeading.className = 'kns-exam-heading';
+        testHeading.innerHTML = `
+            <h3>📝 Exam Test Mode</h3>
+            <p>8 unieke examens — 5 vragen uit elk van de 8 onderwerpen. Geen herhaling van vragen tussen examens. Tijdslimiet: 45 minuten.</p>
+        `;
+        container.appendChild(testHeading);
+
+        if (!this.knsExamSets) {
+            this.knsExamSets = this.generateUniqueExamSets();
+        }
+
+        const testGrid = document.createElement('div');
+        testGrid.className = 'kns-exam-grid';
+
+        for (let i = 1; i <= 8; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'kns-exam-btn kns-exam-test-btn';
+            btn.innerHTML = `<span class="exam-num">${i}</span><span class="exam-label">Test ${i}</span>`;
+            btn.addEventListener('click', () => this.startKnsExamTest(i));
+            testGrid.appendChild(btn);
+        }
+
+        container.appendChild(testGrid);
         this.knsAccordion.appendChild(container);
     }
 
@@ -2075,6 +2116,53 @@ class FlashcardGame {
             [result[i], result[j]] = [result[j], result[i]];
         }
         return result;
+    }
+
+    generateUniqueExamSets() {
+        const topics = Object.keys(oefenexamensData);
+        const numSets = 8;
+        const questionsPerTopic = 5;
+        const sets = [];
+
+        for (let s = 0; s < numSets; s++) sets.push([]);
+
+        topics.forEach(topic => {
+            const pool = this.seededShuffle([...oefenexamensData[topic]], topic.length);
+            for (let s = 0; s < numSets; s++) {
+                const chunk = pool.slice(s * questionsPerTopic, (s + 1) * questionsPerTopic);
+                sets[s].push(...chunk);
+            }
+        });
+
+        return sets.map((set, i) => this.seededShuffle(set, i + 100));
+    }
+
+    startKnsExamTest(testNumber) {
+        if (!this.knsExamSets) {
+            this.knsExamSets = this.generateUniqueExamSets();
+        }
+
+        this.knsDataSource = 'examTest';
+        this.knsQuiz.topic = `Exam Test ${testNumber}`;
+        this.knsQuiz.index = 0;
+        this.knsQuiz.score = 0;
+        this.knsQuiz.selected = null;
+        this.knsQuiz.isAnswered = false;
+        this.knsQuiz.wrongQuestions = [];
+        this.knsQuiz.data = this.knsExamSets[testNumber - 1];
+        this.knsQuiz.isExam = true;
+        this.knsQuiz.examNumber = testNumber;
+        this.knsQuiz.examTimerSeconds = 45 * 60;
+        this.knsQuiz.examTimerInterval = null;
+
+        this.knsTopicTitle.textContent = `Exam Test ${testNumber} (40 vragen)`;
+        this.knsTopicsContainer.classList.add('hidden');
+        this.knsResultContainer.classList.add('hidden');
+        this.knsPlayContainer.classList.remove('hidden');
+
+        this.showExamTimer();
+        this.startExamTimer();
+        this.renderKnsQuestion();
     }
 
     startKnsExam(examNumber) {

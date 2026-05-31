@@ -2993,6 +2993,34 @@ details[open]>.type-toggle-btn .chevron-icon {
     font-weight: 500;
 }
 
+/* Exam Test Mode buttons — distinct blue accent */
+.kns-exam-test-btn {
+    background: white;
+    border: 2px solid #e0e7ff;
+    border-radius: 0.75rem;
+    padding: 0.8rem 0.4rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+    font-family: var(--font-body);
+}
+
+.kns-exam-test-btn:hover {
+    border-color: var(--primary);
+    background: #eff6ff;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+}
+
+.kns-exam-test-btn .exam-num {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
 /* Exam Timer (in quiz header) */
 .kns-exam-timer {
     display: flex;
