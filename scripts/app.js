@@ -915,6 +915,26 @@ class FlashcardGame {
         this.domainMedical.classList.toggle('active', newDomain === 'medical');
         this.domainGeneral.classList.toggle('active', newDomain === 'general');
 
+        // Swap Vinayak/Siddhi label order & boldness
+        if (this.labelVinayak && this.labelSiddhi) {
+            const parent = this.labelVinayak.parentNode;
+            if (newDomain === 'medical') {
+                // Siddhi on top, bold
+                parent.insertBefore(this.labelSiddhi, this.labelVinayak);
+                this.labelSiddhi.style.cssText = 'font-weight:700;font-size:0.85rem;';
+                this.labelVinayak.style.cssText = 'font-size:0.75rem;';
+            } else {
+                // Vinayak on top, bold
+                parent.insertBefore(this.labelVinayak, this.labelSiddhi);
+                this.labelVinayak.style.cssText = 'font-weight:700;font-size:0.85rem;';
+                this.labelSiddhi.style.cssText = 'font-size:0.75rem;';
+            }
+        }
+        // Sync visual toggle checkbox
+        if (this.vinayakSiddhiToggle) {
+            this.vinayakSiddhiToggle.checked = (newDomain === 'medical');
+        }
+
         // Show Pic Write, KNS Quiz, and Speaking Exam buttons only for General domain
         this.modePicWrite.style.display = (newDomain === 'general') ? '' : 'none';
         this.modeKnsQuiz.style.display = (newDomain === 'general') ? '' : 'none';
