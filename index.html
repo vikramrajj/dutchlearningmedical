@@ -44,6 +44,28 @@
                     General
                 </button>
             </div>
+            <!-- Vinayak / Siddhi visual toggle -->
+            <div class="theme-switch-wrapper" style="margin-left:12px; display:flex; align-items:center; gap:0.6rem;">
+                <label class="theme-switch" title="Switch between Vinayak (General) and Siddhi (Medical)">
+                    <input type="checkbox" class="theme-switch__checkbox" id="vinayakSiddhiToggle">
+                    <div class="theme-switch__container">
+                        <div class="theme-switch__circle-container">
+                            <div class="theme-switch__sun-moon-container">
+                                <div class="theme-switch__moon"></div>
+                                <div class="theme-switch__spot"></div>
+                                <div class="theme-switch__spot"></div>
+                                <div class="theme-switch__spot"></div>
+                                <div class="theme-switch__clouds"></div>
+                            </div>
+                        </div>
+                        <div class="theme-switch__stars-container"></div>
+                    </div>
+                </label>
+                <div style="display:flex; flex-direction:column; font-size:0.8rem; color:var(--text-muted);">
+                    <span id="labelVinayak" style="font-weight:700;">Vinayak</span>
+                    <span id="labelSiddhi" style="font-size:0.75rem;">Siddhi</span>
+                </div>
+            </div>
             <div class="level-badge" id="currentLevelDisplay">Level: A2</div>
         </div>
     </header>
@@ -145,6 +167,17 @@
                                 <line x1="8" y1="23" x2="16" y2="23"/>
                             </svg>
                             Sprek Examen
+                        </button>
+                        <button class="mode-btn" id="modeDerdeRonde" data-mode="derderonde">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2.5">
+                                <line x1="17" y1="10" x2="3" y2="10" />
+                                <line x1="21" y1="6" x2="3" y2="6" />
+                                <line x1="21" y1="14" x2="3" y2="14" />
+                                <line x1="17" y1="18" x2="3" y2="18" />
+                                <circle cx="19" cy="18" r="2" />
+                            </svg>
+                            Derde Ronde
                         </button>
                     </div>
                 </div>
@@ -838,6 +871,88 @@
                         <button class="btn btn-secondary" id="seFinishBtn">Terug naar onderwerpen</button>
                     </div>
                 </div>
+            </div>
+        </section>
+
+    <!-- ===================== DERDE RONDE MODE ===================== -->
+        <section class="derde-ronde-section hidden" id="derdeRondeSection">
+            <div class="spelling-card">
+                <div class="spelling-card-header">
+                    <span class="category-tag" id="drChapterLabel">Les 8</span>
+                    <button class="speak-btn text-blue-muted" id="speakBtnDrSentence" title="Hear sentence in Dutch">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+                            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+                            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+                        </svg>
+                    </button>
+                </div>
+
+                <p class="spelling-prompt-label">Vul het ontbrekende woord in: (Fill in the missing word)</p>
+
+                <!-- Sentence with a blank -->
+                <p class="vulin-sentence" id="drSentence">Loading...</p>
+
+                <!-- Hint -->
+                <div class="vulin-hint-row">
+                    <button class="vulin-hint-btn" id="drHintBtn">
+                        💡 Show hint
+                    </button>
+                    <p class="vulin-hint-text hidden" id="drHintText"></p>
+                </div>
+
+                <!-- Text input for answer -->
+                <div class="dr-input-row">
+                    <input type="text" class="dr-answer-input" id="drAnswerInput"
+                        placeholder="Typ het ontbrekende woord..." autocomplete="off" />
+                    <button class="btn btn-primary" id="drCheckBtn">Check</button>
+                </div>
+
+                <!-- Feedback -->
+                <div class="spelling-feedback hidden" id="drFeedback">
+                    <div class="feedback-icon" id="drFeedbackIcon"></div>
+                    <p class="feedback-message" id="drFeedbackMessage"></p>
+                    <p class="correct-answer hidden" id="drCorrectAnswer"></p>
+                </div>
+            </div>
+
+            <!-- Chapter selector -->
+            <div class="dr-chapter-nav">
+                <label class="dr-chapter-label">Chapter:</label>
+                <div class="dr-chapter-buttons" id="drChapterButtons">
+                    <!-- Injected by JS -->
+                </div>
+            </div>
+
+            <!-- Stats & Nav -->
+            <div class="spelling-stats">
+                <div class="stat-box">
+                    <span class="stat-num" id="drStatCorrect">0</span>
+                    <span class="stat-label">Correct</span>
+                </div>
+                <div class="stat-box stat-wrong">
+                    <span class="stat-num" id="drStatWrong">0</span>
+                    <span class="stat-label">Wrong</span>
+                </div>
+                <div class="stat-box stat-accuracy">
+                    <span class="stat-num" id="drStatAccuracy">–</span>
+                    <span class="stat-label">Accuracy</span>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button id="drPrevBtn" class="btn btn-secondary">Previous</button>
+                <button id="drShuffleBtn" class="btn btn-icon" title="Shuffle">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="16 3 21 3 21 8" />
+                        <line x1="4" y1="20" x2="21" y2="3" />
+                        <polyline points="21 16 21 21 16 21" />
+                        <line x1="15" y1="15" x2="21" y2="21" />
+                        <line x1="4" y1="4" x2="9" y2="9" />
+                    </svg>
+                </button>
+                <button id="drNextBtn" class="btn btn-primary">Next</button>
             </div>
         </section>
 

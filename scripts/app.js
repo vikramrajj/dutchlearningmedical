@@ -3,6 +3,7 @@ import { generalVocab } from './generalData.js';
 import { knsData } from './knsData.js';
 import { oefenexamensData } from './oefenexamensData.js';
 import { speakingExamData } from './speakingExamData.js';
+import { derdeRondeVulinData } from './derdeRondeVulinData.js';
 
 
 class FlashcardGame {
@@ -12,7 +13,7 @@ class FlashcardGame {
         this.filteredVocab = [...this.vocab].sort(() => Math.random() - 0.5);
 
         this.currentIndex = 0;
-        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz' | 'vulin' | 'writing'
+        this.mode = 'flashcard'; // 'flashcard' | 'spelling' | 'speaking' | 'quiz' | 'vulin' | 'writing' | 'derderonde'
 
         this.writingPrompts = [
             {
@@ -380,6 +381,10 @@ class FlashcardGame {
         this.domainMedical = document.getElementById('domainMedical');
         this.domainGeneral = document.getElementById('domainGeneral');
         this.appLogo = document.getElementById('appLogo');
+        // Vinayak <-> Siddhi visual toggle
+        this.vinayakSiddhiToggle = document.getElementById('vinayakSiddhiToggle');
+        this.labelVinayak = document.getElementById('labelVinayak');
+        this.labelSiddhi = document.getElementById('labelSiddhi');
 
 
         // DOM — flashcard mode
@@ -504,6 +509,34 @@ class FlashcardGame {
         this.speakBtnVulinSentence = document.getElementById('speakBtnVulinSentence');
         this.vulinStats = { correct: 0, wrong: 0 };
 
+        // DOM — Derde Ronde mode
+        this.modeDerdeRonde = document.getElementById('modeDerdeRonde');
+        this.derdeRondeSection = document.getElementById('derdeRondeSection');
+        this.drChapterLabel = document.getElementById('drChapterLabel');
+        this.drSentence = document.getElementById('drSentence');
+        this.drHintBtn = document.getElementById('drHintBtn');
+        this.drHintText = document.getElementById('drHintText');
+        this.drAnswerInput = document.getElementById('drAnswerInput');
+        this.drCheckBtn = document.getElementById('drCheckBtn');
+        this.drFeedback = document.getElementById('drFeedback');
+        this.drFeedbackIcon = document.getElementById('drFeedbackIcon');
+        this.drFeedbackMessage = document.getElementById('drFeedbackMessage');
+        this.drCorrectAnswer = document.getElementById('drCorrectAnswer');
+        this.drChapterButtons = document.getElementById('drChapterButtons');
+        this.drPrevBtn = document.getElementById('drPrevBtn');
+        this.drNextBtn = document.getElementById('drNextBtn');
+        this.drShuffleBtn = document.getElementById('drShuffleBtn');
+        this.drStatCorrect = document.getElementById('drStatCorrect');
+        this.drStatWrong = document.getElementById('drStatWrong');
+        this.drStatAccuracy = document.getElementById('drStatAccuracy');
+        this.speakBtnDrSentence = document.getElementById('speakBtnDrSentence');
+        this.drStats = { correct: 0, wrong: 0 };
+        this.drCurrentChapter = 'chapter_8';
+        this.drExercises = [];
+        this.drCurrentIndex = 0;
+        this.drChecked = false;
+        this.drHintShown = false;
+
         // DOM — writing mode
         this.modeWriting = document.getElementById('modeWriting');
         this.writingSection = document.getElementById('writingSection');
@@ -606,6 +639,17 @@ class FlashcardGame {
         this.domainMedical.addEventListener('click', () => this.switchDomain('medical'));
         this.domainGeneral.addEventListener('click', () => this.switchDomain('general'));
 
+        // ---- Vinayak / Siddhi visual toggle ----
+        if (this.vinayakSiddhiToggle) {
+            // checked -> Siddhi (medical), unchecked -> Vinayak (general)
+            this.vinayakSiddhiToggle.addEventListener('change', () => {
+                const domain = this.vinayakSiddhiToggle.checked ? 'medical' : 'general';
+                this.switchDomain(domain);
+            });
+            // initialize state to match current domain
+            this.vinayakSiddhiToggle.checked = (this.domain === 'medical');
+        }
+
         // ---- Mode toggle ----
 
         this.modeFlashcard.addEventListener('click', () => this.switchMode('flashcard'));
@@ -659,6 +703,7 @@ class FlashcardGame {
 
         // ---- Speaking Exam events ----
         this.modeSpeakingExam.addEventListener('click', () => this.switchMode('speakingexam'));
+        this.modeDerdeRonde.addEventListener('click', () => this.switchMode('derderonde'));
         this.seStartFullExamBtn.addEventListener('click', () => this.startSpeakingExam('full'));
         this.seBackToTopics.addEventListener('click', () => this.showSpeakingExamTopics());
         this.seMicBtn.addEventListener('click', () => this.toggleSpeakingExamRecording());
@@ -742,6 +787,21 @@ class FlashcardGame {
             this.vulinHintBtn.textContent = isHidden ? '💡 Show English hint' : '🙈 Hide hint';
         });
 
+        // ---- Derde Ronde mode events ----
+        this.drNextBtn.addEventListener('click', () => this.drNextExercise());
+        this.drPrevBtn.addEventListener('click', () => this.drPrevExercise());
+        this.drShuffleBtn.addEventListener('click', () => this.drShuffleExercises());
+        this.drCheckBtn.addEventListener('click', () => this.checkDrAnswer());
+        this.drAnswerInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') this.checkDrAnswer();
+        });
+        this.drHintBtn.addEventListener('click', () => {
+            this.drHintShown = !this.drHintShown;
+            this.drHintText.classList.toggle('hidden', !this.drHintShown);
+            this.drHintBtn.textContent = this.drHintShown ? '🙈 Hide hint' : '💡 Show hint';
+        });
+        this.speakBtnDrSentence.addEventListener('click', () => this.speakDrSentence());
+
         // ---- Writing mode events ----
         this.writingNextBtn.addEventListener('click', () => {
             this.currentWritingIndex = (this.currentWritingIndex + 1) % this.writingPrompts.length;
@@ -810,6 +870,7 @@ class FlashcardGame {
         this.picWritingSection.classList.toggle('hidden', newMode !== 'picwriting');
         this.knsQuizSection.classList.toggle('hidden', newMode !== 'knsquiz');
         this.speakingExamSection.classList.toggle('hidden', newMode !== 'speakingexam');
+        this.derdeRondeSection.classList.toggle('hidden', newMode !== 'derderonde');
 
         if (newMode === 'knsquiz') {
             this.initKnsTopics();
@@ -817,6 +878,10 @@ class FlashcardGame {
 
         if (newMode === 'speakingexam') {
             this.initSpeakingExamTopics();
+        }
+
+        if (newMode === 'derderonde') {
+            this.initDerdeRonde();
         }
 
         // Reset state for new mode
@@ -854,6 +919,8 @@ class FlashcardGame {
         this.modePicWrite.style.display = (newDomain === 'general') ? '' : 'none';
         this.modeKnsQuiz.style.display = (newDomain === 'general') ? '' : 'none';
         this.modeSpeakingExam.style.display = (newDomain === 'general') ? '' : 'none';
+        // Derde Ronde is Medical-only
+        this.modeDerdeRonde.style.display = (newDomain === 'medical') ? '' : 'none';
 
         // If switching away from General while in specialized modes, fall back to writing or flashcard
         if (newDomain === 'medical') {
@@ -866,6 +933,14 @@ class FlashcardGame {
                 return;
             }
             if (this.mode === 'speakingexam') {
+                this.switchMode('flashcard');
+                return;
+            }
+        }
+
+        // If switching away from Medical while in Derde Ronde, fall back to flashcard
+        if (newDomain === 'general') {
+            if (this.mode === 'derderonde') {
                 this.switchMode('flashcard');
                 return;
             }
@@ -1675,6 +1750,155 @@ class FlashcardGame {
         if (!item || !('speechSynthesis' in window)) return;
         window.speechSynthesis.cancel();
         const utterance = new SpeechSynthesisUtterance(item.example || item.dutch);
+        utterance.lang = 'nl-NL';
+        const voices = window.speechSynthesis.getVoices();
+        const nlVoice = voices.find(v => v.lang.startsWith('nl'));
+        if (nlVoice) utterance.voice = nlVoice;
+        window.speechSynthesis.speak(utterance);
+    }
+
+    // ============================================================
+    //  DERDE RONDE MODE
+    // ============================================================
+    initDerdeRonde() {
+        // Build chapter buttons in numerical order
+        this.drChapterButtons.innerHTML = '';
+        const chapters = Object.keys(derdeRondeVulinData).sort((a, b) => {
+            const na = parseInt(a.split('_')[1]);
+            const nb = parseInt(b.split('_')[1]);
+            return na - nb;
+        });
+        chapters.forEach(chKey => {
+            const ch = derdeRondeVulinData[chKey];
+            const btn = document.createElement('button');
+            btn.className = 'dr-chapter-btn';
+            btn.textContent = ch.title;
+            btn.dataset.chapter = chKey;
+            btn.addEventListener('click', () => {
+                this.drCurrentChapter = chKey;
+                this.drCurrentIndex = 0;
+                this.drExercises = [...ch.exercises];
+                this.drStats = { correct: 0, wrong: 0 };
+                this.updateDrChapterButtons();
+                this.drLoadExercise();
+                this.updateDrStats();
+            });
+            this.drChapterButtons.appendChild(btn);
+        });
+
+        // Load first chapter
+        this.drCurrentChapter = chapters[0];
+        const firstCh = derdeRondeVulinData[this.drCurrentChapter];
+        this.drExercises = [...firstCh.exercises];
+        this.drCurrentIndex = 0;
+        this.drStats = { correct: 0, wrong: 0 };
+        this.updateDrChapterButtons();
+        this.drLoadExercise();
+        this.updateDrStats();
+    }
+
+    updateDrChapterButtons() {
+        this.drChapterButtons.querySelectorAll('.dr-chapter-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.chapter === this.drCurrentChapter);
+        });
+        const ch = derdeRondeVulinData[this.drCurrentChapter];
+        this.drChapterLabel.textContent = ch ? `${ch.title} — Derde Ronde` : 'Derde Ronde';
+    }
+
+    drLoadExercise() {
+        if (this.drExercises.length === 0) return;
+        const ex = this.drExercises[this.drCurrentIndex];
+        
+        // Show blanked sentence
+        this.drSentence.textContent = ex.blanked;
+        
+        // Reset state
+        this.drAnswerInput.value = '';
+        this.drAnswerInput.className = 'dr-answer-input';
+        this.drAnswerInput.disabled = false;
+        this.drAnswerInput.focus();
+        this.drChecked = false;
+        this.drHintShown = false;
+        this.drHintText.classList.add('hidden');
+        this.drHintText.textContent = ex.hint || '(No hint available)';
+        this.drHintBtn.textContent = '💡 Show hint';
+        this.drFeedback.classList.add('hidden');
+        this.drCorrectAnswer.classList.add('hidden');
+        this.drCheckBtn.disabled = false;
+    }
+
+    checkDrAnswer() {
+        if (this.drChecked || this.drExercises.length === 0) return;
+        const ex = this.drExercises[this.drCurrentIndex];
+        const userAnswer = this.drAnswerInput.value.trim();
+        
+        if (!userAnswer) return;
+        
+        this.drChecked = true;
+        this.drAnswerInput.disabled = true;
+        this.drCheckBtn.disabled = true;
+        
+        // Normalize comparison: case-insensitive, trim whitespace
+        const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
+        const isCorrect = normalize(userAnswer) === normalize(ex.answer);
+        
+        this.drAnswerInput.classList.add(isCorrect ? 'correct-input' : 'wrong-input');
+        
+        this.drFeedback.classList.remove('hidden');
+        if (isCorrect) {
+            this.drStats.correct++;
+            this.drFeedback.className = 'spelling-feedback feedback-correct';
+            this.drFeedbackIcon.innerHTML = '✅';
+            this.drFeedbackMessage.textContent = 'Correct! Goed gedaan!';
+        } else {
+            this.drStats.wrong++;
+            this.drFeedback.className = 'spelling-feedback feedback-wrong';
+            this.drFeedbackIcon.innerHTML = '❌';
+            this.drFeedbackMessage.textContent = 'Incorrect!';
+            this.drCorrectAnswer.textContent = `Answer: ${ex.answer}`;
+            this.drCorrectAnswer.classList.remove('hidden');
+        }
+        
+        this.updateDrStats();
+    }
+
+    drNextExercise() {
+        if (this.drExercises.length === 0) return;
+        this.drCurrentIndex = (this.drCurrentIndex + 1) % this.drExercises.length;
+        this.drLoadExercise();
+    }
+
+    drPrevExercise() {
+        if (this.drExercises.length === 0) return;
+        this.drCurrentIndex = this.drCurrentIndex > 0 ? this.drCurrentIndex - 1 : this.drExercises.length - 1;
+        this.drLoadExercise();
+    }
+
+    drShuffleExercises() {
+        if (this.drExercises.length === 0) return;
+        for (let i = this.drExercises.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.drExercises[i], this.drExercises[j]] = [this.drExercises[j], this.drExercises[i]];
+        }
+        this.drCurrentIndex = 0;
+        this.drLoadExercise();
+    }
+
+    updateDrStats() {
+        const total = this.drStats.correct + this.drStats.wrong;
+        this.drStatCorrect.textContent = this.drStats.correct;
+        this.drStatWrong.textContent = this.drStats.wrong;
+        this.drStatAccuracy.textContent = total > 0
+            ? `${Math.round((this.drStats.correct / total) * 100)}%` : '–';
+    }
+
+    speakDrSentence() {
+        if (this.drExercises.length === 0 || !('speechSynthesis' in window)) return;
+        const ex = this.drExercises[this.drCurrentIndex];
+        if (!ex) return;
+        window.speechSynthesis.cancel();
+        // Speak the original sentence (not blanked)
+        const utterance = new SpeechSynthesisUtterance(ex.sentence);
         utterance.lang = 'nl-NL';
         const voices = window.speechSynthesis.getVoices();
         const nlVoice = voices.find(v => v.lang.startsWith('nl'));
