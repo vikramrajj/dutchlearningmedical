@@ -3875,6 +3875,28 @@ details[open]>.type-toggle-btn .chevron-icon {
     align-items: center;
 }
 
+.dr-answers-container {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.dr-answer-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.dr-answer-item label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.dr-answer-item .dr-answer-input {
+    width: 100%;
+}
+
 .dr-answer-input {
     flex: 1;
     padding: 0.75rem 1rem;

@@ -903,11 +903,13 @@
                 </div>
 
                 <!-- Text input for answer -->
-                <div class="dr-input-row">
+                <div class="dr-input-row" id="drInputRow">
                     <input type="text" class="dr-answer-input" id="drAnswerInput"
                         placeholder="Typ het ontbrekende woord..." autocomplete="off" />
                     <button class="btn btn-primary" id="drCheckBtn">Check</button>
                 </div>
+
+                <div class="dr-answers-container hidden" id="drAnswersContainer"></div>
 
                 <!-- Feedback -->
                 <div class="spelling-feedback hidden" id="drFeedback">

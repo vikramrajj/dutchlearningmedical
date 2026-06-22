@@ -530,12 +530,15 @@ class FlashcardGame {
         this.drStatWrong = document.getElementById('drStatWrong');
         this.drStatAccuracy = document.getElementById('drStatAccuracy');
         this.speakBtnDrSentence = document.getElementById('speakBtnDrSentence');
+        this.drAnswersContainer = document.getElementById('drAnswersContainer');
+        this.drInputRow = document.getElementById('drInputRow');
         this.drStats = { correct: 0, wrong: 0 };
         this.drCurrentChapter = 'chapter_8';
         this.drExercises = [];
         this.drCurrentIndex = 0;
         this.drChecked = false;
         this.drHintShown = false;
+        this.drAnswerInputs = [];
 
         // DOM — writing mode
         this.modeWriting = document.getElementById('modeWriting');
@@ -1828,42 +1831,98 @@ class FlashcardGame {
     drLoadExercise() {
         if (this.drExercises.length === 0) return;
         const ex = this.drExercises[this.drCurrentIndex];
-        
-        // Show blanked sentence
-        this.drSentence.textContent = ex.blanked;
-        
+        const hints = Array.isArray(ex.hints) ? ex.hints : ex.hint ? [ex.hint] : [];
+
+        // Show blanked paragraph or sentence
+        this.drSentence.textContent = ex.blanked || ex.sentence || '';
+
         // Reset state
         this.drAnswerInput.value = '';
         this.drAnswerInput.className = 'dr-answer-input';
         this.drAnswerInput.disabled = false;
-        this.drAnswerInput.focus();
+        this.drAnswerInputs = [];
+        this.drAnswersContainer.innerHTML = '';
         this.drChecked = false;
         this.drHintShown = false;
         this.drHintText.classList.add('hidden');
-        this.drHintText.textContent = ex.hint || '(No hint available)';
+        this.drHintText.textContent = hints.length > 0 ? hints.map((hint, index) => hints.length > 1 ? `${index + 1}. ${hint}` : hint).join(' ') : '(No hint available)';
         this.drHintBtn.textContent = '💡 Show hint';
         this.drFeedback.classList.add('hidden');
         this.drCorrectAnswer.classList.add('hidden');
         this.drCheckBtn.disabled = false;
+
+        if (Array.isArray(ex.answers) && ex.answers.length > 1) {
+            this.drInputRow.classList.add('hidden');
+            this.drAnswersContainer.classList.remove('hidden');
+
+            ex.answers.forEach((_, index) => {
+                const item = document.createElement('div');
+                item.className = 'dr-answer-item';
+                const label = document.createElement('label');
+                label.htmlFor = `drAnswerInput${index}`;
+                label.textContent = `Woord ${index + 1}`;
+                const input = document.createElement('input');
+                input.type = 'text';
+                input.id = `drAnswerInput${index}`;
+                input.className = 'dr-answer-input';
+                input.dataset.index = index;
+                input.placeholder = `Typ woord ${index + 1}...`;
+                input.autocomplete = 'off';
+                input.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' && index === ex.answers.length - 1) {
+                        this.checkDrAnswer();
+                    }
+                });
+                item.appendChild(label);
+                item.appendChild(input);
+                this.drAnswersContainer.appendChild(item);
+                this.drAnswerInputs.push(input);
+            });
+
+            this.drAnswersContainer.firstElementChild?.querySelector('input')?.focus();
+            this.drAnswerInput.disabled = true;
+        } else {
+            this.drInputRow.classList.remove('hidden');
+            this.drAnswersContainer.classList.add('hidden');
+            this.drAnswerInput.focus();
+        }
     }
 
     checkDrAnswer() {
         if (this.drChecked || this.drExercises.length === 0) return;
         const ex = this.drExercises[this.drCurrentIndex];
-        const userAnswer = this.drAnswerInput.value.trim();
-        
-        if (!userAnswer) return;
-        
-        this.drChecked = true;
-        this.drAnswerInput.disabled = true;
-        this.drCheckBtn.disabled = true;
-        
-        // Normalize comparison: case-insensitive, trim whitespace
         const normalize = s => s.toLowerCase().replace(/\s+/g, ' ').trim();
-        const isCorrect = normalize(userAnswer) === normalize(ex.answer);
-        
-        this.drAnswerInput.classList.add(isCorrect ? 'correct-input' : 'wrong-input');
-        
+        const expected = Array.isArray(ex.answers) ? ex.answers : [ex.answer];
+        const userAnswers = Array.isArray(ex.answers) && ex.answers.length > 1
+            ? this.drAnswerInputs.map(input => input.value.trim())
+            : [this.drAnswerInput.value.trim()];
+
+        if (userAnswers.every(answer => normalize(answer) === '')) return;
+
+        this.drChecked = true;
+        this.drCheckBtn.disabled = true;
+
+        if (Array.isArray(ex.answers) && ex.answers.length > 1) {
+            this.drAnswerInputs.forEach(input => {
+                input.disabled = true;
+                input.classList.remove('correct-input', 'wrong-input');
+            });
+        } else {
+            this.drAnswerInput.disabled = true;
+            this.drAnswerInput.classList.remove('correct-input', 'wrong-input');
+        }
+
+        const results = expected.map((answer, index) => normalize(userAnswers[index] || '') === normalize(answer || ''));
+        const isCorrect = results.every(Boolean);
+
+        if (Array.isArray(ex.answers) && ex.answers.length > 1) {
+            this.drAnswerInputs.forEach((input, index) => {
+                input.classList.add(results[index] ? 'correct-input' : 'wrong-input');
+            });
+        } else {
+            this.drAnswerInput.classList.add(isCorrect ? 'correct-input' : 'wrong-input');
+        }
+
         this.drFeedback.classList.remove('hidden');
         if (isCorrect) {
             this.drStats.correct++;
@@ -1875,10 +1934,13 @@ class FlashcardGame {
             this.drFeedback.className = 'spelling-feedback feedback-wrong';
             this.drFeedbackIcon.innerHTML = '❌';
             this.drFeedbackMessage.textContent = 'Incorrect!';
-            this.drCorrectAnswer.textContent = `Answer: ${ex.answer}`;
+            const wrongAnswers = expected
+                .map((answer, index) => results[index] ? null : `#${index + 1} = ${answer}`)
+                .filter(Boolean);
+            this.drCorrectAnswer.textContent = `Answer${wrongAnswers.length > 1 ? 's' : ''}: ${wrongAnswers.join(', ')}`;
             this.drCorrectAnswer.classList.remove('hidden');
         }
-        
+
         this.updateDrStats();
     }
 
