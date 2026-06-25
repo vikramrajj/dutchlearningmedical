@@ -902,14 +902,19 @@
                     <p class="vulin-hint-text hidden" id="drHintText"></p>
                 </div>
 
-                <!-- Text input for answer -->
+                <!-- Text input for single answer -->
                 <div class="dr-input-row" id="drInputRow">
                     <input type="text" class="dr-answer-input" id="drAnswerInput"
                         placeholder="Typ het ontbrekende woord..." autocomplete="off" />
-                    <button class="btn btn-primary" id="drCheckBtn">Check</button>
                 </div>
 
+                <!-- Multi-answer inputs -->
                 <div class="dr-answers-container hidden" id="drAnswersContainer"></div>
+
+                <!-- Check button (shared) -->
+                <div class="dr-check-row">
+                    <button class="btn btn-primary" id="drCheckBtn">Check</button>
+                </div>
 
                 <!-- Feedback -->
                 <div class="spelling-feedback hidden" id="drFeedback">

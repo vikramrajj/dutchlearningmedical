@@ -1869,7 +1869,7 @@ class FlashcardGame {
                 input.placeholder = `Typ woord ${index + 1}...`;
                 input.autocomplete = 'off';
                 input.addEventListener('keydown', (e) => {
-                    if (e.key === 'Enter' && index === ex.answers.length - 1) {
+                    if (e.key === 'Enter') {
                         this.checkDrAnswer();
                     }
                 });
