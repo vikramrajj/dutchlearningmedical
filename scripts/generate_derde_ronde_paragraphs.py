@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Generate multi-blank Derde Ronde exercises from raw chapter text.
 Extracts both paragraph-level (2-4 blanks) and sentence-level (1-2 blanks) exercises.
-Target: 32 exercises per chapter."""
+Uses multi-variation blank selection to maximize exercise count.
+Target: 64 exercises per chapter."""
 import json
 import random
 import re
@@ -140,10 +141,14 @@ def score_candidate(idx: int, word: str, total_tokens: int) -> int:
     return score
 
 
-def select_blanks(tokens: list[str], min_blanks: int = 1, max_blanks: int = 4) -> list[int]:
-    """Select which words to blank out. Returns list of token indices."""
+def select_blanks(tokens: list[str], min_blanks: int = 1, max_blanks: int = 4,
+                  skip_indices: set[int] = None) -> list[int]:
+    """Select which words to blank out. Returns list of token indices.
+    skip_indices allows generating alternate blank selections from the same text."""
     candidates = []
     for i, token in enumerate(tokens):
+        if skip_indices and i in skip_indices:
+            continue
         if WORD_RE.fullmatch(token) and is_candidate_word(token, i, tokens):
             candidates.append((i, token))
 
@@ -195,8 +200,9 @@ def build_blank_exercise(text: str, blanks: list[int]) -> dict | None:
     }
 
 
-def build_exercises(text: str, max_per_chapter: int = 32) -> list[dict]:
-    """Build all exercises for one chapter from its raw text."""
+def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
+    """Build all exercises for one chapter from its raw text.
+    Uses multiple variations of blank selection to maximize exercise count."""
     pages = text.split('\n\n')
 
     # --- Source 1: Reading pages → paragraph-level exercises ---
@@ -213,7 +219,7 @@ def build_exercises(text: str, max_per_chapter: int = 32) -> list[dict]:
                 continue
             paragraphs.append(para)
 
-    # Build paragraph-level exercises (2-4 blanks)
+    # Build paragraph-level exercises (2-4 blanks, multiple variations per paragraph)
     para_exercises = []
     for paragraph in paragraphs:
         tokens = tokenize(paragraph)
@@ -221,13 +227,36 @@ def build_exercises(text: str, max_per_chapter: int = 32) -> list[dict]:
                           if WORD_RE.fullmatch(t) and is_candidate_word(t, i, tokens))
         if n_candidates < 2:
             continue
-        n_blanks = min(4, max(2, n_candidates // 5))
-        blank_idxs = select_blanks(tokens, min_blanks=2, max_blanks=n_blanks)
-        if not blank_idxs or len(blank_idxs) < 2:
-            continue
-        ex = build_blank_exercise(paragraph, blank_idxs)
-        if ex and len(ex['answers']) >= 2:
-            para_exercises.append(ex)
+
+        # Generate up to 3 variations from long paragraphs, 1-2 from shorter ones
+        n_variations = 3 if n_candidates >= 10 else (2 if n_candidates >= 5 else 1)
+        used_blank_sets = set()
+
+        for variation in range(n_variations):
+            n_blanks = min(4, max(2, n_candidates // 5))
+            skip_set = set()
+            # For variations 2+, skip some previously-used candidates to get different blanks
+            if variation >= 1:
+                # Collect all candidates used in prior variations
+                for prev_key in used_blank_sets:
+                    skip_set.update(prev_key)
+                # If too many are skipped, clear some to allow fresh selection
+                if len(skip_set) > n_candidates // 3:
+                    skip_set = set(random.sample(list(skip_set), n_candidates // 4))
+
+            blank_idxs = select_blanks(tokens, min_blanks=2, max_blanks=n_blanks,
+                                       skip_indices=skip_set if skip_set else None)
+            if not blank_idxs or len(blank_idxs) < 2:
+                continue
+
+            blank_key = tuple(sorted(blank_idxs))
+            if blank_key in used_blank_sets:
+                continue
+            used_blank_sets.add(blank_key)
+
+            ex = build_blank_exercise(paragraph, blank_idxs)
+            if ex and len(ex['answers']) >= 2:
+                para_exercises.append(ex)
 
     # --- Source 2: Individual sentences → 1-2 blank exercises ---
     sentence_exercises = []
@@ -246,17 +275,36 @@ def build_exercises(text: str, max_per_chapter: int = 32) -> list[dict]:
                               if WORD_RE.fullmatch(t) and is_candidate_word(t, i, tokens))
             if n_candidates < 1:
                 continue
-            n_blanks = min(2, n_candidates)
-            blank_idxs = select_blanks(tokens, min_blanks=1, max_blanks=n_blanks)
-            if not blank_idxs:
-                continue
-            ex = build_blank_exercise(s, blank_idxs)
-            if ex and len(ex['answers']) >= 1:
-                sentence_exercises.append(ex)
+
+            # Generate up to 2 variations for sentences with 3+ candidates
+            n_variations = 2 if n_candidates >= 3 else 1
+            used_blank_sets = set()
+
+            for variation in range(n_variations):
+                n_blanks = min(2, n_candidates)
+                skip_set = set()
+                if variation >= 1:
+                    for prev_key in used_blank_sets:
+                        skip_set.update(prev_key)
+
+                blank_idxs = select_blanks(tokens, min_blanks=1, max_blanks=n_blanks,
+                                           skip_indices=skip_set if skip_set else None)
+                if not blank_idxs:
+                    continue
+
+                blank_key = tuple(sorted(blank_idxs))
+                if blank_key in used_blank_sets:
+                    continue
+                used_blank_sets.add(blank_key)
+
+                ex = build_blank_exercise(s, blank_idxs)
+                if ex and len(ex['answers']) >= 1:
+                    sentence_exercises.append(ex)
 
     # --- Combine & deduplicate ---
     all_exercises = []
     seen_answers = set()
+    seen_texts_dedup = set()
 
     for ex in para_exercises + sentence_exercises:
         # Quality filters
@@ -270,6 +318,7 @@ def build_exercises(text: str, max_per_chapter: int = 32) -> list[dict]:
         if para.count('_____') == 0 and ex['blanked'].count('_____') < 1:
             continue
 
+        # Deduplicate by answer key
         key = '|'.join(sorted(a.lower() for a in ex['answers']))
         if key in seen_answers:
             continue
@@ -292,7 +341,7 @@ def main() -> None:
     all_exercises = {}
     for ch_key in sorted(data.keys(), key=lambda x: int(x.split('_')[1])):
         ch = data[ch_key]
-        exercises = build_exercises(ch['text'], max_per_chapter=32)
+        exercises = build_exercises(ch['text'], max_per_chapter=64)
         print(f"{ch_key}: generated {len(exercises)} exercises")
         all_exercises[ch_key] = {
             'title': ch['title'],
@@ -302,7 +351,7 @@ def main() -> None:
     out = []
     out.append('// Auto-generated multi-blank fill-in-the-blank exercises')
     out.append('// Extracted from Derde Ronde chapters 8-15')
-    out.append('// Target: 32 exercises per chapter')
+    out.append('// Target: 64 exercises per chapter')
     out.append('export const derdeRondeVulinData = {')
 
     chapters = sorted(all_exercises.keys(), key=lambda x: int(x.split('_')[1]))
