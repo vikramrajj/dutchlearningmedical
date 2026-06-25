@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """Generate multi-blank Derde Ronde exercises from raw chapter text.
-Extracts both paragraph-level (2-4 blanks) and sentence-level (1-2 blanks) exercises.
+Extracts paragraph-level (2-4 blanks), sentence-level (1-2 blanks), and
+sentence-group (2-3 blanks) exercises. Includes exercise pages as source
+material (with pre-existing blanks stripped).
 Uses multi-variation blank selection to maximize exercise count.
-Target: 64 exercises per chapter."""
+Target: 125 exercises per chapter (1000 total)."""
 import json
 import random
 import re
@@ -52,6 +54,24 @@ def clean_text(text: str) -> str:
     return text.strip()
 
 
+def clean_exercise_page(text: str) -> str:
+    """Clean an exercise page: strip pre-existing _____ markers and other artifacts,
+    then apply normal text cleaning."""
+    # Remove pre-existing blanks (they're already exercises, we want the raw text)
+    text = re.sub(r'_{2,}', '', text)
+    # Remove section headers
+    for header in SECTION_HEADERS:
+        text = re.sub(rf'\b{header}\b', ' ', text, flags=re.IGNORECASE)
+    # Remove opdracht markers
+    text = re.sub(r'Opdracht\s+\d+', ' ', text)
+    # Remove standalone numbers (exercise numbers)
+    text = re.sub(r'\b\d{1,3}[.)]\s*', ' ', text)
+    text = re.sub(r'\(\s*\d{1,2}\s*\)', ' ', text)
+    # Collapse multiple spaces
+    text = re.sub(r'\s+', ' ', text)
+    return clean_text(text)
+
+
 def is_exercise_page(text: str) -> bool:
     upper = text.upper()
     if '_____' in text:
@@ -63,10 +83,22 @@ def is_exercise_page(text: str) -> bool:
     return False
 
 
-def split_sentences(text: str) -> list[str]:
+def split_sentences(text: str, min_len: int = 15) -> list[str]:
     """Split text into individual sentences."""
     raw = re.split(r'(?<=[.!?])\s+(?=[A-Z0-9"“‘’(])', text)
-    return [s.strip() for s in raw if s.strip() and len(s.strip()) > 20]
+    return [s.strip() for s in raw if s.strip() and len(s.strip()) >= min_len]
+
+
+def build_sentence_groups(sentences: list[str], group_size: int = 2) -> list[str]:
+    """Create overlapping groups of sentences (e.g., 2-sentence or 3-sentence groups)."""
+    if len(sentences) < group_size:
+        return []
+    groups = []
+    for i in range(len(sentences) - group_size + 1):
+        group = ' '.join(sentences[i:i+group_size])
+        if 40 <= len(group) <= 500:
+            groups.append(group)
+    return groups
 
 
 def split_into_chunks(text: str, min_len: int = 50, max_len: int = 500) -> list[str]:
@@ -200,26 +232,30 @@ def build_blank_exercise(text: str, blanks: list[int]) -> dict | None:
     }
 
 
-def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
+def build_exercises(text: str, max_per_chapter: int = 125) -> list[dict]:
     """Build all exercises for one chapter from its raw text.
-    Uses multiple variations of blank selection to maximize exercise count."""
+    Uses all available sources: reading pages, exercise pages, sentences, and sentence groups."""
     pages = text.split('\n\n')
 
-    # --- Source 1: Reading pages → paragraph-level exercises ---
-    reading_pages = [clean_text(page) for page in pages if not is_exercise_page(page)]
+    # --- Gather ALL text sources ---
+    reading_pages_raw = [clean_text(page) for page in pages if not is_exercise_page(page)]
+    exercise_pages_raw = [clean_exercise_page(page) for page in pages if is_exercise_page(page)]
+    all_pages = reading_pages_raw + exercise_pages_raw
+
+    # Extract paragraphs from all pages
     paragraphs = []
-    for page in reading_pages:
+    for page in all_pages:
         for paragraph in split_paragraphs(page):
             para = paragraph.strip()
-            if len(para) < 50:
+            if len(para) < 35:
                 continue
             if para.startswith('Les ') or para.startswith('Derde Ronde'):
                 continue
-            if para.count(' ') < 8:
+            if para.count(' ') < 5:
                 continue
             paragraphs.append(para)
 
-    # Build paragraph-level exercises (2-4 blanks, multiple variations per paragraph)
+    # --- Source 1: Paragraph-level exercises (2-4 blanks) ---
     para_exercises = []
     for paragraph in paragraphs:
         tokens = tokenize(paragraph)
@@ -228,21 +264,18 @@ def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
         if n_candidates < 2:
             continue
 
-        # Generate up to 3 variations from long paragraphs, 1-2 from shorter ones
-        n_variations = 3 if n_candidates >= 10 else (2 if n_candidates >= 5 else 1)
+        # More variations: 4 for rich paragraphs, 3 for medium, 1-2 for short
+        n_variations = 4 if n_candidates >= 12 else (3 if n_candidates >= 7 else (2 if n_candidates >= 4 else 1))
         used_blank_sets = set()
 
         for variation in range(n_variations):
-            n_blanks = min(4, max(2, n_candidates // 5))
+            n_blanks = min(4, max(2, n_candidates // 4))
             skip_set = set()
-            # For variations 2+, skip some previously-used candidates to get different blanks
             if variation >= 1:
-                # Collect all candidates used in prior variations
                 for prev_key in used_blank_sets:
                     skip_set.update(prev_key)
-                # If too many are skipped, clear some to allow fresh selection
-                if len(skip_set) > n_candidates // 3:
-                    skip_set = set(random.sample(list(skip_set), n_candidates // 4))
+                if len(skip_set) > n_candidates // 2:
+                    skip_set = set(random.sample(list(skip_set), max(1, n_candidates // 4)))
 
             blank_idxs = select_blanks(tokens, min_blanks=2, max_blanks=n_blanks,
                                        skip_indices=skip_set if skip_set else None)
@@ -258,13 +291,51 @@ def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
             if ex and len(ex['answers']) >= 2:
                 para_exercises.append(ex)
 
-    # --- Source 2: Individual sentences → 1-2 blank exercises ---
+    # --- Source 2: Sentence-group exercises (2-3 blanks) ---
+    group_exercises = []
+    seen_groups = set()
+    for page in all_pages:
+        sentences = split_sentences(page)
+        # 2-sentence groups
+        for group in build_sentence_groups(sentences, 2):
+            if group in seen_groups:
+                continue
+            seen_groups.add(group)
+            tokens = tokenize(group)
+            n_candidates = sum(1 for i, t in enumerate(tokens)
+                              if WORD_RE.fullmatch(t) and is_candidate_word(t, i, tokens))
+            if n_candidates < 2:
+                continue
+            n_blanks = min(3, max(2, n_candidates // 5))
+            blank_idxs = select_blanks(tokens, min_blanks=2, max_blanks=n_blanks)
+            if blank_idxs and len(blank_idxs) >= 2:
+                ex = build_blank_exercise(group, blank_idxs)
+                if ex and len(ex['answers']) >= 2:
+                    group_exercises.append(ex)
+        # 3-sentence groups
+        for group in build_sentence_groups(sentences, 3):
+            if group in seen_groups:
+                continue
+            seen_groups.add(group)
+            tokens = tokenize(group)
+            n_candidates = sum(1 for i, t in enumerate(tokens)
+                              if WORD_RE.fullmatch(t) and is_candidate_word(t, i, tokens))
+            if n_candidates < 3:
+                continue
+            n_blanks = min(4, max(2, n_candidates // 5))
+            blank_idxs = select_blanks(tokens, min_blanks=2, max_blanks=n_blanks)
+            if blank_idxs and len(blank_idxs) >= 2:
+                ex = build_blank_exercise(group, blank_idxs)
+                if ex and len(ex['answers']) >= 2:
+                    group_exercises.append(ex)
+
+    # --- Source 3: Individual sentences → 1-2 blank exercises ---
     sentence_exercises = []
     seen_texts = set()
-    for page in reading_pages:
+    for page in all_pages:
         for sentence in split_sentences(page):
             s = sentence.strip()
-            if len(s) < 30 or s.count(' ') < 5:
+            if len(s) < 20 or s.count(' ') < 3:
                 continue
             if s in seen_texts:
                 continue
@@ -276,8 +347,8 @@ def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
             if n_candidates < 1:
                 continue
 
-            # Generate up to 2 variations for sentences with 3+ candidates
-            n_variations = 2 if n_candidates >= 3 else 1
+            # More variations for richer sentences
+            n_variations = 3 if n_candidates >= 4 else (2 if n_candidates >= 2 else 1)
             used_blank_sets = set()
 
             for variation in range(n_variations):
@@ -301,15 +372,32 @@ def build_exercises(text: str, max_per_chapter: int = 64) -> list[dict]:
                 if ex and len(ex['answers']) >= 1:
                     sentence_exercises.append(ex)
 
+    # --- Source 4: 3-blank paragraph exercises from long texts ---
+    triple_exercises = []
+    for paragraph in paragraphs:
+        if len(paragraph) < 100:
+            continue
+        tokens = tokenize(paragraph)
+        n_candidates = sum(1 for i, t in enumerate(tokens)
+                          if WORD_RE.fullmatch(t) and is_candidate_word(t, i, tokens))
+        if n_candidates < 4:
+            continue
+        # Generate 1-2 triple-blank variations distinct from the 2-4 blank ones
+        for _ in range(min(2, n_candidates // 6)):
+            blank_idxs = select_blanks(tokens, min_blanks=3, max_blanks=3)
+            if blank_idxs and len(blank_idxs) == 3:
+                ex = build_blank_exercise(paragraph, blank_idxs)
+                if ex and len(ex['answers']) == 3:
+                    triple_exercises.append(ex)
+
     # --- Combine & deduplicate ---
     all_exercises = []
     seen_answers = set()
-    seen_texts_dedup = set()
 
-    for ex in para_exercises + sentence_exercises:
+    for ex in para_exercises + group_exercises + sentence_exercises + triple_exercises:
         # Quality filters
         para = ex['paragraph']
-        if len(para) < 30:
+        if len(para) < 20:
             continue
         if len(set(a.lower() for a in ex['answers'])) < len(ex['answers']):
             continue  # duplicate answers
@@ -341,7 +429,7 @@ def main() -> None:
     all_exercises = {}
     for ch_key in sorted(data.keys(), key=lambda x: int(x.split('_')[1])):
         ch = data[ch_key]
-        exercises = build_exercises(ch['text'], max_per_chapter=64)
+        exercises = build_exercises(ch['text'], max_per_chapter=125)
         print(f"{ch_key}: generated {len(exercises)} exercises")
         all_exercises[ch_key] = {
             'title': ch['title'],
@@ -351,7 +439,7 @@ def main() -> None:
     out = []
     out.append('// Auto-generated multi-blank fill-in-the-blank exercises')
     out.append('// Extracted from Derde Ronde chapters 8-15')
-    out.append('// Target: 64 exercises per chapter')
+    out.append('// Target: 125 exercises per chapter (1000 total)')
     out.append('export const derdeRondeVulinData = {')
 
     chapters = sorted(all_exercises.keys(), key=lambda x: int(x.split('_')[1]))
