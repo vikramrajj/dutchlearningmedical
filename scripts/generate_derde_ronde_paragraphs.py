@@ -302,96 +302,113 @@ def build_exercise(text: str, blank_indices: list[int]) -> dict | None:
 
 
 def generate_exercises(reading_text: str, target_count: int) -> list[dict]:
-    """Generate high-quality fill-in-the-blank exercises prioritizing semantic content."""
+    """Generate comprehensive reading comprehension exercises with 6-8 strategic blanks per passage.
+    Focus: Full paragraphs (~600+ chars) with semantic vocabulary focus."""
     text = clean_reading_text(reading_text)
     if len(text) < 500:
         return []
     
     all_exercises = []
     seen_answers = set()
-    paragraphs = split_paragraphs(text)
     sentences = split_sentences(text)
+    
+    if len(sentences) < 5:
+        return []
 
-    # Source 1: Paragraph exercises (2-3 blanks) - best for context
-    for para in paragraphs:
-        if len(para) < 60:
-            continue
-        tokens = tokenize(para)
-        n_candidates = sum(1 for i, t in enumerate(tokens)
-                          if WORD_RE.fullmatch(t) and is_content_word(t))
-        if n_candidates < 4:
+    # Strategy: Create longer passages with 6-8 blanks each (comprehensive reading comprehension)
+    # Group 4-6 sentences into one exercise, blank 6-8 words
+    attempts = 0
+    max_attempts = len(sentences) * 3
+    
+    while len(all_exercises) < target_count and attempts < max_attempts:
+        attempts += 1
+        
+        # Random sentence group size: 4-6 sentences per exercise
+        group_size = random.randint(4, 6)
+        start_idx = random.randint(0, len(sentences) - group_size)
+        group_sentences = sentences[start_idx:start_idx + group_size]
+        passage = ' '.join(group_sentences)
+        
+        # Ensure passage is long enough
+        if len(passage) < 300:
             continue
         
-        # Try different blank counts for diversity
-        for n_blanks in [3, 2]:
+        tokens = tokenize(passage)
+        
+        # Count how many content words we can blank
+        n_candidates = sum(1 for i, t in enumerate(tokens)
+                          if WORD_RE.fullmatch(t) and is_content_word(t))
+        
+        # Need at least 16 candidates to blank 6-8 safely (leave context)
+        if n_candidates < 16:
+            continue
+        
+        # Target 6-8 blanks for comprehensive reading exercises
+        for n_blanks in [7, 6, 8]:  # Try 7 first, then 6, then 8
             if n_candidates < n_blanks * 2:
                 continue
-            # Multiple attempts per paragraph for variety
-            for _ in range(5):
+            
+            # Multiple attempts to find good blank combinations
+            for attempt in range(3):
                 idxs = select_blanks(tokens, n_blanks)
                 if not idxs or len(idxs) < n_blanks:
                     continue
-                ex = build_exercise(para, idxs)
+                
+                ex = build_exercise(passage, idxs)
                 if not ex:
                     continue
+                
                 # Deduplication by answer set
                 key = '|'.join(sorted(a.lower() for a in ex['answers']))
                 if key in seen_answers:
                     continue
+                
                 seen_answers.add(key)
                 all_exercises.append(ex)
-
-    # Source 2: Multi-sentence exercises (2-3 sentences, 2-3 blanks)
-    for group_size in [3, 2]:
-        groups = build_sentence_groups(sentences, group_size)
-        for group in groups:
-            tokens = tokenize(group)
-            n_candidates = sum(1 for i, t in enumerate(tokens)
-                              if WORD_RE.fullmatch(t) and is_content_word(t))
-            if n_candidates < 4:
-                continue
-            # For 3-sentence groups, prefer 3 blanks; for 2-sentence, 2-3 blanks
-            for n_blanks in [3, 2] if group_size == 3 else [2, 3]:
-                if n_candidates < n_blanks * 2:
-                    continue
-                for _ in range(3):
-                    idxs = select_blanks(tokens, n_blanks)
-                    if not idxs or len(idxs) < 2:
-                        continue
-                    ex = build_exercise(group, idxs)
-                    if not ex:
-                        continue
-                    key = '|'.join(sorted(a.lower() for a in ex['answers']))
-                    if key in seen_answers:
-                        continue
-                    seen_answers.add(key)
-                    all_exercises.append(ex)
-
-    # Source 3: Single-sentence exercises (1-2 blanks)
-    for s in sentences:
-        if len(s) < 25:
-            continue
-        tokens = tokenize(s)
-        n_candidates = sum(1 for i, t in enumerate(tokens)
-                          if WORD_RE.fullmatch(t) and is_content_word(t))
-        if n_candidates < 2:
-            continue
+                break  # Success - move to next attempt
         
-        # Try both 1 and 2 blanks
-        for n_blanks in [2, 1]:
-            if n_candidates < n_blanks:
-                continue
-            idxs = select_blanks(tokens, n_blanks)
-            if not idxs:
-                continue
-            ex = build_exercise(s, idxs)
-            if not ex:
-                continue
-            key = '|'.join(sorted(a.lower() for a in ex['answers']))
-            if key in seen_answers:
-                continue
-            seen_answers.add(key)
-            all_exercises.append(ex)
+        if len(all_exercises) >= target_count:
+            break
+
+    # Source 2: If we need more, also create exercises from multi-sentence groups (4-5 sentences, 5-6 blanks)
+    if len(all_exercises) < target_count * 0.8:
+        for group_size in [5, 4]:
+            if len(all_exercises) >= target_count:
+                break
+            groups = build_sentence_groups(sentences, group_size)
+            
+            for group in groups:
+                if len(all_exercises) >= target_count:
+                    break
+                
+                tokens = tokenize(group)
+                n_candidates = sum(1 for i, t in enumerate(tokens)
+                                  if WORD_RE.fullmatch(t) and is_content_word(t))
+                
+                if n_candidates < 12:  # Need enough candidates for 5-6 blanks
+                    continue
+                
+                # Try 5-6 blanks for these longer passages
+                for n_blanks in [6, 5]:
+                    if n_candidates < n_blanks * 2:
+                        continue
+                    
+                    for _ in range(2):
+                        idxs = select_blanks(tokens, n_blanks)
+                        if not idxs or len(idxs) < n_blanks:
+                            continue
+                        
+                        ex = build_exercise(group, idxs)
+                        if not ex:
+                            continue
+                        
+                        key = '|'.join(sorted(a.lower() for a in ex['answers']))
+                        if key in seen_answers:
+                            continue
+                        
+                        seen_answers.add(key)
+                        all_exercises.append(ex)
+                        break
 
     # Quality filtering & validation
     filtered = []
@@ -437,16 +454,18 @@ def main() -> None:
     data = json.loads(content[start:end + 1])
     all_exercises = {}
     
-    # Increased targets for better coverage (target ~1000+ total)
+    # New targets: Comprehensive reading exercises (6-8 blanks each, ~600+ chars)
+    # Since blanks are now 6-8 per exercise (vs 2-3 before), we need fewer total exercises
+    # but with similar semantic coverage
     chapter_targets = {
-        'chapter_8': 160,   # Les 8: Vier Hollandse legendes (5 pages, content-rich)
-        'chapter_9': 145,   # Les 9: Nederland waterlaboratorium (4 pages)
-        'chapter_10': 135,  # Les 10: Sinterklaas (4 pages, dialogue-based)
-        'chapter_11': 170,  # Les 11: Zeehelden/kolonisators (6 pages, dense historical)
-        'chapter_12': 150,  # Les 12: Museums (4 pages, dialogue-rich)
-        'chapter_13': 160,  # Les 13: Rondje Delft (6 pages, descriptive)
-        'chapter_14': 160,  # Les 14: Dutch design (6 pages, technical)
-        'chapter_15': 155,  # Les 15: Nederland 2060 (4 pages, narrative)
+        'chapter_8': 50,   # Les 8: Vier Hollandse legendes (5 pages)
+        'chapter_9': 45,   # Les 9: Nederland waterlaboratorium (4 pages)
+        'chapter_10': 40,  # Les 10: Sinterklaas (4 pages)
+        'chapter_11': 60,  # Les 11: Zeehelden (6 pages, content-rich)
+        'chapter_12': 45,  # Les 12: Museums (4 pages)
+        'chapter_13': 50,  # Les 13: Rondje Delft (6 pages)
+        'chapter_14': 55,  # Les 14: Dutch design (6 pages)
+        'chapter_15': 45,  # Les 15: Nederland 2060 (4 pages)
     }
     
     total_generated = 0
@@ -458,7 +477,7 @@ def main() -> None:
         
         page_start, page_end = CHAPTER_PAGE_RANGES[ch_key]
         clean_text = extract_correct_pages(ch['text'], page_start, page_end)
-        target = chapter_targets.get(ch_key, 150)
+        target = chapter_targets.get(ch_key, 50)
         
         print(f"{ch_key}: extracted {len(clean_text)} chars from pages {page_start}-{page_end}")
         exercises = generate_exercises(clean_text, target)
@@ -471,10 +490,10 @@ def main() -> None:
         }
     
     out = []
-    out.append('// Auto-generated fill-in-the-blank exercises (Improved quality)')
+    out.append('// Auto-generated comprehensive reading comprehension exercises')
     out.append('// Extracted from Derde Ronde chapters 8-15 (correct page ranges)')
-    out.append('// Focus: Rare & semantically important vocabulary (nouns, proper nouns, unique adjectives)')
-    out.append('// Avoiding: Common prepositions, articles, and function words')
+    out.append('// Format: Full paragraphs (4-6 sentences) with 6-8 strategic blanks each')
+    out.append('// Focus: Rare & semantically important vocabulary (proper nouns, unique words)')
     out.append(f'// Total exercises: {total_generated}')
     out.append('export const derdeRondeVulinData = {')
     chapters = sorted(all_exercises.keys(), key=lambda x: int(x.split('_')[1]))
