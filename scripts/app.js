@@ -523,6 +523,8 @@ class FlashcardGame {
         this.drFeedbackMessage = document.getElementById('drFeedbackMessage');
         this.drCorrectAnswer = document.getElementById('drCorrectAnswer');
         this.drChapterButtons = document.getElementById('drChapterButtons');
+        this.drProgressSummary = document.getElementById('drProgressSummary');
+        this.drQuestionCounter = document.getElementById('drQuestionCounter');
         this.drPrevBtn = document.getElementById('drPrevBtn');
         this.drNextBtn = document.getElementById('drNextBtn');
         this.drShuffleBtn = document.getElementById('drShuffleBtn');
@@ -535,6 +537,9 @@ class FlashcardGame {
         this.drStats = { correct: 0, wrong: 0 };
         this.drCurrentChapter = 'chapter_8';
         this.drExercises = [];
+        this.drProgressMap = {};
+        this.drCompletedQuestionKeys = new Set();
+        this.drCurrentExerciseKey = '';
         this.drCurrentIndex = 0;
         this.drChecked = false;
         this.drHintShown = false;
@@ -1784,6 +1789,8 @@ class FlashcardGame {
     //  DERDE RONDE MODE
     // ============================================================
     initDerdeRonde() {
+        this.loadDrProgress();
+
         // Build chapter buttons in numerical order
         this.drChapterButtons.innerHTML = '';
         const chapters = Object.keys(derdeRondeVulinData).sort((a, b) => {
@@ -1793,10 +1800,14 @@ class FlashcardGame {
         });
         chapters.forEach(chKey => {
             const ch = derdeRondeVulinData[chKey];
+            const progress = this.getDrChapterProgress(chKey, ch.exercises.length);
             const btn = document.createElement('button');
             btn.className = 'dr-chapter-btn';
-            btn.textContent = ch.title;
             btn.dataset.chapter = chKey;
+            btn.innerHTML = `
+                <span class="dr-chapter-btn-title">${ch.title}</span>
+                <span class="dr-chapter-btn-meta">${progress.completed}/${progress.total} done</span>
+            `;
             btn.addEventListener('click', () => {
                 this.drCurrentChapter = chKey;
                 this.drCurrentIndex = 0;
@@ -1822,16 +1833,26 @@ class FlashcardGame {
 
     updateDrChapterButtons() {
         this.drChapterButtons.querySelectorAll('.dr-chapter-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.dataset.chapter === this.drCurrentChapter);
+            const chKey = btn.dataset.chapter;
+            const ch = derdeRondeVulinData[chKey];
+            const progress = this.getDrChapterProgress(chKey, ch?.exercises?.length || 0);
+            btn.classList.toggle('active', chKey === this.drCurrentChapter);
+            btn.classList.toggle('has-progress', progress.completed > 0);
+            const meta = btn.querySelector('.dr-chapter-btn-meta');
+            if (meta) {
+                meta.textContent = `${progress.completed}/${progress.total} done`;
+            }
         });
         const ch = derdeRondeVulinData[this.drCurrentChapter];
         this.drChapterLabel.textContent = ch ? `${ch.title} — Derde Ronde` : 'Derde Ronde';
+        this.updateDrProgressUI();
     }
 
     drLoadExercise() {
         if (this.drExercises.length === 0) return;
         const ex = this.drExercises[this.drCurrentIndex];
         const hints = Array.isArray(ex.hints) ? ex.hints : ex.hint ? [ex.hint] : [];
+        this.drCurrentExerciseKey = `${this.drCurrentChapter}:${this.drCurrentIndex}`;
 
         // Show blanked paragraph or sentence
         this.drSentence.textContent = ex.blanked || ex.sentence || '';
@@ -1886,6 +1907,8 @@ class FlashcardGame {
             this.drAnswersContainer.classList.add('hidden');
             this.drAnswerInput.focus();
         }
+
+        this.updateDrProgressUI();
     }
 
     checkDrAnswer() {
@@ -1898,6 +1921,11 @@ class FlashcardGame {
             : [this.drAnswerInput.value.trim()];
 
         if (userAnswers.every(answer => normalize(answer) === '')) return;
+
+        if (!this.drCompletedQuestionKeys.has(this.drCurrentExerciseKey)) {
+            this.drCompletedQuestionKeys.add(this.drCurrentExerciseKey);
+            this.markDrExerciseCompleted(this.drCurrentChapter, this.drCurrentIndex);
+        }
 
         this.drChecked = true;
         this.drCheckBtn.disabled = true;
@@ -1942,6 +1970,86 @@ class FlashcardGame {
         }
 
         this.updateDrStats();
+        this.updateDrProgressUI();
+    }
+
+    getDrChapterProgress(chKey, total = null) {
+        if (!this.drProgressMap[chKey]) {
+            this.drProgressMap[chKey] = { completed: 0, total: total || 0, completedIndexes: [] };
+        }
+        if (typeof total === 'number') {
+            this.drProgressMap[chKey].total = total;
+        }
+        return this.drProgressMap[chKey];
+    }
+
+    markDrExerciseCompleted(chKey, index) {
+        const progress = this.getDrChapterProgress(chKey);
+        if (!progress.completedIndexes.includes(index)) {
+            progress.completedIndexes.push(index);
+            progress.completed = progress.completedIndexes.length;
+            this.saveDrProgress();
+        }
+    }
+
+    getOverallDrCompletedCount() {
+        return Object.values(this.drProgressMap).reduce((sum, progress) => sum + (progress.completed || 0), 0);
+    }
+
+    loadDrProgress() {
+        try {
+            const saved = localStorage.getItem('drProgressState');
+            if (!saved) {
+                this.drProgressMap = {};
+                return;
+            }
+            const parsed = JSON.parse(saved);
+            this.drProgressMap = parsed && typeof parsed === 'object' ? parsed : {};
+            this.drCompletedQuestionKeys = new Set(Object.entries(this.drProgressMap).flatMap(([chapter, progress]) =>
+                (progress.completedIndexes || []).map(index => `${chapter}:${index}`)
+            ));
+        } catch (error) {
+            this.drProgressMap = {};
+            this.drCompletedQuestionKeys = new Set();
+        }
+    }
+
+    saveDrProgress() {
+        try {
+            localStorage.setItem('drProgressState', JSON.stringify(this.drProgressMap));
+        } catch (error) {
+            // Ignore storage issues
+        }
+    }
+
+    updateDrProgressUI() {
+        const currentChapter = this.drCurrentChapter || 'chapter_8';
+        const chapter = derdeRondeVulinData[currentChapter];
+        const chapterProgress = this.getDrChapterProgress(currentChapter, chapter?.exercises?.length || 0);
+        const overallTotal = Object.values(derdeRondeVulinData).reduce((sum, item) => sum + (item.exercises?.length || 0), 0);
+        const overallCompleted = this.getOverallDrCompletedCount();
+
+        if (this.drQuestionCounter) {
+            this.drQuestionCounter.textContent = `Question ${this.drCurrentIndex + 1} / ${this.drExercises.length || 0}`;
+        }
+
+        if (this.drProgressSummary) {
+            this.drProgressSummary.innerHTML = `
+                <span class="dr-progress-pill">Chapter: ${chapterProgress.completed}/${chapterProgress.total} completed</span>
+                <span class="dr-progress-pill">Overall: ${overallCompleted}/${overallTotal} completed</span>
+            `;
+        }
+
+        this.drChapterButtons.querySelectorAll('.dr-chapter-btn').forEach(btn => {
+            const chKey = btn.dataset.chapter;
+            const chData = derdeRondeVulinData[chKey];
+            const progress = this.getDrChapterProgress(chKey, chData?.exercises?.length || 0);
+            btn.classList.toggle('has-progress', progress.completed > 0);
+            const meta = btn.querySelector('.dr-chapter-btn-meta');
+            if (meta) {
+                meta.textContent = `${progress.completed}/${progress.total} done`;
+            }
+        });
     }
 
     drNextExercise() {
